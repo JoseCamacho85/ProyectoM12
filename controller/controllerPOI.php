@@ -10,6 +10,11 @@
  *
  * @author Mazu
  */
-interface controllerPOI {
-    //put your code here
-}
+
+echo "hola";
+
+?>
+    
+    
+
+
