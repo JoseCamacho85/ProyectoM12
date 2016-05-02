@@ -11,6 +11,6 @@ include("../../dbConnector.php");
  *
  * @author Mazu
  */
-class classBitacleDB{
+class BitacleDB{
     
 }

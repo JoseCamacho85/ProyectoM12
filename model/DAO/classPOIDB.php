@@ -11,7 +11,7 @@
  *
  * @author Mazu
  */
-class classPOIDB {
+class POIDB {
     public function insertPOI($POI){
 
         $con = new Database();                 

@@ -11,7 +11,7 @@
  *
  * @author Mazu
  */
-class classDB extends PDO{
+class DB extends PDO{
     private $host;
     private $user;
     private $pass;
