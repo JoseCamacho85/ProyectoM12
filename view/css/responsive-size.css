@@ -1,0 +1,140 @@
+/* ==========================================================================
+  PROYECTO EMPRESA DE SERVICIOS Y APLICACIONES -SQUAL INN WEB DESIGN-
+                            BY GERMAN PLA
+   ========================================================================== */
+
+/* ==========================================================================
+   Author's custom styles GERMAN PLA SEPULVEDA ==============================
+   MEDIA QUERY ==============================================================
+   ========================================================================== */
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .content-top{
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+    .meet h2{
+        padding: 0 2%;
+    }
+    .form input[type="checkbox"] {
+        margin-left: 50%;
+    }
+    .about-header h3:last-child{
+        color: #ffffff;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .content-top{
+        padding: 0 20px;
+    }
+    .carousel-caption p{
+        padding: 0;
+        margin: 0;
+        font-size: 1.1em;
+    }
+    .carousel-caption a{
+        padding: 1%;
+    }
+    .meet h2{
+        text-align: center;
+        margin: 2% 5%;
+        padding: 5% 0;
+    }
+    .aleta{
+        display: none;
+
+    }
+    .meet h2{
+        font-size: 5em;
+    }
+    .about-header {
+        background-position: 82% 0%;
+    }
+    .work-center img:hover{
+        transform : scale(1.05);
+        -moz-transform : scale(1.05);
+        -webkit-transform : scale(1.05);
+        -o-transform : scale(1.05);
+        -ms-transform : scale(1.05);
+    }
+    .blog-text{
+        text-align: center;
+    }
+    .entry-section img{
+        float: none !important;
+        margin: 5% auto !important;
+    }
+    .form textarea{
+        width: 90%;
+        margin: 2% auto;
+    }
+    .form input[type="checkbox"] {
+        margin-left: 15%;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .content-top{
+        padding: 0 20px;
+    }
+    .art-wrapper-thumb {
+        background-size: 35% auto;
+        padding-top: 80px;
+    }
+    .art-main-wrapper{
+        text-align: center;
+        background-position: 50% 0px;
+    }
+    .art-wrapper-thumb{
+        width: 100%;
+        float: left;
+        padding-bottom: 10px;
+        background-size: 20% auto;
+        background-position: 50% 0;
+        padding-top: 80px;
+        text-align: center;
+        /*transición*/
+        position: relative;
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+    }
+    .art-wrapper-thumb h3,p{
+        font-size: 1.1em;
+    }
+    .icons-services>div{
+        width: 100%;
+        float: left;
+    }
+    .footer-right{
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .footer-middle{
+        width: 100%;
+        float: left;
+        text-align: center;
+    }
+    .footer-middle img{
+        margin: 20px auto;
+    }
+    .carousel-caption h3{
+        padding-bottom: ;
+    }
+    .carousel-caption p:nth-child(even){
+        display: none;
+    }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+

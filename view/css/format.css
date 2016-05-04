@@ -1,0 +1,19 @@
+
+div, section, article{
+  border: 1px solid #000;
+  background: #fff;
+  text-align: center;
+}
+#myCarousel{
+  min-height: 250px;
+  
+}
+ul.list-social li {
+  display: inline; 
+}
+ul.list-social{
+  text-align: center;
+}
+img{
+	visibility: hidden;
+}
