@@ -23,7 +23,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                 </button>
+<<<<<<< HEAD
                 <a class="navbar-brand" href="main.php">BitaCle</a>
+=======
+                <a class="navbar-brand" href="main.php">Bitacle</a>
+>>>>>>> origin/master
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
