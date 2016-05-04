@@ -11,7 +11,7 @@ include_once("controller/functionAutoload.php");
  *
  * @author Mazu
  */
-class classBitacle {
+class Bitacle {
     private $id = null;
     private $nom;
     

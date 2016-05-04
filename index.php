@@ -1,18 +1,18 @@
 <?php
 
 //function __autoload($class_name){
-require_once "/model/Business/class_Hospital.php";
+require_once "/model/Bussiness/classBitacle.php";
 //}
 //Open session
 session_start();
 // if session hospital doesn't exist, we make it.
-if (!isset($_SESSION['hospital'])) {
+if (!isset($_SESSION['bitacle'])) {
 
-    $hospital = new Hospital("hospital", "granollers");
-    $_SESSION['hospital'] = serialize($hospital);
+    $hospital = new Bitacle("bitacle");
+    $_SESSION['bitacle'] = serialize($hospital);
 } else {
     // if session exist, we unserializate it.
     $hospital = unserialize($_SESSION['hospital']);
 }
-header("Location:view/form_Login.php");
+header("Location:view/main.php");
 ?>
