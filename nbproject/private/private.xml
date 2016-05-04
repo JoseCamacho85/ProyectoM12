@@ -5,9 +5,6 @@
 <<<<<<< HEAD
         <group/>
 =======
-<<<<<<< HEAD
-        <group/>
-=======
         <group>
             <file>file:/C:/xampp/htdocs/ProyectoM12/model/DAO/classDiarioDB.php</file>
             <file>file:/C:/xampp/htdocs/ProyectoM12/config/dbConnector.php</file>
@@ -17,7 +14,6 @@
             <file>file:/C:/xampp/htdocs/ProyectoM12/model/DAO/classMensajeForoDB.php</file>
             <file>file:/C:/xampp/htdocs/ProyectoM12/model/DAO/classMensajePrivadoDB.php</file>
         </group>
->>>>>>> origin/master
 >>>>>>> origin/master
     </open-files>
 </project-private>
