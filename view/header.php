@@ -27,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="main.php" class="glyphicon glyphicon-home">Inicio</a></li>
+                    <li class="active"><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                     <li><a href="showPOI.php">POI's</a></li>
                     <li><a href="showRutas.php">Rutas</a></li>
                     <li><a href="showForo.php">Foro</a></li>
@@ -35,8 +35,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a>Usuario: <input type="text" name="user" class="userInput" required></a></li>
                     <li><a>Password: <input type="password" name="pass" class="userInput" required></a></li>
-                    <li><a href="../controller/controllerUser.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                     <li><a href="register.php" id="ok"><span class="-glyphicon glyphicon-plus"></span> Signin</a></li>
+                    <li><a href="../controller/controllerUser.php" id="ok"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                     <li><a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a></li>
                 </ul>
             </div>
         </div>
