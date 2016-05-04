@@ -125,7 +125,7 @@
         margin: 20px auto;
     }
     .carousel-caption h3{
-        padding-bottom: ;
+        //padding-bottom: ;
     }
     .carousel-caption p:nth-child(even){
         display: none;
