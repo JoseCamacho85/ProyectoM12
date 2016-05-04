@@ -1,16 +1,6 @@
 <?php
+include("../../config/dbConnector.php");
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classDB
- *
- * @author Mazu
- */
 class DB extends PDO{
     private $host;
     private $user;
@@ -41,6 +31,7 @@ class DB extends PDO{
     public function executeNonQuery($nonquery){
         $nonquery->execute();
     }
+    
     public function executeQuery($query){
         $query->execute();
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
