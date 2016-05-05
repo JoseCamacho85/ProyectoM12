@@ -38,9 +38,9 @@ include ("../controller/checkSession.php");
                     </ul>
                     <?php
                     if (!checkSession()) {
-                        include("lib/login.html");
+                        include("modules/login.html");
                     } else {
-                        include("lib/userNav.html");
+                        include("modules/userNav.html");
                     }
                     ?>
                 </div>
