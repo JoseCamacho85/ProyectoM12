@@ -1,14 +1,3 @@
-/* ==========================================================================
-  PROYECTO EMPRESA DE SERVICIOS Y APLICACIONES -SQUAL INN WEB DESIGN-
-                            BY GERMAN PLA
-   ========================================================================== */
-
-/* ==========================================================================
-   Author's custom styles GERMAN PLA SEPULVEDA ==============================
-   MEDIA QUERY ==============================================================
-   ========================================================================== */
-
-/* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
     .content-top{
         padding: 0 20px;
@@ -125,7 +114,7 @@
         margin: 20px auto;
     }
     .carousel-caption h3{
-        //padding-bottom: ;
+        
     }
     .carousel-caption p:nth-child(even){
         display: none;
