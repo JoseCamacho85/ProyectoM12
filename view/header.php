@@ -21,12 +21,6 @@ include ("../controller/checkSession.php");
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>                        
-                    </button>
-
                     <a class="navbar-brand" href="main.php">Bitacle</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -37,10 +31,10 @@ include ("../controller/checkSession.php");
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
                     <?php
-                    if (!checkSession()) {
+                    if (checkSession()) {
                         include("modules/login.html");
                     } else {
-                        include("modules/userNav.html");
+                        include("modules/userNav.php");
                     }
                     ?>
                 </div>

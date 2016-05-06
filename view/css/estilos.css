@@ -32,3 +32,7 @@ footer {
     }
     .row.content {height:auto;} 
 }
+
+#userBox{
+   float:right; 
+}
