@@ -1,10 +1,9 @@
 <?php
 include ("header.php");
-<<<<<<< HEAD
+
 include("footer.php");
 include ("../controller/checkSession.php");
-=======
->>>>>>> origin/master
+
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
