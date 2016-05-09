@@ -1,7 +1,5 @@
 <?php
 include ("header.php");
-include ("../controller/checkSession.php");
-
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
