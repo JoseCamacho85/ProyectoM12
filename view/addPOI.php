@@ -38,10 +38,11 @@ include ("header.php");
                             selecciona ciudad
                         </option>
                     </select>
-
-
-
+                    <input type="submit" id="submitPOI" value="Crear POI">
                 </form>
+            </div>
+            <div id="seleccionados">
+                ELEMENTOS SELECCIONADOS APARECERÁN AQUÍ
             </div>
         </div>
     </div>

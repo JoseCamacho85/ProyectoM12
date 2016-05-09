@@ -15,8 +15,12 @@ include ("header.php");
                         <option>
                             selecciona POI
                         </option>
-                    </select>
+                    </select><br/><br/>
+                    <input type="submit" id="submitRuta" value="Crear Ruta">
                 </form>
+            </div>
+            <div id="seleccionados">
+                ELEMENTOS SELECCIONADOS APARECERÁN AQUÍ
             </div>
         </div>
     </div>
