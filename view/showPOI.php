@@ -1,5 +1,6 @@
 <?php
 include ("header.php");
+<<<<<<< HEAD
 include_once("../model/Persistence/classDatabase.php");
 require_once('Structures/DataGrid.php');
 session_start() ;
@@ -199,3 +200,11 @@ if(count($rtotalobres)>0){
 <?php
 include ("footer.php");
 ?>
+=======
+//include ("../controller/checkSession.php");
+?>
+
+        <?php
+        include ("footer.php");
+        ?>
+>>>>>>> origin/master
