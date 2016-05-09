@@ -4,31 +4,52 @@ include ("header.php");
 <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-12 text-center"> 
-            <h1>BitaCle</h1>
-            <p>DESCRIPCION DEL WEB</p>
-            <hr>
-            <h3>TITULO</h3>
+
             <div class="flexslider">
+                <div id="content">
+                    <h1>BitaCle</h1>
+                    <p>DESCRIPCION DEL WEB</p>
+                    <hr>
+                </div>
                 <ul class="slides">
+
                     <li>
-                        <img src="img/zelda2.jpg" />
+                        <img src="img/1.jpg" />
                     </li>
                     <li>
-                        <img src="img/zelda3.jpg" />
+                        <img src="img/2.jpg" />
                     </li>
                     <li>
-                        <img src="img/zelda4.jpg" />
+                        <img src="img/3.jpg" />
                     </li>
                     <li>
-                        <img src="img/zelda5.jpg" />
+                        <img src="img/4.jpg" />
                     </li>
                     <li>
-                        <img src="img/zelda6.jpg" />
+                        <img src="img/5.jpg" />
                     </li>
+                    <li>
+                        <img src="img/6.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/7.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/8.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/9.jpg" />
+                    </li>
+                    <li>
+                        <img src="img/10.jpg" />
+                    </li>
+
                 </ul>
             </div>
         </div>
+    </div>
+</div>
 
-        <?php
-        include ("footer.php");
-        ?>
+<?php
+include ("footer.php");
+?>
