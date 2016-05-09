@@ -13,7 +13,7 @@ include ("header.php");
                    
                     POI:<select id="POIRuta">
                         <option>
-                            selecciona tipo
+                            selecciona POI
                         </option>
                     </select>
                 </form>
