@@ -17,7 +17,6 @@ include ("../controller/checkSession.php");
 
     </head>
     <body>
-        <!--INICIO DE NAVBAR-->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -30,12 +29,14 @@ include ("../controller/checkSession.php");
                         <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
+
                     <?php
-                    if (checkSession()) {
+                    if (!checkSession()) {
                         include("modules/login.html");
                     } else {
                         include("modules/userNav.php");
                     }
+              
                     ?>
                 </div>
             </div>
