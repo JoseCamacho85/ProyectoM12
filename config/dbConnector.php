@@ -3,6 +3,6 @@
 $GLOBALS['server'] = "localhost";
 $GLOBALS['USER'] = "root";
 $GLOBALS['PASS'] = "";
-$GLOBALS['dbname'] = "bitacle";
+$GLOBALS['dbname'] = "bitaclebd";
 
 ?>
