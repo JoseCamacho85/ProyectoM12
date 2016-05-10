@@ -8,14 +8,14 @@ include ("header.php");
             <div>
                 <form action="" name="formPOI">
                     <hr>
-                    Nombre:<input type="text" id="nombreRuta"><br/><br/>
-                    Descripción:<input type="text" id="descripcionRuta"><br/><br/>
+                    <p>Nombre:<input type="text" id="nombreRuta"></p>
+                    <p>Descripción:<input type="text" id="descripcionRuta"></p>
                    
-                    POI:<select id="POIRuta">
+                    <p>POI:<select id="POIRuta">
                         <option>
                             selecciona POI
                         </option>
-                    </select><br/><br/>
+                    </select></p>
                     <input type="submit" id="submitRuta" value="Crear Ruta">
                 </form>
             </div>

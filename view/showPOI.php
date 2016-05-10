@@ -1,9 +1,10 @@
 <?php
 include ("header.php");
 
-include_once("../model/Persistence/classDatabase.php");
+include_once("../model/DAO/classDB.php");
 require_once('Structures/DataGrid.php');
-session_start() ;
+
+//session_start() ;
 
 // Incloem els fitxers necessaris: ADODB, seguretat, configuració i funcions
 //include_once("adodb/adodb.inc.php");
