@@ -12,18 +12,25 @@
  * @author toni
  */
 class DiarioDB {
-    public function insertRuta($diario){
-        $con = new Database();                 
-        $nonquery = $con->prepare("INSERT INTO diario (nombre,descripcion) "
-                . "VALUES (:nombre,:descripcion)");
-        $nombre=$diario->getNombre();           
-        $descripcion=$diario->getDescripcion();
-        
-        $nonquery->bindParam(":nombre",$nombre);
-        $nonquery->bindParam(":descripcion",$descripcion);
+    
+    public function insertDiario($user){
+
+        $con = new DB();                 
+            $nonquery = $con->prepare("INSERT INTO diario (nombre,descripcion,id_usuario) VALUES (:nombre,:descripcion,:id_usuario)");
+            $nombre=$diario->getNombre();
+            $descripcion=$diario->getDescripcion();
+            $id_usuario=$diario->getId_usuario();
+         
+            $nonquery->bindParam(":nombre",$nombre);
+            $nonquery->bindParam(":descripcion",$descripcion);
+            $nonquery->bindParam(":id_usuario",$id_usuario);
             
-        $con->executeNonQuery($nonquery);
+            $con->executeNonQuery($nonquery);
+      
+            $id = $this->$con->lastInsertId();   
             
-        $con=null;
+            return $id;                                      
+            $con=null;
+
     }
 }

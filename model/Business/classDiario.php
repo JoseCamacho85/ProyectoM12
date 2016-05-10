@@ -45,4 +45,10 @@ class Diario {
     function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
     }
+
+    public function persist() {
+        $diarioDAO = new DiarioDB();
+        $id = $diarioDAO->insertDiario($this);
+        return $id;
+    }
 }
