@@ -24,7 +24,11 @@ include ("../controller/checkSession.php");
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"></button>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
                     <a class="navbar-brand" href="main.php">Bitacle</a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
