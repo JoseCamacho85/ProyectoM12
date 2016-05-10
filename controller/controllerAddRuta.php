@@ -15,12 +15,7 @@ if (isset($_REQUEST['submit'])) {
 try {
     $userId= $bitacle->getId();
     $bitacle->insertRuta(null, $ruta, $descripcion, $idUsuari);
-
-    //echo $username . "perfecto";
-
-    //showMessage("Usuario ". $username ." creado correctamente");	
-    //header("Location: ../index.php");
-    //$_SESSION['bitacle']=serialize($bitacle);		
+    header("location:../view/addRutas.php");
 } catch (Exception $e) {
     showMessage($e->getMessage());
 }
