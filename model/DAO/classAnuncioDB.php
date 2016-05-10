@@ -21,8 +21,8 @@ class AnuncioDB {
         $titulo = $anuncio->getTitulo();
         $descripcion = $anuncio->getDescripcion();
         $imagen = $anuncio->getImagen();
-        $id_poi = $anuncio->getAlgo();
-        $id_usuario = $anuncio->getAlgo();
+        $id_poi = $anuncio->getPOI->getId();
+        $id_usuario = $anuncio->getUsuario->getId();
 
         $nonquery->bindParam(":titulo", $titulo);
         $nonquery->bindParam(":descripcion", $descripcion);
