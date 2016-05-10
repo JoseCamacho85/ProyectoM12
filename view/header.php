@@ -39,13 +39,13 @@ include ("../controller/checkSession.php");
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
 
-                    <?php
+                    <?php/*
                     if (!checkSession()) {
                         include("modules/login.html");
                     } else {
                         include("modules/userNav.php");
                     }
-              
+                    */
                     ?>
                 </div>
             </div>
