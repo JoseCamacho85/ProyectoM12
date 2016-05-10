@@ -13,25 +13,25 @@
  */
 class Usuario {
     
-    private $id;
-    private $user;
+    private $id=null;
+    private $username;
     private $password;
     private $email;
     private $poblacion;
     private $idioma;
-    private $movil;
+    private $telefono;
     private $url;
     private $foto;
     private $textoPresentacion;
     
-    function __construct($id, $user, $password, $email, $poblacion, $idioma, $movil, $url, $foto, $textoPresentacion) {
+    function __construct($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $this->id = $id;
-        $this->user = $user;
+        $this->username = $username;
         $this->password = $password;
         $this->email = $email;
         $this->poblacion = $poblacion;
         $this->idioma = $idioma;
-        $this->movil = $movil;
+        $this->telefono = $telefono;
         $this->url = $url;
         $this->foto = $foto;
         $this->textoPresentacion = $textoPresentacion;
@@ -42,8 +42,8 @@ class Usuario {
         return $this->id;
     }
 
-    function getUser() {
-        return $this->user;
+    function getUsername() {
+        return $this->username;
     }
 
     function getPassword() {
@@ -62,8 +62,8 @@ class Usuario {
         return $this->idioma;
     }
 
-    function getMovil() {
-        return $this->movil;
+    function getTelefono() {
+        return $this->telefono;
     }
 
     function getUrl() {
@@ -82,8 +82,8 @@ class Usuario {
         $this->id = $id;
     }
 
-    function setUser($user) {
-        $this->user = $user;
+    function setUsername($username) {
+        $this->username = $username;
     }
 
     function setPassword($password) {
@@ -102,8 +102,8 @@ class Usuario {
         $this->idioma = $idioma;
     }
 
-    function setMovil($movil) {
-        $this->movil = $movil;
+    function setTelefono($telefono) {
+        $this->telefono = $telefono;
     }
 
     function setUrl($url) {
@@ -118,6 +118,12 @@ class Usuario {
         $this->textoPresentacion = $textoPresentacion;
     }
 
+
+ public function persist() {
+        $userDAO = new UsuarioDB();
+        $id = $userDAO->insertUser($this);
+        return $id;
+    }
 
     
     

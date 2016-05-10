@@ -1,7 +1,7 @@
 <?php
 include ("header.php");
 ?>
-<form action="../controller/controllerNewUser.php" method="POST">
+<form action="../controller/controllerAddUser.php" method="post">
     <p>Nombre de usuario: <input type="text" name="username" maxlength="25" required /></p>
     <p>Contraseña: <input type="password" name="password" maxlength="25" required /></p>
     <p>E-mail: <input type="email" name="email" maxlength="50" required /></p>
@@ -11,7 +11,7 @@ include ("header.php");
     <p>URL: <input type="text" name="url" maxlength="50" /></p>
     <p>Foto: <input type="text" name="foto" /></p> <!-- Ver si hay algún plugin para examinar imagen -->
     <p>Texto de presentación:</p>
-    <textarea rows="4" cols="30"></textarea><br/>
+    <textarea name="textoPresentacion" rows="4" cols="30"></textarea><br/>
     <input type="submit" value="Registrarse" name="submit"/>
 </form>
 <?php
