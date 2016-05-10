@@ -13,13 +13,13 @@
  */
 class DiarioDB {
     
-    public function insertDiario($user){
+    public function insertDiario($diario){
 
         $con = new DB();                 
             $nonquery = $con->prepare("INSERT INTO diario (nombre,descripcion,id_usuario) VALUES (:nombre,:descripcion,:id_usuario)");
             $nombre=$diario->getNombre();
             $descripcion=$diario->getDescripcion();
-            $id_usuario=$diario->getId_usuario();
+            $id_usuario=$diario->getUsuario->getId();
          
             $nonquery->bindParam(":nombre",$nombre);
             $nonquery->bindParam(":descripcion",$descripcion);

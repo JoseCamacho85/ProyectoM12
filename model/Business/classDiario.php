@@ -15,11 +15,13 @@ class Diario {
     private $id = null;
     private $nombre;
     private $descripcion;
+    private $usuario;
     
-    function __construct($id, $nombre, $descripcion) {
+    function __construct($id, $nombre, $descripcion,$usuario) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
+        $this->usuario = $usuario;
     }
 
     function getId() {
@@ -34,6 +36,10 @@ class Diario {
         return $this->descripcion;
     }
 
+    function getUsuario() {
+        return $this->usuario;
+    }
+
     function setId($id) {
         $this->id = $id;
     }
@@ -44,6 +50,10 @@ class Diario {
 
     function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
+    }
+
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
     }
 
     public function persist() {
