@@ -17,7 +17,7 @@ class Ruta {
     private $descripcion;
     private $usuario;
     
-    function __construct($id, $nombre, $descripcion) {
+    function __construct($id, $nombre, $descripcion, $usuario) {
         $this->setId($id);
         $this->setNombre($nombre);
         $this->setDescripcion($descripcion);
@@ -56,8 +56,12 @@ class Ruta {
         $this->usuario = $usuario;
     }
 
-
-
+    public function persist() {
+        $rutaDAO = new RutaDB();
+        $id = $rutaDAO->insertRuta($this);
+        return $id;
+    }
+    
 
 
 }
