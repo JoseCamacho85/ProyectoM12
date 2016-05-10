@@ -1,5 +1,6 @@
 <?php
 
+class UsuarioDB {
 
 public function insertUser($user){
 
@@ -8,7 +9,7 @@ public function insertUser($user){
 $con = new DB();                 
             //$nonquery = $con->prepare("INSERT INTO employees VALUES (NULL,:name,:surname,:nif,:category)");
             $nonquery = $con->prepare("INSERT INTO usuario (username,password,email,poblacion,idioma,telefono,url,foto,textoPresentacion) VALUES (:username,:password,:email,:poblacion,:idioma,:telefono,:url,:foto,:textoPresentacion)");
-            $username=$user->getUsername();
+            $username=$user->getUserName();
             $password=$user->getPassword();
             $email=$user->getEmail();
             $poblacion=$user->getPoblacion();
@@ -67,5 +68,7 @@ $con = new DB();
 
         return $users;
     } 
+
+}
 
 ?>
