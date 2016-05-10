@@ -7,16 +7,15 @@ include ("../controller/checkSession.php");
         <title>Bitacle -- Tu red de viajes</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery.js"></script>
-        
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link type="text/css" href="css/estilos.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/agency.css">
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
-        <link type="text/css" href="css/estilos.css">
         <script type="text/javascript" src="js/animation.js"></script>
         <script src="js/validations.js"></script>
 
@@ -48,7 +47,6 @@ include ("../controller/checkSession.php");
                     } else {
                         include("modules/userNav.php");
                     }
-              
                     ?>
                 </div>
             </div>

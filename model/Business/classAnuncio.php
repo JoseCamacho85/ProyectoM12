@@ -55,6 +55,12 @@ class Anuncio {
     function setImagen($imagen) {
         $this->imagen = $imagen;
     }
+    
+      public function persist() {
+        $anuncioDAO = new anuncioDB();
+        $id = $anuncioDAO->insertAnuncio($this);
+        return $id;
+    }
 
 
     
