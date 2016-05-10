@@ -27,13 +27,9 @@ class RutaDB {
 
         $con->executeNonQuery($nonquery);
 
-        $sql = $con->prepare("SELECT id FROM usuario WHERE username = '" . $username . "'");
-        $result = $con->executeQuery($sql);
+        $id = $this->$con->lastInsertId();
 
-        foreach ($result as $row) {
-            $id = $row['id'];
-            return $id;
-        }
+        return $id;
         $con = null;
     }
 
