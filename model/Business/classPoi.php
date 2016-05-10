@@ -12,7 +12,7 @@
  * @author Mazu
  */
 class Poi {
-    
+
     private $id = null;
     private $nombre;
     private $foto;
@@ -31,7 +31,6 @@ class Poi {
         $this->horario = $horario;
     }
 
-    
     function getId() {
         return $this->id;
     }
@@ -88,7 +87,12 @@ class Poi {
         $this->horario = $horario;
     }
 
-
+    public function persist() {
+        $poiDAO = new PoiDB();
+        $id = $poiDAO->insertPoi($this);
+        return $id;
+    }
 
 }
+
 ?>
