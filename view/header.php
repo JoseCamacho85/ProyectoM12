@@ -41,14 +41,14 @@ include ("../controller/checkSession.php");
                         <li><a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a></li>
                     </ul>
 
-                    <!--?php
+                    <?php
                     if (!checkSession()) {
                         include("modules/login.html");
                     } else {
                         include("modules/userNav.php");
                     }
               
-                    ?-->
+                    ?>
                 </div>
             </div>
         </nav>
