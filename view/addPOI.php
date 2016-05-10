@@ -6,7 +6,7 @@ include ("header.php");
         <div class="col-sm-12 text-center"> 
             <h1>Introducir POI</h1>
             <div>
-                <form action="../controller/controllerPoi.php" name="formPoi" method="POST">
+                <form action="../controller/controllerAddPoi.php" name="formPoi" method="POST">
                     <hr>
                     <p>Nombre: <input type="text" id="nombrePoi"></p>
                     <p>Foto: <input type="text" id="fotoPoi"></p>
@@ -39,14 +39,6 @@ include ("header.php");
                         </select>
                     </p>
                     <p>
-                        País:
-                        <select id="paisPoi">
-                            <option>
-                                selecciona país
-                            </option>
-                        </select>
-                    </p>
-                    <p>
                         Ciudad:
                         <select id="ciudadPoi">
                             <option>
@@ -54,6 +46,15 @@ include ("header.php");
                             </option>
                         </select>
                     </p>
+                    <p>
+                        País:
+                        <select id="paisPoi">
+                            <option>
+                                selecciona país
+                            </option>
+                        </select>
+                    </p>
+                    <p>Usuario: <input type="text" id="usuarioPoi"></p>
                     <input type="submit" id="submitPoi" value="Crear POI">
                 </form>
             </div>
