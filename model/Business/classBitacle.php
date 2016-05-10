@@ -87,19 +87,35 @@ public function insertUser($id,$username,$password,$email,$poblacion,$idioma,$te
 }
 
 public function insertPoi(){   
-    
+    $poi = new Poi($id,$nombre,$foto,$descripcion,$url,$precio,$horario,$id_tipo,$id_transporte,$id_entorno,$id_ciudad,$id_pais,$id_usuario);
+    $id = $poi->persist();
+    $poi->setId($id);
+    array_push($this->pois,$poi);
+    return $poi;
 }
 
 public function insertRuta(){   
-    
+    $ruta = new Ruta($id,$nombre,$descripcion,$id_usuario);
+    $id = $ruta->persist();
+    $ruta->setId($id);
+    array_push($this->rutas,$ruta);
+    return $ruta;
 }
 
-public function insertDiario(){   
-    
+public function insertDiario($id,$nombre,$descripcion,$id_usuario){   
+    $diario = new Diario($id,$nombre,$descripcion,$id_usuario);
+    $id = $diario->persist();
+    $diario->setId($id);
+    array_push($this->diarios,$diario);
+    return $diario;
 }
 
 public function insertAnuncio(){
-
+    $anuncio = new Anuncio($id,$titulo,$descripcion,$imagen,$id_poi,$id_usuario);
+    $id = $anuncio->persist();
+    $anuncio->setId($id);
+    array_push($this->anuncios,$anuncio);
+    return $anuncio;
 }
 
     
