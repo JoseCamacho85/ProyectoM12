@@ -1,20 +1,27 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+session_start();
+include("../model/functionAutoLoad.php");
+$bitacle = unserialize($_SESSION['bitacle']);
 
-/**
- *
- * @author Mazu
- */
+if (isset($_REQUEST['submit'])) {
+    $nombre = $_REQUEST['nombrePoi'];
+    $foto = $_REQUEST['fotoPoi'];
+    $descripcion = $_REQUEST['descripcionPoi'];
+    $url = $_REQUEST['urlPoi'];
+    $precio = $_REQUEST['precioPoi'];
+    $horario = $_REQUEST['horarioPoi'];
+    $tipo = $_REQUEST['tipoPoi'];
+    $transporte = $_REQUEST['transportePoi'];
+    $entorno = $_REQUEST['entornoPoi'];
+    $pais = $_REQUEST['paisPoi'];
+    $ciudad = $_REQUEST['ciudadPoi'];
 
-echo "hola";
-
+    try {
+        $bitacle->insertUser(null, $_REQUEST['username'], $_REQUEST['password'], $_REQUEST['email'], $_REQUEST['poblacion'], $_REQUEST['idioma'], $_REQUEST['telefono'], $_REQUEST['url'], $_REQUEST['foto'], $_REQUEST['textoPresentacion']);
+        echo $username . "perfecto";
+    } catch (Exception $e) {
+        showMessage($e->getMessage());
+    }
+}
 ?>
-    
-    
-
-

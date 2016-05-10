@@ -1,4 +1,5 @@
 <?php
+
 include_once("model/functionAutoload.php");
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +13,7 @@ include_once("model/functionAutoload.php");
  * @author Mazu
  */
 class Bitacle {
+
     private $id = null;
     private $nom;
     private $users = null;
@@ -19,7 +21,7 @@ class Bitacle {
     private $rutas = null;
     private $diarios = null;
     private $anuncios = null;
-    
+
     function __construct($nom) {
         $this->id = $id;
         $this->nom = $nom;
@@ -29,7 +31,7 @@ class Bitacle {
         $this->diarios = array();
         $this->anuncios = array();
     }
-    
+
     function getId() {
         return $this->id;
     }
@@ -46,77 +48,76 @@ class Bitacle {
         $this->nom = $nom;
     }
 
-    public function getUsers(){
+    public function getUsers() {
         return $this->users;
     }
 
-    public function setUsers($users){
+    public function setUsers($users) {
         $this->users = $users;
     }
 
-    public function getPois(){
+    public function getPois() {
         return $this->pois;
     }
 
-    public function setPois($pois){
+    public function setPois($pois) {
         $this->pois = $pois;
     }
 
-    public function getRutas(){
+    public function getRutas() {
         return $this->rutas;
     }
 
-    public function setRutas($rutas){
+    public function setRutas($rutas) {
         $this->rutas = $rutas;
     }
 
-    public function getDiarios(){
+    public function getDiarios() {
         return $this->diarios;
     }
 
-    public function setDiarios($diarios){
+    public function setDiarios($diarios) {
         $this->diarios = $diarios;
     }
 
-public function insertUser($id,$username,$password,$email,$poblacion,$idioma,$telefono,$url,$foto,$textoPresentacion){   
-    $user = new Usuario($id,$username,$password,$email,$poblacion,$idioma,$telefono,$url,$foto,$textoPresentacion);
-    $id = $user->persist();
-    $user->setId($id);
-    array_push($this->users,$user);
-    return $user;
-}
+    public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
+        $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+        $id = $user->persist();
+        $user->setId($id);
+        array_push($this->users, $user);
+        return $user;
+    }
 
-public function insertPoi(){   
-    $poi = new Poi($id,$nombre,$foto,$descripcion,$url,$precio,$horario,$id_tipo,$id_transporte,$id_entorno,$id_ciudad,$id_pais,$id_usuario);
-    $id = $poi->persist();
-    $poi->setId($id);
-    array_push($this->pois,$poi);
-    return $poi;
-}
+    public function insertPoi($id, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario) {
+        $poi = new Poi($id, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);
+        $id = $poi->persist();
+        $poi->setId($id);
+        array_push($this->pois, $poi);
+        return $poi;
+    }
 
-public function insertRuta(){   
-    $ruta = new Ruta($id,$nombre,$descripcion,$id_usuario);
-    $id = $ruta->persist();
-    $ruta->setId($id);
-    array_push($this->rutas,$ruta);
-    return $ruta;
-}
+    public function insertRuta($id, $nombre, $descripcion, $id_usuario) {
+        $ruta = new Ruta($id, $nombre, $descripcion, $id_usuario);
+        $id = $ruta->persist();
+        $ruta->setId($id);
+        array_push($this->rutas, $ruta);
+        return $ruta;
+    }
 
-public function insertDiario($id,$nombre,$descripcion,$id_usuario){   
-    $diario = new Diario($id,$nombre,$descripcion,$id_usuario);
-    $id = $diario->persist();
-    $diario->setId($id);
-    array_push($this->diarios,$diario);
-    return $diario;
-}
+    public function insertDiario($id, $nombre, $descripcion, $id_usuario) {
+        $diario = new Diario($id, $nombre, $descripcion, $id_usuario);
+        $id = $diario->persist();
+        $diario->setId($id);
+        array_push($this->diarios, $diario);
+        return $diario;
+    }
 
-public function insertAnuncio(){
-    $anuncio = new Anuncio($id,$titulo,$descripcion,$imagen,$id_poi,$id_usuario);
-    $id = $anuncio->persist();
-    $anuncio->setId($id);
-    array_push($this->anuncios,$anuncio);
-    return $anuncio;
-}
+    public function insertAnuncio($id, $titulo, $descripcion, $imagen, $id_poi, $id_usuario) {
+        $anuncio = new Anuncio($id, $titulo, $descripcion, $imagen, $id_poi, $id_usuario);
+        $id = $anuncio->persist();
+        $anuncio->setId($id);
+        array_push($this->anuncios, $anuncio);
+        return $anuncio;
+    }
 
-    
 }

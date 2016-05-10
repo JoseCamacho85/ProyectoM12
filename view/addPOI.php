@@ -6,39 +6,55 @@ include ("header.php");
         <div class="col-sm-12 text-center"> 
             <h1>Introducir POI</h1>
             <div>
-                <form action="" name="formPOI">
+                <form action="../controller/controllerPoi.php" name="formPoi" method="POST">
                     <hr>
-                    Nombre:<input type="text" id="nombrePOI"><br/><br/>
-                    Descripción:<input type="text" id="descripcionPOI"><br/><br/>
-                    URL:<input type="text" id="urlPOI"><br/><br/>
-                    Precio:<input type="text" id="precioPOI"><br/><br/>
-                    Horario:<input type="text" id="horarioPOI"><br/><br/>
-                    Tipo:<select id="tipoPOI">
-                        <option>
-                            selecciona tipo
-                        </option>
-                    </select><br/><br/>
-                    Transporte:<select id="transportePOI">
-                        <option>
-                            selecciona transporte
-                        </option>
-                    </select><br/><br/>
-                    Entorno:<select id="entornoPOI">
-                        <option>
-                            selecciona entorno
-                        </option>
-                    </select><br/><br/>
-                    País:<select id="paisPOI">
-                        <option>
-                            selecciona país
-                        </option>
-                    </select><br/><br/>
-                    Ciudad:<select id="ciudadPOI">
-                        <option>
-                            selecciona ciudad
-                        </option>
-                    </select>
-                    <input type="submit" id="submitPOI" value="Crear POI">
+                    <p>Nombre: <input type="text" id="nombrePoi"></p>
+                    <p>Foto: <input type="text" id="fotoPoi"></p>
+                    <p>Descripción: <input type="text" id="descripcionPoi"></p>
+                    <p>URL: <input type="text" id="urlPoi"></p>
+                    <p>Precio: <input type="text" id="precioPoi"></p>
+                    <p>Horario: <input type="text" id="horarioPoi"></p>
+                    <p>
+                        Tipo:
+                        <select id="tipoPoi">
+                            <option>
+                                selecciona tipo
+                            </option>
+                        </select>
+                    </p>
+                    <p>
+                        Transporte:
+                        <select id="transportePoi">
+                            <option>
+                                selecciona transporte
+                            </option>
+                        </select>
+                    </p>
+                    <p>
+                        Entorno:
+                        <select id="entornoPoi">
+                            <option>
+                                selecciona entorno
+                            </option>
+                        </select>
+                    </p>
+                    <p>
+                        País:
+                        <select id="paisPoi">
+                            <option>
+                                selecciona país
+                            </option>
+                        </select>
+                    </p>
+                    <p>
+                        Ciudad:
+                        <select id="ciudadPoi">
+                            <option>
+                                selecciona ciudad
+                            </option>
+                        </select>
+                    </p>
+                    <input type="submit" id="submitPoi" value="Crear POI">
                 </form>
             </div>
             <div id="seleccionados">
