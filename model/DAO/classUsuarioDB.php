@@ -33,16 +33,19 @@ $con = new DB();
             
             $con->executeNonQuery($nonquery);
 
-            $sql = $con->prepare("SELECT id FROM usuario WHERE username = '".$username."'");
+            /*$sql = $con->prepare("SELECT id FROM usuario WHERE username = '".$username."'");
             $result=$con->executeQuery($sql);
 
             foreach ($result as $row) {        
-            $id           = $row['id'];   
-            return $id;    
-            }                       
-            $con=null;
+            $id           = $row['id'];  
+            */
+            $id = $this->$con->lastInsertId(); 
+            return $id;
 
-    }
+            $con=null;  
+      }         
+
+    
       function fecthUsers(){
 
         $users = array();
