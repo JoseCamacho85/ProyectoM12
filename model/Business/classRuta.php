@@ -15,13 +15,13 @@ class Ruta {
     private $id = null;
     private $nombre;
     private $descripcion;
-    private $id_usuario;
+    private $usuario;
     
     function __construct($id, $nombre, $descripcion) {
-        $this->id = $id;
-        $this->nombre = $nombre;
-        $this->descripcion = $descripcion;
-        $this->id_usuario = $id_usuario;
+        $this->setId($id);
+        $this->setNombre($nombre);
+        $this->setDescripcion($descripcion);
+        $this->setUsuario($usuario);
     }
 
     function getId() {
@@ -48,13 +48,15 @@ class Ruta {
         $this->descripcion = $descripcion;
     }
     
-    function getId_usuario() {
-        return $this->id_usuario;
+    function getUsuario() {
+        return $this->usuario;
     }
 
-    function setId_usuario($id_usuario) {
-        $this->id_usuario = $id_usuario;
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
     }
+
+
 
 
 
