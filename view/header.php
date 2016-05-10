@@ -25,10 +25,10 @@ include ("../controller/checkSession.php");
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
                     <a class="navbar-brand" href="main.php">Bitacle</a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
