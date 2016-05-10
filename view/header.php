@@ -6,20 +6,16 @@ include ("../controller/checkSession.php");
     <head>
         <title>Bitacle -- Tu red de viajes</title>
         <meta charset="utf-8">
-        <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/agency.css">
-        <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+        
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/agency.css">
+        <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link type="text/css" href="css/estilos.css">
         <script type="text/javascript" src="js/animation.js"></script>
         <script src="js/validations.js"></script>
@@ -38,6 +34,12 @@ include ("../controller/checkSession.php");
                         <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>Usuario: <input type="text" name="user" class="userInput" required></a></li>
+                        <li><a>Password: <input type="password" name="pass" class="userInput" required></a></li>
+                        <li><a href="../controller/controllerUser.php" id="ok"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                        <li><a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a></li>
+                    </ul>
 
                     <?php
                     if (!checkSession()) {
@@ -45,7 +47,7 @@ include ("../controller/checkSession.php");
                     } else {
                         include("modules/userNav.php");
                     }
-                    
+              
                     ?>
                 </div>
             </div>
