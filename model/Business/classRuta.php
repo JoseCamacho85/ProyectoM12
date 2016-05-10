@@ -15,11 +15,13 @@ class Ruta {
     private $id = null;
     private $nombre;
     private $descripcion;
+    private $id_usuario;
     
     function __construct($id, $nombre, $descripcion) {
         $this->id = $id;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
+        $this->id_usuario = $id_usuario;
     }
 
     function getId() {
@@ -45,5 +47,15 @@ class Ruta {
     function setDescripcion($descripcion) {
         $this->descripcion = $descripcion;
     }
+    
+    function getId_usuario() {
+        return $this->id_usuario;
+    }
+
+    function setId_usuario($id_usuario) {
+        $this->id_usuario = $id_usuario;
+    }
+
+
 
 }
