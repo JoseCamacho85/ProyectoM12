@@ -7,7 +7,11 @@ include("model/functionAutoload.php");
 if (!isset($_SESSION['bitacle'])) {
 
     $bitacle = new Bitacle("bitacle");
+    $bitacle->populateTipos();
+    $bitacle->populateTransportes();
+    $bitacle->populateEntornos();
     $bitacle->populateCiudades();
+    $bitacle->populatePaises();
     $_SESSION['bitacle'] = serialize($bitacle);
 } else {
     // if session exist, we unserializate it.
@@ -15,5 +19,3 @@ if (!isset($_SESSION['bitacle'])) {
 }
 header("Location:view/addPoi.php");
 ?>
-
-

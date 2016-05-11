@@ -21,7 +21,11 @@ class Bitacle {
     private $rutas = null;
     private $diarios = null;
     private $anuncios = null;
-    private $ciudades;
+    private $ciudades = null;
+    private $tipos = null;
+    private $transportes = null;
+    private $entornos = null;
+    private $paises = null;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -32,6 +36,10 @@ class Bitacle {
         $this->diarios = array();
         $this->anuncios = array();
         $this->ciudades = array();
+        $this->tipos = array();
+        $this->transportes = array();
+        $this->entornos = array();
+        $this->paises = array();
     }
 
     function getId() {
@@ -90,6 +98,46 @@ class Bitacle {
         return $this->ciudades;
     }
 
+    function getAnuncios() {
+        return $this->anuncios;
+    }
+
+    function getTipos() {
+        return $this->tipos;
+    }
+
+    function getTransportes() {
+        return $this->transportes;
+    }
+
+    function getEntornos() {
+        return $this->entornos;
+    }
+
+    function getPaises() {
+        return $this->paises;
+    }
+
+    function setAnuncios($anuncios) {
+        $this->anuncios = $anuncios;
+    }
+
+    function setTipos($tipos) {
+        $this->tipos = $tipos;
+    }
+
+    function setTransportes($transportes) {
+        $this->transportes = $transportes;
+    }
+
+    function setEntornos($entornos) {
+        $this->entornos = $entornos;
+    }
+
+    function setPaises($paises) {
+        $this->paises = $paises;
+    }
+
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
@@ -137,11 +185,43 @@ class Bitacle {
         return $validate;
     }
 
+    public function populateTipos() {
+        $bitacleDB = new BitacleDB();
+        $arrayTipos = $bitacleDB->fetchTipo();
+        for ($i = 0; $i < count($arrayTipos); $i++) {
+            array_push($this->tipos, $arrayTipos[$i]);
+        }
+    }
+
+    public function populateTransportes() {
+        $bitacleDB = new BitacleDB();
+        $arrayTransportes = $bitacleDB->fetchTransporte();
+        for ($i = 0; $i < count($arrayTransportes); $i++) {
+            array_push($this->transportes, $arrayTransportes[$i]);
+        }
+    }
+
+    public function populateEntornos() {
+        $bitacleDB = new BitacleDB();
+        $arrayEntornos = $bitacleDB->fetchEntorno();
+        for ($i = 0; $i < count($arrayEntornos); $i++) {
+            array_push($this->entornos, $arrayEntornos[$i]);
+        }
+    }
+
     public function populateCiudades() {
         $bitacleDB = new BitacleDB();
         $arrayCiudades = $bitacleDB->fetchCiudad();
         for ($i = 0; $i < count($arrayCiudades); $i++) {
             array_push($this->ciudades, $arrayCiudades[$i]);
+        }
+    }
+
+    public function populatePaises() {
+        $bitacleDB = new BitacleDB();
+        $arrayPaises = $bitacleDB->fetchPais();
+        for ($i = 0; $i < count($arrayPaises); $i++) {
+            array_push($this->paises, $arrayPaises[$i]);
         }
     }
 
