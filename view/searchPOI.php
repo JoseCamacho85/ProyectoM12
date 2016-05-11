@@ -29,7 +29,7 @@ include ("header.php");
             </select>
         </div>
     </div>
-    <input name="search" type="submit"/>
+    <input type="submit" value="Buscar Puntos de interes" class="btn btn-info"/>
 </form>
 <a href="showPOI.php"><button class="btn btn-info">volver a pantalla de POIs</button></a>
 <?php
