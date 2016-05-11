@@ -121,4 +121,10 @@ class Bitacle {
         return $anuncio;
     }
 
+    public function validateUser($user,$password){       
+        $bitacleDB = new BitacleDB();
+        $validate = $bitacleDB->fetchValidateUser($user,$password);
+        return $validate;
+    }
+
 }
