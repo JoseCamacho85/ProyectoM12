@@ -32,7 +32,17 @@ footer {
     }
     .row.content {height:auto;} 
 }
+.flexslider{
+z-index: -1;
+}
+
+#tituloPagina{
+}
+
 
 #userBox{
-   float:right; 
+    float:right; 
+}
+
+.image-slider{
 }
