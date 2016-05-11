@@ -21,7 +21,7 @@ class Bitacle {
     private $rutas = null;
     private $diarios = null;
     private $anuncios = null;
-    private $ciudades = null;
+    private $ciudades;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -138,8 +138,8 @@ class Bitacle {
     }
 
     public function populateCiudades() {
-        $bitacleDAO = new BitacleDB();
-        $arrayCiudades = $bitacleDAO->fetchCiudad();
+        $bitacleDB = new BitacleDB();
+        $arrayCiudades = $bitacleDB->fetchCiudad();
         for ($i = 0; $i < count($arrayCiudades); $i++) {
             array_push($this->ciudades, $arrayCiudades[$i]);
         }
