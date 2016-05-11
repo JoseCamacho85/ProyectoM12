@@ -4,7 +4,7 @@ include ("header.php");
 <?php
 $fotoSubida = "";
 # definimos la carpeta destino
-$carpetaDestino = "imagenes/";
+$carpetaDestino = "fotoUsuario/";
 
 # si hay algun archivo que subir
 if (@$_FILES["archivo"]["name"][0]) {
