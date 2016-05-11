@@ -17,7 +17,7 @@ include ("../controller/checkSession.php");
         <link rel="stylesheet" type="text/css" href="css/agency.css">
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <script type="text/javascript" src="js/animation.js"></script>
-        <script src="js/validations.js"></script>
+        <script type="text/javascript" src="js/validations.js"></script>
 
     </head>
     <body>
