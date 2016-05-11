@@ -12,13 +12,15 @@
  * @author Mazu
  */
 class Ciudad {
+
     private $id = null;
     private $nombre;
-    
-    
-    function __construct($id, $nombre) {
+    private $id_pais;
+
+    function __construct($id, $nombre, $id_pais) {
         $this->id = $id;
         $this->nombre = $nombre;
+        $this->id_pais = $id_pais;
     }
 
     function getId() {
@@ -36,4 +38,13 @@ class Ciudad {
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
+
+    function getId_pais() {
+        return $this->id_pais;
+    }
+
+    function setId_pais($id_pais) {
+        $this->id_pais = $id_pais;
+    }
+
 }
