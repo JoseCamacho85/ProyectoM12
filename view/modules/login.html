@@ -1,9 +1,21 @@
 <form action="../controller/auth.php" method="POST" class="login">
 <ul class="nav navbar-nav navbar-right">
-    <li><a>Usuario: <input type="text" name="username" class="userInput" required></a></li>
-    <li><a>Password: <input type="password" name="password" class="userInput" required></a></li>
-    <li><!--<a href="../controller/auth.php" id="ok">--><!--<span class="glyphicon glyphicon-user">--><input type="submit" name="login" value="login"></span><!-- Login</a>--></li>
-    <li><a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a></li>
+    <li>
+    	<a>Usuario: <input type="text" name="username" class="userInput" required></a>
+    </li>
+
+    <li>
+    	<a>Password: <input type="password" name="password" class="userInput" required></a>
+    </li>
+
+    <li>
+    	<span class="glyphicon glyphicon-user"></span><input id="mySubmit" type="submit" name="login" value="login">
+    </li>
+
+    <li>  
+    	<a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a>
+    </li>
+    
 </ul>
 </form>
 
