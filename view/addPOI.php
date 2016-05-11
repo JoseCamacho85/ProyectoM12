@@ -1,5 +1,7 @@
 <?php
 include ("header.php");
+include '../model/DAO/dbConnector.php';
+include 'makeDropdownLists.php';
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
@@ -41,9 +43,7 @@ include ("header.php");
                     <p>
                         Ciudad:
                         <select name="ciudadPoi">
-                            <option>
-                                selecciona ciudad
-                            </option>
+                            <?php makeDropdownlistCiudades(); ?>
                         </select>
                     </p>
                     <p>

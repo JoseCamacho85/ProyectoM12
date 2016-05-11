@@ -21,15 +21,17 @@ class Bitacle {
     private $rutas = null;
     private $diarios = null;
     private $anuncios = null;
+    private $ciudades = null;
 
     function __construct($nom) {
-        $this->id = $id;
+        @$this->id = $id;
         $this->nom = $nom;
         $this->users = array();
         $this->pois = array();
         $this->rutas = array();
         $this->diarios = array();
         $this->anuncios = array();
+        $this->ciudades = array();
     }
 
     function getId() {
@@ -80,6 +82,14 @@ class Bitacle {
         $this->diarios = $diarios;
     }
 
+    public function setCiudades($ciudades) {
+        $this->ciudades = $ciudades;
+    }
+
+    public function getCiudades() {
+        return $this->ciudades;
+    }
+
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
@@ -121,10 +131,18 @@ class Bitacle {
         return $anuncio;
     }
 
-    public function validateUser($user,$password){       
+    public function validateUser($user, $password) {
         $bitacleDB = new BitacleDB();
-        $validate = $bitacleDB->fetchValidateUser($user,$password);
+        $validate = $bitacleDB->fetchValidateUser($user, $password);
         return $validate;
+    }
+
+    public function populateCiudades() {
+        $bitacleDAO = new BitacleDB();
+        $arrayCiudades = $bitacleDAO->fetchCiudad();
+        for ($i = 0; $i < count($arrayCiudades); $i++) {
+            array_push($this->ciudades, $arrayCiudades[$i]);
+        }
     }
 
 }
