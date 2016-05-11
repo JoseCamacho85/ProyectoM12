@@ -1,5 +1,5 @@
 <?php
-include("config/dbConnector.php");
+include("dbConnector.php");
 
 class DB extends PDO{
     private $host;
