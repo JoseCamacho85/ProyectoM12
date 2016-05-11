@@ -19,7 +19,7 @@ class RutaDB {
                 . "VALUES (:nombre,:descripcion,:id_usuario)");
         $nombre = $ruta->getNombre();
         $descripcion = $ruta->getDescripcion();
-        $idUsuario = $ruta->getId_usuario();
+        $idUsuario = $ruta->getUsuario()->getId();
 
         $nonquery->bindParam(":nombre", $nombre);
         $nonquery->bindParam(":descripcion", $descripcion);

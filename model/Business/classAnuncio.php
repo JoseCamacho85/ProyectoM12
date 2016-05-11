@@ -16,14 +16,35 @@ class Anuncio {
     private $titulo;
     private $descripcion;
     private $imagen;
+    private $usuario;
+    private $poi;
     
-    function __construct($id, $titulo, $descripcion, $imagen) {
+    function __construct($id, $titulo, $descripcion, $imagen, $poi, $usuario) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->descripcion = $descripcion;
         $this->imagen = $imagen;
+        $this->usuario = $usuario;
+        $this->poi = $poi;
     }
 
+        function getUsuario() {
+        return $this->usuario;
+    }
+
+    function getPoi() {
+        return $this->poi;
+    }
+
+    function setUsuario($usuario) {
+        $this->usuario = $usuario;
+    }
+
+    function setPoi($poi) {
+        $this->poi = $poi;
+    }
+
+        
     function getId() {
         return $this->id;
     }
