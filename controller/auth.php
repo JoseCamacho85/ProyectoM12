@@ -21,22 +21,26 @@ $bitacle = unserialize($_SESSION['bitacle']);
 //valida si el usuari es correcte (admin, 1234) [Controlador]
 if (isset($_POST['login'])) {
 	if ($bitacle->validateUser($_POST['username'], $_POST['password'])) {
-		if ($securimage->check($_POST['captcha_code']) == false) {
+		/*if ($securimage->check($_POST['captcha_code']) == false) {
 			// the code was incorrect
 			// you should handle the error so that the form processor doesn't continue
 			// or you can use the following code if there is no validation or you do not know how
 			echo "The security code entered was incorrect.<br /><br />";
 			echo "Please go <a href='javascript:history.go(-1)'>back</a> and try again.";
 			exit;
-		}
+		}*/
 		$_SESSION["login"] = true;
-		$_SESSION["user"] = $_POST['username'];
-		header("Location: ../view/showMenu.php");
+		$user = $_POST['username'];
+		echo $user;
+		$_SESSION['user'] = serialize($user);	
+		//$_SESSION['user'] = serialize($bitacle);
+		header("Location: ../index.php");
 	} else {
-		$_SESSION["user"] = "";
+		//$_SESSION["user"] = "";
+		echo "INVALIDO";
 		session_destroy();		
 		//Print de missatges [View]
-		printInvalidMessage();
+		//printInvalidMessage();
 	}
 	//$_SESSION["login"] = true;
 	//$_SESSION["user"] = $_POST['username'];
