@@ -76,7 +76,7 @@ FK:id_usuario Usuario(id)-->
 <table border="0" align="center" bgcolor="#EDE8C9">
     <tr>
       <td valign="middle" align="center" colspan="2">
-	    <form name="formbuscar" action="gridEmployees.php" method="post">
+	    <form name="formbuscar" action="showPOI.php" method="post">
 			<input name ="buscar" type="text" size="40" value="<?php echo ($_SESSION['buscar'])?>">
 			<select name="categoria">
 			  <option value="nombre" <?php if ($_SESSION['categoria'] == "nombre") echo 'selected="selected"'?>>Nombre</option>
