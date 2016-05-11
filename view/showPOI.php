@@ -50,6 +50,8 @@ function Borrar($params){
  return "<a href=\"../controller/controllerDeleteEmployee.php?id=$id\"><img border=\"0\" src=\"images/delete.gif\" alt=\"$label\" title=\"$label\" /></a>";		
 }
 ?>
+<a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
+
 <p></p>
  <table border="0" align="center" cellpadding="5" cellspacing="2" bgcolor="#EDE8C9">
     <tr bgcolor="#FFFFCC">

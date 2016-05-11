@@ -19,25 +19,19 @@ include 'makeDropdownLists.php';
                     <p>
                         Tipo:
                         <select name="tipoPoi">
-                            <option>
-                                selecciona tipo
-                            </option>
+                            <?php makeDropdownlistTipos(); ?>
                         </select>
                     </p>
                     <p>
                         Transporte:
                         <select name="transportePoi">
-                            <option>
-                                selecciona transporte
-                            </option>
+                            <?php makeDropdownlistTransportes(); ?>
                         </select>
                     </p>
                     <p>
                         Entorno:
                         <select name="entornoPoi">
-                            <option>
-                                selecciona entorno
-                            </option>
+                            <?php makeDropdownlistEntornos(); ?>
                         </select>
                     </p>
                     <p>
@@ -49,9 +43,7 @@ include 'makeDropdownLists.php';
                     <p>
                         País:
                         <select name="paisPoi">
-                            <option>
-                                selecciona país
-                            </option>
+                            <?php makeDropdownlistPaises(); ?>
                         </select>
                     </p>
                     <p>Usuario: <input type="text" name="usuarioPoi"></p>

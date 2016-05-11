@@ -23,8 +23,7 @@ if (@$_FILES["archivo"]["name"][0]) {
                 # movemos el archivo
                 if (@move_uploaded_file($origen, $destino)) {
                     $fotoSubida = $_FILES["archivo"]["name"][$i];
-
-                    // echo "<br>" . $fotoSubida . " movido correctamente";
+                     echo "<br>Imagen subida correctamente";
                 } else {
                     echo "<br>No se ha podido mover el archivo: " . $_FILES["archivo"]["name"][$i];
                 }
