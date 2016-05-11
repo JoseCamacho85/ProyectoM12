@@ -22,13 +22,13 @@ class PoiDB {
         $descripcion = $poi->getDescripcion();
         $url = $poi->getUrl();
         $precio = $poi->getPrecio();
-        $horario = $poi->getHoriario();
-        $id_tipo = $poi->getId_tipo()->getId();
-        $id_transporte = $poi->getId_transporte()->getId();
-        $id_entorno = $poi->getId_entorno()->getId();
-        $id_ciudad = $poi->getId_ciudad()->getId();
-        $id_pais = $poi->getId_pais()->getId();
-        $id_usuario = $poi->getId_usuario()->getId();
+        $horario = $poi->getHorario();
+        $id_tipo = $poi->getId_tipo();
+        $id_transporte = $poi->getId_transporte();
+        $id_entorno = $poi->getId_entorno();
+        $id_ciudad = $poi->getId_ciudad();
+        $id_pais = $poi->getId_pais();
+        $id_usuario = $poi->getId_usuario();
 
         $nonquery->bindParam(":nombre", $nombre);
         $nonquery->bindParam(":foto", $foto);
@@ -45,13 +45,8 @@ class PoiDB {
 
         $con->executeNonQuery($nonquery);
 
-        $sql = $con->prepare("SELECT id FROM poi WHERE nombre = '" . $nombre . "'");
-        $result = $con->executeQuery($sql);
-
-        foreach ($result as $row) {
-            $id = $row['id'];
-            return $id;
-        }
+        $id = $con->lastInsertId();
+        return $id;
 
         $con = null;
     }

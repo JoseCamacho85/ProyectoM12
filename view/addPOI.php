@@ -6,17 +6,17 @@ include ("header.php");
         <div class="col-sm-12 text-center"> 
             <h1>Introducir POI</h1>
             <div>
-                <form action="../controller/controllerAddPoi.php" name="formPoi" method="POST">
+                <form action="../controller/controllerAddPoi.php" method="post">
                     <hr>
-                    <p>Nombre: <input type="text" id="nombrePoi"></p>
-                    <p>Foto: <input type="text" id="fotoPoi"></p>
-                    <p>Descripción: <input type="text" id="descripcionPoi"></p>
-                    <p>URL: <input type="text" id="urlPoi"></p>
-                    <p>Precio: <input type="text" id="precioPoi"></p>
-                    <p>Horario: <input type="text" id="horarioPoi"></p>
+                    <p>Nombre: <input type="text" name="nombrePoi"></p>
+                    <p>Foto: <input type="text" name="fotoPoi"></p>
+                    <p>Descripción: <input type="text" name="descripcionPoi"></p>
+                    <p>URL: <input type="text" name="urlPoi"></p>
+                    <p>Precio: <input type="text" name="precioPoi"></p>
+                    <p>Horario: <input type="text" name="horarioPoi"></p>
                     <p>
                         Tipo:
-                        <select id="tipoPoi">
+                        <select name="tipoPoi">
                             <option>
                                 selecciona tipo
                             </option>
@@ -24,7 +24,7 @@ include ("header.php");
                     </p>
                     <p>
                         Transporte:
-                        <select id="transportePoi">
+                        <select name="transportePoi">
                             <option>
                                 selecciona transporte
                             </option>
@@ -32,7 +32,7 @@ include ("header.php");
                     </p>
                     <p>
                         Entorno:
-                        <select id="entornoPoi">
+                        <select name="entornoPoi">
                             <option>
                                 selecciona entorno
                             </option>
@@ -40,7 +40,7 @@ include ("header.php");
                     </p>
                     <p>
                         Ciudad:
-                        <select id="ciudadPoi">
+                        <select name="ciudadPoi">
                             <option>
                                 selecciona ciudad
                             </option>
@@ -48,14 +48,14 @@ include ("header.php");
                     </p>
                     <p>
                         País:
-                        <select id="paisPoi">
+                        <select name="paisPoi">
                             <option>
                                 selecciona país
                             </option>
                         </select>
                     </p>
-                    <p>Usuario: <input type="text" id="usuarioPoi"></p>
-                    <input type="submit" id="submitPoi" value="Crear POI">
+                    <p>Usuario: <input type="text" name="usuarioPoi"></p>
+                    <input type="submit" name="submit" value="Crear POI">
                 </form>
             </div>
             <div id="seleccionados">
