@@ -1,9 +1,10 @@
 <?php
-
-function validatePOIfields($array) {
+function validatePOIfields($array) {   
+    $ok = true; 
     for($i = 0; $i < count($array); $i++){
-        if($fields[$i] != null){
-            $arr[$i] .= $fields[$i];
+        if($array[$i] == null){
+            $ok = false;            
         }
     }
+    return $ok;
 }
