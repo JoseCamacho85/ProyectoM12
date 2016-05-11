@@ -84,6 +84,7 @@ class Bitacle {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
         $user->setId($id);
+        echo $id;
         array_push($this->users, $user);
         return $user;
     }

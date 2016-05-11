@@ -39,10 +39,11 @@ $con = new DB();
             foreach ($result as $row) {        
             $id           = $row['id'];  
             */
-            $id = $this->$con->lastInsertId(); 
+            $id = $con->lastInsertId(); 
             return $id;
 
             $con=null;  
+            
       }         
 
     
