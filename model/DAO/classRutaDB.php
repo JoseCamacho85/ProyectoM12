@@ -14,7 +14,7 @@
 class RutaDB {
 
     public function insertRuta($ruta) {
-        $con = new Database();
+        $con = new DB();
         $nonquery = $con->prepare("INSERT INTO ruta (nombre,descripcion, id_usuario) "
                 . "VALUES (:nombre,:descripcion,:id_usuario)");
         $nombre = $ruta->getNombre();
