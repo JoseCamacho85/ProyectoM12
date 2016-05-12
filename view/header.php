@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../model/functionAutoLoad.php"); 
+include("../model/functionAutoLoad.php");
 include ("../controller/checkSession.php");
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="js/jquery.js"></script>
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/animationDropdown.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -57,16 +58,15 @@ include ("../controller/checkSession.php");
                     }
 
                     if (!isset($_SESSION['user'])) {
-                        $user="";
+                        $user = "";
                         include("modules/login.html");
                         //$bitacle = new Bitacle("bitacle");
                         //$_SESSION['bitacle'] = serialize($bitacle);
-                    } else {                       
+                    } else {
                         //$bitacle = unserialize($_SESSION['bitacle']);
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");
                     }
-                    
                     ?>
                 </div>
             </div>

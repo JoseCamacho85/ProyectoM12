@@ -10,41 +10,51 @@ include 'makeDropdownLists.php';
             <div>
                 <form action="../controller/controllerAddPoi.php" method="post">
                     <hr>
-                    <p>Nombre: <input type="text" name="nombrePoi"></p>
-                    <p>Foto: <input type="text" name="fotoPoi"></p>
-                    <p>Descripción: <input type="text" name="descripcionPoi"></p>
-                    <p>URL: <input type="text" name="urlPoi"></p>
-                    <p>Precio: <input type="text" name="precioPoi"></p>
-                    <p>Horario: <input type="text" name="horarioPoi"></p>
+                    <p>Nombre: <input type="text" name="nombrePoi" id="nombrePoi" required></p>
+                    <label class="errores" id="nombrePoiE"></label>
+                    <p>Foto: <input type="text" name="fotoPoi" id="fotoPoi"></p>
+                    <label class="errores" id="fotoPoiE"></label>
+                    <p>Descripción: <input type="text" name="descripcionPoi" id="descripcionPoi" required></p>
+                    <label class="errores" id="descripcionPoiE"></label>
+                    <p>URL: <input type="text" name="urlPoi" id="urlPoi"></p>
+                    <label class="errores" id="urlPoiE"></label>
+                    <p>Precio: <input type="text" name="precioPoi" id="precioPoi"></p>
+                    <label class="errores" id="precioPoiE"></label>
+                    <p>Horario: <input type="text" name="horarioPoi" id="horarioPoi"></p>
+                    <label class="errores" id="horarioPoiE"></label>
                     <p>
                         Tipo:
-                        <select name="tipoPoi">
+                        <select name="tipoPoi" id="tipoPoi">
                             <?php makeDropdownlistTipos(); ?>
                         </select>
                     </p>
+                    <label class="errores" id="tipoPoiE"></label>
                     <p>
                         Transporte:
-                        <select name="transportePoi">
+                        <select name="transportePoi" id="transportePoi">
                             <?php makeDropdownlistTransportes(); ?>
                         </select>
                     </p>
+                    <label class="errores" id="transportePoiE"></label>
                     <p>
                         Entorno:
-                        <select name="entornoPoi">
+                        <select name="entornoPoi" id="entornoPoi">
                             <?php makeDropdownlistEntornos(); ?>
                         </select>
                     </p>
+                    <label class="errores" id="entornoPoiE"></label>
                     <p>
                         País:
-                        <select name="paisPoi" onchange="cambioPais(this.value)">
+                        <select name="paisPoi" onchange="cambioPais(this.value)" id="paisPoi">
                             <?php makeDropdownlistPaises(); ?>
                         </select>
                     </p>
+                    <label class="errores" id="paisPoiE"></label>
                     <p id="ciudad">
-<!--                        Ciudad:
-                        <select name="ciudadPoi">
-                            <?php //makeDropdownlistCiudades(); ?>
-                        </select>-->
+                        <!--                        Ciudad:
+                                                <select name="ciudadPoi">
+                        <?php //makeDropdownlistCiudades(); ?>
+                                                </select>-->
                     </p>
                     <input type="submit" name="submit" value="Crear POI">
                 </form>
