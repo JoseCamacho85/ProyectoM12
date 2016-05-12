@@ -12,6 +12,18 @@ label{
     color:black;
 }
 
+#tituloPagina{
+   margin-bottom: -120px;
+       
+}
+
+
+
+.flexslider{
+    position: absolute;
+    z-index:-1;
+}
+
 .text-muted {
     color: #777;
 }
