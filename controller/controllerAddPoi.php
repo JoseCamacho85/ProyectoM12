@@ -16,7 +16,7 @@ if (isset($_REQUEST['submit'])) {
     $id_entorno = 1/* $_REQUEST['entornoPoi'] */;
     $id_ciudad = 1/* $_REQUEST['ciudadPoi'] */;
     $id_pais = 1/* $_REQUEST['paisPoi'] */;
-    $id_usuario = $_REQUEST['usuarioPoi'];
+    $id_usuario = 1 /* $_REQUEST['usuarioPoi'] */;
 
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);

@@ -35,18 +35,17 @@ include 'makeDropdownLists.php';
                         </select>
                     </p>
                     <p>
-                        Ciudad:
-                        <select name="ciudadPoi">
-                            <?php makeDropdownlistCiudades(); ?>
-                        </select>
-                    </p>
-                    <p>
                         País:
-                        <select name="paisPoi">
+                        <select name="paisPoi" onchange="cambioPais(this.value)">
                             <?php makeDropdownlistPaises(); ?>
                         </select>
                     </p>
-                    <p>Usuario: <input type="text" name="usuarioPoi"></p>
+                    <p id="ciudad">
+<!--                        Ciudad:
+                        <select name="ciudadPoi">
+                            <?php //makeDropdownlistCiudades(); ?>
+                        </select>-->
+                    </p>
                     <input type="submit" name="submit" value="Crear POI">
                 </form>
             </div>
