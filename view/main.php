@@ -5,7 +5,7 @@ include ("header.php");
     <div class="row ">
         <div id="tituloPagina">
                 <h1>BitaCle</h1>
-                <p>DESCRIPCION DEL WEB</p>
+                <p></p>
             </div>
         <div class="col-md-12">
             <div class="flexslider">

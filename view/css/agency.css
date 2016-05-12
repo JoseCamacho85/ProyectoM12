@@ -12,12 +12,15 @@ label{
     color:black;
 }
 
-#tituloPagina{
-   margin-bottom: -120px;
-       
+h1{
+    font-size: 90px;
+    text-shadow: 7px 3px 7px #000000;
+   color: #f1f1f1;
 }
+#tituloPagina{
+    margin-bottom: -120px;
 
-
+}
 
 .flexslider{
     position: absolute;
@@ -789,4 +792,3 @@ video{
     margin-top: 4%;
 }
 
-    
