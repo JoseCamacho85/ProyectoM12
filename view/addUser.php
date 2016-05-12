@@ -54,6 +54,11 @@ if (@$_FILES["archivo"]["name"][0]) {
 
     <p>Texto de presentación:</p>
     <textarea name="textoPresentacion" rows="4" cols="30"></textarea><br/>
+    
+    
+    <p>¿Eres usuario registrado?: <input type="checkbox" name="profesional" value="patata" /></p>
+    
+    
     <input type="submit" value="Registrarse" name="submit"/>
 </form>
 
