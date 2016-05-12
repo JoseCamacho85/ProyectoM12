@@ -1,12 +1,12 @@
 <?php
 
-include("validatePOIfields.php");
+include("validateNullfields.php");
 
 
 $fields = array($_POST["typePOI"], $_POST["transportPOI"], $_POST["entornPOI"],
     $_POST["cityPOI"], $_POST["countryPOI"]);
 
-if (validatePOIfields($fields)) {
+if (validateNullfields($fields)) {
     $fields = array($_POST["typePOI"],
         $_POST["transportPOI"],
         $_POST["entornPOI"],
