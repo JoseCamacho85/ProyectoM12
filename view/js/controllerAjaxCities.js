@@ -8,9 +8,10 @@ function cambioPais(id_com)
      data:{"data":id_com},
      
      success:tornadaCom
-            
+		            
    }); 
 }
+
 
 function tornadaCom (txt) {
 	 document.getElementById('ciudadesPOI').innerHTML=txt;  
