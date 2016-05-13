@@ -37,7 +37,7 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo1, $id_transporte1, $id_entorno1, $id_ciudad1, $id_pais1, $id_usuario);
-        echo $nombre . "perfecto";
+        echo $nombre . "INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {
         showMessage($e->getMessage());
     }
