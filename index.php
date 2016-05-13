@@ -7,6 +7,7 @@ include("model/functionAutoload.php");
 if (!isset($_SESSION['bitacle'])) {
 
     $bitacle = new Bitacle("bitacle");
+    $bitacle->populatePois();
     $bitacle->populateTipos();
     $bitacle->populateTransportes();
     $bitacle->populateEntornos();

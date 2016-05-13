@@ -224,5 +224,13 @@ class Bitacle {
             array_push($this->paises, $arrayPaises[$i]);
         }
     }
+    
+    public function populatePois() {
+        $bitacleDB = new BitacleDB();
+        $arrayPois = $bitacleDB->fetchPoi();
+        for ($i = 0; $i < count($arrayPois); $i++) {
+            array_push($this->pois, $arrayPois[$i]);
+        }
+    }
 
 }
