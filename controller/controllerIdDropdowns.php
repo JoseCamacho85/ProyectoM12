@@ -6,9 +6,7 @@ function cogerId($pais, $id_tipo) {
             $id_tipo1 = $pais[$i]->getId();
         }
     }
-
     $id_tipo2 = intval($id_tipo1);
-
     return $id_tipo2;
 }
 
