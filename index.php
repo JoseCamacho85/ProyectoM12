@@ -4,7 +4,7 @@ session_start();
 include("model/functionAutoload.php");
 //include("model/Business/classBitacle.php"); 
 // if session bitacle doesn't exist, we make it.
-if (!isset($_SESSION['bitacle'])) {
+if (isset($_SESSION['bitacle'])) {
 
     $bitacle = new Bitacle("bitacle");
     $bitacle->populatePois();

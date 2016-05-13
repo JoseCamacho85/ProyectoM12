@@ -1,9 +1,9 @@
 <?php
 
-function cogerId($clase, $id_tipo) {
-    for ($i = 0; $i < count($clase); $i++) {
-        if ($clase[$i]->getNombre() == $id_tipo) {
-            $id_tipo1 = $clase[$i]->getId();
+function cogerId($pais, $id_tipo) {
+    for ($i = 0; $i < count($pais); $i++) {
+        if ($pais[$i]->getNombre() == $id_tipo) {
+            $id_tipo1 = $pais[$i]->getId();
         }
     }
 
