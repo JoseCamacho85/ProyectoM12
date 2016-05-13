@@ -21,7 +21,7 @@ class DB extends PDO{
 
     public function Open(){
         try{
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname.';charset=latin1';
         parent::__construct($dsn,$this->getUser(),$this->getPass());       
         }catch(Exception $e){
             echo "ERROR AL CREAR CONEXION";
