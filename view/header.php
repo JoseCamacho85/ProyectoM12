@@ -7,7 +7,7 @@ include ("../controller/checkSession.php");
 <html>
     <head>
         <title>Bitacle -- Tu red de viajes</title>
-        <meta charset="ISO-8859-1">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
