@@ -41,7 +41,10 @@ $id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
 
-if (validateNullfields($requiredFields) && validateNames($nombre) /*&& validateDescriptions($descripcion)*/) {
+if (validateNullfields($requiredFields) 
+        && validateNames($nombre) 
+        && validateDescriptions($descripcion)
+        && validateUrls($url)) {
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo1, $id_transporte1, $id_entorno1, $id_ciudad1, $id_pais1, $id_usuario);
         echo $nombre . " INSERTADO CORRECTAMENTE";
