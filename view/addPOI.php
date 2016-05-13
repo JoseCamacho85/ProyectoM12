@@ -51,10 +51,10 @@ include 'makeDropdownLists.php';
                     </p>
                     <label class="errores" id="paisPoiE"></label>
                     <p id="ciudad">
-                        <!--                        Ciudad:
-                                                <select name="ciudadPoi">
-                        <?php //makeDropdownlistCiudades(); ?>
-                                                </select>-->
+                        Ciudad:
+                        <select name="ciudadPoi">
+                            <?php makeDropdownlistCiudades(); ?>
+                        </select>
                     </p>
                     <input type="submit" name="submit" value="Crear POI">
                 </form>
