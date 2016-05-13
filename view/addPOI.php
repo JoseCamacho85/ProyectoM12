@@ -41,13 +41,11 @@ include 'makeDropdownLists.php';
                         </select>
                     </p>
                     <p id="ciudad">
-                        <div id="ciudadesPOI">
-                        </div>    
-
-                        <!--Ciudad:
+                        Ciudad:
+                    <div id="cidPOI">
                         <select name="ciudadPoi" id="ciudadPoi">
-                            <?php makeDropdownlistCiudades(); ?>
-                        </select>-->
+                        </select>
+                    </div>
                     </p>
                     <input type="submit" name="submit" value="Crear POI">
                 </form>

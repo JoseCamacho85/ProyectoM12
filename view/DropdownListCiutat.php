@@ -10,8 +10,8 @@ $id_com = $_POST["data"];
 
 $aux = cogerId($pais, $id_com);
 
-echo "Ciudad: <br>";
-echo "<select name=\"ciudadPoi\">";
+//echo "Ciudad: <br>";
+//echo "<select name=\"ciudadPoi\">";
 for ($i = 0; $i < count($bitacle->getCiudades()); $i++) {
 
 if ($bitacle->getCiudades()[$i]->getId_pais() == $aux) {
@@ -20,7 +20,7 @@ if ($bitacle->getCiudades()[$i]->getId_pais() == $aux) {
     }
 
  }
-echo "</select>";
+//echo "</select>";
 
 //echo "hola";
 //echo "hola" + $id_com;

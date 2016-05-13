@@ -30,7 +30,7 @@ include ("../controller/checkSession.php");
         type: "POST",
      
         url:"DropdownListCiutat.php",
-        data:{"data":id_com},
+        data:{"data":id_com}
      
         success:tornadaCom
                     
@@ -39,7 +39,7 @@ include ("../controller/checkSession.php");
 
 
     function tornadaCom (txt) {
-     document.getElementById('ciudadesPOI').innerHTML=txt;  
+     document.getElementById('cidPOI').innerHTML=txt;
     }
         </script>
 
