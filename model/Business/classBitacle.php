@@ -233,4 +233,12 @@ class Bitacle {
         }
     }
 
+    public function populateUsuarios() {
+        $bitacleDB = new BitacleDB();
+        $arrayUsuarios = $bitacleDB->fetchUsuario();
+        for ($i = 0; $i < count($arrayUsuarios); $i++) {
+            array_push($this->users, $arrayUsuarios[$i]);
+        }
+    }
+
 }
