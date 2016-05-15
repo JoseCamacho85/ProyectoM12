@@ -9,18 +9,17 @@ include("validateDescriptions.php");
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
-
-$nombre = $_POST['nombrePoi'];
-$foto = $_POST['fotoPoi'];
-$descripcion = $_POST['descripcionPoi'];
-$url = $_POST['urlPoi'];
-$precio = $_POST['precioPoi'];
-$horario = $_POST['horarioPoi'];
-$id_tipo = $_POST['tipoPoi'];
-$id_transporte = $_POST['transportePoi'];
-$id_entorno = $_POST['entornoPoi'];
-$id_ciudad = $_POST['ciudadPoi'];
-$id_pais = $_POST['paisPoi'];
+$nombre = $_REQUEST['nombrePoi'];
+$foto = $_REQUEST['fotoPoi'];
+$descripcion = $_REQUEST['descripcionPoi'];
+$url = $_REQUEST['urlPoi'];
+$precio = $_REQUEST['precioPoi'];
+$horario = $_REQUEST['horarioPoi'];
+$id_tipo = $_REQUEST['tipoPoi'];
+$id_transporte = $_REQUEST['transportePoi'];
+$id_entorno = $_REQUEST['entornoPoi'];
+$id_pais = $_REQUEST['paisPoi'];
+$id_ciudad = $_REQUEST['selectCiudadPOI'];
 
 //aplicar id de usuario logeado
 $usuarios = $bitacle->getUsers();

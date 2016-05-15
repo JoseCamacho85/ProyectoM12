@@ -1,50 +1,94 @@
 <?php
-
+//echo $_REQUEST['tipoPOI'];
+session_start();
+include("../model/functionAutoLoad.php");
+include("controllerIdDropdowns.php");
 include("validateNullfields.php");
 
+$bitacle = unserialize($_SESSION['bitacle']);
 
-$fields = array($_POST["typePOI"], $_POST["transportPOI"], $_POST["entornPOI"],
-    $_POST["cityPOI"], $_POST["countryPOI"]);
+$tipo = null;
+$transporte = null;
+$entorno = null;
+$pais = null;
+$ciudad = null;
 
-if (validateNullfields($fields)) {
-    $fields = array($_POST["typePOI"],
-        $_POST["transportPOI"],
-        $_POST["entornPOI"],
-        $_POST["cityPOI"],
-        $_POST["countryPOI"]);
+$fields = [];
+$fieldNames = [];
 
-    $fieldNames = array("id_tipo",
-        "id_transporte",
-        "id_entorno",
-        "id_ciudad",
-        "id_pais");
+$arrayPOI = $bitacle->getPois();
+$arrayTipo = $bitacle->getTipos();
+$arrayTransporte = $bitacle->getTransportes();
+$arrayEntorno = $bitacle->getEntornos();
+$arrayPais = $bitacle->getPaises();
+$arrayCiudad = $bitacle->getCiudades();
 
-    //$query = "SELECT * FROM POI";
-    $query = "WHERE ";
+if (isset($_REQUEST['checkTipoPOI'])) {
+    //echo $_REQUEST['selectTipoPOI'];
+    $tipo = $_REQUEST['selectTipoPOI'];
+    $id_tipo = cogerId($arrayTipo, $tipo);
+    array_push($fields,$id_tipo);
+    array_push($fieldNames,"id_tipo");
 
-    $arr = array();
-
-    for ($i = 0; $i < count($fields); $i++) {
-        if ($fields[$i] != null) {
-            $arr[$i] .= $fields[$i];
-        }
-    }
-
-    //print_r($arr);
-
-    for ($i = 0; $i < count($arr); $i++) {
-        if ($arr[$i] != null) {
-            //echo count($arr);
-            if ($i == count($arr) - 1) {
-                $query .= $fieldNames[$i] . "=" . $fields[$i] . "  ";
-            } else {
-                $query .= $fieldNames[$i] . "=" . $fields[$i] . " and ";
-            }
-        }
-    }
-    echo $query;
-} else {
-    echo "¡no hay campos!";
-    //header("location:../view/searchPOI.php");
 }
+if (isset($_REQUEST['checkTransportePOI'])) {
+    //echo $_REQUEST['selectTransportePOI'];
+    $transporte = $_REQUEST['selectTransportePOI'];
+    $id_transporte = cogerId($arrayTransporte, $transporte);
+    array_push($fields,$id_transporte);
+    array_push($fieldNames,"id_transporte");
+}
+if (isset($_REQUEST['checkEntornoPOI'])) {
+    //echo $_REQUEST['selectEntornoPOI'];
+    $entorno =$_REQUEST['selectEntornoPOI'];
+    $id_entorno = cogerId($arrayEntorno, $entorno);
+    array_push($fields,$id_entorno);
+    array_push($fieldNames,"id_entorno");
+}
+if (isset($_REQUEST['checkPaisPOI'])) {
+    //echo $_REQUEST['selectPaisPOI'];
+    $pais =$_REQUEST['selectPaisPOI'];
+    $id_pais = cogerId($arrayPais, $pais);
+    array_push($fields,$id_pais);
+    array_push($fieldNames,"id_pais");
+}
+if (isset($_REQUEST['checkCiudadPOI'])) {
+    //echo $_REQUEST['selectCiudadPOI'];
+    $ciudad =$_REQUEST['selectCiudadPOI'];
+    $id_ciudad = cogerId($arrayCiudad, $ciudad);
+    array_push($fields,$id_ciudad);
+    array_push($fieldNames,"id_ciudad");
+}
+
+//if (validateNullfields($fields)) {
+//Retorna una array de POIS        
+    $arrayQuery = $bitacle->crearQuery($fields,$fieldNames);
+    if ($arrayQuery == null){
+    echo "no hay coincidencias";
+    }else{
+    //var_dump($arrayQuery);
+    //header("Location: ../view/showBuscarAvanzado.php");
+    for ($i=0; $i < count($arrayQuery); $i++) { 
+    echo "<div>
+        <div>Nombre: <span>".$arrayQuery[$i]->getNombre()."</span></div>
+        <div>Url: <span>".$arrayQuery[$i]->getUrl()."</div>
+        <div>Precio: <span>".$arrayQuery[$i]->getPrecio()."</div>
+        <div>Horario: <span>".$arrayQuery[$i]->getHorario()."</div>
+         </div>";
+
+
+
+
+    } 
+
+
+    }
+
+
+ 
+
+//} else {
+    //echo "¡no hay campos!";
+    //header("location:../view/searchPOI.php");
+//}
 ?>

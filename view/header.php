@@ -35,7 +35,7 @@ include ("../controller/checkSession.php");
             }
 
             function tornadaCom(txt) {
-                $("#ciudadPoi").html(txt);
+                $("#selectCiudadPOI").html(txt);
                 $("#ciudad").css("display", "block");
             }
         </script>

@@ -254,4 +254,12 @@ class Bitacle {
         return $detall;
     }
 
+    public function crearQuery($fields,$fieldNames){
+        $bitacleDB = new BitacleDB();
+        $arrayCrearQuery = $bitacleDB->crearQueryDB($fields,$fieldNames);
+        return $arrayCrearQuery; 
+    }
+
+
+
 }

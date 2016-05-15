@@ -8,7 +8,7 @@ include 'makeDropdownLists.php';
         <div class="col-sm-12 text-center"> 
             <h1>Introducir POI</h1>
             <div>
-                <form method="post" id="formPOI">
+                <form method="POST" id="formPOI">
                     <hr>
                     <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
                     <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi"></p>
@@ -42,7 +42,8 @@ include 'makeDropdownLists.php';
                     </p>
                     <p id="ciudad">
                         <span>Ciudad: </span>
-                        <select name="ciudadPoi" id="ciudadPoi">
+                         <select name="selectCiudadPOI" id="selectCiudadPOI">
+
                         </select>
                     </p>
                     <input type="submit" name="submit" value="Crear POI">

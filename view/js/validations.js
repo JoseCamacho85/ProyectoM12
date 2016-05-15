@@ -48,7 +48,7 @@ function validarPOI() {
                     "transportePoi":$("#transportePoi").val(),
                     "entornoPoi":$("#entornoPoi").val(),
                     "paisPoi":$("#paisPoi").val(),
-                    "ciudadPoi":$("#ciudadPoi").val(),
+                    "selectCiudadPOI":$("#selectCiudadPOI").val(),
               
                     
                 },

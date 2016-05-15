@@ -242,4 +242,60 @@ class BitacleDB {
         return $usuarios;
     }
 
+    function crearQueryDB($fields,$fieldNames){
+    
+    $query = "SELECT * FROM POI WHERE ";
+
+    //$arr = array();
+
+    /*for ($i = 0; $i < count($fields); $i++) {
+        if ($fields[$i] != null) {
+            $arr[$i] .= $fields[$i];
+        }    
+    }*/
+
+    //print_r($arr);
+
+    for ($i = 0; $i < count($fields); $i++) {
+        if ($fields[$i] != null) {
+            //echo count($arr);
+            if ($i == count($fields) - 1) {
+                $query .= $fieldNames[$i] . "=" . $fields[$i] . "  ";
+            } else {
+                $query .= $fieldNames[$i] . "=" . $fields[$i] . " and ";
+            }
+        }
+    }
+    //echo $query;
+
+        $pois = array();
+
+        $con = new DB();
+        $sql = $con->prepare($query);
+        $result = $con->executeQuery($sql);
+
+        foreach ($result as $row) {
+            $id = $row['id'];
+            $nombre = $row['nombre'];
+            $foto = $row['foto'];
+            $descripcion = $row['descripcion'];
+            $url = $row['url'];
+            $precio = $row['precio'];
+            $horario = $row['horario'];
+            $id_tipo = $row['id_tipo'];
+            $id_transporte = $row['id_transporte'];
+            $id_entorno = $row['id_entorno'];
+            $id_ciudad = $row['id_ciudad'];
+            $id_pais = $row['id_pais'];
+            $id_usuario = $row['id_usuario'];
+            $poi = new Poi($id, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);
+            array_push($pois, $poi);
+        }
+
+//Muestra resultado
+        return $pois;
+
+
+    }
+
 }

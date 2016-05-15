@@ -8,43 +8,43 @@ function validateUserPassword() {
 
 
 function showValuesPOI() {
-    showTypePoi();
-    showTransportPoi();
+    showTipoPoi();
+    showTransportePoi();
     showEntornPoi();
     showCountryPoi();
     showCityPoi();
 }
 
 
-function showTypePoi(){
-    var typePOI = jQuery('#checkTypePOI');
-    var showType = jQuery('#typePOI');
-    $(typePOI).click(function (event) {
-        if (typePOI.is(':checked')) {
-            showType.show();
+function showTipoPoi(){
+    var tipoPOI = jQuery('#checkTipoPOI');
+    var showTipo = jQuery('#selectTipoPOI');
+    $(tipoPOI).click(function (event) {
+        if (tipoPOI.is(':checked')) {
+            showTipo.show();
         } else {
-            showType.hide();
+            showTipo.hide();
         }
     });
 }
 
-function showTransportPoi(){
-    var typePOI = jQuery('#checkTransportPOI');
-    var showType = jQuery('#transportPOI');
-    $(typePOI).click(function (event) {
-        if (typePOI.is(':checked')) {
-            showType.show();
+function showTransportePoi(){
+    var tipoPOI = jQuery('#checkTransportePOI');
+    var showTipo = jQuery('#selectTransportePOI');
+    $(tipoPOI).click(function (event) {
+        if (tipoPOI.is(':checked')) {
+            showTipo.show();
         } else {
-            showType.hide();
+            showTipo.hide();
         }
     });
 }
 
 function showEntornPoi(){
-    var typePOI = jQuery('#checkEntornPOI');
-    var showType = jQuery('#entornPOI');
-    $(typePOI).click(function (event) {
-        if (typePOI.is(':checked')) {
+    var tipoPOI = jQuery('#checkEntornoPOI');
+    var showType = jQuery('#selectEntornoPOI');
+    $(tipoPOI).click(function (event) {
+        if (tipoPOI.is(':checked')) {
             showType.show();
         } else {
             showType.hide();
@@ -53,10 +53,10 @@ function showEntornPoi(){
 }
 
 function showCountryPoi(){
-    var typePOI = jQuery('#checkCountryPOI');
-    var showType = jQuery('#countryPOI');
-    $(typePOI).click(function (event) {
-        if (typePOI.is(':checked')) {
+    var tipoPOI = jQuery('#checkPaisPOI');
+    var showType = jQuery('#selectPaisPOI');
+    $(tipoPOI).click(function (event) {
+        if (tipoPOI.is(':checked')) {
             showType.show();
         } else {
             showType.hide();
@@ -64,10 +64,10 @@ function showCountryPoi(){
     });
 }
 function showCityPoi(){
-    var typePOI = jQuery('#checkCityPOI');
-    var showType = jQuery('#cityPOI');
-    $(typePOI).click(function (event) {
-        if (typePOI.is(':checked')) {
+    var tipoPOI = jQuery('#checkCiudadPOI');
+    var showType = jQuery('#selectCiudadPOI');
+    $(tipoPOI).click(function (event) {
+        if (tipoPOI.is(':checked')) {
             showType.show();
         } else {
             showType.hide();
