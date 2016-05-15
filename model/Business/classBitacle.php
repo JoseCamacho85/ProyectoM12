@@ -138,6 +138,9 @@ class Bitacle {
         $this->paises = $paises;
     }
 
+
+    
+
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
@@ -239,6 +242,16 @@ class Bitacle {
         for ($i = 0; $i < count($arrayUsuarios); $i++) {
             array_push($this->users, $arrayUsuarios[$i]);
         }
+    }
+
+    public function VerDetallesPOI($idPOI){
+
+        for ($i = 0; $i<count($this->getPois());$i++){
+            if($this->getPois()[$i]->getId() == $idPOI){
+                $detall = $this->getPois()[$i];
+            }
+        }
+        return $detall;
     }
 
 }

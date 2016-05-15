@@ -53,6 +53,11 @@ function Borrar($params) {
     $id = $record['id'];
     return "<a href=\"../controller/controllerDeleteEmployee.php?id=$id\"><img border=\"0\" src=\"images/delete.gif\" alt=\"$label\" title=\"$label\" /></a>";
 }
+function VerDetalles($params) {
+    extract($params);
+    $id = $record['id'];
+    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+}
 ?>
 <a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
 
@@ -61,7 +66,7 @@ function Borrar($params) {
     <tr bgcolor="#FFFFCC">
         <td height="48">
             <font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">
-            <strong>POI (Puntos de inter�s) gridview</strong>
+            <strong>POI (Puntos de interes) gridview</strong>
             </font>
         </td>
     </tr>
@@ -132,7 +137,8 @@ FK:id_usuario Usuario(id)-->
               $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
               $dg->addColumn($column);
              */
-
+            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+            $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
