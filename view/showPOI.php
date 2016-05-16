@@ -60,6 +60,7 @@ function VerDetalles($params) {
 }
 ?>
 <a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
+<a href="addPOI.php"><button class="btn btn-info">Añadir POIs</button></a>
 
 <p></p>
 <table border="0" align="center" cellpadding="5" cellspacing="2" bgcolor="#EDE8C9">

@@ -53,7 +53,9 @@ include 'makeDropdownLists.php';
                 <div id="ok"></div>
             </div>
         </div>
-    </div>
+    </div><br>
+    <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
+
 </div>
 <?php
 include ("footer.php");
