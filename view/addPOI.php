@@ -3,15 +3,23 @@ include ("header.php");
 include '../model/DAO/dbConnector.php';
 include 'makeDropdownLists.php';
 ?>
+
 <div class="container-fluid text-center">    
+    <h2>Introducir POI</h2>
     <div class="row content">
         <div class="col-sm-12 text-center"> 
-            <h1>Introducir POI</h1>
             <div>
+                  <?php
+                include ("./modules/addFotoUser.php");
+                ?>
+                <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
+                    <input class="center-block" type="file" name="archivo[]" multiple="multiple">
+                    <input type="submit" value="Subir imagen"  class="trig">
+                </form>
                 <form method="POST" id="formPOI">
                     <hr>
                     <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
-                    <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi"></p>
                     <p><span>Descripción: </span><input type="text" name="descripcionPoi" id="descripcionPoi" ></p>
                     <p><span>URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
                     <p><span>Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
@@ -42,7 +50,7 @@ include 'makeDropdownLists.php';
                     </p>
                     <p id="ciudad">
                         <span>Ciudad: </span>
-                         <select name="selectCiudadPOI" id="selectCiudadPOI">
+                        <select name="selectCiudadPOI" id="selectCiudadPOI">
 
                         </select>
                     </p>
