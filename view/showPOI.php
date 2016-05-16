@@ -60,7 +60,24 @@ function VerDetalles($params) {
 }
 ?>
 <a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
-<a href="addPOI.php"><button class="btn btn-info">Añadir POIs</button></a>
+      <?php
+                    if (!isset($_SESSION['bitacle'])) {
+
+                        $bitacle = new Bitacle("bitacle");
+                        $_SESSION['bitacle'] = serialize($bitacle);
+                    } else {
+                        // if session exist, we unserializate it.
+                        $bitacle = unserialize($_SESSION['bitacle']);
+                    }
+
+                    if (isset($_SESSION['user'])) {
+                        $user = "";
+                        include("modules/addPoiBoton.php");
+                        //$bitacle = new Bitacle("bitacle");
+                        //$_SESSION['bitacle'] = serialize($bitacle);
+                    } 
+                    ?>
+
 
 <p></p>
 <table border="0" align="center" cellpadding="5" cellspacing="2" bgcolor="#EDE8C9">
