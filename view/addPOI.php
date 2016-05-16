@@ -10,7 +10,7 @@ include 'makeDropdownLists.php';
         <div class="col-sm-12 text-center"> 
             <div>
                   <?php
-                include ("./modules/addFotoUser.php");
+                include ("./modules/addFotoPoi.php");
                 ?>
                 <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
