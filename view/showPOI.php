@@ -13,7 +13,7 @@ require_once('Structures/DataGrid.php');
 function Editar($params) {
     extract($params);
     $id = $record['id'];
-    //return "<a href=\"worker_modify.php?id=$id\"><img border=\"0\" src=\"images/edit.gif\" alt=\"$label\" title=\"$label\" /></a>";	
+    //return "<a href=\"worker_modify.php?id=$id\"><img border=\"0\" src=\"images/edit.gif\" alt=\"$label\" title=\"$label\" /></a>";   
 }
 
 //final de la funcio Editar
@@ -46,7 +46,7 @@ function Llistar($params) {
     return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
 }
 
-//final de la funcio Editar	
+//final de la funcio Editar 
 
 function Borrar($params) {
     extract($params);
@@ -59,6 +59,11 @@ function VerDetalles($params) {
     return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
 }
 ?>
+
+<style type="text/css">
+<?php include("css/gridview.css"); ?>
+</style>
+
 <a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
       <?php
                     if (!isset($_SESSION['bitacle'])) {
@@ -78,17 +83,7 @@ function VerDetalles($params) {
                     } 
                     ?>
 
-
-<p></p>
-<table border="0" align="center" cellpadding="5" cellspacing="2" bgcolor="#EDE8C9">
-    <tr bgcolor="#FFFFCC">
-        <td height="48">
-            <font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">
-            <strong>POI (Puntos de interes) gridview</strong>
-            </font>
-        </td>
-    </tr>
-</table>
+<h1>Puntos de interes</h1>
 
 <br />  
 
@@ -101,7 +96,7 @@ FK:id_ciudad Ciudad(id)
 FK:id_pais Pais(id)
 FK:id_usuario Usuario(id)-->
 
-<table border="0" align="center" bgcolor="#EDE8C9">
+<table align="center">
     <tr>
         <td valign="middle" align="center" colspan="2">
             <form name="formbuscar" action="showPOI.php" method="post">
@@ -110,15 +105,15 @@ FK:id_usuario Usuario(id)-->
                     <option value="id" <?php if ($_SESSION['categoria'] == "id") echo 'selected="selected"' ?>>ID</option>
                     <option value="nombre" <?php if ($_SESSION['categoria'] == "nombre") echo 'selected="selected"' ?>>Nombre</option>
                     <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>
-                    <option value="precio" <?php if ($_SESSION['categoria'] == "precio") echo 'selected="selected"' ?>> Precio</option>		
+                    <option value="precio" <?php if ($_SESSION['categoria'] == "precio") echo 'selected="selected"' ?>> Precio</option>     
                     <option value="horario" <?php if ($_SESSION['categoria'] == "horario") echo 'selected="selected"' ?>>Horario</option>
-                </select>			
+                </select>           
                 <input name ="enviar" type="submit" value="Search">
             </form>
         </td>
     </tr>
     <tr>
-        <td colspan="2" align="center">
+        <td id="contentGrid" colspan="2" align="center">
 
             <?php
             $mostrar = 15;
@@ -138,15 +133,15 @@ FK:id_usuario Usuario(id)-->
 
 // Set empty row table attributes
 // Definim les columnes del datagrid
-            $column = new Structures_DataGrid_Column('id', 'id', 'id', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('nombre', 'nombre', 'nombre', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('url', 'url', 'url', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('precio', 'precio', 'precio', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('horario', 'horario', 'horario', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Horario', 'horario', 'horario', array('align' => 'center'));
             $dg->addColumn($column);
 
             /*
@@ -155,15 +150,15 @@ FK:id_usuario Usuario(id)-->
               $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
               $dg->addColumn($column);
              */
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+            $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
-            $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
-            $dg->addColumn($column);
+            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
+            //$dg->addColumn($column);
+            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
+            //$dg->addColumn($column);
 //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Llistar($label=Llistats de peticionari)');
 //$dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+            $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
             $dg->addColumn($column);
 
 

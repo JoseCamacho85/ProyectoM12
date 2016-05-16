@@ -3,6 +3,8 @@ include ("header.php");
 include '../model/DAO/dbConnector.php';
 include 'makeDropdownLists.php';
 ?>
+<!-- Script para generarar dropdown ciudades-->
+<script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
 
 <div class="container-fluid text-center">    
     <h2>Introducir POI</h2>

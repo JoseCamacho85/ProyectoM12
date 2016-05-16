@@ -21,24 +21,7 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="js/animation.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
-        <script type="text/javascript" src="js/validations.js"></script>
-        <script type="text/javascript">
-            function cambioPais(id_com)
-            {
-                $.ajax({
-                    async: true,
-                    type: "POST",
-                    url: "DropdownListCiutat.php",
-                    data: {"data": id_com},
-                    success: tornadaCom
-                });
-            }
-
-            function tornadaCom(txt) {
-                $("#selectCiudadPOI").html(txt);
-                $("#ciudad").css("display", "block");
-            }
-        </script>
+        <script type="text/javascript" src="js/validations.js"></script>       
     </head>
     <body>
         <nav class="navbar navbar-inverse">

@@ -2,6 +2,10 @@
 include ("header.php");
 include 'makeDropdownLists.php';
 ?>
+
+<!-- Script para generarar dropdown ciudades-->
+<script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
+
 <form action="../controller/controllerSearchPOI.php" type="POST">
     <div class="container col-md-12" style="background: #E7FFFF;">    
         <div class="col-md-offset-1 col-md-2">

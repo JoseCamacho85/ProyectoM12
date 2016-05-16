@@ -72,20 +72,14 @@ function VerDetalles($params) {
                     } 
                     ?>
 
-<p></p>
-<table border="0" align="center" cellpadding="5" cellspacing="2" bgcolor="#EDE8C9">
-    <tr bgcolor="#FFFFCC">
-        <td height="48">
-            <font color="#003366" size="2" face="Verdana, Arial, Helvetica, sans-serif">
-            <strong>Rutas gridview</strong>
-            </font>
-        </td>
-    </tr>
-</table>
+<!--Css para gridviews-->
+<style type="text/css">
+<?php include("css/gridview.css"); ?>
+</style>
 
-<br />  
+<h1>Rutas</h1>
 
-<table border="0" align="center" bgcolor="#EDE8C9">
+<table align="center">
     <tr>
         <td valign="middle" align="center" colspan="2">
             <form name="formbuscar" action="showRutas.php" method="post">
@@ -100,7 +94,7 @@ function VerDetalles($params) {
         </td>
     </tr>
     <tr>
-        <td colspan="2" align="center">
+        <td id="contentGrid" colspan="2" align="center">
 
             <?php
             $mostrar = 15;
@@ -120,11 +114,11 @@ function VerDetalles($params) {
 
 // Set empty row table attributes
 // Definim les columnes del datagrid
-            $column = new Structures_DataGrid_Column('id', 'id', 'id', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('nombre', 'nombre', 'nombre', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('descripcion', 'descripcion', 'descripcion', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Descripcion', 'descripcion', 'descripcion', array('align' => 'center'));
             $dg->addColumn($column);
 
             /*
@@ -133,15 +127,15 @@ function VerDetalles($params) {
               $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
               $dg->addColumn($column);
              */
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+            $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
-            $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
-            $dg->addColumn($column);
+            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
+            //$dg->addColumn($column);
+            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
+            //$dg->addColumn($column);
 //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Llistar($label=Llistats de peticionari)');
 //$dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+            $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
             $dg->addColumn($column);
 
 
