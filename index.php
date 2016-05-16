@@ -14,6 +14,7 @@ if (isset($_SESSION['bitacle'])) {
     $bitacle->populateCiudades();
     $bitacle->populatePaises();
     $bitacle->populateUsuarios();
+    $bitacle->populateRutas();
     $_SESSION['bitacle'] = serialize($bitacle);
 } else {
     // if session exist, we unserializate it.

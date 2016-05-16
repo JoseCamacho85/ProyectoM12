@@ -138,9 +138,6 @@ class Bitacle {
         $this->paises = $paises;
     }
 
-
-    
-
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
@@ -227,7 +224,7 @@ class Bitacle {
             array_push($this->paises, $arrayPaises[$i]);
         }
     }
-    
+
     public function populatePois() {
         $bitacleDB = new BitacleDB();
         $arrayPois = $bitacleDB->fetchPoi();
@@ -238,28 +235,44 @@ class Bitacle {
 
     public function populateUsuarios() {
         $bitacleDB = new BitacleDB();
-        $arrayUsuarios = $bitacleDB->fetchUsuario();
-        for ($i = 0; $i < count($arrayUsuarios); $i++) {
-            array_push($this->users, $arrayUsuarios[$i]);
+        $arrayRutas = $bitacleDB->fetchRuta();
+        for ($i = 0; $i < count($arrayRutas); $i++) {
+            array_push($this->rutas, $arrayRutas[$i]);
         }
     }
 
-    public function VerDetallesPOI($idPOI){
+    public function populateRutas() {
+        $bitacleDB = new BitacleDB();
+        $arrayPois = $bitacleDB->fetchPoi();
+        for ($i = 0; $i < count($arrayPois); $i++) {
+            array_push($this->pois, $arrayPois[$i]);
+        }
+    }
 
-        for ($i = 0; $i<count($this->getPois());$i++){
-            if($this->getPois()[$i]->getId() == $idPOI){
+    public function VerDetallesPOI($idPOI) {
+
+        for ($i = 0; $i < count($this->getPois()); $i++) {
+            if ($this->getPois()[$i]->getId() == $idPOI) {
                 $detall = $this->getPois()[$i];
             }
         }
         return $detall;
     }
 
-    public function crearQuery($fields,$fieldNames){
-        $bitacleDB = new BitacleDB();
-        $arrayCrearQuery = $bitacleDB->crearQueryDB($fields,$fieldNames);
-        return $arrayCrearQuery; 
+    public function VerDetallesRuta($idRuta) {
+
+        for ($i = 0; $i < count($this->getRutas()); $i++) {
+            if ($this->getRutas()[$i]->getId() == $idRuta) {
+                $detall = $this->getRutas()[$i];
+            }
+        }
+        return $detall;
     }
 
-
+    public function crearQuery($fields, $fieldNames) {
+        $bitacleDB = new BitacleDB();
+        $arrayCrearQuery = $bitacleDB->crearQueryDB($fields, $fieldNames);
+        return $arrayCrearQuery;
+    }
 
 }
