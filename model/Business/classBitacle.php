@@ -265,6 +265,14 @@ class Bitacle {
         }
     }
 
+    public function populateDiarios() {
+        $bitacleDB = new BitacleDB();
+        $arrayDiarios = $bitacleDB->fetchDiario();
+        for ($i = 0; $i < count($arrayDiarios); $i++) {
+            array_push($this->diarios, $arrayDiarios[$i]);
+        }
+    }
+
     public function VerDetallesPOI($idPOI) {
 
         for ($i = 0; $i < count($this->getPois()); $i++) {
@@ -290,6 +298,16 @@ class Bitacle {
         for ($i = 0; $i < count($this->getUsers()); $i++) {
             if ($this->getUsers()[$i]->getId() == $idUsuario) {
                 $detall = $this->getUsers()[$i];
+            }
+        }
+        return $detall;
+    }
+
+    public function VerDetallesDiario($idDiario) {
+
+        for ($i = 0; $i < count($this->getDiarios()); $i++) {
+            if ($this->getDiarios()[$i]->getId() == $idDiario) {
+                $detall = $this->getDiarios()[$i];
             }
         }
         return $detall;
