@@ -14,6 +14,7 @@ $rutaPOIObj = new RutaPOIDB();
 try {
     $rutaPOIObj->insertRutaPoi($idPOI, $idRuta);
     echo "rutaPoi insertado";
+    header("location:../view/showPOI.php");
 } catch (Exception $e) {
     echo "error al insertar";
     showMessage($e->getMessage());
