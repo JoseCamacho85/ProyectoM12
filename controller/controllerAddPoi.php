@@ -8,8 +8,8 @@ include("validateNames.php");
 include("validateDescriptions.php");
 include("validateURLS.php");
 include("validateHour.php");
-//$bitacle = unserialize($_SESSION['bitacle']);
-//$user = unserialize($_SESSION['user']);
+$bitacle = unserialize($_SESSION['bitacle']);
+$user = unserialize($_SESSION['user']);
 
 $nombre = $_REQUEST['nombrePoi'];
 $foto = $_REQUEST['fotoPoi'];
@@ -24,10 +24,9 @@ $id_pais = $_REQUEST['paisPoi'];
 $id_ciudad = $_REQUEST['selectCiudadPOI'];
 
 //aplicar id de usuario logeado
-// = $bitacle->getUsers();
-$id_usuario = 1;//cogerId($usuarios,$user);
+$usuarios = $bitacle->getUsers();
+$id_usuario = cogerId($usuarios, $user);
 
-/*
 $tipo = $bitacle->getTipos();
 $transporte = $bitacle->getTransportes();
 $entorno = $bitacle->getEntornos();
@@ -39,20 +38,15 @@ $id_transporte1 = cogerId($transporte, $id_transporte);
 $id_entorno1 = cogerId($entorno, $id_entorno);
 $id_ciudad1 = cogerId($ciudad, $id_ciudad);
 $id_pais1 = cogerId($pais, $id_pais);
-*/
 $requiredFields = Array($nombre, $descripcion);
 
 
 if (validateNullfields($requiredFields)) {
     echo "requireds ok";
-    if(validateNames($nombre) 
-        && validateDescriptions($descripcion)
-        && validateUrls($url)
-        && validateHour($horario)){
-        
+    if (validateNames($nombre) && validateDescriptions($descripcion) && validateUrls($url) && validateHour($horario)) {
+
         echo "validations ok";
-        
-    }else{
+    } else {
         echo "validations error";
     }
     try {
