@@ -235,7 +235,10 @@ class BitacleDB {
             $url = $row['url'];
             $foto = $row['foto'];
             $textoPresentacion = $row['textoPresentacion'];
-            $usuario = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+            $administrador = $row['esAdministrador'];
+            $registrado = $row['esUsuarioRegistrado'];
+            $professional = $row['esUsuarioProfesional'];
+            $usuario = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional);
             array_push($usuarios, $usuario);
         }
 
