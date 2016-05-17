@@ -23,8 +23,11 @@ class Usuario {
     private $url;
     private $foto;
     private $textoPresentacion;
+    private $administrador;
+    private $registrado;
+    private $professional;
     
-    function __construct($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
+    function __construct($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional) {
         $this->id = $id;
         $this->username = $username;
         $this->password = $password;
@@ -35,6 +38,10 @@ class Usuario {
         $this->url = $url;
         $this->foto = $foto;
         $this->textoPresentacion = $textoPresentacion;
+        $this->administrador = $administrador;
+        $this->registrado = $registrado;
+        $this->professional = $professional;
+
     }
 
     
@@ -118,6 +125,27 @@ class Usuario {
         $this->textoPresentacion = $textoPresentacion;
     }
 
+    function getAdministrador() {
+        return $this->administrador;
+    }
+
+    function setAdministrador($administrador) {
+        $this->administrador = $administrador;
+    }
+    function getRegistrado() {
+        return $this->registrado;
+    }
+
+    function setRegistrado($registrado) {
+        $this->registrado = $registrado;
+    }
+    function getProfessional() {
+        return $this->professional;
+    }
+
+    function setProfessional($professional) {
+        $this->professional = $professional;
+    }
 
  public function persist() {
         $userDAO = new UsuarioDB();

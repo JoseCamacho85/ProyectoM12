@@ -8,16 +8,19 @@ public function insertUser($user){
 
 $con = new DB();                 
             //$nonquery = $con->prepare("INSERT INTO employees VALUES (NULL,:name,:surname,:nif,:category)");
-            $nonquery = $con->prepare("INSERT INTO usuario (username,password,email,poblacion,idioma,telefono,url,foto,textoPresentacion) VALUES (:username,:password,:email,:poblacion,:idioma,:telefono,:url,:foto,:textoPresentacion)");
+            $nonquery = $con->prepare("INSERT INTO usuario (username,password,email,poblacion,idioma,telefono,url,foto,textoPresentacion,esAdministrador,esUsuarioRegistrado,esUsuarioProfesional) VALUES (:username,:password,:email,:poblacion,:idioma,:telefono,:url,:foto,:textoPresentacion,:administrador,:registrado,:professional)");
             $username=$user->getUserName();
             $password=$user->getPassword();
             $email=$user->getEmail();
             $poblacion=$user->getPoblacion();
             $idioma=$user->getIdioma();
             $telefono=$user->getTelefono();
-			$url=$user->getUrl();
-			$foto=$user->getFoto();
-			$textoPresentacion=$user->getTextoPresentacion();
+		$url=$user->getUrl();
+		$foto=$user->getFoto();
+		$textoPresentacion=$user->getTextoPresentacion();
+            $administrador = $user->getAdministrador();
+            $registrado = $user->getRegistrado();
+            $professional = $user->getProfessional();
 
             
             $nonquery->bindParam(":username",$username);
@@ -29,6 +32,9 @@ $con = new DB();
             $nonquery->bindParam(":url",$url);
             $nonquery->bindParam(":foto",$foto);
             $nonquery->bindParam(":textoPresentacion",$textoPresentacion);
+            $nonquery->bindParam(":administrador",$administrador);
+            $nonquery->bindParam(":registrado",$registrado);
+            $nonquery->bindParam(":professional",$professional);
 
             
             $con->executeNonQuery($nonquery);
@@ -66,7 +72,10 @@ $con = new DB();
             $url  = $row['url'];
             $foto  = $row['foto'];
             $textoPresentacion  = $row['textoPresentacion'];
-            $user= new Usuario($username,$password,$email,$poblacion,$idioma,$telefono,$url,$foto,$textoPresentacion);
+            $administrador  = $row['esAdministrador'];
+            $registrado  = $row['esUsuarioRegistrado'];
+            $professional  = $row['esUsuarioProfesional'];
+            $user= new Usuario($username,$password,$email,$poblacion,$idioma,$telefono,$url,$foto,$textoPresentacion,$administrador,$registrado,$professional);
             array_push($users,$user);
             }
 

@@ -2,13 +2,12 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
-include("validateNullfields.php");
-include("validateNames.php");
-include("validateDescriptions.php");
-include("validateURLS.php");
-//include("../model/Business/classBitacle.php");
-//include("../controller/controllerControlEmptyField.php");
-//include("../controller/controllerControlNIF.php");
+include("validations/validateNullfields.php");
+include("validations/validateNames.php");
+include("validations/validateDescriptions.php");
+include("validations/validateURLS.php");
+include("validations/validateUsername.php");
+include("validations/validatePhone.php");
 //include("../view/functionShowMessage.php"); 
 //include("../controller/controllerControlFindNif.php");
 
@@ -23,35 +22,53 @@ $poblacion = $_REQUEST['poblacion'];
 $idioma = $_REQUEST['idioma'];
 $telefono = $_REQUEST['telefono'];
 $url = $_REQUEST['url'];
-$foto = $_REQUEST['foto'];
+$foto = $_REQUEST['fotoUser'];
 $textoPresentacion = $_REQUEST['textoPresentacion'];
 $professional = 0;
-$usuario = 0;
+$registrado = 1;
+$administrador = 0;
+
 if (isset($_REQUEST['profesional'])) {
     $professional = 1;
 } else {
-    $usuario = 1;
+    $professional = 0;
 }
-/* echo $professional;
-  echo $usuario; */
+
 $requiredFields = array($username,$password,$email);
 
-if (validateNullfields($requiredFields)) {
-    echo "requireds ok";
-
-    if (validateNames($username) 
-            && validateNames($password) 
-            && validateDescriptions($textoPresentacion) 
-            && validateUrls($url)
-            && validatePhone($telefono)) {
-
-        echo "validations ok";
-    } else {
-        echo "validations error";
-    }
+/*if (validateNullfields($requiredFields)) {
+ header("Location: ../view/errors/errorCamposVacios.html");
+break;
+}*/
+/*if (controlBuscarUsername($username)) {
+header("Location: ../view/errors/errorCampoUsuario.html");
+break;
+}*/
+if (validateNames($username)) {
+header("Location: ../view/errors/errorCampoUsuario.html");
+break;
+}
+else if (validateNames($password)) {
+header("Location: ../view/errors/errorCampoPassword.html");
+break;
+}
+else if (validateDescriptions($textoPresentacion)){
+header("Location: ../view/errors/errorCampoDescripcion.html");
+break;
+} 
+else if (validateUrls($url)){
+header("Location: ../view/errors/errorCampoUrl.html");
+break;
+}
+else if (validatePhone($telefono)) {
+header("Location: ../view/errors/errorCampoTelefono.html");
+break;
+    
+} 
+      
     
     try {
-        $bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+        $bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional);
 
         //echo $username . "perfecto";
         //showMessage("Usuario ". $username ." creado correctamente");	
@@ -60,8 +77,6 @@ if (validateNullfields($requiredFields)) {
     } catch (Exception $e) {
         //showMessage($e->getMessage());
     }
-} else {
-    echo "requireds fail";
-}
+
 ?>
 
