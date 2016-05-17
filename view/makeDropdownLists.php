@@ -47,4 +47,14 @@ function makeDropdownlistPaises() {
     }
 }
 
+function makeDropdownlistRuta() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+
+    for ($i = 0; $i < count($bitacle->getRutas()); $i++) {
+        $nombre = $bitacle->getRutas()[$i]->getNombre();
+        echo "<OPTION>" . $nombre . "</OPTION>";
+    }
+}
+
+
 ?>

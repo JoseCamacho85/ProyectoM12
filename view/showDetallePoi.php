@@ -1,6 +1,14 @@
 <?php
 include ("header.php");
 include("../controller/controllerVerDetallePOI.php");
+include("../controller/controllerIdDropdowns.php");
+include("makeDropdownLists.php");
+$bitacle = unserialize($_SESSION['bitacle']);
+$user = unserialize($_SESSION['user']);
+//aplicar id de usuario logeado
+$usuarios = $bitacle->getUsers();
+$id_usuario = cogerId($usuarios, $user);
+
 ?>
 <div>
 
@@ -58,7 +66,12 @@ include("../controller/controllerVerDetallePOI.php");
         <span>Pais: </span>
         <span><?php echo $id_pais ?></span>
     </div>
-
+    <div>
+        <span></span>
+    </div>
+    <select>
+        <?php makeDropdownlistRuta(); ?>
+    </select>
 </div>
 <?php
 include ("footer.php");
