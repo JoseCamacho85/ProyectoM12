@@ -43,7 +43,7 @@ function Imprimir($params) {
 function Llistar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/icon.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 
 //final de la funcio Editar 
@@ -56,7 +56,7 @@ function Borrar($params) {
 function VerDetalles($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/icon.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 ?>
 
