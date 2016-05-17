@@ -235,17 +235,17 @@ class Bitacle {
 
     public function populateUsuarios() {
         $bitacleDB = new BitacleDB();
-        $arrayRutas = $bitacleDB->fetchRuta();
-        for ($i = 0; $i < count($arrayRutas); $i++) {
-            array_push($this->rutas, $arrayRutas[$i]);
+        $arrayUsuarios = $bitacleDB->fetchUsuario();
+        for ($i = 0; $i < count($arrayUsuarios); $i++) {
+            array_push($this->users, $arrayUsuarios[$i]);
         }
     }
 
     public function populateRutas() {
         $bitacleDB = new BitacleDB();
-        $arrayPois = $bitacleDB->fetchPoi();
-        for ($i = 0; $i < count($arrayPois); $i++) {
-            array_push($this->pois, $arrayPois[$i]);
+        $arrayRutas = $bitacleDB->fetchRuta();
+        for ($i = 0; $i < count($arrayRutas); $i++) {
+            array_push($this->rutas, $arrayRutas[$i]);
         }
     }
 
@@ -264,6 +264,16 @@ class Bitacle {
         for ($i = 0; $i < count($this->getRutas()); $i++) {
             if ($this->getRutas()[$i]->getId() == $idRuta) {
                 $detall = $this->getRutas()[$i];
+            }
+        }
+        return $detall;
+    }
+
+    public function VerDetallesUsuario($idUsuario) {
+
+        for ($i = 0; $i < count($this->getUsers()); $i++) {
+            if ($this->getUsers()[$i]->getId() == $idUsuario) {
+                $detall = $this->getUsers()[$i];
             }
         }
         return $detall;
