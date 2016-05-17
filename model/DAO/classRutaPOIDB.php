@@ -13,10 +13,13 @@
  */
 class RutaPOIDB {
 
-    public function insertRutaPOI($rutaPOI) {
+
+    
+    public function insertRutaPOI($idPOI, $idRuta) {
+        $rutaPOI = new RutaPOI($idPOI, $idRuta);
+
         $con = new DB();
-        $nonquery = $con->prepare("INSERT INTO rutapoi (id_ruta,id_poi) "
-                . "VALUES (:id_ruta,:id_poi)");
+        $nonquery = $con->prepare("INSERT INTO rutapoi (id_ruta,id_poi) VALUES (:id_ruta,:id_poi)");
         $idPOI = $rutaPOI->getIdPOI();
         $idRuta = $rutaPOI->getIdRuta();
 

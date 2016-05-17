@@ -12,7 +12,7 @@ $id_usuario = cogerIdUsuario($usuarios, $user);
 $foto = "kylo.jpg";
 $idPOI = $_REQUEST["id"];
 ?>
-<input type="text" id="userId" value='<?php echo $idPOI; ?>'/>
+
 
 <div>
 
@@ -73,35 +73,37 @@ $idPOI = $_REQUEST["id"];
     <div>
         <span></span>
     </div>
-    <form>
-        <select id="idRuta">
+    <form method="post" action="../controller/controllerAddRutaPOI.php">
+        <input type="text" name="idPoi" value='<?php echo $idPOI; ?>'/>
+        <select name="idRuta">
             <?php makeDropdownlistRuta(); ?>
         </select>
-        <button id="addRuta">Añadir Poi A Ruta</button>
+        <input type="submit" value="Enviar">
+        
     </form>
 </div>
-<script>
+<!--<script>
     $(document).ready(function () {
         $("#addRuta").click(function () {
-            alert($("#userId").val());
+            alert($("#idPoi").val());
             alert($("#idRuta").val());
             $.ajax({
                 type: "POST",
                 url: "../controller/controllerAddRutaPOI.php",
                 data: {
-                    "idPOI": $("#userId").val(),
+                    "idPOI": $("#idPoi").val(),
                     "idRuta": $("#idRuta").val()
 
                 },
                 success: function (data) {
                    
-                    $("body").html(data);
+                    //$("body").html(data);
 
                 }
             });
         });
     });
-</script>
+</script>-->
 <?php
 include ("footer.php");
 ?>

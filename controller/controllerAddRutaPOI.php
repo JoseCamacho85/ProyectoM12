@@ -2,19 +2,20 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
+include("../model/DAO/classRutaPOIDB.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 //$user = unserialize($_SESSION['user']);
 
-$idPOI = $_POST["idPOI"];
+$idPOI = $_POST["idPoi"];
 $idRuta = $_POST["idRuta"];
+$rutaPOIObj = new RutaPOIDB();
 
 try {
-    $bitacle->insertRutaPoi($idPOI, $idRuta);
+    $rutaPOIObj->insertRutaPoi($idPOI, $idRuta);
+    echo "rutaPoi insertado";
 } catch (Exception $e) {
     echo "error al insertar";
     showMessage($e->getMessage());
-}finally{
-    echo "rutaPoi insertado";
 }
 ?>
