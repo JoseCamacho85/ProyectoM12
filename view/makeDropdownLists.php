@@ -52,7 +52,8 @@ function makeDropdownlistRuta() {
 
     for ($i = 0; $i < count($bitacle->getRutas()); $i++) {
         $nombre = $bitacle->getRutas()[$i]->getNombre();
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getRutas()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 

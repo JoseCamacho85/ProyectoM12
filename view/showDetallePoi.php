@@ -7,10 +7,13 @@ $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 //aplicar id de usuario logeado
 $usuarios = $bitacle->getUsers();
-$id_usuario = 5;//cogerIdUsuario($usuarios, $user);
+$id_usuario = cogerIdUsuario($usuarios, $user);
 
-echo $id_usuario;
+$foto = "kylo.jpg";
+$idPOI = $_REQUEST["id"];
 ?>
+<input type="text" id="userId" value='<?php echo $idPOI; ?>'/>
+
 <div>
 
     <div>
@@ -70,10 +73,35 @@ echo $id_usuario;
     <div>
         <span></span>
     </div>
-    <select>
-        <?php makeDropdownlistRuta(); ?>
-    </select>
+    <form>
+        <select id="idRuta">
+            <?php makeDropdownlistRuta(); ?>
+        </select>
+        <button id="addRuta">Añadir Poi A Ruta</button>
+    </form>
 </div>
+<script>
+    $(document).ready(function () {
+        $("#addRuta").click(function () {
+            alert($("#userId").val());
+            alert($("#idRuta").val());
+            $.ajax({
+                type: "POST",
+                url: "../controller/controllerAddRutaPOI.php",
+                data: {
+                    "idPOI": $("#userId").val(),
+                    "idRuta": $("#idRuta").val()
+
+                },
+                success: function (data) {
+                   
+                    $("body").html(data);
+
+                }
+            });
+        });
+    });
+</script>
 <?php
 include ("footer.php");
 ?>

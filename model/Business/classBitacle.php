@@ -26,6 +26,7 @@ class Bitacle {
     private $transportes = null;
     private $entornos = null;
     private $paises = null;
+    private $rutaPoi = null;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -138,6 +139,15 @@ class Bitacle {
         $this->paises = $paises;
     }
 
+    function getRutaPoi() {
+        return $this->rutaPoi;
+    }
+
+    function setRutaPoi($rutaPoi) {
+        $this->rutaPoi = $rutaPoi;
+    }
+    
+    
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
         $id = $user->persist();
@@ -155,6 +165,13 @@ class Bitacle {
         return $poi;
     }
 
+    public function insertRutaPoi($idPOI, $idRuta) {
+        $rutaPoi = new RutaPOI($idPOI, $idRuta);
+        $rutaPoi->persist();
+        $rutaPoi->setIdPOI($idPOI);
+        array_push($this->rutaPoi, $rutaPoi);
+        return $rutaPoi;
+    }
     public function insertRuta($id, $nombre, $descripcion, $id_usuario) {
         $ruta = new Ruta($id, $nombre, $descripcion, $id_usuario);
         $id = $ruta->persist();
@@ -162,7 +179,6 @@ class Bitacle {
         array_push($this->rutas, $ruta);
         return $ruta;
     }
-
     public function insertDiario($id, $nombre, $descripcion, $id_usuario) {
         $diario = new Diario($id, $nombre, $descripcion, $id_usuario);
         $id = $diario->persist();
