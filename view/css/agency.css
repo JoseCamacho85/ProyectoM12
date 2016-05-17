@@ -28,6 +28,14 @@ h1{
     text-shadow: 7px 3px 7px #000000;
     color: #f1f1f1;
 }
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 7px 3px 7px #000000;
+    color: #f1f1f1;
+}
+
 #tituloPagina{
     margin-bottom: -120px;
 

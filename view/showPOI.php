@@ -83,7 +83,7 @@ function VerDetalles($params) {
                     } 
                     ?>
 
-<h1>Puntos de interes</h1>
+<h2>Puntos de interes</h2>
 
 <br />  
 

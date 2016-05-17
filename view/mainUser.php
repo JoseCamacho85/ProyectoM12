@@ -3,7 +3,7 @@
     <div class="row content">
         <!--LATERAL IZQUIERDO-->
         <div class="col-md-3 text-center"> 
-            <h1>Diario de usuario</h1>
+            <h2>Diario de usuario</h2>
             <ul>
                 <li></li>
             </ul>
