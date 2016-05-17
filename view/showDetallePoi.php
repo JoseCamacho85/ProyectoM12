@@ -7,8 +7,9 @@ $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 //aplicar id de usuario logeado
 $usuarios = $bitacle->getUsers();
-$id_usuario = cogerId($usuarios, $user);
+$id_usuario = 5;//cogerIdUsuario($usuarios, $user);
 
+echo $id_usuario;
 ?>
 <div>
 
@@ -19,7 +20,7 @@ $id_usuario = cogerId($usuarios, $user);
 
     <div>
         <span>Foto: </span>
-        <span><?php echo $foto ?></span>
+        <span><img src="fotoPoi/<?php echo $foto ?>"/></span>
     </div>
 
     <div>
