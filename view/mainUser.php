@@ -1,26 +1,19 @@
-<?php include ("header.php"); ?>
-<div class="container-fluid text-center">    
-    <div class="row content">
-        <!--LATERAL IZQUIERDO-->
-        <div class="col-md-3 text-center"> 
-            <h1>Diario de usuario</h1>
-            <ul>
-                <li></li>
-            </ul>
-            <hr>
-        </div>
-        <!--FIN DEL LATERAL IZQUIERDO-->
-        <!--CONTENIDO-->
-        <div class="col-md-9 text-center"> 
-            <h1>BitaCle</h1>
-            <p>DESCRIPCION DEL WEB</p>
-            <hr>
-            <h3>TITULO</h3>
-            <p>CONTENIDO AQUÍ</p>
-        </div>
-        <!--FIN DEL CONTENIDO-->
-        <!--LATERAL DERECHO-->
-        <!--FIN DEL LATERAL DERECHO-->
-    </div>
-</div>
+<?php
+include ("header.php");
+include '../controller/controllerVerDetalleUsuario.php';
+?>
+<h3>DATOS PERSONALES</h3>
+<form method="post" action="../controller/controllerModificarDatosUsuario.php"> <!-- HAY QUE CREAR EL CONTROLLER -->
+    <img src="<?php $foto ?>" />
+    <p>Username: <input type="text" value="<?php echo $username ?>" /></p>
+    <p>E-mail: <input type="text" value="<?php echo $email ?>" </p>
+    <p>Población: <input type="text" value="<?php echo $poblacion ?>" </p>
+    <p>Idioma: <input type="text" value="<?php echo $idioma ?>" </p>
+    <p>Teléfono: <input type="text" value="<?php echo $telefono ?>" </p>
+    <p>URL: <input type="text" value="<?php echo $url ?>" </p>
+    <p>Texto de presentación: <input type="text" value="<?php echo $texto ?>" </p>
+    <p><input type="submit" value="Modificar datos" /></p>
+</form>
+<a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
+<a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
 <?php include ("footer.php"); ?>

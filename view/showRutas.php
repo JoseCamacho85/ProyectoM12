@@ -77,7 +77,7 @@ function VerDetalles($params) {
 <?php include("css/gridview.css"); ?>
 </style>
 
-<h1>Rutas</h1>
+<h2>Rutas</h2>
 
 <table align="center">
     <tr>

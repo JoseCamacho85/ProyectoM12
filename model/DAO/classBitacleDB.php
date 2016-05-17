@@ -235,38 +235,38 @@ class BitacleDB {
             $url = $row['url'];
             $foto = $row['foto'];
             $textoPresentacion = $row['textoPresentacion'];
-            $usuario = new Transporte($id, $username);
+            $usuario = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
             array_push($usuarios, $usuario);
         }
 
         return $usuarios;
     }
 
-    function crearQueryDB($fields,$fieldNames){
-    
-    $query = "SELECT * FROM POI WHERE ";
+    function crearQueryDB($fields, $fieldNames) {
 
-    //$arr = array();
+        $query = "SELECT * FROM POI WHERE ";
 
-    /*for ($i = 0; $i < count($fields); $i++) {
-        if ($fields[$i] != null) {
-            $arr[$i] .= $fields[$i];
-        }    
-    }*/
+        //$arr = array();
 
-    //print_r($arr);
+        /* for ($i = 0; $i < count($fields); $i++) {
+          if ($fields[$i] != null) {
+          $arr[$i] .= $fields[$i];
+          }
+          } */
 
-    for ($i = 0; $i < count($fields); $i++) {
-        if ($fields[$i] != null) {
-            //echo count($arr);
-            if ($i == count($fields) - 1) {
-                $query .= $fieldNames[$i] . "=" . $fields[$i] . "  ";
-            } else {
-                $query .= $fieldNames[$i] . "=" . $fields[$i] . " and ";
+        //print_r($arr);
+
+        for ($i = 0; $i < count($fields); $i++) {
+            if ($fields[$i] != null) {
+                //echo count($arr);
+                if ($i == count($fields) - 1) {
+                    $query .= $fieldNames[$i] . "=" . $fields[$i] . "  ";
+                } else {
+                    $query .= $fieldNames[$i] . "=" . $fields[$i] . " and ";
+                }
             }
         }
-    }
-    //echo $query;
+        //echo $query;
 
         $pois = array();
 
@@ -294,8 +294,6 @@ class BitacleDB {
 
 //Muestra resultado
         return $pois;
-
-
     }
 
 }
