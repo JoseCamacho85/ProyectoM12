@@ -3,11 +3,11 @@
 session_start();
 include("../model/functionAutoLoad.php");
 include("controllerIdDropdowns.php");
-include("validateNullfields.php");
-include("validateNames.php");
-include("validateDescriptions.php");
-include("validateURLS.php");
-include("validateHour.php");
+include("validations/validateNullfields.php");
+include("validations/validateNames.php");
+include("validations/validateDescriptions.php");
+include("validations/validateURLS.php");
+include("validations/validateHour.php");
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
@@ -25,7 +25,7 @@ $id_ciudad = $_REQUEST['selectCiudadPOI'];
 
 //aplicar id de usuario logeado
 $usuarios = $bitacle->getUsers();
-$id_usuario = cogerId($usuarios, $user);
+$id_usuario = cogerIdUsuario($usuarios, $user);
 
 $tipo = $bitacle->getTipos();
 $transporte = $bitacle->getTransportes();

@@ -302,4 +302,13 @@ class Bitacle {
         return $arrayCrearQuery;
     }
 
+    public function VerRutaPoi($idRuta) {
+        $bitacleDB = new BitacleDB();
+        $arrayRutasPoi = $bitacleDB->DropdownPoisRuta($idRuta);
+        //for ($i = 0; $i < count($arrayRutas); $i++) {
+          //  array_push($this->rutas, $arrayRutas[$i]);
+        //}
+        return $arrayRutasPoi;
+    }
+
 }

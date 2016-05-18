@@ -1,6 +1,7 @@
 <?php
 
 require_once '../model/functionAutoload.php';
+//include "../controller/controllerNombreDropdowns.php";
 
 function makeDropdownlistTipos() {
     $bitacle = unserialize($_SESSION['bitacle']);
@@ -66,5 +67,6 @@ function makeDropdownlistDiarios() {
         echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
+
 
 ?>

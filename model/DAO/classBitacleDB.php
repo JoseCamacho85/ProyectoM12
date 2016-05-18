@@ -299,4 +299,24 @@ class BitacleDB {
         return $pois;
     }
 
+ function DropdownPoisRuta($idRuta) {
+
+        $arrayRutaPoi = array();
+
+        $con = new DB();
+        $sql = $con->prepare("SELECT * FROM rutapoi WHERE id_ruta = " . $idRuta);
+        $result = $con->executeQuery($sql);
+
+        foreach ($result as $row) {
+            $id_ruta = $row['id_ruta'];
+            $id_poi = $row['id_poi'];
+            $rutaPoi = new RutaPOI($id_ruta, $id_poi);
+            array_push($arrayRutaPoi, $rutaPoi);
+        }
+
+        return $arrayRutaPoi;
+    }
+
+
+
 }

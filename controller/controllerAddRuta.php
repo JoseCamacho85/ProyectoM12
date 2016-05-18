@@ -13,12 +13,12 @@ $idUsuari = $_REQUEST['idUsuari'];
 $ruta = $_REQUEST['nameRuta'];
 $descripcion = $_REQUEST['nameDescripcion'];
 
-$requiredFields = Array($nombre, $descripcion);
+$requiredFields = Array($ruta, $descripcion);
 
 
 if (validateNullfields($requiredFields)) {
     echo "requireds ok";
-    if (validateNames($nombre) && validateDescriptions($descripcion)) {
+    if (validateNames($ruta) && validateDescriptions($descripcion)) {
 
         echo "validations ok";
     } else {

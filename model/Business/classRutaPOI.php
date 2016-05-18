@@ -12,14 +12,16 @@
  * @author Mazu
  */
 class RutaPOI {
-    private $idPOI = null;
     private $idRuta = null;
+    private $idPOI = null;
     
     
     
-    function __construct($idPOI, $idRuta) {
+    
+    function __construct($idRuta,$idPOI) {
+       $this->idRuta = $idRuta;
         $this->idPOI = $idPOI;
-        $this->idRuta = $idRuta;
+        
     }
 
     function getIdPOI() {
