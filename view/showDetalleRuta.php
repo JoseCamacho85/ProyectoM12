@@ -19,7 +19,7 @@ $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
         <span><?php echo $descripcion ?></span>
     </div>
 
-    <select id="selectPois" name="selectPois" onchange="mostrarInfoPoi(this.value)" class="form-control">	  
+    <select id="selectPois" name="selectPois" onchange="mostrarInfoPoi(this.value)">	  
    	<?php makeDropdownlistArray($arrayRutaPoi); ?>
     </select>
 

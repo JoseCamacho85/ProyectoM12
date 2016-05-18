@@ -2,15 +2,14 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
-//include("../controller/controllerIdDropdowns.php");
+
 $bitacle = unserialize($_SESSION['bitacle']);
-//$ciudad = $bitacle->getCiudades();
-//$pais = $bitacle->getPaises();
+
 $poi = $bitacle->getPois();
 
 $id_com = $_POST["data"];
 
-//$aux = cogerId($pais, $id_com);
+
 
 for ($i = 0; $i < count($bitacle->getPois()); $i++) {
 
@@ -22,12 +21,12 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $precio = $bitacle->getPois()[$i]->getPrecio();
         $horario = $bitacle->getPois()[$i]->getHorario();
 
-        echo $nombre."<br>";
-        echo $foto."<br>";
-        echo $descripcion."<br>";
-        echo $url."<br>";
-        echo $precio."<br>";
-        echo $horario."<br>";
+        echo "Nombre : ".$nombre."<br>";
+        echo "Foto : "."<img src=\"fotoPoi/$foto\"/>"."<br>";
+        echo "Descripción : ".$descripcion."<br>";
+        echo "URL : ".$url."<br>";
+        echo "Precio : ".$precio."<br>";
+        echo "Horario : ".$horario."<br>";
         
 
     }

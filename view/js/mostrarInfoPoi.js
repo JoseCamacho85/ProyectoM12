@@ -11,5 +11,7 @@ function mostrarInfoPoi(id_com)
 
             function tornadaCom(txt) {
                 $("#infoPoi").html(txt);
-               // $("#ciudad").css("display", "block");
+               $("#infoPoi").css({"text-align": "justify","width" : "75%", "margin" : "auto", "padding" : "15px"});
+    
+
             }
