@@ -5,7 +5,7 @@ include ("header.php");
 <div id="mostrarInfo">
     
 </div>
-<input type="button" value="VOLVER" onclick="location.href = 'showUser.php'">
+<input type="button" value="VOLVER" onclick="location.href = 'main.php'">
 
 <?php
 include ("footer.php");
