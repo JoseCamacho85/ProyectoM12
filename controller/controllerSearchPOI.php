@@ -3,7 +3,7 @@
 session_start();
 include("../model/functionAutoLoad.php");
 include("controllerIdDropdowns.php");
-include("validateNullfields.php");
+include("validations/validateNullfields.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 

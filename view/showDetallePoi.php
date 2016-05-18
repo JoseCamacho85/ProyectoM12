@@ -13,9 +13,7 @@ $foto = "kylo.jpg";
 $idPOI = $_REQUEST["id"];
 ?>
 
-
 <div>
-
     <div>
         <span>Nombre: </span>
         <span><?php echo $nombre ?></span>
