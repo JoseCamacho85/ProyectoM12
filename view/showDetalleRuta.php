@@ -3,9 +3,11 @@ include ("header.php");
 include("../controller/controllerVerDetalleRuta.php");
 include ("mostrarArrayRutaPoi.php");
 
+
 $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
 
 ?>
+<script type="text/javascript"><?php include ("js/mostrarInfoPoi.js"); ?></script>
 <div>
     <div>
         <span>Nombre: </span>
@@ -17,11 +19,12 @@ $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
         <span><?php echo $descripcion ?></span>
     </div>
 
-    <select id="selectPois" name="selectPois" class="form-control">
-    	  
+    <select id="selectPois" name="selectPois" onchange="mostrarInfoPoi(this.value)" class="form-control">	  
    	<?php makeDropdownlistArray($arrayRutaPoi); ?>
-    	
     </select>
+
+    <div id = "infoPoi">	
+    </div>	
 
 </div>
 <?php
