@@ -2,7 +2,7 @@
 include ("header.php");
 include '../controller/controllerVerDetalleUsuario.php';
 ?>
-<h3>DATOS PERSONALES</h3>
+<h2>DATOS PERSONALES</h2>
 <form method="post" action="../controller/controllerModificarDatosUsuario.php"> <!-- HAY QUE CREAR EL CONTROLLER -->
     <img src="<?php $foto ?>" />
     <p>Username: <input type="text" value="<?php echo $username ?>" /></p>
