@@ -138,8 +138,8 @@ class Bitacle {
         $this->paises = $paises;
     }
 
-    public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional) {
-        $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional);
+    public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional) {
+        $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
         $id = $user->persist();
         $user->setId($id);
         array_push($this->users, $user);
@@ -247,7 +247,7 @@ class Bitacle {
             array_push($this->rutas, $arrayRutas[$i]);
         }
     }
-    
+
     public function populateDiarios() {
         $bitacleDB = new BitacleDB();
         $arrayDiarios = $bitacleDB->fetchDiario();
@@ -275,7 +275,7 @@ class Bitacle {
         }
         return $detall;
     }
-    
+
     public function VerDetallesUsuario($idUsuario) {
 
         for ($i = 0; $i < count($this->getUsers()); $i++) {
@@ -306,9 +306,15 @@ class Bitacle {
         $bitacleDB = new BitacleDB();
         $arrayRutasPoi = $bitacleDB->DropdownPoisRuta($idRuta);
         //for ($i = 0; $i < count($arrayRutas); $i++) {
-          //  array_push($this->rutas, $arrayRutas[$i]);
+        //  array_push($this->rutas, $arrayRutas[$i]);
         //}
         return $arrayRutasPoi;
+    }
+
+    public function VerDiarioPoi($idDiario) {
+        $bitacleDB = new BitacleDB();
+        $arrayDiariosPoi = $bitacleDB->DropdownPoisDiario($idDiario);
+        return $arrayDiariosPoi;
     }
 
 }

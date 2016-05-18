@@ -238,7 +238,7 @@ class BitacleDB {
             $administrador = $row['esAdministrador'];
             $registrado = $row['esUsuarioRegistrado'];
             $professional = $row['esUsuarioProfesional'];
-            $usuario = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion,$administrador,$registrado,$professional);
+            $usuario = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
             array_push($usuarios, $usuario);
         }
 
@@ -299,7 +299,7 @@ class BitacleDB {
         return $pois;
     }
 
- function DropdownPoisRuta($idRuta) {
+    function DropdownPoisRuta($idRuta) {
 
         $arrayRutaPoi = array();
 
@@ -317,6 +317,22 @@ class BitacleDB {
         return $arrayRutaPoi;
     }
 
+    function DropdownPoisDiario($idDiario) {
 
+        $arrayDiarioPoi = array();
+
+        $con = new DB();
+        $sql = $con->prepare("SELECT * FROM diariopoi WHERE id_diario = " . $idDiario);
+        $result = $con->executeQuery($sql);
+
+        foreach ($result as $row) {
+            $id_diario = $row['id_diario'];
+            $id_poi = $row['id_poi'];
+            $diarioPoi = new RutaPOI($id_diario, $id_poi);
+            array_push($arrayDiarioPoi, $diarioPoi);
+        }
+
+        return $arrayDiarioPoi;
+    }
 
 }
