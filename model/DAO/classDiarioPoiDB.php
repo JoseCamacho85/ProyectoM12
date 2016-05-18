@@ -14,7 +14,7 @@
 class DiarioPoiDB {
 
     public function insertDiarioPoi($idPOI, $idDiario) {
-        $diarioPOI = new RutaPOI($idPOI, $idDiario);
+        $diarioPOI = new DiarioPOI($idPOI, $idDiario);
 
         $con = new DB();
         $nonquery = $con->prepare("INSERT INTO diariopoi (id_diario,id_poi) VALUES (:id_diario,:id_poi)");

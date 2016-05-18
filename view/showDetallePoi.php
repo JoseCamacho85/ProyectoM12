@@ -9,7 +9,7 @@ $user = unserialize($_SESSION['user']);
 $usuarios = $bitacle->getUsers();
 $id_usuario = cogerIdUsuario($usuarios, $user);
 
-$foto = "kylo.jpg";
+
 $idPOI = $_REQUEST["id"];
 ?>
 
@@ -20,7 +20,7 @@ $idPOI = $_REQUEST["id"];
     </div>
 
     <div>
-        <span>Foto: </span>
+        <span></span>
         <span><img src="fotoPoi/<?php echo $foto ?>"/></span>
     </div>
 
@@ -72,15 +72,25 @@ $idPOI = $_REQUEST["id"];
         <span></span>
     </div>
     <form method="post" action="../controller/controllerAddRutaPOI.php">
-        <input type="text" name="idPoi" value='<?php echo $idPOI; ?>'/>
-        <select name="idRuta">
-            <?php makeDropdownlistRuta(); ?>
-        </select>
-        <input type="submit" value="Enviar">
-        
+    <input type="hidden" name="idPoi" value='<?php echo $idPOI; ?>'/>
+    <select name="idRuta">
+        <?php makeDropdownlistRuta(); ?>
+    </select>
+    <button id="addRuta">Añadir Punto de interes a ruta</button>
+    <!--input type="submit" value="Enviar"-->
+
+    </form>
+    <form method="post" action="../controller/controllerAddDiaryPOI.php">
+    <input type="hidden" name="idPoi" value='<?php echo $idPOI; ?>'/>
+    <select name="idDiario">
+        <?php makeDropdownlistDiarios(); ?>
+    </select>
+    <button id="addDiario">Añadir Punto de interes a ruta</button>
+    <!--input type="submit" value="Enviar"-->
+
     </form>
 </div>
-<!--<script>
+<script>
     $(document).ready(function () {
         $("#addRuta").click(function () {
             alert($("#idPoi").val());
@@ -94,14 +104,36 @@ $idPOI = $_REQUEST["id"];
 
                 },
                 success: function (data) {
-                   
+
                     //$("body").html(data);
 
                 }
             });
         });
     });
-</script>-->
+</script>
+<script>
+    $(document).ready(function () {
+        $("#addDiario").click(function () {
+            alert($("#idPoi").val());
+            alert($("#idDiario").val());
+            $.ajax({
+                type: "POST",
+                url: "../controller/controllerAddDiaryPOI.php",
+                data: {
+                    "idPOI": $("#idPoi").val(),
+                    "idRuta": $("#idRuta").val()
+
+                },
+                success: function (data) {
+
+                    //$("body").html(data);
+
+                }
+            });
+        });
+    });
+</script>
 <?php
 include ("footer.php");
 ?>

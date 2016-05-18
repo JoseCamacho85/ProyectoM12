@@ -57,5 +57,14 @@ function makeDropdownlistRuta() {
     }
 }
 
+function makeDropdownlistDiarios() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+
+    for ($i = 0; $i < count($bitacle->getDiarios()); $i++) {
+        $nombre = $bitacle->getDiarios()[$i]->getNombre();
+        $id = $bitacle->getDiarios()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
+    }
+}
 
 ?>
