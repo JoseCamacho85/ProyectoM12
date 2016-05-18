@@ -91,48 +91,7 @@ $idPOI = $_REQUEST["id"];
     </form>
 </div>
 <script>
-    $(document).ready(function () {
-        $("#addRuta").click(function () {
-            alert($("#idPoi").val());
-            alert($("#idRuta").val());
-            $.ajax({
-                type: "POST",
-                url: "../controller/controllerAddRutaPOI.php",
-                data: {
-                    "idPOI": $("#idPoi").val(),
-                    "idRuta": $("#idRuta").val()
-
-                },
-                success: function (data) {
-
-                    //$("body").html(data);
-
-                }
-            });
-        });
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        $("#addDiario").click(function () {
-            alert($("#idPoi").val());
-            alert($("#idDiario").val());
-            $.ajax({
-                type: "POST",
-                url: "../controller/controllerAddDiaryPOI.php",
-                data: {
-                    "idPOI": $("#idPoi").val(),
-                    "idRuta": $("#idRuta").val()
-
-                },
-                success: function (data) {
-
-                    //$("body").html(data);
-
-                }
-            });
-        });
-    });
+<?php include("js/relacionesAjax.js");?>
 </script>
 <?php
 include ("footer.php");

@@ -41,12 +41,6 @@ include ("../controller/checkSession.php");
                         <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
-                    <!--ul class="nav navbar-nav navbar-right">
-                        <li><a>Usuario: <input type="text" name="user" class="userInput" required></a></li>
-                        <li><a>Password: <input type="password" name="pass" class="userInput" required></a></li>
-                        <li><a href="../controller/controllerUser.php" id="ok"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                        <li><a href="register.php" id="ok"><span class="glyphicon glyphicon-log-in"></span> Signin</a></li>
-                    </ul-->
                     <?php
                     if (!isset($_SESSION['bitacle'])) {
 
@@ -59,11 +53,8 @@ include ("../controller/checkSession.php");
 
                     if (!isset($_SESSION['user'])) {
                         $user = "";
-                        include("modules/login.html");
-                        //$bitacle = new Bitacle("bitacle");
-                        //$_SESSION['bitacle'] = serialize($bitacle);
+                        include("modules/login.php");
                     } else {
-                        //$bitacle = unserialize($_SESSION['bitacle']);
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");
                     }
