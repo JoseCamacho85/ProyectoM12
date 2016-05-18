@@ -12,13 +12,12 @@ function addDiarioPoi() {
             url: "../controller/controllerAddDiaryPOI.php",
             data: {
                 "idPOI": $("#idPoi").val(),
-                "idRuta": $("#idRuta").val()
+                "idDiario": $("#idDiario").val()
 
             },
             success: function (data) {
-
+                //alert(data);
                 //$("body").html(data);
-
             }
         });
     });

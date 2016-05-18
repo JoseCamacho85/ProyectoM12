@@ -7,12 +7,12 @@ include("../model/DAO/classRutaPOIDB.php");
 $bitacle = unserialize($_SESSION['bitacle']);
 //$user = unserialize($_SESSION['user']);
 
-$idPOI = $_POST["idPoi"];
+$idPOI = $_POST["idPOI"];
 $idDiario = $_POST["idDiario"];
 $diarioPOIObj = new DiarioPoiDB();
 
 try {
-    $diarioPOIObj->insertDiarioPoi($idDiario, $idDiario);
+    $diarioPOIObj->insertDiarioPoi($idPOI, $idDiario);
     echo "POI insertado";
     header("location:../view/showPOI.php");
 } catch (Exception $e) {

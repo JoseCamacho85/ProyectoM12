@@ -9,28 +9,26 @@ function validarPOI() {
 
     $("#formPOI").validate({
         rules: {
-//            nombrePoi: {required: true, minlength: 2, maxlength: 20},
-//            fotoPoi: {minlength: 2},
-//            descripcionPoi: {minlength: 5, maxlength: 100},
-//            urlPoi: {minlength: 8, maxlength: 50},
-//            precioPoi: {required: false},
-//            horarioPoi: {required: false, minlength: 2},
+            nombrePoi: {required: true, minlength: 2, maxlength: 50},
+            descripcionPoi: {minlength: 5, maxlength: 400},
+            urlPoi: {url:true},
+            precioPoi: {minlength: 5, maxlength: 200},
+            horarioPoi: {minlength: 5, maxlength: 200}
 //            tipoPoi: {required: false, minlength: 2},
 //            transportePoi: {required: false, minlength: 2},
 //            entornoPoi: {required: false, minlength: 2},
 //            paisPoi: {required: false, minlength: 2}
         },
         messages: {
-//            nombrePoi: "Debe introducir su nombre.",
-//            fotoPoi: "Debe introducir su foto.",
-//            descripcionPoi: "Debe introducir una descripcion.",
-//            urlPoi: "Debe introducir una url.",
-//            precioPoi: "Debe introducir sun precio.",
-//            horarioPoi: "Debe introducir un horario.",
+            nombrePoi: "Debe introducir un nombre entre 2 y 20 caracteres.",
+            descripcionPoi: "Debe introducir una descripcion entre 5 y 400 caracteres.",
+            urlPoi: "Debe introducir una url valida(http://www.example.com/).",
+            precioPoi: "Debe introducir una descripcion o precio de 5 a 200 caracteres.",
+            horarioPoi: "Debe introducir una descripcion u horario de 5 a 200 caracteres."
 //            tipoPoi: "Debe seleccionar un tipo de POI.",
 //            transportePoi: "Debe seleccionar un transporte de POI.",
 //            entornoPoi: "Debe seleccionar un entorno de POI.",
-//            paisPoi: "Debe seleccionar un tipo pais POI.",
+//            paisPoi: "Debe seleccionar un tipo pais POI."
         },
         submitHandler: function (form) {
             

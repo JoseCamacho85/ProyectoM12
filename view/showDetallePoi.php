@@ -81,8 +81,8 @@ $idPOI = $_REQUEST["id"];
 
     </form>
     <form method="post" action="../controller/controllerAddDiaryPOI.php">
-    <input type="hidden" name="idPoi" value='<?php echo $idPOI; ?>'/>
-    <select name="idDiario">
+    <input type="hidden" id="idPoi" name="idPoi" value='<?php echo $idPOI; ?>'/>
+    <select id="idDiario" id="idDiario" name="idDiario">
         <?php makeDropdownlistDiarios(); ?>
     </select>
     <button id="addDiario">Añadir Punto de interes a ruta</button>

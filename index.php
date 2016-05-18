@@ -21,5 +21,5 @@ if (isset($_SESSION['bitacle'])) {
     // if session exist, we unserializate it.
     $bitacle = unserialize($_SESSION['bitacle']);
 }
-header("Location:view/addPoi.php");
+header("Location:view/mainUser.php");
 ?>
