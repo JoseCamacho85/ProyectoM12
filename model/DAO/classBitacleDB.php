@@ -245,6 +245,29 @@ class BitacleDB {
         return $usuarios;
     }
 
+    function fetchHistorial() {
+
+        $historiales = array();
+
+        $con = new DB();
+        $sql = $con->prepare("SELECT * FROM historial");
+        $result = $con->executeQuery($sql);
+
+        foreach ($result as $row) {
+            $id_diario = $row['id_diario'];
+            $id_poi = $row['id_poi'];
+            $fechaVisitaPoi = $row['fechaVisitaPoi'];
+            $estaEnPoi = $row['estaEnPoi'];
+            $texto = $row['texto'];
+            $foto = $row['foto'];
+            $video = $row['video'];
+            $historial = new Historial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
+            array_push($historiales, $historial);
+        }
+
+        return $historiales;
+    }
+
     function crearQueryDB($fields, $fieldNames) {
 
         $query = "SELECT * FROM POI WHERE ";
@@ -322,13 +345,18 @@ class BitacleDB {
         $arrayDiarioPoi = array();
 
         $con = new DB();
-        $sql = $con->prepare("SELECT * FROM diariopoi WHERE id_diario = " . $idDiario);
+        $sql = $con->prepare("SELECT * FROM historial WHERE id_diario = " . $idDiario);
         $result = $con->executeQuery($sql);
 
         foreach ($result as $row) {
             $id_diario = $row['id_diario'];
             $id_poi = $row['id_poi'];
-            $diarioPoi = new RutaPOI($id_diario, $id_poi);
+            $fechaVisitaPoi = $row['fechaVisitaPoi'];
+            $estaEnPoi = $row['estaEnPoi'];
+            $texto = $row['texto'];
+            $foto = $row['foto'];
+            $video = $row['video'];
+            $diarioPoi = new Historial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
             array_push($arrayDiarioPoi, $diarioPoi);
         }
 

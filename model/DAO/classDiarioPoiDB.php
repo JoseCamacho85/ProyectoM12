@@ -13,18 +13,24 @@
  */
 class DiarioPoiDB {
 
-    public function insertDiarioPoi($idDiario, $idPOI) {
-        $diarioPOI = new DiarioPOI($idDiario, $idPOI);
+    public function insertDiarioPoi($id_diario, $id_poi) {
+        $fechaVisitaPoi = null;
+        $estaEnPoi = null;
+        $texto = null;
+        $foto = null;
+        $video = null;
+        $diarioPOI = new Historial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
 
         $con = new DB();
-        $nonquery = $con->prepare("INSERT INTO diariopoi (id_diario,id_poi) VALUES (:id_diario,:id_poi)");
-        $idDiario = $diarioPOI->getIdDiario();
-        $idPOI = $diarioPOI->getIdPOI();
+        $nonquery = $con->prepare("INSERT INTO historial (id_diario,id_poi) VALUES (:id_diario,:id_poi)");
+        $id_diario = $diarioPOI->getId_diario();
+        $id_poi = $diarioPOI->getId_poi();
 
-        $nonquery->bindParam(":id_diario", $idDiario);
-        $nonquery->bindParam(":id_poi", $idPOI);
+        $nonquery->bindParam(":id_diario", $id_diario);
+        $nonquery->bindParam(":id_poi", $id_poi);
 
         $con->executeNonQuery($nonquery);
+        return $diarioPOI;
     }
 
 }

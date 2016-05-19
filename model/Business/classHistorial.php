@@ -86,5 +86,11 @@ class Historial {
     function setVideo($video) {
         $this->video = $video;
     }
-
+    public function persist() {
+        $historialDAO = new DiarioPoiDB();
+        $id = $historialDAO->insertDiarioPoi($this->id_diario,$this->id_poi);
+        return $id;
+    }
+    
+    
 }

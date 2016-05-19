@@ -26,6 +26,7 @@ class Bitacle {
     private $transportes = null;
     private $entornos = null;
     private $paises = null;
+    private $historial = null;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -40,6 +41,7 @@ class Bitacle {
         $this->transportes = array();
         $this->entornos = array();
         $this->paises = array();
+        $this->historial = array();
     }
 
     function getId() {
@@ -136,6 +138,14 @@ class Bitacle {
 
     function setPaises($paises) {
         $this->paises = $paises;
+    }
+
+    function getHistorial() {
+        return $this->historial;
+    }
+
+    function setHistorial($historial) {
+        $this->historial = $historial;
     }
 
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional) {
@@ -256,6 +266,14 @@ class Bitacle {
         }
     }
 
+    public function populateHistorial() {
+        $bitacleDB = new BitacleDB();
+        $arrayHistoriales = $bitacleDB->fetchHistorial();
+        for ($i = 0; $i < count($arrayHistoriales); $i++) {
+            array_push($this->historial, $arrayHistoriales[$i]);
+        }
+    }
+
     public function VerDetallesPOI($idPOI) {
 
         for ($i = 0; $i < count($this->getPois()); $i++) {
@@ -315,6 +333,11 @@ class Bitacle {
         $bitacleDB = new BitacleDB();
         $arrayDiariosPoi = $bitacleDB->DropdownPoisDiario($idDiario);
         return $arrayDiariosPoi;
+    }
+    public function insertDiarioPoi($idDiario, $idPOI){
+        $bitacleDB = new DiarioPoiDB();
+        $objecteHistorial = $bitacleDB->insertDiarioPoi($idDiario, $idPOI);
+        //array_push($this->historial, $objecteHistorial);
     }
 
 }
