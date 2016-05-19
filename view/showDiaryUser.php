@@ -36,7 +36,7 @@ function Imprimir($params) {
 function Llistar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 
 //final de la funcio Editar 
@@ -50,7 +50,7 @@ function Borrar($params) {
 function VerDetalles($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"showDetalleDiario.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"showDetalleDiario.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\"  src=\"images/boton-detalles.png\"/></a>";
 }
 ?>
 
@@ -193,6 +193,7 @@ if (isset($_SESSION['user'])) {
         </td>
     </tr>
 </table>
+<a href="addDiario.php" id="volver"><button class="btn btn-info">Añadir Diario</button></a>    
 <a href="mainUser.php"><button class="btn btn-info">Datos personales</button></a>
 <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
 <?php
