@@ -195,7 +195,7 @@ function VerDetalles($params) {
         </td>
     </tr>
     <tr>
-        <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="showMenu.php">Volver al Menu</a></font></td>
+        <td> <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a></td>
         <td align="right">&nbsp;
 
         </td>

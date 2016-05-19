@@ -25,7 +25,7 @@ $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
 
     <div id = "infoPoi">	
     </div>	
-
+    <a href="showRutas.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 </div>
 <?php
 include ("footer.php");

@@ -85,6 +85,7 @@ $idPOI = $_REQUEST["id"];
         //$_SESSION['bitacle'] = serialize($bitacle);
     }
     ?>
+    <a href="showPOI.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 </div>
 <script>
 <?php include("js/relacionesAjax.js"); ?>
