@@ -17,7 +17,7 @@ include ("../controller/checkSession.php");
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/animationDropdown.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/agency.css">
+        <link rel="stylesheet" type="text/css" href="css/estilosbitacle.css">
         <script type="text/javascript" src="js/animation.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
