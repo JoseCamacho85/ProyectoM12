@@ -18,11 +18,14 @@ $arrayDiarioPoi = $bitacle->VerDiarioPoi($_REQUEST['id']);
     </div>
     <h4>POIs</h4>
     <select id="selectPois" name="selectPois" onchange="mostrarInfoPoi(this.value)">
+        <option selected>Seleccione un POI</option>
         <?php makeDropdownlistArray($arrayDiarioPoi); ?>
     </select>
-    <div id="infoPoi">	
+    <div id="infoPoi">
     </div>
 </div>
+<br />
+<a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
 <?php
 include ("footer.php");
 ?>
