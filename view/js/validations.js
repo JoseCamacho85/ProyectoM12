@@ -22,7 +22,7 @@ function validarPOI() {
 //            paisPoi: {required: false, minlength: 2}
         },
         messages: {
-            nombrePoi: "Debe introducir un nombre entre 2 y 20 caracteres.",
+            nombrePoi: "Debe introducir un nombre entre 2 y 50 caracteres.",
             descripcionPoi: "Debe introducir una descripcion entre 5 y 400 caracteres.",
             urlPoi: "Debe introducir una url valida(http://www.example.com/).",
             precioPoi: "Debe introducir una descripcion o precio de 5 a 200 caracteres.",
@@ -78,7 +78,7 @@ function validarUser() {
             textoPresentacion: {required:false, minlength: 10, maxlength: 400}
         },
         messages: {
-            username: "Debe introducir un nombre entre 5 y 15 caracteres.",
+            username: "Debe introducir un nombre entre 3 y 15 caracteres.",
             password: "Debe introducir un password entre 6 y 10 caracteres.",
             email: "Debe introducir una dirección de mail válida (example@bitacle.com).",
             idioma: "Debe introducir una descripcion o precio de 5 a 200 caracteres.",
