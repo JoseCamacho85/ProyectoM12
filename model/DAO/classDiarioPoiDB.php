@@ -13,19 +13,18 @@
  */
 class DiarioPoiDB {
 
-    public function insertDiarioPoi($idPOI, $idDiario) {
-        $diarioPOI = new DiarioPOI($idPOI, $idDiario);
+    public function insertDiarioPoi($idDiario, $idPOI) {
+        $diarioPOI = new DiarioPOI($idDiario, $idPOI);
 
         $con = new DB();
         $nonquery = $con->prepare("INSERT INTO diariopoi (id_diario,id_poi) VALUES (:id_diario,:id_poi)");
-        $idPOI = $diarioPOI->getIdPOI();
         $idDiario = $diarioPOI->getIdDiario();
+        $idPOI = $diarioPOI->getIdPOI();
 
         $nonquery->bindParam(":id_diario", $idDiario);
         $nonquery->bindParam(":id_poi", $idPOI);
 
         $con->executeNonQuery($nonquery);
-
     }
 
 }

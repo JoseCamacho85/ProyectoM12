@@ -12,7 +12,7 @@ $idDiario = $_POST["idDiario"];
 $diarioPOIObj = new DiarioPoiDB();
 
 try {
-    $diarioPOIObj->insertDiarioPoi($idPOI, $idDiario);
+    $diarioPOIObj->insertDiarioPoi($idDiario, $idPOI);
     echo "POI insertado";
     header("location:../view/showPOI.php");
 } catch (Exception $e) {

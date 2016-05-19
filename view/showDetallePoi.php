@@ -76,7 +76,7 @@ $idPOI = $_REQUEST["id"];
     <select name="idRuta">
         <?php makeDropdownlistRuta(); ?>
     </select>
-    <button id="addRuta">Añadir Punto de interes a ruta</button>
+    <button id="addRuta">Añadir Punto de interés a ruta</button>
     <!--input type="submit" value="Enviar"-->
 
     </form>
@@ -85,7 +85,7 @@ $idPOI = $_REQUEST["id"];
     <select id="idDiario" id="idDiario" name="idDiario">
         <?php makeDropdownlistDiarios(); ?>
     </select>
-    <button id="addDiario">Añadir Punto de interes a ruta</button>
+    <button id="addDiario">Añadir Punto de interés a diario</button>
     <!--input type="submit" value="Enviar"-->
 
     </form>
