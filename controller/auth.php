@@ -35,11 +35,13 @@ if ($bitacle->validateUser($_POST['username'], $_POST['password'])) {
     echo $user . " ingresó correctamente";
     $_SESSION['user'] = serialize($user);
     //$_SESSION['user'] = serialize($bitacle);
-    header("Location: ../index.php");
+    header("Location: ../view/mainUser.php");
 } else {
     //$_SESSION["user"] = "";
     echo "INVALIDO";
-    session_destroy();
+    //session_destroy();
+    
+    echo "<br><a href='../view/main.php'>volver</a>";
     //Print de missatges [View]
     //printInvalidMessage();
 }
