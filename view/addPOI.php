@@ -11,7 +11,7 @@ include 'makeDropdownLists.php';
     <div class="row content">
         <div class="col-sm-12 text-center"> 
             <div>
-                  <?php
+                <?php
                 include ("./modules/addFotoPoi.php");
                 ?>
                 <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
@@ -19,13 +19,16 @@ include 'makeDropdownLists.php';
                     <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                     <input type="submit" value="Subir imagen"  class="trig">
                 </form>
-                <form method="POST" id="formPOI">
+                <form method="POST" id="formPOI" >
                     <hr>
                     <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
                     <p><span>Descripción: </span><input type="text" name="descripcionPoi" id="descripcionPoi" ></p>
                     <p><span>URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
                     <p><span>Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
                     <p><span>Horario: </span><input type="text" name="horarioPoi" id="horarioPoi"></p>
+                    <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
+
+
                     <p>
                         <span>Tipo: </span>
                         <select name="tipoPoi" id="tipoPoi">
