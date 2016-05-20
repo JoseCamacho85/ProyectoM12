@@ -14,7 +14,7 @@ include ("header.php");
                     <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                     <input type="submit" value="Subir imagen"  class="trig">
                 </form>
-                <form method="post" enctype="multipart/form-data" name="inscripcion" id="formUser" action="../controller/controllerAddUser.php">
+                <form method="post" enctype="multipart/form-data" name="inscripcion" id="formUser">
 
                     <p>Nombre de usuario: <input id="nombreUser" type="text" name="username"  /></p>
                     <p>Contraseña: <input id="passUser" type="password" name="password"  /></p>

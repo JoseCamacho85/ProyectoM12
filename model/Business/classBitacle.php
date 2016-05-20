@@ -341,10 +341,15 @@ class Bitacle {
         $arrayDiariosPoi = $bitacleDB->DropdownPoisDiario($idDiario);
         return $arrayDiariosPoi;
     }
-    public function insertDiarioPoi($idDiario, $idPOI){
+
+    public function insertDiarioPoi($idDiario, $idPOI) {
         $bitacleDB = new DiarioPoiDB();
         $objecteHistorial = $bitacleDB->insertDiarioPoi($idDiario, $idPOI);
         //array_push($this->historial, $objecteHistorial);
     }
 
+    public function modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+    }
 }

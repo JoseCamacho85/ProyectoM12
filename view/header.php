@@ -32,12 +32,12 @@ include ("../controller/checkSession.php");
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                    <a class="navbar-brand" href="main.php">Bitacle</a>
+                    <a class="navbar-brand" href="main.php"></a>
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                        <li><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
+                        <li ><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li ><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
                         <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>

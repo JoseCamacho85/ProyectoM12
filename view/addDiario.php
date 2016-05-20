@@ -1,5 +1,6 @@
 <?php
 include ("header.php");
+if (checkSession()) {
 ?>
 <div class="container-fluid text-center">    
     <h2>Introducir Diario</h2>
@@ -19,5 +20,8 @@ include ("header.php");
     </div> 
 </div>
 <?php
+} else {
+    header("Location: formErrorSession.php");
+}
 include ("footer.php");
 ?>
