@@ -1,6 +1,7 @@
 <?php
 
 require_once '../model/functionAutoload.php';
+//include("../controller/controllerIdDropdowns.php");
 //include "../controller/controllerNombreDropdowns.php";
 
 function makeDropdownlistTipos() {
@@ -68,6 +69,24 @@ function makeDropdownlistDiarios() {
         echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
+function makeDropdownlistPoisAnuncio() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+    $user = unserialize($_SESSION['user']);
+    $usuarios = $bitacle->getUsers();
+    $id_usuario = cogerIdUsuario($usuarios, $user);
+
+ echo "<OPTION selected='selected'>Selecciona un POI</OPTION>";
+    for ($i = 0; $i < count($bitacle->getPois()); $i++) {
+        if ($bitacle->getPois()[$i]->getId_usuario() == $id_usuario){
+        $nombre = $bitacle->getPois()[$i]->getNombre();
+        $id = $bitacle->getPois()[$i]->getId();
+
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
+    }
+    }
+}
+
+
 
 
 ?>

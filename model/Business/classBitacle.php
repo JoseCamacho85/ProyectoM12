@@ -273,6 +273,13 @@ class Bitacle {
             array_push($this->historial, $arrayHistoriales[$i]);
         }
     }
+    public function populateAnuncios() {
+        $bitacleDB = new BitacleDB();
+        $arrayAnuncios = $bitacleDB->fetchAnuncio();
+        for ($i = 0; $i < count($arrayAnuncios); $i++) {
+            array_push($this->anuncios, $arrayAnuncios[$i]);
+        }
+    }
 
     public function VerDetallesPOI($idPOI) {
 
