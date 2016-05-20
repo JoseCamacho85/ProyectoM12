@@ -36,11 +36,12 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
         $foto = $bitacle->getHistorial()[$i]->getFoto();
         $video = $bitacle->getHistorial()[$i]->getVideo();
 
-        echo "Fecha visita: <input type=\"text\" value=" . $fechaVisitaPoi . ">";
-        echo "<p>¿Está?: <input type=\"checkbox\" value=" . $estaEnPoi . ">";
-        echo "<p>Texto: <input type=\"text\" value=" . $texto . ">";
-        echo "<p>Foto: " . "<img src=\"fotoPoi/$foto\"/>" . "</p>";
+        echo "Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . ">";
+        echo "<p>¿Está?: <input name=\"estaEnPoi\" type=\"checkbox\" value=" . $estaEnPoi . ">";
+        echo "<p>Texto: <input name=\"texto\" type=\"text\" value=" . $texto . ">";
+        echo "<p>Foto: <img src=\"fotoPoi/$foto\"/></p>";
         echo "<p>Vídeo: <video> <source src=" . $video . "></video>";
+        echo "<p><input type=\"submit\" value=\"Modificar datos\" /></p>";
     }
 }
 ?>
