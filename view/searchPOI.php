@@ -61,19 +61,17 @@ include 'makeDropdownLists.php';
     var pais = null;
     var ciudad = null;
     var data = null;
-    
-    
-    
-    $("#selectTipoPOI").on("change", function () {
+
+    $("#selectTipoPOI").on("click", function () {
         tipo = {
             checkTipoPOI: $("#checkTipoPOI").val(),
-            selectTipoPOI: $("#selectTipoPOI").val(),
+            selectTipoPOI: $("#selectTipoPOI").val()
         };
-        $('#checkTipoPOI').change(function () {
+        $('#checkTipoPOI').click(function () {
             if ($('#checkTipoPOI').prop('checked')) {
                 tipo = {
                     checkTipoPOI: $("#checkTipoPOI").val(),
-                    selectTipoPOI: $("#selectTipoPOI").val(),
+                    selectTipoPOI: $("#selectTipoPOI").val()
                 }
             } else {
                 tipo = {
@@ -85,16 +83,16 @@ include 'makeDropdownLists.php';
         });
     });
 
-    $("#selectTransportePOI").on("change", function () {
+    $("#selectTransportePOI").on("click", function () {
         transporte = {
             "checkTransportePOI": $("#checkTransportePOI").val(),
-            "selectTransportePOI": $("#selectTransportePOI").val(),
+            "selectTransportePOI": $("#selectTransportePOI").val()
         };
-        $('#checkTransportePOI').change(function () {
+        $('#checkTransportePOI').click(function () {
             if ($('#checkTransportePOI').prop('checked')) {
                 transporte = {
                     checkTransportePOI: $("#checkTransportePOI").val(),
-                    selectTransportePOI: $("#selectTransportePOI").val(),
+                    selectTransportePOI: $("#selectTransportePOI").val()
                 }
             } else {
                 transporte = {
@@ -105,16 +103,16 @@ include 'makeDropdownLists.php';
         });
     });
 
-    $("#selectEntornoPOI").on("change", function () {
+    $("#selectEntornoPOI").on("click", function () {
         entorno = {
             "checkEntornoPOI": $("#checkEntornoPOI").val(),
-            "selectEntornoPOI": $("#selectEntornoPOI").val(),
+            "selectEntornoPOI": $("#selectEntornoPOI").val()
         };
-        $('#checkEntornoPOI').change(function () {
+        $('#checkEntornoPOI').click(function () {
             if ($('#checkEntornoPOI').prop('checked')) {
                 entorno = {
                     checkEntornoPOI: $("#checkEntornoPOI").val(),
-                    selectEntornoPOI: $("#selectEntornoPOI").val(),
+                    selectEntornoPOI: $("#selectEntornoPOI").val()
                 }
             } else {
                 entorno = {
@@ -124,13 +122,13 @@ include 'makeDropdownLists.php';
             }
         });
     });
-    /*
-    $("#selectPaisPOI").on("change", function () {
+
+    $("#selectPaisPOI").on("click", function () {
         pais = {
             "checkPaisPOI": $("#checkPaisPOI").val(),
             "selectPaisPOI": $("#selectPaisPOI").val()
         };
-        $('#checkPaisPOI').change(function () {
+        $('#checkPaisPOI').click(function () {
             if ($('#checkPaisPOI').prop('checked')) {
                 pais = {
                     checkPaisPOI: $("#checkPaisPOI").val(),
@@ -145,12 +143,12 @@ include 'makeDropdownLists.php';
         });
     });
 
-    $("#selectCiudadPOI").on("change", function () {
+    $("#selectCiudadPOI").on("click", function () {
         ciudad = {
             "checkCiudadPOI": $("#checkCiudadPOI").val(),
             "selectCiudadPOI": $("#selectCiudadPOI").val()
         };
-        $('#checkCiudadPOI').change(function () {
+        $('#checkCiudadPOI').click(function () {
             if ($('#checkCiudadPOI').prop('checked')) {
                 ciudad = {
                     checkCiudadPOI: $("#checkCiudadPOI").val(),
@@ -164,10 +162,14 @@ include 'makeDropdownLists.php';
             }
         });
     });
-*/
+
+
+
 
     $("#searchPOI").click(function () {
+        
         data = $.extend(tipo, transporte, entorno);
+
         $.ajax({
             async: "true",
             type: "POST",
