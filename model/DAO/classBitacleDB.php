@@ -372,4 +372,12 @@ class BitacleDB {
         $con = null;
     }
 
+    function modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video) {
+        $sql = "UPDATE historial SET fechaVisitaPoi='" . $fechaVisitaPoi . "',estaEnPoi='" . $estaEnPoi . "',texto='" . $texto . "',"
+                . "foto='" . $foto . "',video='" . $video . "' WHERE id_diario='" . $id_diario . "' AND id_poi='" . $id_poi . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
+    }
+
 }

@@ -352,4 +352,9 @@ class Bitacle {
         $bitacleDB = new BitacleDB();
         $bitacleDB->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
     }
+    
+    public function modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
+    }
 }

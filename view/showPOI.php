@@ -95,9 +95,9 @@ FK:id_entorno Entorno(id)
 FK:id_ciudad Ciudad(id)
 FK:id_pais Pais(id)
 FK:id_usuario Usuario(id)-->
-
-<table align="center">
-    <tr>
+<div class="col-md-12">
+<table class="table table-hover">
+    <tr class="info">
         <td valign="middle" align="center" colspan="2">
             <form name="formbuscar" action="showPOI.php" method="post">
                 <input name ="buscar" type="text" size="40" value="<?php echo ($_SESSION['buscar']) ?>">
@@ -221,7 +221,7 @@ FK:id_usuario Usuario(id)-->
         </td>
     </tr>
 </table>
-
+</div>
 <?php
 include ("footer.php");
 ?>

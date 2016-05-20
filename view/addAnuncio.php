@@ -4,7 +4,7 @@ include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
 
 //include ("../controller/controllerCamposAnuncio.php");
-var_dump($bitacle->getAnuncios());
+
 ?>
 <script type="text/javascript"><?php include ("js/mostrarInfoAnuncio.js");?></script>
 <div class="container-fluid text-center">    
@@ -14,9 +14,6 @@ var_dump($bitacle->getAnuncios());
             <div>
                 <form action="../controller/controllerAddAnuncio.php" name="formPOI">
                     <hr>
-                    <p>Titulo:<input type="text" id="tituloAnuncio"></p>
-                    <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
-                    <p>Imágen:<input type="text" id="imagenAnuncio"></p>
                     <p>POI:<select id="POIAnuncio" id="poiAnuncio" onchange="mostrarInfoAnuncio(this.value)">
                             <!--<option>
                                 selecciona POI
@@ -25,7 +22,14 @@ var_dump($bitacle->getAnuncios());
                             
                             makeDropdownlistPoisAnuncio();      ?>
                         </select></p>
-                    <input type="submit" id="submit" value="Crear Anuncio">
+                    <p>Titulo:<input type="text" id="tituloAnuncio"></p>
+                    <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
+                    <p>Imágen:<input type="text" id="imagenAnuncio"></p>
+                    
+                    <input type="submit" id="modificarAnuncio" value="Modificar Anuncio" display="none">
+                    <div id="botones">
+                    <input type="submit" id="crearAnuncio" value="Crear Anuncio" display="none">
+                </div>
                 </form>
                 
 
