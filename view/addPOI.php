@@ -2,7 +2,10 @@
 include ("header.php");
 include '../model/DAO/dbConnector.php';
 include 'makeDropdownLists.php';
+
+if (checkSession()){
 ?>
+
 <!-- Script para generarar dropdown ciudades-->
 <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
 
@@ -71,6 +74,9 @@ include 'makeDropdownLists.php';
     <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
 
 </div>
-<?php
+<?php 
+}else{
+    header("Location: formErrorSession.html");
+}
 include ("footer.php");
 ?>

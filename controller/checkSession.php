@@ -1,6 +1,6 @@
 <?php
 function checkSession() {
-    session_start();
+    //session_start();
     if (isset($_SESSION["login"])) {
         $ok = true;
     } else {
