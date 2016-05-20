@@ -5,6 +5,7 @@ session_start();
 include("../model/functionAutoLoad.php");
 include("controllerIdDropdowns.php");
 include("validations/validateNullfields.php");
+include("../view/modules/modalPOI.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 
@@ -70,15 +71,13 @@ $arrayQuery = $bitacle->crearQuery($fields, $fieldNames);
 if ($arrayQuery == null) {
     echo "no hay coincidencias";
 } else {
+    
     //var_dump($arrayQuery);
     //header("Location: ../view/showBuscarAvanzado.php");
     for ($i = 0; $i < count($arrayQuery); $i++) {
-        echo "<div>
-        <div>Nombre: <span>" . $arrayQuery[$i]->getNombre() . "</span></div>
-        <div>Url: <span>" . $arrayQuery[$i]->getUrl() . "</div>
-        <div>Precio: <span>" . $arrayQuery[$i]->getPrecio() . "</div>
-        <div>Horario: <span>" . $arrayQuery[$i]->getHorario() . "</div>
-         </div>";
+        showTablePOI($arrayQuery[$i]->getId(),$arrayQuery[$i]->getFoto(),$arrayQuery[$i]->getNombre(),$arrayQuery[$i]->getUrl(),
+                $arrayQuery[$i]->getPrecio(),$arrayQuery[$i]->getHorario());
+        
     }
 }
 
