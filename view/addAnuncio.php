@@ -14,9 +14,6 @@ var_dump($bitacle->getAnuncios());
             <div>
                 <form action="../controller/controllerAddAnuncio.php" name="formPOI">
                     <hr>
-                    <p>Titulo:<input type="text" id="tituloAnuncio"></p>
-                    <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
-                    <p>Imágen:<input type="text" id="imagenAnuncio"></p>
                     <p>POI:<select id="POIAnuncio" id="poiAnuncio" onchange="mostrarInfoAnuncio(this.value)">
                             <!--<option>
                                 selecciona POI
@@ -25,6 +22,10 @@ var_dump($bitacle->getAnuncios());
                             
                             makeDropdownlistPoisAnuncio();      ?>
                         </select></p>
+                    <p>Titulo:<input type="text" id="tituloAnuncio"></p>
+                    <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
+                    <p>Imágen:<input type="text" id="imagenAnuncio"></p>
+                    
                     <input type="submit" id="submit" value="Crear Anuncio">
                 </form>
                 

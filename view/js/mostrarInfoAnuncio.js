@@ -10,19 +10,21 @@ function mostrarInfoAnuncio(id_com) {
 }
 
 function tornadaCom(text) {
-    //var anuncio = txt;
-    //$("#infoPoi").html(txt);
-    //$("#prueba1").html(txt);
-    //if (anuncio != null){
-        $("#prueba1").val(text);
-        //$("#descripcionAnuncio").val(anuncio[1]);
-        //$("#imagenAnuncio").val(anuncio[2]);
 
-    //}else{
-        /*
+    var anuncio = text;
+
+    var array = anuncio.split(",");
+  
+    if (anuncio != null){
+        $("#tituloAnuncio").val(array[0]);
+        $("#descripcionAnuncio").val(array[1]);
+        $("#imagenAnuncio").val(array[2]);
+
+    }else{
+        
         $("#tituloAnuncio").val("");
         $("#descripcionAnuncio").val("");
         $("#imagenAnuncio").val("");
-    }*/
+    }
     
 }
