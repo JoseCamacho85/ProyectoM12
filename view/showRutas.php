@@ -54,23 +54,23 @@ function VerDetalles($params) {
     return "<a href=\"showDetalleRuta.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 ?>
-   <?php
-                    if (!isset($_SESSION['bitacle'])) {
+<?php
+if (!isset($_SESSION['bitacle'])) {
 
-                        $bitacle = new Bitacle("bitacle");
-                        $_SESSION['bitacle'] = serialize($bitacle);
-                    } else {
-                        // if session exist, we unserializate it.
-                        $bitacle = unserialize($_SESSION['bitacle']);
-                    }
+    $bitacle = new Bitacle("bitacle");
+    $_SESSION['bitacle'] = serialize($bitacle);
+} else {
+    // if session exist, we unserializate it.
+    $bitacle = unserialize($_SESSION['bitacle']);
+}
 
-                    if (isset($_SESSION['user'])) {
-                        $user = "";
-                        include("modules/addRutaBoton.php");
-                        //$bitacle = new Bitacle("bitacle");
-                        //$_SESSION['bitacle'] = serialize($bitacle);
-                    } 
-                    ?>
+if (isset($_SESSION['user'])) {
+    $user = "";
+    include("modules/addRutaBoton.php");
+    //$bitacle = new Bitacle("bitacle");
+    //$_SESSION['bitacle'] = serialize($bitacle);
+}
+?>
 
 <!--Css para gridviews-->
 <style type="text/css">

@@ -1,12 +1,16 @@
 <?php
 include ("header.php");
-?>
-<p>DATOS DE USUARIO</p>
-<div id="mostrarInfo">
-    
-</div>
-<input type="button" value="VOLVER" onclick="location.href = 'main.php'">
+if (checkSession()) {
+    ?>
+    <h2>DATOS DE USUARIO</h2>
+    <div id="mostrarInfo">
 
-<?php
+    </div>
+    <input type="button" value="VOLVER" onclick="location.href = 'main.php'">
+
+    <?php
+} else {
+    header("Location: formErrorSession.php");
+}
 include ("footer.php");
 ?>
