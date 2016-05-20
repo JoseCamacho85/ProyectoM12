@@ -2,7 +2,7 @@
 include ("header.php");
 ?>
 <div class="container-fluid text-center">    
-    <h2>Introducir POI</h2>
+    <h2>Registrar Usuario</h2>
     <div class="row content">
         <div class="col-sm-12 text-center"> 
             <div>
@@ -14,7 +14,7 @@ include ("header.php");
                     <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                     <input type="submit" value="Subir imagen"  class="trig">
                 </form>
-                <form method="post" enctype="multipart/form-data" name="inscripcion" id="formUser">
+                <form method="post" enctype="multipart/form-data" name="inscripcion" id="formUser" action="../controller/controllerAddUser.php">
 
                     <p>Nombre de usuario: <input id="nombreUser" type="text" name="username"  /></p>
                     <p>Contraseña: <input id="passUser" type="password" name="password"  /></p>
@@ -35,7 +35,7 @@ include ("header.php");
                     <input type="submit" value="Registrarse" name="submit"/>
                 </form>
                 <div id="seleccionados">
-                    <div id="ok">ssss</div>
+                    <div id="ok"></div>
                 </div>
             </div>
         </div>

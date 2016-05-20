@@ -8,7 +8,7 @@ include("validations/validateEmptyFieldPoi.php");
 include("validations/validatePrecioPoi.php");
 include("validations/validateHorarioPoi.php");
 include("validations/validateNombrePoi.php");
-include("validations/validateDescripcion.php");
+include("validations/validateDescripcionPoi.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
@@ -48,7 +48,7 @@ $requiredFields = Array($nombre, $descripcion);
       break;
     }
     else if(validateNombrePoi($nombre)==false){
-      header("Location: ../view/errors/errorNombrePoi.html");
+      header("Location: ../view/errors/errorCampoNombrePoi.html");
       break;
     }
     else if(emptyField($descripcion)==false){
@@ -56,7 +56,7 @@ $requiredFields = Array($nombre, $descripcion);
       break;         
     }
     else if(validateDescripcion($descripcion)==false){
-      header("Location: ../view/errors/errorCampoDescripcion.html");
+      header("Location: ../view/errors/errorCampoDescripcionPoi.html");
       break;         
     }
     else if(validateUrls($url)==false){
