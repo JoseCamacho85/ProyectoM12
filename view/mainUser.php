@@ -1,8 +1,9 @@
 <?php
 include ("header.php");
+if (checkSession()) {
 include '../controller/controllerVerDetalleUsuario.php';
 
-if (checkSession()) {
+
     ?>
     <h2>DATOS PERSONALES</h2>
     <form method="post" action="../controller/controllerModificarDatosUsuario.php"> <!-- HAY QUE CREAR EL CONTROLLER -->
