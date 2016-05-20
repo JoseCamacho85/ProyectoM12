@@ -4,7 +4,7 @@ include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
 
 //include ("../controller/controllerCamposAnuncio.php");
-var_dump($bitacle->getAnuncios());
+
 ?>
 <script type="text/javascript"><?php include ("js/mostrarInfoAnuncio.js");?></script>
 <div class="container-fluid text-center">    
@@ -26,7 +26,10 @@ var_dump($bitacle->getAnuncios());
                     <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
                     <p>Imágen:<input type="text" id="imagenAnuncio"></p>
                     
-                    <input type="submit" id="submit" value="Crear Anuncio">
+                    <input type="submit" id="modificarAnuncio" value="Modificar Anuncio" display="none">
+                    <div id="botones">
+                    <input type="submit" id="crearAnuncio" value="Crear Anuncio" display="none">
+                </div>
                 </form>
                 
 

@@ -19,12 +19,18 @@ function tornadaCom(text) {
         $("#tituloAnuncio").val(array[0]);
         $("#descripcionAnuncio").val(array[1]);
         $("#imagenAnuncio").val(array[2]);
+        $("#crearAnuncio").css({"display":"none","margin" : "auto"});
+         $("#modificarAnuncio").css({"display":"block","margin" : "auto"});
 
-    }else{
+    }
+    if(anuncio == ""){
         
         $("#tituloAnuncio").val("");
         $("#descripcionAnuncio").val("");
         $("#imagenAnuncio").val("");
-    }
+        $("#crearAnuncio").css({"display":"block","margin" : "auto"});
+        $("#modificarAnuncio").css({"display":"none","margin" : "auto"});
+
     
+}
 }
