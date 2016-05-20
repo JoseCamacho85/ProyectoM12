@@ -9,6 +9,12 @@ body {
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+#imgLogo{
+    width: 30%;
+    height: 156%;
+    margin: -2%;
+}
+
 
 
 p .errores{
