@@ -363,4 +363,13 @@ class BitacleDB {
         return $arrayDiarioPoi;
     }
 
+    function modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
+        $sql = "UPDATE usuario SET username='" . $username . "',email='" . $email . "',poblacion='" . $poblacion . "',"
+                . "idioma='" . $idioma . "',telefono='" . $telefono . "',url='" . $url . "',foto='" . $foto . "',"
+                . "textoPresentacion='" . $textoPresentacion . "' WHERE id='" . $id . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
+    }
+
 }
