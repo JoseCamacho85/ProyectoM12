@@ -7,7 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #d9edf7;
+    background-image: url("../img/bg.gif");
 }
 
 #imgLogo{
