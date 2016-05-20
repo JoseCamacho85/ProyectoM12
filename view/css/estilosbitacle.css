@@ -9,6 +9,8 @@ body {
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
+
+
 p .errores{
     display: none;
     color: red;
@@ -20,7 +22,9 @@ label{
 }
 
 
-
+.fotoMostrar{
+    width: 350px;
+}
 
 
 h1{

@@ -3,11 +3,13 @@
 session_start();
 include("../model/functionAutoLoad.php");
 include("controllerIdDropdowns.php");
-include("validations/validateNullfields.php");
-include("validations/validateNames.php");
-include("validations/validateDescriptions.php");
-include("validations/validateURLS.php");
-include("validations/validateHour.php");
+include("validations/validateUrlPoi.php");
+include("validations/validateEmptyFieldPoi.php");
+include("validations/validatePrecioPoi.php");
+include("validations/validateHorarioPoi.php");
+include("validations/validateNombrePoi.php");
+include("validations/validateDescripcionPoi.php");
+
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
@@ -41,21 +43,40 @@ $id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
 
-if (validateNullfields($requiredFields)) {
-    echo "requireds ok";
-    if (validateNames($nombre) && validateDescriptions($descripcion) && validateUrls($url) && validateHour($horario)) {
-
-        echo "validations ok";
-    } else {
-        echo "validations error";
+    if(emptyField($nombre)==false){
+      header("Location: ../view/errors/errorCamposVaciosPoi.html");
+      break;
     }
+    else if(validateNombrePoi($nombre)==false){
+      header("Location: ../view/errors/errorCampoNombrePoi.html");
+      break;
+    }
+    else if(emptyField($descripcion)==false){
+      header("Location: ../view/errors/errorCamposVaciosPoi.html");
+      break;         
+    }
+    else if(validateDescripcion($descripcion)==false){
+      header("Location: ../view/errors/errorCampoDescripcionPoi.html");
+      break;         
+    }
+    else if(validateUrls($url)==false){
+      header("Location: ../view/errors/errorCampoUrlPoi.html");
+      break;         
+    }
+    else if(validatePrecio($precio)==false){
+      header("Location: ../view/errors/errorCampoPrecioPoi.html");
+      break;         
+    }
+    else if(validateHorario($horario)==false){
+      header("Location: ../view/errors/errorCampoHorarioPoi.html");
+      break;         
+    }
+
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo1, $id_transporte1, $id_entorno1, $id_ciudad1, $id_pais1, $id_usuario);
         echo $nombre . " INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {
         showMessage($e->getMessage());
     }
-} else {
-    echo "requireds error";
-}
+
 ?>

@@ -37,7 +37,7 @@ function Imprimir($params) {
 function Llistar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 
 //final de la funcio Editar	
@@ -51,7 +51,7 @@ function Borrar($params) {
 function VerDetalles($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"showDetalleRuta.php?id=$id\"><img border=\"0\" src=\"images/llistar.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"showDetalleRuta.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 ?>
    <?php
@@ -195,7 +195,7 @@ function VerDetalles($params) {
         </td>
     </tr>
     <tr>
-        <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="showMenu.php">Volver al Menu</a></font></td>
+        <td> <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a></td>
         <td align="right">&nbsp;
 
         </td>

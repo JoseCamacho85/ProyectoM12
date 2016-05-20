@@ -43,7 +43,7 @@ function Imprimir($params) {
 function Llistar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/icon.png\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 
 //final de la funcio Editar 
@@ -56,7 +56,7 @@ function Borrar($params) {
 function VerDetalles($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/icon.png\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
 }
 ?>
 
@@ -104,8 +104,7 @@ FK:id_usuario Usuario(id)-->
                 <select name="categoria">
                     <option value="id" <?php if ($_SESSION['categoria'] == "id") echo 'selected="selected"' ?>>ID</option>
                     <option value="nombre" <?php if ($_SESSION['categoria'] == "nombre") echo 'selected="selected"' ?>>Nombre</option>
-                    <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>
-                    <option value="precio" <?php if ($_SESSION['categoria'] == "precio") echo 'selected="selected"' ?>> Precio</option>     
+                    <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>     
                     <option value="horario" <?php if ($_SESSION['categoria'] == "horario") echo 'selected="selected"' ?>>Horario</option>
                 </select>           
                 <input name ="enviar" type="submit" value="Search">
@@ -138,8 +137,6 @@ FK:id_usuario Usuario(id)-->
             $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
-            $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Horario', 'horario', 'horario', array('align' => 'center'));
             $dg->addColumn($column);
@@ -218,9 +215,9 @@ FK:id_usuario Usuario(id)-->
         </td>
     </tr>
     <tr>
-        <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="showMenu.php">Volver al Menu</a></font></td>
+  <td> <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a></td>
         <td align="right">&nbsp;
-
+ 
         </td>
     </tr>
 </table>

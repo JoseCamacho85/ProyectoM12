@@ -4,7 +4,7 @@ include '../controller/controllerVerDetalleUsuario.php';
 ?>
 <h2>DATOS PERSONALES</h2>
 <form method="post" action="../controller/controllerModificarDatosUsuario.php"> <!-- HAY QUE CREAR EL CONTROLLER -->
-    <img src="<?php $foto ?>" />
+    <img class="fotoMostrar" src="fotoUsuario/<?php $foto ?>"/>
     <p>Username: <input type="text" value="<?php echo $username ?>" /></p>
     <p>E-mail: <input type="text" value="<?php echo $email ?>" </p>
     <p>Población: <input type="text" value="<?php echo $poblacion ?>" </p>
@@ -16,4 +16,5 @@ include '../controller/controllerVerDetalleUsuario.php';
 </form>
 <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
 <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
+<a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 <?php include ("footer.php"); ?>

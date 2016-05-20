@@ -2,17 +2,17 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
-include("../model/DAO/classRutaPOIDB.php");
+include("../model/DAO/classDiarioPoiDB.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 //$user = unserialize($_SESSION['user']);
 
-$idPOI = $_POST["idPOI"];
+$idPOI = $_POST["idPoi"];
 $idDiario = $_POST["idDiario"];
-$diarioPOIObj = new DiarioPoiDB();
+//$diarioPOIObj = new DiarioPoiDB();
 
 try {
-    $diarioPOIObj->insertDiarioPoi($idDiario, $idPOI);
+    $bitacle->insertDiarioPoi($idDiario, $idPOI);
     echo "POI insertado";
     header("location:../view/showPOI.php");
 } catch (Exception $e) {

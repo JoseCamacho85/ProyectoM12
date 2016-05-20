@@ -9,8 +9,6 @@ $poi = $bitacle->getPois();
 
 $id_com = $_POST["data"];
 
-
-
 for ($i = 0; $i < count($bitacle->getPois()); $i++) {
 
     if ($bitacle->getPois()[$i]->getId() == $id_com) {
@@ -21,14 +19,12 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $precio = $bitacle->getPois()[$i]->getPrecio();
         $horario = $bitacle->getPois()[$i]->getHorario();
 
-        echo "Nombre : ".$nombre."<br>";
-        echo "Foto : "."<img src=\"fotoPoi/$foto\"/>"."<br>";
-        echo "Descripción : ".$descripcion."<br>";
-        echo "URL : ".$url."<br>";
-        echo "Precio : ".$precio."<br>";
-        echo "Horario : ".$horario."<br>";
-        
-
+        echo "<p>Nombre: " . $nombre . "</p>";
+        echo "<p>Foto: " . "<img src=\"fotoPoi/$foto\"/>" . "</p>";
+        echo "<p>Descripción: " . $descripcion . "</p>";
+        echo "<p>URL: " . $url . "</p>";
+        echo "<p>Precio: " . $precio . "</p>";
+        echo "<p>Horario: " . $horario . "</p>";
     }
 }
 ?>

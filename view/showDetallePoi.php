@@ -21,7 +21,7 @@ $idPOI = $_REQUEST["id"];
 
     <div>
         <span></span>
-        <span><img src="fotoPoi/<?php echo $foto ?>"/></span>
+        <span><img class="fotoMostrar" src="fotoPoi/<?php echo $foto ?>"/></span>
     </div>
 
     <div>
@@ -68,30 +68,27 @@ $idPOI = $_REQUEST["id"];
         <span>Pais: </span>
         <span><?php echo $id_pais ?></span>
     </div>
-    <div>
-        <span></span>
-    </div>
-    <form method="post" action="../controller/controllerAddRutaPOI.php">
-    <input type="hidden" name="idPoi" value='<?php echo $idPOI; ?>'/>
-    <select name="idRuta">
-        <?php makeDropdownlistRuta(); ?>
-    </select>
-    <button id="addRuta">Añadir Punto de interés a ruta</button>
-    <!--input type="submit" value="Enviar"-->
+    <?php
+    if (!isset($_SESSION['bitacle'])) {
 
-    </form>
-    <form method="post" action="../controller/controllerAddDiaryPOI.php">
-    <input type="hidden" id="idPoi" name="idPoi" value='<?php echo $idPOI; ?>'/>
-    <select id="idDiario" id="idDiario" name="idDiario">
-        <?php makeDropdownlistDiarios(); ?>
-    </select>
-    <button id="addDiario">Añadir Punto de interés a diario</button>
-    <!--input type="submit" value="Enviar"-->
+        $bitacle = new Bitacle("bitacle");
+        $_SESSION['bitacle'] = serialize($bitacle);
+    } else {
+        // if session exist, we unserializate it.
+        $bitacle = unserialize($_SESSION['bitacle']);
+    }
 
-    </form>
+    if (isset($_SESSION['user'])) {
+        $user = "";
+        include("modules/addRutaPOI_addDiarioPOI.php");
+        //$bitacle = new Bitacle("bitacle");
+        //$_SESSION['bitacle'] = serialize($bitacle);
+    }
+    ?>
+    <a href="showPOI.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 </div>
 <script>
-<?php include("js/relacionesAjax.js");?>
+<?php include("js/relacionesAjax.js"); ?>
 </script>
 <?php
 include ("footer.php");

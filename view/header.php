@@ -17,11 +17,11 @@ include ("../controller/checkSession.php");
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/animationDropdown.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/agency.css">
+        <link rel="stylesheet" type="text/css" href="css/estilosbitacle.css">
         <script type="text/javascript" src="js/animation.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
-        <script type="text/javascript" src="js/validations.js"></script>       
+        <script type="text/javascript" src="js/validations.js"></script> 
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -36,8 +36,8 @@ include ("../controller/checkSession.php");
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                        <li><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
+                        <li ><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li ><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
                         <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
