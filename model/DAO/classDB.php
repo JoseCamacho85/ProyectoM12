@@ -24,7 +24,7 @@ class DB extends PDO{
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname.';charset=utf8';
         parent::__construct($dsn,$this->getUser(),$this->getPass());       
         }catch(Exception $e){
-            echo "ERROR AL CREAR CONEXION";
+        echo "ERROR AL CREAR CONEXION";
         }
     }
     

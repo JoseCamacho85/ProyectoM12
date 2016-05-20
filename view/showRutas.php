@@ -172,8 +172,8 @@ if (isset($_SESSION['user'])) {
             if (strlen($direccio))
                 $totalobres .= " " . $direccio;
 
-            $con = new DB();
-            $stm = $con->query($totalobres);
+            $mysqli = new DB();
+            $stm = $mysqli->query($totalobres);
             $rtotalobres = $stm->fetchAll(PDO::FETCH_ASSOC);
 
             if (count($rtotalobres) > 0) {
