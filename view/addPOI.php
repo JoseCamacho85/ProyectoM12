@@ -53,7 +53,6 @@ if (checkSession()){
                     <p>
                         <span>País: </span>
                         <select name="paisPoi" onchange="cambioPais(this.value)" id="paisPoi">
-                            <option selected>Seleccione un país</option>
                             <?php makeDropdownlistPaises(); ?>
                         </select>
                     </p>
@@ -67,7 +66,7 @@ if (checkSession()){
                 </form>
             </div>
             <div id="seleccionados">
-                <div id="ok">ssss</div>
+                <div id="ok"></div>
             </div>
         </div>
     </div><br>
