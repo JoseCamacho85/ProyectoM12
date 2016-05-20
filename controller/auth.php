@@ -32,19 +32,27 @@ if ($bitacle->validateUser($_POST['username'], $_POST['password'])) {
       } */
     $_SESSION["login"] = true;
     $user = $_POST['username'];
-    echo $user . " ingresó correctamente";
+    //echo $user . " ingresó correctamente";
     $_SESSION['user'] = serialize($user);
     //$_SESSION['user'] = serialize($bitacle);
     header("Location: ../view/mainUser.php");
 } else {
     //$_SESSION["user"] = "";
-    echo "INVALIDO";
+    echo "<div class='container-fluid text-center'>    
+    <div class='row content'>
+        <div class='col-sm-12 text-center'> "
+    . "<h2>Login incorrecto</h2>"
+    . "<br/><br/><br/>"
+    . "<img src='images/alert.png'"
+    . "<br/><br/><br/><br/>"
+    . "<a href='main.php'><button class='btn btn-info'>VOLVER</button></a>"
+    . "<br/><br/>"
+    . "</div></div></div>";
     //session_destroy();
-    
-    echo "<br><a href='../view/main.php'>volver</a>";
     //Print de missatges [View]
     //printInvalidMessage();
 }
+
 //$_SESSION["login"] = true;
 //$_SESSION["user"] = $_POST['username'];
 //header("Location: ../view/showMenu.php");

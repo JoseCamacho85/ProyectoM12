@@ -9,10 +9,11 @@ $(document).ready(function () {
 
             },
             success: function (data) {
-                alert("Ingresaste Correctamente!");
                 $("body").html(data);
 
             }
+            
+            
         });
     });
 });
