@@ -104,8 +104,7 @@ FK:id_usuario Usuario(id)-->
                 <select name="categoria">
                     <option value="id" <?php if ($_SESSION['categoria'] == "id") echo 'selected="selected"' ?>>ID</option>
                     <option value="nombre" <?php if ($_SESSION['categoria'] == "nombre") echo 'selected="selected"' ?>>Nombre</option>
-                    <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>
-                    <option value="precio" <?php if ($_SESSION['categoria'] == "precio") echo 'selected="selected"' ?>> Precio</option>     
+                    <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>     
                     <option value="horario" <?php if ($_SESSION['categoria'] == "horario") echo 'selected="selected"' ?>>Horario</option>
                 </select>           
                 <input name ="enviar" type="submit" value="Search">
@@ -138,8 +137,6 @@ FK:id_usuario Usuario(id)-->
             $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
-            $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Horario', 'horario', 'horario', array('align' => 'center'));
             $dg->addColumn($column);
