@@ -22,7 +22,10 @@ if (!isset($_SESSION['bitacle'])) {
     $_SESSION['bitacle'] = serialize($bitacle);
 } else {
     // if session exist, we unserializate it.
-    $bitacle = unserialize($_SESSION['bitacle']);
+    session_destroy($_SESSION['bitacle']);
+    session_start();
+    $bitacle = new Bitacle("bitacle");
+    //$bitacle = unserialize($_SESSION['bitacle']);
     $bitacle->populatePois();
     $bitacle->populateTipos();
     $bitacle->populateTransportes();
