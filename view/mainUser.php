@@ -18,6 +18,7 @@ include '../controller/controllerVerDetalleUsuario.php';
 <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
 <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
 <a href="addAnuncio.php"><button class="btn btn-info">Anuncios</button></a>
+<a href="showMisPois.php"><button class="btn btn-info">Mis POIs</button></a>
 <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 <?php
 }else{

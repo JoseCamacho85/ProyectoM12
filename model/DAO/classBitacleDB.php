@@ -380,4 +380,28 @@ class BitacleDB {
         $con = null;
     }
 
+    function modificarAnuncio($titulo, $descripcion, $imagen, $id_poi, $id_usuario) {
+        $sql = "UPDATE anuncio SET titulo='" . $titulo . "',descripcion='" . $descripcion . "',imagen='" . $imagen
+        . "' WHERE id_usuario='" . $id_usuario . "' AND id_poi='" . $id_poi . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
+    }
+
+    function modificarPoi($id_poi, $nombre, $foto, $descripcion, $url, $precio, $horario) {
+        $sql = "UPDATE poi SET nombre='" . $nombre . "',foto='" . $foto . "',descripcion='" .
+        $descripcion. "',url='" . $url . "',precio='" . $precio. "',horario='" . $horario. "' WHERE id='" . $id_poi . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
+    }
+
+    function eliminarPoi($id){
+        $sql = "DELETE FROM poi WHERE id='".$id."'";
+       echo $sql;
+            $con = new DB(); 
+            $result = $con->exec($sql);
+            $con = null; 
+    }
+
 }

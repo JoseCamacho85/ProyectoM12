@@ -23,6 +23,18 @@ if (!isset($_SESSION['bitacle'])) {
 } else {
     // if session exist, we unserializate it.
     $bitacle = unserialize($_SESSION['bitacle']);
+    $bitacle->populatePois();
+    $bitacle->populateTipos();
+    $bitacle->populateTransportes();
+    $bitacle->populateEntornos();
+    $bitacle->populateCiudades();
+    $bitacle->populatePaises();
+    $bitacle->populateUsuarios();
+    $bitacle->populateRutas();
+    $bitacle->populateDiarios();
+    $bitacle->populateHistorial();
+    $bitacle->populateAnuncios();
+    $_SESSION['bitacle'] = serialize($bitacle);
 }
 
 //print_r($_SESSION["bitacle"]);

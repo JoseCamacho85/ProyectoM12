@@ -3,6 +3,8 @@ include ("header.php");
 include("../controller/controllerVerDetallePOI.php");
 include("../controller/controllerIdDropdowns.php");
 include("makeDropdownLists.php");
+include("modules/showAnuncio.php");
+
 $bitacle = unserialize($_SESSION['bitacle']);
 
 if (checkSession()) {
@@ -71,21 +73,15 @@ $idPOI = $_REQUEST["id"];
         <span><?php echo $id_pais ?></span>
     </div>
     <?php
-    if (!isset($_SESSION['bitacle'])) {
-
-        $bitacle = new Bitacle("bitacle");
-        $_SESSION['bitacle'] = serialize($bitacle);
-    } else {
-        // if session exist, we unserializate it.
-        $bitacle = unserialize($_SESSION['bitacle']);
-    }
 
     if (isset($_SESSION['user'])) {
-        $user = "";
         include("modules/addRutaPOI_addDiarioPOI.php");
-        //$bitacle = new Bitacle("bitacle");
-        //$_SESSION['bitacle'] = serialize($bitacle);
     }
+    ?>
+    
+    <?php
+    
+    showAnuncio($idPOI);
     ?>
     <a href="showPOI.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
 </div>

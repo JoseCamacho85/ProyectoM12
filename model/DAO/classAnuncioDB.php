@@ -15,14 +15,14 @@ class AnuncioDB {
 
     public function insertAnuncio($anuncio) {
 
-        $con = new Database();
+        $con = new DB();
         $nonquery = $con->prepare("INSERT INTO anuncio (titulo,descripcion, imagen, id_poi, id_usuario) "
                 . "VALUES (:titulo,:descripcion,:imagen,:id_poi,:id_usuario)");
         $titulo = $anuncio->getTitulo();
         $descripcion = $anuncio->getDescripcion();
         $imagen = $anuncio->getImagen();
-        $id_poi = $anuncio->getPOI->getId();
-        $id_usuario = $anuncio->getUsuario->getId();
+        $id_poi = $anuncio->getPoi();
+        $id_usuario = $anuncio->getUsuario();
 
         $nonquery->bindParam(":titulo", $titulo);
         $nonquery->bindParam(":descripcion", $descripcion);

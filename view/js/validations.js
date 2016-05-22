@@ -36,7 +36,13 @@ function validarPOI() {
                     "descripcionPoi": $("#descripcionPoi").val(),
                     "urlPoi": $("#urlPoi").val(),
                     "precioPoi": $("#precioPoi").val(),
-                    "horarioPoi": $("#horarioPoi").val()
+                    "horarioPoi": $("#horarioPoi").val(),
+                    "fotoPoi": $("#fotoPoi").val(),
+                    "tipoPoi": $("#tipoPoi").val(),
+                    "entornoPoi": $("#entornoPoi").val(),
+                    "transportePoi": $("#transportePoi").val(),
+                    "paisPoi": $("#paisPoi").val(),
+                    "selectCiudadPOI": $("#selectCiudadPOI").val()
                 },
                 success: function (data) {
                     $("#ok").html(data);

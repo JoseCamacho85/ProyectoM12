@@ -69,7 +69,7 @@ function makeDropdownlistDiarios() {
         echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
-function makeDropdownlistPoisAnuncio() {
+function makeDropdownlistPoisUser() {
     $bitacle = unserialize($_SESSION['bitacle']);
     $user = unserialize($_SESSION['user']);
     $usuarios = $bitacle->getUsers();

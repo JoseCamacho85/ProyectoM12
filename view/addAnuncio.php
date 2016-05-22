@@ -6,6 +6,14 @@ include("../controller/controllerIdDropdowns.php");
 //include ("../controller/controllerCamposAnuncio.php");
 
 ?>
+<style type="text/css">
+    #crearAnuncio{
+        display:none;
+    }
+    #modificarAnuncio{
+        display:none;
+    }
+</style>
 <script type="text/javascript"><?php include ("js/mostrarInfoAnuncio.js");?></script>
 <div class="container-fluid text-center">    
     <div class="row content">
@@ -14,21 +22,21 @@ include("../controller/controllerIdDropdowns.php");
             <div>
                 <form action="../controller/controllerAddAnuncio.php" name="formPOI">
                     <hr>
-                    <p>POI:<select id="POIAnuncio" id="poiAnuncio" onchange="mostrarInfoAnuncio(this.value)">
+                    <p>POI:<select id="POIAnuncio" name="POIAnuncio" onchange="mostrarInfoAnuncio(this.value)">
                             <!--<option>
                                 selecciona POI
                             </option>-->
                             <?php     
                             
-                            makeDropdownlistPoisAnuncio();      ?>
+                            makeDropdownlistPoisUser();      ?>
                         </select></p>
-                    <p>Titulo:<input type="text" id="tituloAnuncio"></p>
-                    <p>Descripción:<input type="text" id="descripcionAnuncio"></p>
-                    <p>Imágen:<input type="text" id="imagenAnuncio"></p>
+                    <p>Titulo:<input type="text" id="tituloAnuncio" name="tituloAnuncio" ></p>
+                    <p>Descripción:<input type="text" id="descripcionAnuncio" name="descripcionAnuncio"></p>
+                    <p>Imágen:<input type="text" id="imagenAnuncio" name="imagenAnuncio"></p>
                     
-                    <input type="submit" id="modificarAnuncio" value="Modificar Anuncio" display="none">
+                    <input type="submit" id="modificarAnuncio" name= "modificarAnuncio" value="Modificar Anuncio">
                     <div id="botones">
-                    <input type="submit" id="crearAnuncio" value="Crear Anuncio" display="none">
+                    <input type="submit" id="crearAnuncio" name="crearAnuncio" value="Crear Anuncio">
                 </div>
                 </form>
                 

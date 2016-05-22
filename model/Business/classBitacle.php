@@ -357,4 +357,29 @@ class Bitacle {
         $bitacleDB = new BitacleDB();
         $bitacleDB->modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
     }
+
+    public function modificarAnuncio($titulo, $descripcion,$imagen, $id_poi, $id_usuario){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->modificarAnuncio($titulo, $descripcion,$imagen,$id_poi, $id_usuario);
+    }
+
+    public function modificarPoi($id_poi,$nombre, $foto, $descripcion, $url, $precio, $horario){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->modificarPoi($id_poi,$nombre, $foto, $descripcion, $url, $precio, $horario);
+    }
+
+    public function eliminarPoi($id){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->eliminarPoi($id);
+        $arrayAux = []; 
+        for ($i = 0; $i<count($this->getPois()); $i++){
+
+            if (($this->getPois()[$i]->getId()!=$id)){
+                //echo "ID objeto FOR:".$this->employees[$i]->getId()."<br>"; 
+                array_push($arrayAux, $this->getPois()[$i]);             
+            }
+    
+        }   
+        $this->setPois($arrayAux);
+    }
 }

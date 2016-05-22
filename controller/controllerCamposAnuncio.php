@@ -19,7 +19,7 @@ if ($bitacle->getAnuncios()[$i]->getPoi() == $id_com) {
 	//array_push($arrayDatos,$bitacle->getAnuncios()[0]->getImagen());
 	$resultado = $resultado.$bitacle->getAnuncios()[$i]->getTitulo();
 	$resultado = $resultado.",".$bitacle->getAnuncios()[$i]->getDescripcion();
-	$resultado = $resultado.",".$bitacle->getAnuncios()[$i]->getTitulo();
+	$resultado = $resultado.",".$bitacle->getAnuncios()[$i]->getImagen();
 
    echo $resultado;
 //echo "pepe";
