@@ -52,6 +52,30 @@ function validarPOI() {
             });
         }
     });
+
+    $('#validate').click(function () {
+
+        if ($('#tipoPoi option:selected').index() == 0) {
+            $(".erroresTipo").html('Debe seleccionar un tipo de POI.');
+
+        }
+
+        if ($('#transportePoi option:selected').index() == 0) {
+            $(".erroresTransporte").html('Debe seleccionar un transporte.');
+        }
+
+        if ($('#entornoPoi option:selected').index() == 0) {
+            $(".erroresEntorno").html('Debe seleccionar un entorno.');
+        }
+
+        if ($('#paisPoi option:selected').index() == 0) {
+            $(".erroresPais").html('Debe seleccionar un país.');
+        }
+
+        if ($('#selectCiudadPOI option:selected').index() == 0) {
+            $(".erroresCiudad").html('Debe seleccionar una ciudad.');
+        }
+    });
 }
 
 
@@ -108,6 +132,8 @@ function validarUser() {
             });
         }
     });
+
+
 }
 
 function validarDiario() {
@@ -131,7 +157,7 @@ function validarDiario() {
                 data: {
                     "nombre": $("#nombreDiario").val(),
                     "descripcion": $("#descripcionDiario").val(),
-                  //  "id_usuario": $("#idUsuario").val()
+                    //  "id_usuario": $("#idUsuario").val()
                 },
                 success: function (data) {
                     $("#ok").html(data);
