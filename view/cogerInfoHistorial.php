@@ -4,8 +4,6 @@ session_start();
 include("../model/functionAutoLoad.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
-$poi = $bitacle->getPois();
-$historial = $bitacle->getHistorial();
 
 $id_com = $_POST["data"];
 for ($i = 0; $i < count($bitacle->getPois()); $i++) {
@@ -36,11 +34,26 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
         $foto = $bitacle->getHistorial()[$i]->getFoto();
         $video = $bitacle->getHistorial()[$i]->getVideo();
 
-        echo "Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . ">";
-        echo "<p>¿Está?: <input name=\"estaEnPoi\" type=\"checkbox\" value=" . $estaEnPoi . ">";
-        echo "<p>Texto: <input name=\"texto\" type=\"text\" value=" . $texto . ">";
-        echo "<p>Foto: <img src=\"fotoPoi/$foto\"/></p>";
-        echo "<p>Vídeo: <video> <source src=" . $video . "></video>";
+        if ($estaEnPoi == 1) {
+            $checked = "checked";
+        } else {
+            $checked = null;
+        }
+
+        include ("./modules/addFotoHistorial.php");
+
+//        echo "<p><span>Foto: </span><input type = \"text\" name = \"fotoHistorial\" id = \"fotoHistorial\" value = " . $fotoSubida . "></p>";
+//        echo "<form action = " . $_SERVER["PHP_SELF"] . " method = \"post\" enctype = \"multipart/form-data\" name = \"inscripcion\">";
+//        echo "<input type = \"file\" name = \"archivo[]\" multiple = \"multiple\">";
+//        echo "<input type = \"submit\" value = \"Subir imagen\" class = \"trig\">";
+//        echo "</form>";
+        
+//        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name = \"fotoHistorial\" value=" . $fotoSubida . "/></p>";
+        echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
+        echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
+        echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
+        echo "<p>Foto:</p><img src=\"fotoHistorial\.$foto.\"/>";
+        echo "<p>Vídeo:</p><video> <source src=" . $video . "></video>";
         echo "<p><input type=\"submit\" value=\"Modificar datos\" /></p>";
     }
 }

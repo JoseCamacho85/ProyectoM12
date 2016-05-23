@@ -7,12 +7,12 @@ include("controllerIdDropdowns.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
 
-$id_diario = $_REQUEST['id'];
-$id_poi = 8;
+$id_diario = 4;
+$id_poi = 2;
 $fechaVisitaPoi = $_REQUEST['fechaVisitaPoi'];
 $estaEnPoi = 0;
-$texto = $_REQUEST['texto'];
-$foto;
+$texto = $_REQUEST['textoHistorial'];
+$foto = $_REQUEST['fotoHistorial'];
 $video;
 
 if (isset($_REQUEST['estaEnPoi'])) {
