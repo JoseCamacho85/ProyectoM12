@@ -36,4 +36,10 @@ class Entorno {
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
+
+    public function persist() {
+        $entornoDAO = new TipoDB();
+        $id = $entornoDAO->insertEntorno($this);
+        return $id;
+    }
 }

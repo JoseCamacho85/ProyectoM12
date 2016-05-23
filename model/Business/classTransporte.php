@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classTransporte
- *
- * @author Mazu
- */
 class Transporte {
     private $id = null;
     private $nombre;
@@ -36,4 +25,10 @@ class Transporte {
     function setNombre($nombre) {
         $this->nombre = $nombre;
     }
+
+    public function persist() {
+        $transporteDAO = new TipoDB();
+        $id = $transporteDAO->insertTransporte($this);
+        return $id;
+    } 
 }

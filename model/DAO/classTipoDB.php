@@ -12,7 +12,7 @@ class TipoDB {
 
         $con->executeNonQuery($nonquery);
 
-        $id = $this->$con->lastInsertId();
+        $id = $con->lastInsertId();
 
         return $id;
         $con = null;

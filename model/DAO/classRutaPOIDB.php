@@ -28,10 +28,10 @@ class RutaPOIDB {
 
         $con->executeNonQuery($nonquery);
 
-        /* $id = $this->$con->lastInsertId();
+        $id = $con->lastInsertId();
 
-          return $id;
-          $con = null; */
+        return $id;
+        $con = null; 
     }
 
 }
