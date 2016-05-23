@@ -27,7 +27,7 @@ class Transporte {
     }
 
     public function persist() {
-        $transporteDAO = new TipoDB();
+        $transporteDAO = new TransporteDB();
         $id = $transporteDAO->insertTransporte($this);
         return $id;
     } 

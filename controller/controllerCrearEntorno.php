@@ -9,14 +9,8 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 $entorno = $_REQUEST['entorno'];
 
-
-    if(emptyField($entorno)==false){
-      header("Location: ../view/errors/errorCamposVaciosPoi.html");
-      break;
-    }
-
     try {
-        $bitacle->insertTransporte(null, $entorno);
+        $bitacle->insertEntorno(null, $entorno);
         echo $entorno . " INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {
         showMessage($e->getMessage());

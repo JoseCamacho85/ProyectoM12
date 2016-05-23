@@ -38,7 +38,7 @@ class Entorno {
     }
 
     public function persist() {
-        $entornoDAO = new TipoDB();
+        $entornoDAO = new EntornoDB();
         $id = $entornoDAO->insertEntorno($this);
         return $id;
     }

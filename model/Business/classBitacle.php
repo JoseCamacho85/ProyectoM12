@@ -209,7 +209,7 @@ class Bitacle {
     }
 
     public function insertTransporte($id, $transporte) {
-        $tipo = new Tipo($id, $transporte);
+        $transporte = new Transporte($id, $transporte);
         $id = $transporte->persist();
         $transporte->setId($id);
         array_push($this->transportes, $transporte);
@@ -217,7 +217,7 @@ class Bitacle {
     }
 
     public function insertEntorno($id, $entorno) {
-        $entorno = new Tipo($id, $entorno);
+        $entorno = new Entorno($id, $entorno);
         $id = $entorno->persist();
         $entorno->setId($id);
         array_push($this->entornos, $entorno);

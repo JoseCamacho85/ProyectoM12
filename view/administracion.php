@@ -54,7 +54,7 @@ include("../controller/controllerIdDropdowns.php");
             <div>
                 <h3>Creación de Entornos</h3>
                 <form action="../controller/controllerCrearEntorno.php" name="crearEntorno">
-                    <input name="" type="text"></input>
+                    <input name="entorno" type="text"></input>
                     <input type="submit" value="Crear Entorno" />
                 </form>
             </div>
