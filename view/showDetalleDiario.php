@@ -7,7 +7,7 @@ $arrayDiarioPoi = $bitacle->VerDiarioPoi($_REQUEST['id']);
 if (checkSession()) {
     ?>
 
-        
+
     <script type="text/javascript"><?php include ("js/mostrarInfoHistorial.js"); ?></script>
     <div>
         <h2>DIARIO</h2>
@@ -22,11 +22,11 @@ if (checkSession()) {
         </div>
 
         <h2>POIs</h2>
-        <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value)">
-            <option>Seleccione un POI</option>
-            <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
-        </select>
         <form method="post" action="../controller/controllerModificarHistorial.php">
+            <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value)">
+                <option>Seleccione un POI</option>
+                <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
+            </select>
             <div id="infoPoi">
             </div>
         </form>

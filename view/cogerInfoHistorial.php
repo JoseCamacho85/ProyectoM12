@@ -26,7 +26,7 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
 }
 
 for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
-
+//revisar id diario
     if ($bitacle->getHistorial()[$i]->getId_poi() == $id_com) {
         $fechaVisitaPoi = $bitacle->getHistorial()[$i]->getFechaVisitaPoi();
         $estaEnPoi = $bitacle->getHistorial()[$i]->getEstaEnPoi();
