@@ -188,6 +188,14 @@ class Bitacle {
         return $anuncio;
     }
 
+    public function insertTipo($id, $tipo) {
+        $tipo = new Tipo($id, $tipo);
+        $id = $tipo->persist();
+        $tipo->setId($id);
+        array_push($this->tipos, $tipo);
+        return $tipo;
+    }
+
     public function validateUser($user, $password) {
         $bitacleDB = new BitacleDB();
         $validate = $bitacleDB->fetchValidateUser($user, $password);
