@@ -207,6 +207,22 @@ class Bitacle {
         array_push($this->tipos, $tipo);
         return $tipo;
     }
+
+    public function insertTransporte($id, $transporte) {
+        $tipo = new Tipo($id, $transporte);
+        $id = $transporte->persist();
+        $transporte->setId($id);
+        array_push($this->transportes, $transporte);
+        return $transporte;
+    }
+
+    public function insertEntorno($id, $entorno) {
+        $entorno = new Tipo($id, $entorno);
+        $id = $entorno->persist();
+        $entorno->setId($id);
+        array_push($this->entornos, $entorno);
+        return $entorno;
+    }
     public function insertMP($titulo,$message,$usuarioReceptor,$id_usuario) {
         $MP = new MensajePrivado($titulo,$message,$usuarioReceptor,$id_usuario);
         $id = $MP->persist();
