@@ -7,7 +7,7 @@ $arrayDiarioPoi = $bitacle->VerDiarioPoi($_REQUEST['id']);
 if (checkSession()) {
     ?>
 
-        <!--<script type="text/javascript"><?php include ("js/mostrarInfoPoi.js"); ?></script>-->
+        
     <script type="text/javascript"><?php include ("js/mostrarInfoHistorial.js"); ?></script>
     <div>
         <h2>DIARIO</h2>

@@ -7,6 +7,9 @@ if (checkSession()) {
     ?>
 
     <h2>LUGARES VISITADOS</h2>
+    
+    <?php include ("mostrarCiudadesVisitadas.php"); ?>
+
 
     <a href="mainUser.php"><button class="btn btn-info">Datos personales</button></a>
     <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
