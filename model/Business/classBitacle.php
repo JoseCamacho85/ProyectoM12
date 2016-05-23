@@ -382,4 +382,19 @@ class Bitacle {
         }   
         $this->setPois($arrayAux);
     }
+
+    public function eliminarUser($id){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->eliminarUser($id);
+        $arrayAux = []; 
+        for ($i = 0; $i<count($this->getUsers()); $i++){
+
+            if (($this->getUsers()[$i]->getId()!=$id)){
+                //echo "ID objeto FOR:".$this->employees[$i]->getId()."<br>"; 
+                array_push($arrayAux, $this->getUsers()[$i]);             
+            }
+    
+        }   
+        $this->setUsers($arrayAux);
+    }
 }

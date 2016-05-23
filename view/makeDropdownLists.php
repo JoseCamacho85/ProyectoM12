@@ -86,7 +86,15 @@ function makeDropdownlistPoisUser() {
     }
 }
 
-
+function makeDropdownlistUsers() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+ echo "<OPTION selected='selected'>Selecciona un usuario</OPTION>";
+    for ($i = 0; $i < count($bitacle->getUsers()); $i++) {
+        $username = $bitacle->getUsers()[$i]->getUsername();
+        $id = $bitacle->getUsers()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $username . "</OPTION>";
+    }
+}
 
 
 ?>
