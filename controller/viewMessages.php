@@ -27,7 +27,7 @@ if($result){
     //echo "Mensaje registrado.";
     foreach ($result as $value) {
         //print_r($value);
-        echo "Titulo: ".$value["titulo"]."<br>";
+        echo "<b>Titulo: ".$value["titulo"]." | ".$user."</b><br>";
         echo " ".$value["texto"];
         echo "<br>";
     }

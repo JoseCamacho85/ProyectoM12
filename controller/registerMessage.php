@@ -25,23 +25,23 @@ $id_usuario = cogerIdUsuario($usuario, $user);
 
 
 try{
-    $MP = new MensajePrivado($titulo,$message,$usuarioReceptor,$id_usuario);
+    $bitacle->insertMP($titulo,$message,$usuarioReceptor,$id_usuario);
 } catch (Exception $ex) {
     
 }
-
-
-
-$con = @mysqli_connect($server, $userbd, $password, $bd);
-if(!$con)die("error de conexion".mysqli_connect_error());
-
-$sql = "INSERT INTO mensajeprivado (titulo,texto,destinatario,id_usuario) VALUES("
-        ."'$titulo','$message','$usuarioReceptor','$id_usuario')"; 
-$result = mysqli_query($con, $sql);
-
-if($result){
-    echo "Mensaje registrado.";
-}
+//
+//
+//
+//$con = @mysqli_connect($server, $userbd, $password, $bd);
+//if(!$con)die("error de conexion".mysqli_connect_error());
+//
+//$sql = "INSERT INTO mensajeprivado (titulo,texto,destinatario,id_usuario) VALUES("
+//        ."'$titulo','$message','$usuarioReceptor','$id_usuario')"; 
+//$result = mysqli_query($con, $sql);
+//
+//if($result){
+//    echo "Mensaje registrado.";
+//}
     
 
 

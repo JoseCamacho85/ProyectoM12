@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classMensajePrivado
- *
- * @author Mazu
- */
 class MensajePrivado {
     
     private $id = null;
@@ -57,6 +46,11 @@ class MensajePrivado {
     function setDestinatario($destinatario) {
         $this->destinatario = $destinatario;
     }
-
+    
+    public function persist() {
+        $MPDAO = new MensajePrivadoDB();
+        $id = $MPDAO->insertMensajePrivado($this);
+        return $id;
+    }
 
 }

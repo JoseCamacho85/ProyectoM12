@@ -11,11 +11,11 @@
  *
  * @author toni
  */
-class classMensajePrivadoDB {
+class MensajePrivadoDB {
     public function insertMensajePrivado($MP){
-        $con = new Database();                 
-        $nonquery = $con->prepare("INSERT INTO diario (nombre,texto) "
-                . "VALUES (:nombre,:texto)");
+        $con = new DB();               
+        $nonquery = $con->prepare("INSERT INTO mensajeprivado (titulo,texto,destinatario,id_usuario) VALUES("
+            ."titulo,texto,destinatario,id_usuario'");
         $nombre=$MP->getNombre();           
         $descripcion=$diario->getDescripcion();
         

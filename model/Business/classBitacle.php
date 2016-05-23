@@ -27,6 +27,7 @@ class Bitacle {
     private $entornos = null;
     private $paises = null;
     private $historial = null;
+    private $MP = null;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -42,6 +43,7 @@ class Bitacle {
         $this->entornos = array();
         $this->paises = array();
         $this->historial = array();
+        $this->MP = array();
     }
 
     function getId() {
@@ -148,6 +150,16 @@ class Bitacle {
         $this->historial = $historial;
     }
 
+    function getMP() {
+        return $this->MP;
+    }
+
+    function setMP($MP) {
+        $this->MP = $MP;
+    }
+
+        
+    
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional) {
         $user = new Usuario($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
         $id = $user->persist();
@@ -194,6 +206,13 @@ class Bitacle {
         $tipo->setId($id);
         array_push($this->tipos, $tipo);
         return $tipo;
+    }
+    public function insertMP($titulo,$message,$usuarioReceptor,$id_usuario) {
+        $MP = new MensajePrivado($titulo,$message,$usuarioReceptor,$id_usuario);
+        $id = $MP->persist();
+        $MP->setId($id);
+        array_push($this->MP, $MP);
+        return $MP;
     }
 
     public function validateUser($user, $password) {
