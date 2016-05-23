@@ -18,10 +18,10 @@ else
                 <input type="hidden" name="identificador" value="<?php echo $identificador; ?>">
                 <input type="hidden" name="respuestas" value="<?php echo $respuestas; ?>">
                 <table>
-                    <tr>
+<!--                    <tr>
                         <td>Autor </td>
                         <td><input type="text" name="autor"></td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td>Titulo</td>
                         <td><input type="text" name="titulo"></td>

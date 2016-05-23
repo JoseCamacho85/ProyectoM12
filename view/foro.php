@@ -3,9 +3,8 @@ include("header.php");
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
-        <div class="col-sm-12 text-center"> 
+        <div class="col-md-12 text-center"> 
             <?php
-
             include("../controller/conexionBD.php");
             if (isset($_GET["id"]))
                 $id = $_GET['id'];
@@ -24,7 +23,13 @@ include("header.php");
                 echo "<tr><td>autor: $autor</td></tr>";
                 echo "<tr><td>$mensaje</td></tr>";
                 echo "</table>";
-                echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
+                if (isset($_SESSION['user'])) {
+                    $user = "";
+                    echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'  class='btn btn-info'>Responder</a><br />";
+                    //$bitacle = new Bitacle("bitacle");
+                    //$_SESSION['bitacle'] = serialize($bitacle);
+                }
+                //echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
             }
 
             $query2 = "SELECT * FROM  foro WHERE identificador = '$id' ORDER BY fecha DESC";
@@ -43,7 +48,13 @@ include("header.php");
                 echo "<tr><td>autor: $autor</td></tr>";
                 echo "<tr><td>$mensaje</td></tr>";
                 echo "</table>";
-                echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
+                if (isset($_SESSION['user'])) {
+                    $user = "";
+                    echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'  class='btn btn-info'>>Responder</a><br />";
+                    //$bitacle = new Bitacle("bitacle");
+                    //$_SESSION['bitacle'] = serialize($bitacle);
+                }
+                //echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
             }
             ?>
         </div>
