@@ -79,10 +79,10 @@ if (isset($_REQUEST['profesional'])) {
       header("Location: ../view/errors/errorCampoUrlUser.html");
       break;         
     }
-    else if(validateFoto($foto)==false){
+    /*else if(validateFoto($foto)==false){
       header("Location: ../view/errors/errorCampoFotoUser.html");
       break;         
-    }
+    }*/
     else if(validateTextoPresentacion($textoPresentacion)==false){
       header("Location: ../view/errors/errorTextoPresentacionUser.html");
       break;         
