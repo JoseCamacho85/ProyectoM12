@@ -1,10 +1,11 @@
+
 <?php
 include ("header.php");
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-12 text-center"> 
-        </div>
+      
         <table width="620px">
             <tr>
                 <td width="20px"></td>
@@ -30,10 +31,17 @@ include ("header.php");
             }
             ?>
         </table>
-        <a href="formulario.php"> nuevo tema </a>
+<?php
+if (isset($_SESSION['user'])) {
+    $user = "";
+    include("modules/addTemaForoBoton.php");
+    //$bitacle = new Bitacle("bitacle");
+    //$_SESSION['bitacle'] = serialize($bitacle);
+}
+?>
     </div>
 </div>
-
+  </div>
 <?php
 include ("footer.php");
 ?>
