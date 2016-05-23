@@ -2,10 +2,13 @@
 include ("header.php");
 if (checkSession()){
 include '../controller/controllerVerDetalleUsuario.php';
+if($foto == ""){
+    $foto = "user.png";
+}
 ?>
 <h2>DATOS PERSONALES</h2>
 <form method="post" action="../controller/controllerModificarDatosUsuario.php"> <!-- HAY QUE CREAR EL CONTROLLER -->
-    <img class="fotoMostrar" src="fotoUsuario/<?php $foto ?>"/>
+    <img class="fotoMostrar" style="width: 150px;" src="fotoUsuario/<?php echo $foto ?>"/>
     <p>Username: <input type="text" name="username" value="<?php echo $username ?>" /></p>
     <p>E-mail: <input type="text" name="email" value="<?php echo $email ?>" </p>
     <p>Población: <input type="text" name="poblacion" value="<?php echo $poblacion ?>" </p>
