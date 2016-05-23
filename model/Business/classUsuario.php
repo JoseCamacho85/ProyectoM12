@@ -13,7 +13,7 @@
  */
 class Usuario {
     
-    private $id=null;
+    private $id;
     private $username;
     private $password;
     private $email;

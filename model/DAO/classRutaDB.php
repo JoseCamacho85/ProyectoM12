@@ -19,15 +19,15 @@ class RutaDB {
                 . "VALUES (:nombre,:descripcion,:id_usuario)");
         $nombre = $ruta->getNombre();
         $descripcion = $ruta->getDescripcion();
-        $idUsuario = $ruta->getUsuario()->getId();
+        $id_usuario = $ruta->getUsuario();
 
         $nonquery->bindParam(":nombre", $nombre);
         $nonquery->bindParam(":descripcion", $descripcion);
-        $nonquery->bindParam(":id_usuario", $idUsuario);
+        $nonquery->bindParam(":id_usuario", $id_usuario);
 
         $con->executeNonQuery($nonquery);
 
-        $id = $this->$con->lastInsertId();
+        $id = $con->lastInsertId();
 
         return $id;
         $con = null;
