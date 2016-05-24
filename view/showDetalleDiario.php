@@ -35,7 +35,7 @@ if (checkSession()) {
             <p><span>Foto: </span><input type="text" name="fotoHistorial" id="fotoHistorial" value="<?php echo $fotoSubida ?>"></p>
             <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
                 <input type="file" name="archivo[]" multiple="multiple">
-                <input type="submit" value="Subir imagen" class="trig">
+                <input type="submit" name="subirImagen" value="Subir imagen" class="trig">
             </form>
         </div>
     </div>
