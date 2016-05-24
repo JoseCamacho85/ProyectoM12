@@ -2,15 +2,8 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
-//include("validateNullfields.php");
-//include("validateNames.php");
-//include("validateDescriptions.php");
 include("controllerIdDropdowns.php");
-//include("../model/Business/classBitacle.php");
-//include("../controller/controllerControlEmptyField.php");
-//include("../controller/controllerControlNIF.php");
-//include("../view/functionShowMessage.php"); 
-//include("../controller/controllerControlFindNif.php");
+
 
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);

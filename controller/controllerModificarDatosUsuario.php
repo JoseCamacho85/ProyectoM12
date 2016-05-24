@@ -17,9 +17,10 @@ $url = $_REQUEST['url'];
 $foto = $_REQUEST['fotoUser'];
 $textoPresentacion = $_REQUEST['textoPresentacion'];
 
+$usuarios = $bitacle->getUsers();
+$id = cogerIdUsuario($usuarios, $user);
+
 try {
-    $usuarios = $bitacle->getUsers();
-    $id = cogerIdUsuario($usuarios, $user);
     $bitacle->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
 } catch (Exception $e) {
     $e->getMessage();
