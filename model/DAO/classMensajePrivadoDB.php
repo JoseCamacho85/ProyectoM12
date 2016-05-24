@@ -14,13 +14,13 @@
 class classMensajePrivadoDB {
     public function insertMensajePrivado($MP){
         $con = new Database();                 
-        $nonquery = $con->prepare("INSERT INTO diario (nombre,descripcion) "
-                . "VALUES (:nombre,:descripcion)");
+        $nonquery = $con->prepare("INSERT INTO diario (nombre,texto) "
+                . "VALUES (:nombre,:texto)");
         $nombre=$MP->getNombre();           
         $descripcion=$diario->getDescripcion();
         
         $nonquery->bindParam(":nombre",$nombre);
-        $nonquery->bindParam(":descripcion",$descripcion);
+        $nonquery->bindParam(":texto",$descripcion);
             
         $con->executeNonQuery($nonquery);
             

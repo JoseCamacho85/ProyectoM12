@@ -14,7 +14,7 @@ $poblacion = $_REQUEST['poblacion'];
 $idioma = $_REQUEST['idioma'];
 $telefono = $_REQUEST['telefono'];
 $url = $_REQUEST['url'];
-$foto = $_REQUEST['foto'];
+$foto = $_REQUEST['fotoUser'];
 $textoPresentacion = $_REQUEST['textoPresentacion'];
 
 try {
@@ -24,4 +24,5 @@ try {
 } catch (Exception $e) {
     $e->getMessage();
 }
+header("Location: ../view/mainUser.php");
 ?>

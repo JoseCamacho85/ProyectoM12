@@ -37,7 +37,10 @@ class Tipo {
         $this->nombre = $nombre;
     }
 
-
-    
+    public function persist() {
+        $tipoDAO = new TipoDB();
+        $id = $tipoDAO->insertTipo($this);
+        return $id;
+    }    
     
 }

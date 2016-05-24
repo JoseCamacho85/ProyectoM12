@@ -24,7 +24,7 @@ $con = new DB();
 
             
             $nonquery->bindParam(":username",$username);
-            $nonquery->bindParam(":password",$password);
+            $nonquery->bindParam(":password",md5($password));
             $nonquery->bindParam(":email",$email);
             $nonquery->bindParam(":poblacion",$poblacion);
             $nonquery->bindParam(":idioma",$idioma);

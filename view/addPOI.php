@@ -37,34 +37,33 @@ include 'makeDropdownLists.php';
                             <span>Tipo: </span>
                             <select name="tipoPoi" id="tipoPoi">
                                 <?php makeDropdownlistTipos(); ?>
-                            </select>
+                            </select><span class="erroresTipo"></span>
                         </p>
                         <p>
                             <span>Transporte: </span>
                             <select name="transportePoi" id="transportePoi">
                                 <?php makeDropdownlistTransportes(); ?>
-                            </select>
+                            </select><span class="erroresTransporte"></span>
                         </p>
                         <p>
                             <span>Entorno: </span>
                             <select name="entornoPoi" id="entornoPoi">
                                 <?php makeDropdownlistEntornos(); ?>
-                            </select>
+                            </select><span class="erroresEntorno"></span>
                         </p>
                         <p>
                             <span>País: </span>
                             <select name="paisPoi" onchange="cambioPais(this.value)" id="paisPoi">
-                                <option selected>Seleccione un país</option>
                                 <?php makeDropdownlistPaises(); ?>
-                            </select>
+                            </select><span class="erroresPais"></span>
                         </p>
                         <p id="ciudad">
                             <span>Ciudad: </span>
                             <select name="selectCiudadPOI" id="selectCiudadPOI">
 
-                            </select>
+                            </select><span class="erroresCiudad"></span>
                         </p>
-                        <input type="submit" name="submit" value="Crear POI">
+                        <input type="submit" name="submit" id="validate" value="Crear POI">
                     </form>
                 </div>
                 <div id="seleccionados">

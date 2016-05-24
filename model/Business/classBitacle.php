@@ -188,6 +188,14 @@ class Bitacle {
         return $anuncio;
     }
 
+    public function insertTipo($id, $tipo) {
+        $tipo = new Tipo($id, $tipo);
+        $id = $tipo->persist();
+        $tipo->setId($id);
+        array_push($this->tipos, $tipo);
+        return $tipo;
+    }
+
     public function validateUser($user, $password) {
         $bitacleDB = new BitacleDB();
         $validate = $bitacleDB->fetchValidateUser($user, $password);
@@ -381,5 +389,20 @@ class Bitacle {
     
         }   
         $this->setPois($arrayAux);
+    }
+
+    public function eliminarUser($id){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->eliminarUser($id);
+        $arrayAux = []; 
+        for ($i = 0; $i<count($this->getUsers()); $i++){
+
+            if (($this->getUsers()[$i]->getId()!=$id)){
+                //echo "ID objeto FOR:".$this->employees[$i]->getId()."<br>"; 
+                array_push($arrayAux, $this->getUsers()[$i]);             
+            }
+    
+        }   
+        $this->setUsers($arrayAux);
     }
 }

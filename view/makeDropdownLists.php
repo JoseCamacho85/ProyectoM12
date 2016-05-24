@@ -9,7 +9,8 @@ function makeDropdownlistTipos() {
  echo "<OPTION selected='selected'>Selecciona un tipo</OPTION>";
     for ($i = 0; $i < count($bitacle->getTipos()); $i++) {
         $nombre = $bitacle->getTipos()[$i]->getNombre();
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getTipos()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 
@@ -18,8 +19,8 @@ function makeDropdownlistTransportes() {
  echo "<OPTION selected='selected'>Selecciona un transporte</OPTION>";
     for ($i = 0; $i < count($bitacle->getTransportes()); $i++) {
         $nombre = $bitacle->getTransportes()[$i]->getNombre();
-       
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getTransportes()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 
@@ -28,7 +29,8 @@ function makeDropdownlistEntornos() {
  echo "<OPTION selected='selected'>Selecciona un entorno</OPTION>";
     for ($i = 0; $i < count($bitacle->getEntornos()); $i++) {
         $nombre = $bitacle->getEntornos()[$i]->getNombre();
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getEntornos()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 
@@ -37,7 +39,8 @@ function makeDropdownlistCiudades() {
  echo "<OPTION selected='selected'>Selecciona una ciudad</OPTION>";
     for ($i = 0; $i < count($bitacle->getCiudades()); $i++) {
         $nombre = $bitacle->getCiudades()[$i]->getNombre();
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getCiudades()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 
@@ -46,7 +49,8 @@ function makeDropdownlistPaises() {
  echo "<OPTION selected='selected'>Selecciona un país</OPTION>";
     for ($i = 0; $i < count($bitacle->getPaises()); $i++) {
         $nombre = $bitacle->getPaises()[$i]->getNombre();
-        echo "<OPTION>" . $nombre . "</OPTION>";
+        $id = $bitacle->getPaises()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
     }
 }
 
@@ -86,7 +90,15 @@ function makeDropdownlistPoisUser() {
     }
 }
 
-
+function makeDropdownlistUsers() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+ echo "<OPTION selected='selected'>Selecciona un usuario</OPTION>";
+    for ($i = 0; $i < count($bitacle->getUsers()); $i++) {
+        $username = $bitacle->getUsers()[$i]->getUsername();
+        $id = $bitacle->getUsers()[$i]->getId();
+        echo "<OPTION value='".$id."'>" . $username . "</OPTION>";
+    }
+}
 
 
 ?>

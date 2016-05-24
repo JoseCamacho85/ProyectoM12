@@ -404,4 +404,12 @@ class BitacleDB {
             $con = null; 
     }
 
+    function eliminarUser($id){
+        $sql = "DELETE FROM usuario WHERE id='".$id."'";
+       echo $sql;
+            $con = new DB(); 
+            $result = $con->exec($sql);
+            $con = null; 
+    }
+
 }
