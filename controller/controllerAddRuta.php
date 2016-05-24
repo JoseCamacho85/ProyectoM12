@@ -24,22 +24,25 @@ $requiredFields = Array($ruta, $descripcion);
 $usuarios = $bitacle->getUsers();
 $id_usuario = cogerIdUsuario($usuarios, $user);
 
-if (emptyField($requiredFields)) {
-    echo "requireds ok";
-    if (validateNombreRuta($ruta) && validateDescripcionRuta($descripcion)) {
+if (emptyField($ruta) == false) {
+    header("Location: ../view/errors/errorCampoVacioRuta.html");
+    break;
+} else if (validateNombreRuta($ruta) == false) {
+    header("Location: ../view/errors/errorCampoNombreRuta.html");
+    break;
+} else if (emptyField($descripcion) == false) {
+    header("Location: ../view/errors/errorCampoVacioRuta.html");
+    break;
+} else if (validateDescripcionRuta($descripcion) == false) {
+    header("Location: ../view/errors/errorCampoDescripcionRuta.html");
+    break;
+}
 
-        echo "validations ok";
-    } else {
-        echo "validations error";
-    }
-    try {
-        $userId = $bitacle->getId();
-        $bitacle->insertRuta(null, $ruta, $descripcion, $id_usuario);
-        header("location:../view/addRutas.php");
-    } catch (Exception $e) {
-        showMessage($e->getMessage());
-    }
-} else {
-    echo "requireds fail";
+try {
+    $userId = $bitacle->getId();
+    $bitacle->insertRuta(null, $ruta, $descripcion, $id_usuario);
+    header("location:../view/addRutas.php");
+} catch (Exception $e) {
+    showMessage($e->getMessage());
 }
 ?>
