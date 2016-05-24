@@ -2,26 +2,15 @@
 
 session_start();
 include("../model/functionAutoLoad.php");
-//include("validateNullfields.php");
-//include("validateNames.php");
-//include("validateDescriptions.php");
 include("controllerIdDropdowns.php");
+
 include("./validations/validateDescripcionAnuncio.php");
 include("./validations/validateNombreAnuncio.php");
 include("./validations/validateEmptyFieldAnuncio.php");
 
 
-//include("../model/Business/classBitacle.php");
-//include("../controller/controllerControlEmptyField.php");
-//include("../controller/controllerControlNIF.php");
-//include("../view/functionShowMessage.php"); 
-//include("../controller/controllerControlFindNif.php");
-
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
-//$bitacle = new Bitacle("bitacle");
-//if (isset($_REQUEST['submit'])) {
-//Recover form data
 $titulo = $_REQUEST['tituloAnuncio'];
 $descripcion = $_REQUEST['descripcionAnuncio'];
 $imagen = $_REQUEST['imagenAnuncio'];
@@ -49,8 +38,6 @@ if (isset($_REQUEST["crearAnuncio"])) {
 
         echo $titulo . "perfecto";
 
-//showMessage("Usuario ". $username ." creado correctamente");	
-//header("Location: ../index.php");
         $_SESSION['bitacle'] = serialize($bitacle);
     } catch (Exception $e) {
         showMessage($e->getMessage());
