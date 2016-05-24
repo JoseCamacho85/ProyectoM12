@@ -30,7 +30,10 @@ label{
 
 
 .fotoMostrar{
-    width: 350px;
+    height: 210px;
+    width: 210px;
+    padding: 1%;
+    
 }
 
 

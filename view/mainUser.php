@@ -7,7 +7,7 @@ if (checkSession()) {
     <?php
     include ("./modules/addFotoUser.php");
     ?>
-    <p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php echo $fotoSubida; ?>"></p>
+    <!--p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php //echo $fotoSubida; ?>"></p-->
     <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
         <input type="file" name="archivo[]" multiple="multiple">
         <input type="submit" value="Subir imagen"  class="trig">
