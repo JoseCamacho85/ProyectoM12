@@ -29,7 +29,7 @@ if (checkSession()) {
         <?php 
             include("../controller/validatorTipoUsuario.php");
             if($objUsuarioConectado->getProfessional()==1){
-                include("modules/addAnuncio.php");
+                include("modules/botonAddAnuncio.php");
             }
         ?>   
     <a href="showMisPois.php"><button class="btn btn-info">Mis POIs</button></a>

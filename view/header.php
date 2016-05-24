@@ -2,7 +2,6 @@
 session_start();
 include("../model/functionAutoLoad.php");
 include ("../controller/checkSession.php");
-include ("../controller/devolverUsuario.php");
 ?>
 <!DOCTYPE html>
 <html>
