@@ -51,7 +51,7 @@ try {
     }
 }
 
-//arrayCiudades amb el nom de les ciutats de la array de pois
+//arrayCiudades amb el nom de les ciutats de la array de poist
 for ($i = 0; $i <count($arrayPois);$i++){
 		$nomCiutat = cogerNombre($bitacle->getCiudades(), $arrayPois[$i]->getId_ciudad());
     	array_push($arrayCiudades,$nomCiutat);   	
