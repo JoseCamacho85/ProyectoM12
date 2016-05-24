@@ -2,10 +2,8 @@
 include ("header.php");
 include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
-
-
 ?>
-<script type="text/javascript"><?php include ("js/mostrarUsuarios.js");?></script>
+<script type="text/javascript"><?php include ("js/mostrarUsuarios.js"); ?></script>
 <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-12 text-center"> 
@@ -13,8 +11,8 @@ include("../controller/controllerIdDropdowns.php");
             <hr>
             <div id="adminUsers">
                 <h3>Administración de usuarios</h3>
-                <form action="../controller/controllerAdministracion.php" name="formUser">            
-                    <p>User: <select name="selectedUser" onchange="mostrarUsuarios(this.value)">
+                <form method="POST" action="../controller/controllerAdministracion.php" name="formAdminUser" id="formAdminUser">            
+                    <p>User: <select name="selectedUser" id="selectedUser" onchange="mostrarUsuarios(this.value)">
                             <?php makeDropdownlistUsers(); ?>
                         </select></p>
                     <p>Username:<input type="text" id="usernameUser" name="usernameUser"/></p>
@@ -29,16 +27,18 @@ include("../controller/controllerIdDropdowns.php");
 
                     <input type="submit" id="modificarUser" name= "modificarUser" value="Modificar Usuario">
                     <div id="botones">
-                    <input type="submit" id="eliminarUser" name="eliminarUser" value="Eliminar Usuario">
-                </div>
+                        <input type="submit" id="eliminarUser" name="eliminarUser" value="Eliminar Usuario">
+                    </div>
                 </form>
-
+                <div id="seleccionados">
+                    <div id="ok"></div>
+                </div>
             </div>
 
             <div>
                 <h3>Creación de Tipos</h3>
                 <form action="../controller/controllerCrearTipo.php" name="crearTipo">
-                    <input name="tipo" type="text"></input>
+                    <input name="tipo" type="text">
                     <input type="submit" value="Crear Tipo" />
                 </form>
             </div>
@@ -46,7 +46,7 @@ include("../controller/controllerIdDropdowns.php");
             <div>
                 <h3>Creación de Transportes</h3>
                 <form action="../controller/controllerCrearTransporte.php" name="crearTransporte">
-                    <input name="transporte" type="text"></input>
+                    <input name="transporte" type="text">
                     <input type="submit" value="Crear Transporte" />
                 </form>
             </div>
@@ -54,15 +54,15 @@ include("../controller/controllerIdDropdowns.php");
             <div>
                 <h3>Creación de Entornos</h3>
                 <form action="../controller/controllerCrearEntorno.php" name="crearEntorno">
-                    <input name="entorno" type="text"></input>
+                    <input name="entorno" type="text">
                     <input type="submit" value="Crear Entorno" />
                 </form>
             </div>
 
-            </div>
-
         </div>
+
     </div>
+</div>
 </div>
 
 <?php
