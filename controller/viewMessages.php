@@ -33,9 +33,10 @@ if($MPs){
     foreach ($MPs as $value) {
         //print_r($value);
         $emisor = cogerUsername($bitacle->getUsers(), $value->getId_emisor());
-        echo "<table class=''>";
-        echo "<b>Titulo: ".$value->getTitulo()."<br>";
-        echo $emisor ." dice : ".$value->getTexto();
+        echo "<table class='table table-bordered'><tr class='info'>";
+        echo "<td><h5>Titulo: ".$value->getTitulo()."</h5></td>"
+                . "<td style='width:20%;'><h5>".$emisor."</h5></td></tr>";
+        echo "<tr><td colspan='2'>".$value->getTexto()."</td></tr>";
     }
     
 }
