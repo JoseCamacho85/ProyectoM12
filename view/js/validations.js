@@ -179,7 +179,7 @@ function validarPanelAdmin() {
     $("#formAdminUser").validate({
         rules: {
             usernameUser: {required: true, minlength: 5, maxlength: 15},
-            passwordUser: {required: true, minlength: 6, maxlength: 10},
+            passwordUser: {required: false, minlength: 6, maxlength: 40},
             emailUser: {required: true, email: true},
             poblacionUser: {required: false, minlength: 5, maxlength: 20},
             idiomaUser: {required: false, minlength: 4, maxlength: 10},
