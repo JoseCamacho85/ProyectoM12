@@ -5,7 +5,9 @@ $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
 ?>
-
+<script type="text/javascript">
+    <?php include("js/mensajesPrivados.js"); ?>
+</script>
 <form id="formChat" role="form">
     <div class="form-group">
         <label for="user"><h3>Titulo</h3></label>
@@ -30,43 +32,6 @@ $user = unserialize($_SESSION['user']);
     </div>
     </div>
 </form>
-
-<script type="text/javascript">
-    $(document).on("ready", function () {
-        registerMessage();
-        $.ajaxSetup({"cache": false});
-        setInterval("loadOldMessages()", 500);
-
-    });
-
-
-    var registerMessage = function () {
-        $("#send").on("click", function (e) {
-            e.preventDefault();
-            var frm = $("#formChat").serialize();
-            $.ajax({
-                type: "POST",
-                url: "../controller/registerMessage.php",
-                data: frm
-            }).done(function (info) {
-                console.log(info);
-            })
-        });
-    }
-    
-    var loadOldMessages = function () {
-        var frm = $("#formChat").serialize();
-        $.ajax({
-            type: "POST",
-            data: frm,
-            url: "../controller/viewMessages.php"
-        }).done(function (info) {
-            $("#conversation").html(info);
-            $("#conversation p:last-child").css({"background-color": "lightgreen",
-                "padding-botton": "20px"})
-        });
-    }
-</script>
 
 <?php
 include ("footer.php")
