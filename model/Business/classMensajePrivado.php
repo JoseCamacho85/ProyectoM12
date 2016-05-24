@@ -6,13 +6,15 @@ class MensajePrivado {
     private $titulo;
     private $texto;
     private $destinatario;
+    private $id_emisor;
     
     
-    function __construct($id, $titulo, $texto, $destinatario) {
+    function __construct($id, $titulo, $texto, $destinatario, $id_emisor) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->texto = $texto;
         $this->destinatario = $destinatario;
+        $this->id_emisor = $id_emisor;
     }
 
     function getId() {
@@ -30,8 +32,12 @@ class MensajePrivado {
     function getDestinatario() {
         return $this->destinatario;
     }
+    
+    function getId_emisor() {
+        return $this->id_emisor;
+    }
 
-    function setId($id) {
+        function setId($id) {
         $this->id = $id;
     }
 
@@ -47,6 +53,10 @@ class MensajePrivado {
         $this->destinatario = $destinatario;
     }
     
+    function setId_emisor($id_emisor) {
+        $this->id_emisor = $id_emisor;
+    }
+
     public function persist() {
         $MPDAO = new MensajePrivadoDB();
         $id = $MPDAO->insertMensajePrivado($this);

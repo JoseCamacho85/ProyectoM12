@@ -223,8 +223,8 @@ class Bitacle {
         array_push($this->entornos, $entorno);
         return $entorno;
     }
-    public function insertMP($titulo,$message,$usuarioReceptor,$id_usuario) {
-        $MP = new MensajePrivado($titulo,$message,$usuarioReceptor,$id_usuario);
+    public function insertMP($id,$titulo,$message,$usuarioReceptor,$id_usuario) {
+        $MP = new MensajePrivado($id,$titulo,$message,$usuarioReceptor,$id_usuario);
         $id = $MP->persist();
         $MP->setId($id);
         array_push($this->MP, $MP);
@@ -363,7 +363,14 @@ class Bitacle {
         }
         return $detall;
     }
-
+    
+    public function VerMensajesPrivados($Destinatario) {
+        $bitacleDB = new BitacleDB();
+        $result = $bitacleDB->searchMP($Destinatario);
+        
+        return $result;
+    }
+    
     public function crearQuery($fields, $fieldNames) {
         $bitacleDB = new BitacleDB();
         $arrayCrearQuery = $bitacleDB->crearQueryDB($fields, $fieldNames);

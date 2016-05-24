@@ -267,6 +267,30 @@ class BitacleDB {
 
         return $historiales;
     }
+    
+    function searchMP($Destinatario){
+        $con = new DB();
+        
+        $MPS = array();
+ 
+        $sql = $con->prepare("SELECT * FROM mensajeprivado where destinatario='$Destinatario'");      
+        
+        $result = $con->executeQuery($sql);
+                
+        //print_r($result);
+        
+        foreach ($result as $row) {
+            $id_MP = $row['id'];
+            $texto = $row['texto'];
+            $destinatario = $row['destinatario'];
+            $id_usuario = $row['id_usuario'];
+            
+            $MensajePrivado = new MensajePrivado(null,$id_MP, $texto, $destinatario, $id_usuario);
+            array_push($MPS, $MensajePrivado);
+        }
+        
+        return $MPS;
+    }
 
     function crearQueryDB($fields, $fieldNames) {
 
