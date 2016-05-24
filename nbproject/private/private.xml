@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/showDetallePoi.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/foro.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/model/Business/classUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/controller/agregar.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/addUser.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/addAnuncio.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/controller/conexionBD.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/showForo.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/js/validations.js</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/model/DAO/classDB.php</file>
-            <file>file:/C:/xampp/htdocs/ProyectoM12/view/formulario.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoM12/view/cogerInfoHistorial.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoM12/view/showDetalleDiario.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoM12/view/mainUser.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoM12/controller/controllerModificarHistorial.php</file>
+            <file>file:/C:/xampp/htdocs/ProyectoM12/view/js/mostrarInfoHistorial.js</file>
         </group>
     </open-files>
 </project-private>

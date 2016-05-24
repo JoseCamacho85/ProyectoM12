@@ -1,9 +1,9 @@
-function mostrarInfoHistorial(id_com) {
+function mostrarInfoHistorial(id_com, id_diario) {
     $.ajax({
         async: true,
         type: "POST",
         url: "cogerInfoHistorial.php",
-        data: {"data": id_com},
+        data: {"data": id_com, "diario": id_diario},
         success: tornadaCom
     });
 }
