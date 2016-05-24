@@ -276,16 +276,15 @@ class BitacleDB {
         $sql = $con->prepare("SELECT * FROM mensajeprivado where destinatario='$Destinatario'");      
         
         $result = $con->executeQuery($sql);
-                
-        //print_r($result);
-        
+               
         foreach ($result as $row) {
             $id_MP = $row['id'];
+            $titulo = $row['titulo'];
             $texto = $row['texto'];
             $destinatario = $row['destinatario'];
             $id_usuario = $row['id_usuario'];
             
-            $MensajePrivado = new MensajePrivado(null,$id_MP, $texto, $destinatario, $id_usuario);
+            $MensajePrivado = new MensajePrivado($id_MP, $titulo, $texto, $destinatario, $id_usuario);
             array_push($MPS, $MensajePrivado);
         }
         
