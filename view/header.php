@@ -10,7 +10,7 @@ include ("../controller/checkSession.php");
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+        <!--script type="text/javascript" src="js/jquery-1.11.3.min.js"></script-->
         <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
