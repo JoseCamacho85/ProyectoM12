@@ -28,7 +28,6 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
 }
 
 for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
-//revisar id diario
     if ($bitacle->getHistorial()[$i]->getId_poi() == $id_com && $bitacle->getHistorial()[$i]->getId_diario() == $id_diario) {
         $fechaVisitaPoi = $bitacle->getHistorial()[$i]->getFechaVisitaPoi();
         $estaEnPoi = $bitacle->getHistorial()[$i]->getEstaEnPoi();
@@ -42,19 +41,14 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
             $checked = null;
         }
 
-        include ("./modules/addFotoHistorial.php");
-
-//        echo "<p><span>Foto: </span><input type = \"text\" name = \"fotoHistorial\" id = \"fotoHistorial\" value = " . $fotoSubida . "></p>";
-//        echo "<form action = " . $_SERVER["PHP_SELF"] . " method = \"post\" enctype = \"multipart/form-data\" name = \"inscripcion\">";
-//        echo "<input type = \"file\" name = \"archivo[]\" multiple = \"multiple\">";
-//        echo "<input type = \"submit\" value = \"Subir imagen\" class = \"trig\">";
-//        echo "</form>";
-//        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name = \"fotoHistorial\" value=" . $fotoSubida . "/></p>";
         echo "<input type=\"hidden\" name=\"poi\" value=" . $id_com . ">";
+        echo "<input type=\"hidden\" name=\"diario\" value=" . $id_diario . ">";
         echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
         echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
         echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
-        echo "<p>Foto:</p><img src=\"fotoHistorial\.$foto.\"/>";
+        include ("./modules/addFotoHistorial.php");
+        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name=\"fotoHistorial\" value=" . $fotoSubida . "></p>";
+        echo "<p>Foto:</p><img src=\"fotoHistorial/" . $foto . "/>";
         echo "<p>Vídeo:</p><video> <source src=" . $video . "></video>";
         echo "<p><input type=\"submit\" value=\"Modificar datos\" /></p>";
     }
