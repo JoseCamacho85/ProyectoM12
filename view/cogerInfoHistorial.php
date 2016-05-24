@@ -7,7 +7,7 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 $id_com = $_POST["data"];
 $id_diario = $_POST["diario"];
-echo $id_diario;
+
 for ($i = 0; $i < count($bitacle->getPois()); $i++) {
 
     if ($bitacle->getPois()[$i]->getId() == $id_com) {
@@ -50,7 +50,7 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
 //        echo "<input type = \"submit\" value = \"Subir imagen\" class = \"trig\">";
 //        echo "</form>";
 //        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name = \"fotoHistorial\" value=" . $fotoSubida . "/></p>";
-        echo "<input type=\"hidden\" name=\"poi\" value=".$id_com.">";
+        echo "<input type=\"hidden\" name=\"poi\" value=" . $id_com . ">";
         echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
         echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
         echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";

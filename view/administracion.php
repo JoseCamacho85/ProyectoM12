@@ -2,7 +2,10 @@
 include ("header.php");
 include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
+include("../controller/validatorTipoUsuario.php");
+if ((checkSession())&&($objUsuarioConectado->getAdministrador()==1)) {
 ?>
+
 <script type="text/javascript"><?php include ("js/mostrarUsuarios.js"); ?></script>
 <div class="container-fluid text-center">    
     <div class="row content">
@@ -64,7 +67,9 @@ include("../controller/controllerIdDropdowns.php");
     </div>
 </div>
 </div>
-
-<?php
+    <?php
+} else {
+    header("Location: formErrorSession.php");
+}
 include ("footer.php");
 ?>

@@ -2,8 +2,10 @@
 include ("header.php");
 include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
+include("../controller/validatorTipoUsuario.php");
 
-//include ("../controller/controllerCamposAnuncio.php");
+if ((checkSession())&&($objUsuarioConectado->getProfessional()==1)) {
+
 ?>
 <style type="text/css">
     #crearAnuncio{
@@ -58,6 +60,9 @@ include("../controller/controllerIdDropdowns.php");
 </div>
 
 <?php
+} else {
+    header("Location: formErrorSession.php");
+}
 include ("footer.php");
 ?>
 

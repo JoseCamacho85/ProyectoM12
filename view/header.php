@@ -57,8 +57,10 @@ include ("../controller/checkSession.php");
                     } else {
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");
-                    }
+                    }           
+
                     ?>
+                  
                 </div>
             </div>
         </nav>
