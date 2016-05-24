@@ -100,5 +100,38 @@ function makeDropdownlistUsers() {
     }
 }
 
+function makeDropdownlistRutasUser() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+    $user = unserialize($_SESSION['user']);
+    $usuarios = $bitacle->getUsers();
+    $id_usuario = cogerIdUsuario($usuarios, $user);
+
+ echo "<OPTION selected='selected'>Selecciona una Ruta</OPTION>";
+    for ($i = 0; $i < count($bitacle->getRutas()); $i++) {
+        if ($bitacle->getRutas()[$i]->getUsuario() == $id_usuario){
+        $nombre = $bitacle->getRutas()[$i]->getNombre();
+        $id = $bitacle->getRutas()[$i]->getId();
+
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
+    }
+    }
+}
+function makeDropdownlistDiariosUser() {
+    $bitacle = unserialize($_SESSION['bitacle']);
+    $user = unserialize($_SESSION['user']);
+    $usuarios = $bitacle->getUsers();
+    $id_usuario = cogerIdUsuario($usuarios, $user);
+
+ echo "<OPTION selected='selected'>Selecciona un Diario</OPTION>";
+    for ($i = 0; $i < count($bitacle->getDiarios()); $i++) {
+        if ($bitacle->getDiarios()[$i]->getId_usuario() == $id_usuario){
+        $nombre = $bitacle->getDiarios()[$i]->getNombre();
+        $id = $bitacle->getDiarios()[$i]->getId();
+
+        echo "<OPTION value='".$id."'>" . $nombre . "</OPTION>";
+    }
+    }
+}
+
 
 ?>
