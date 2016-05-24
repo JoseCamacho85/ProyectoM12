@@ -33,7 +33,11 @@ if (checkSession()) {
             }
         ?>   
     <a href="showMisPois.php"><button class="btn btn-info">Mis POIs</button></a>
-    <a href="administracion.php"><button class="btn btn-info">Administración</button></a>
+    <?php 
+            if($objUsuarioConectado->getAdministrador()==1){
+                include("modules/botonAddAdministrador.php");
+            }
+        ?>   
     <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
     <?php
 } else {
