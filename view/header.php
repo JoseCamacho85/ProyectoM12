@@ -22,6 +22,7 @@ include ("../controller/checkSession.php");
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
         <script type="text/javascript" src="js/validatePOIcliente.js"></script> 
+        <script type="text/javascript" src="js/validateUsuarioCliente.js"></script> 
     </head>
     <body>
         <nav class="navbar navbar-inverse">

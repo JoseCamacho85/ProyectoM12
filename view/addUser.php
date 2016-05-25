@@ -9,13 +9,13 @@ include ("header.php");
                 <?php
                 include ("./modules/addFotoUser.php");
                 ?>
-                <p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php echo $fotoSubida; ?>"></p>
+
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
                     <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                     <input type="submit" value="Subir imagen"  class="trig">
                 </form>
-                <form method="post" enctype="multipart/form-data" name="inscripcion" id="formUser">
-
+                <form action="../controller/controllerAddUser.php" method="post" enctype="multipart/form-data" name="inscripcion" id="formUser">
+                    <p>Foto: <input id="fotoUser" type="text" id="fotoUser" name = "fotoUser" value="<?php echo $fotoSubida; ?>"/></p>
                     <p>Nombre de usuario: <input id="nombreUser" type="text" name="username"  /></p>
                     <p>Contraseña: <input id="passUser" type="password" name="password"  /></p>
                     <p>E-mail: <input id="emailUser" type="email" name="email"/></p>
@@ -23,8 +23,6 @@ include ("header.php");
                     <p>Idioma: <input id="idiomaUser" type="text" name="idioma" /></p>
                     <p>Teléfono: <input id="telefonoUser" type="text" name="telefono"/></p>
                     <p>URL: <input id="urlUser" type="text" name="url" /></p>
-                    <p>Foto: <input id="fotoUser" type="text" id="fotoUser" name = "fotoUser" value="<?php echo $fotoSubida; ?>"/></p>
-
                     <p>Texto de presentación:</p>
                     <textarea id="presentacionUser" name="textoPresentacion" rows="4" cols="30"></textarea><br/>
 

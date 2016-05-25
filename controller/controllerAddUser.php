@@ -20,6 +20,9 @@ $bitacle = unserialize($_SESSION['bitacle']);
 //$bitacle = new Bitacle("bitacle");
 //if (isset($_REQUEST['submit'])) {
 //Recover form data
+if (isset($_REQUEST["submit"])) {
+    
+
 $username = $_REQUEST['username'];
 $password = $_REQUEST['password'];
 $email = $_REQUEST['email'];
@@ -93,6 +96,9 @@ $bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $t
     //final para mandar mail al usuario . hay que modificar el php.ini del xampp, SMTP
 } catch (Exception $e) {
     showMessage($e->getMessage());
+}
+}else{
+    echo "no has hecho submit";
 }
 ?>
 
