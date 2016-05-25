@@ -24,6 +24,7 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="../controller/validations/validateUsuarioCliente.js"></script>
         <script type="text/javascript" src="../controller/validations/validateDiarioCliente.js"></script>
         <script type="text/javascript" src="../controller/validations/validateAdminPanelCliente.js"></script> 
+        <script type="text/javascript" src="../controller/validations/validateRutaCliente.js"></script> 
 
 
     </head>
