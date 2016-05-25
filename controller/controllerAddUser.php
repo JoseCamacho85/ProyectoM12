@@ -81,14 +81,15 @@ if (emptyField($username) == false) {
 
 
 try {
-    $bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
+$bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
+   header("Location: ../index.php");
    //inicio para mandar mail al usuario
-    $to = $email;
+    /*$to = $email;
     $subject = 'bitaCle';
     $message = 'Se ha enviado un mensaje a<b> ' . $email . ' </b>para verificar la cuenta.';
 
     mail($to, $subject, $message);
-    echo $message;
+    echo $message;*/
     //final para mandar mail al usuario . hay que modificar el php.ini del xampp, SMTP
 } catch (Exception $e) {
     showMessage($e->getMessage());
