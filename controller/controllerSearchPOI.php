@@ -56,8 +56,8 @@ if (isset($_REQUEST['checkPaisPOI'])) {
 if (isset($_REQUEST['checkCiudadPOI'])) {
     //echo $_REQUEST['selectCiudadPOI'];
     $ciudad = $_REQUEST['selectCiudadPOI'];
-    //$id_ciudad = cogerId($arrayCiudad, $ciudad);
-    array_push($fields, $ciudad);
+    $id_ciudad = cogerId($arrayCiudad, $ciudad);
+    array_push($fields, $id_ciudad);
     array_push($fieldNames, "id_ciudad");
 }
 //echo $_REQUEST['selectTipoPOI'];
