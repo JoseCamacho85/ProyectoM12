@@ -1,16 +1,6 @@
-
 $(document).ready(function () {
-    validarPOI();
-    validarUser();
-    validarDiario();
     validarPanelAdmin();
-
-
 });
-
-
-
-
 
 function validarPanelAdmin() {
 
@@ -41,4 +31,3 @@ function validarPanelAdmin() {
         }
     });
 }
-

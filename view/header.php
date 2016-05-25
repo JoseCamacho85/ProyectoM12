@@ -22,7 +22,9 @@ include ("../controller/checkSession.php");
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
         <script type="text/javascript" src="../controller/validations/validatePOIcliente.js"></script> 
         <script type="text/javascript" src="../controller/validations/validateUsuarioCliente.js"></script>
-        <script type="text/javascript" src="../controller/validations/validateDiarioCliente.js"></script> 
+        <script type="text/javascript" src="../controller/validations/validateDiarioCliente.js"></script>
+        <script type="text/javascript" src="../controller/validations/validateAdminPanelCliente.js"></script> 
+
 
     </head>
     <body>
