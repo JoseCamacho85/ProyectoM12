@@ -72,8 +72,7 @@ if ($arrayQuery == null) {
     echo "no hay coincidencias";
 } else {
     
-    //var_dump($arrayQuery);
-    //header("Location: ../view/showBuscarAvanzado.php");
+  
     for ($i = 0; $i < count($arrayQuery); $i++) {
         showTablePOI($arrayQuery[$i]->getId(),$arrayQuery[$i]->getFoto(),$arrayQuery[$i]->getNombre(),$arrayQuery[$i]->getUrl(),
                 $arrayQuery[$i]->getPrecio(),$arrayQuery[$i]->getHorario());

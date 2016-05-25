@@ -35,14 +35,14 @@ $entorno = $bitacle->getEntornos();
 $ciudad = $bitacle->getCiudades();
 $pais = $bitacle->getPaises();
 
-$id_tipo1 = cogerId($tipo, $id_tipo);
-$id_transporte1 = cogerId($transporte, $id_transporte);
-$id_entorno1 = cogerId($entorno, $id_entorno);
-$id_ciudad1 = cogerId($ciudad, $id_ciudad);
-$id_pais1 = cogerId($pais, $id_pais);
+//$id_tipo1 = cogerId($tipo, $id_tipo);
+//$id_transporte1 = cogerId($transporte, $id_transporte);
+//$id_entorno1 = cogerId($entorno, $id_entorno);
+//$id_ciudad1 = cogerId($ciudad, $id_ciudad);
+//$id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
-
+/*
     if(emptyField($nombre)==false){
       header("Location: ../view/errors/errorCamposVaciosPoi.html");
       break;
@@ -71,9 +71,9 @@ $requiredFields = Array($nombre, $descripcion);
       header("Location: ../view/errors/errorCampoHorarioPoi.html");
       break;         
     }
-
+*/
     try {
-        $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo1, $id_transporte1, $id_entorno1, $id_ciudad1, $id_pais1, $id_usuario);
+        $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);
         echo $nombre . " INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {
         showMessage($e->getMessage());
