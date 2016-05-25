@@ -3,12 +3,12 @@ include ("header.php");
 ?>
 <div class="container-fluid text-center">
     <div class="row ">
-        <div id="tituloPagina">
-                <h1>BitaCle</h1>
-                <p></p>
-            </div>
         <div class="col-md-12">
             <div class="flexslider">
+                <div id="tituloPagina" class="absolute-wrapper col-md-12">
+                    <h1>BitaCle</h1>
+                    <p>tu web de viajes</p>
+                </div>
                 <ul  id="sliderContent" class="slides">
                     <li>
                         <img class="image-slider" src="img/1.jpg" />

@@ -1,9 +1,9 @@
 <?php
 include ("header.php");
-
+include '../controller/controllerVerDetalleUsuario.php';
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
-
+include 'modules/moduleUserNav.php';
 ?>
 <script type="text/javascript">
     <?php include("js/mensajesPrivados.js"); ?>
