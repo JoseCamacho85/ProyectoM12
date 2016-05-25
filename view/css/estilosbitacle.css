@@ -10,6 +10,13 @@ body {
     background-image: url("../images/bg.gif");
 }
 
+#crearAnuncio{
+    display:none;
+}
+#modificarAnuncio{
+    display:none;
+}
+
 #imgLogo{
     width: 30%;
     height: 156%;
@@ -33,7 +40,7 @@ label{
     height: 210px;
     width: 210px;
     padding: 1%;
-    
+
 }
 
 
