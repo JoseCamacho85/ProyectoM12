@@ -50,19 +50,9 @@ include("header.php");
 
 
                 echo "<table class='table table-bordered'>";
-                echo "<tr><td><h6>$autor</h6></td></tr>";
+                echo "<tr><td  class='info'><h6>$autor</h6></td></tr>";
                 echo "<tr><td>$mensaje</td></tr>";
-
-                if (isset($_SESSION['user'])) {
-                    $user = "";
-                    echo "<tr><td class='col-md-12'>"
-                    . "<a href='formulario.php?id&respuestas=$respuestas&identificador=$id' class='btn btn-info'>Responder</a>"
-                    . "</td></tr>";
-                    echo "</table>";
-                    //$bitacle = new Bitacle("bitacle");
-                    //$_SESSION['bitacle'] = serialize($bitacle);
-                }
-                //echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
+                echo "</table>";
             }
             ?>
         </div>
