@@ -10,37 +10,7 @@ $(document).ready(function () {
 
 
 
-function validarDiario() {
 
-    $("#ok").hide();
-
-    $("#formDiario").validate({
-        rules: {
-            nombre: {required: true, minlength: 2, maxlength: 50},
-            descripcion: {required: true, minlength: 5, maxlength: 400}
-        },
-        messages: {
-            nombre: "Debe introducir un nombre entre 2 y 50 caracteres.",
-            descripcion: "Debe introducir una descripcion entre 5 y 400 caracteres."
-        },
-        submitHandler: function (form) {
-
-            $.ajax({
-                type: "POST",
-                url: "../controller/controllerAddDiario.php",
-                data: {
-                    "nombre": $("#nombreDiario").val(),
-                    "descripcion": $("#descripcionDiario").val(),
-                },
-                success: function (data) {
-                    $("#ok").html(data);
-                    $("#ok").show();
-                    $("#formPOI").hide();
-                }
-            });
-        }
-    });
-}
 
 function validarPanelAdmin() {
 
