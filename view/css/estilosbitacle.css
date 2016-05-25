@@ -5,8 +5,8 @@
  */
 @font-face{
     font-family: "tituloFuente";
-    src: url("../fonts/Squimpy.otf") format("truetype");
-    
+    /*src: url("../fonts/Squimpy.otf") format("truetype");*/
+    src: url("../fonts/CaviarDreams.ttf") format("truetype");
 }
 @font-face{
     font-family: "Quicksand-Bold";
@@ -29,6 +29,7 @@ body {
 #crearAnuncio{
     display:none;
 }
+
 #modificarAnuncio{
     display:none;
 }
@@ -38,8 +39,6 @@ body {
     height: 156%;
     margin: -2%;
 }
-
-
 
 p .errores{
     display: none;
@@ -51,22 +50,20 @@ label{
     color:black;
 }
 
-
 .fotoMostrar{
     height: 210px;
     width: 210px;
     padding: 1%;
-
 }
 
 
 h1{
     font-family: "tituloFuente";
-    
     font-size: 6em;
-    text-shadow: 7px 3px 7px #000000;
-    color: #EAEA8A;
-
+    /*text-shadow: 7px 3px 7px #000000;*/
+    text-shadow: 5px 4px 6px #000000;
+    /*color: #EAEA8A;*/
+    color: white;
 }
 
 h2{

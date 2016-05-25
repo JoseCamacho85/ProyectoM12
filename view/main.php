@@ -6,7 +6,7 @@ include ("header.php");
         <div class="col-md-12">
             <div class="flexslider">
                 <div id="tituloPagina" class="absolute-wrapper col-md-12">
-                    <h1>BitaCle</h1>
+                    <h1>Bitacle</h1>
                 </div>
                 <ul  id="sliderContent" class="slides">
                     <li>
