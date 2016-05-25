@@ -2,7 +2,8 @@
 include ("header.php");
 if (checkSession()) {
     include '../controller/controllerVerDetalleUsuario.php';
-    //include 'modules/moduleUserNav.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
     <!--ul class="nav nav-pills">
         <li><a href="#">DATOS PERSONALES</a></li>
@@ -35,7 +36,7 @@ if (checkSession()) {
     <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
     <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
     <?php
-    include("../controller/validatorTipoUsuario.php");
+//    include("../controller/validatorTipoUsuario.php");
     if ($objUsuarioConectado->getProfessional() == 1) {
         include("modules/botonAddAnuncio.php");
     }

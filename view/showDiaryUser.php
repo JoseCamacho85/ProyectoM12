@@ -2,10 +2,8 @@
 include ("header.php");
 
 if (checkSession()) {
-    include '../controller/controllerVerDetalleUsuario.php';
     include_once("../model/DAO/classDB.php");
     require_once('Structures/DataGrid.php');
-
     function Editar($params) {
         extract($params);
         $id = $record['id'];
@@ -76,6 +74,10 @@ if (checkSession()) {
         //$bitacle = new Bitacle("bitacle");
         //$_SESSION['bitacle'] = serialize($bitacle);
     }
+    include '../controller/controllerVerDetalleUsuario.php';
+    
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
 
     <h2>Diarios</h2>
@@ -98,107 +100,107 @@ if (checkSession()) {
         <tr>
             <td id="contentGrid" colspan="2" align="center">
 
-    <?php
-    $mostrar = 15;
+                <?php
+                $mostrar = 15;
 
-    $dg = & new Structures_DataGrid($mostrar);
+                $dg = & new Structures_DataGrid($mostrar);
 // Define DataGrid Color Attributes
 // Define DataGrid Table Attributes
 //$dg->renderer->setTableAttribute('width', '25%');
-    $dg->renderer->setTableAttribute('cellspacing', '1');
-    $dg->renderer->setTableAttribute('cellpadding', '4');
-    $dg->renderer->setTableAttribute('class', 'datagrid');
+                $dg->renderer->setTableAttribute('cellspacing', '1');
+                $dg->renderer->setTableAttribute('cellpadding', '4');
+                $dg->renderer->setTableAttribute('class', 'datagrid');
 
 //$dg->renderer->sortIconASC = "&uArr;";
 //$dg->renderer->sortIconDESC = "&dArr;";
-    $dg->renderer->sortIconASC = "&uarr;";
-    $dg->renderer->sortIconDESC = "&darr;";
+                $dg->renderer->sortIconASC = "&uarr;";
+                $dg->renderer->sortIconDESC = "&darr;";
 
 // Set empty row table attributes
 // Definim les columnes del datagrid
-    $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
-    $dg->addColumn($column);
-    $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
-    $dg->addColumn($column);
+                $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
+                $dg->addColumn($column);
+                $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
+                $dg->addColumn($column);
 
-    /*
-      $column = new Structures_DataGrid_Column('Nom', 'petnom', 'petnom', array('width' => '255','align'=>'center'));
-      $dg->addColumn($column);
-      $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
-      $dg->addColumn($column);
-     */
-    $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
-    $dg->addColumn($column);
-    //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
-    //$dg->addColumn($column);
-    //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
-    //$dg->addColumn($column);
+                /*
+                  $column = new Structures_DataGrid_Column('Nom', 'petnom', 'petnom', array('width' => '255','align'=>'center'));
+                  $dg->addColumn($column);
+                  $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
+                  $dg->addColumn($column);
+                 */
+                $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+                $dg->addColumn($column);
+                //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
+                //$dg->addColumn($column);
+                //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
+                //$dg->addColumn($column);
 //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Llistar($label=Llistats de peticionari)');
 //$dg->addColumn($column);
-    $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
-    $dg->addColumn($column);
+                $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+                $dg->addColumn($column);
 
 
-    if (isset($_GET["orderBy"])) {
-        $order = $_GET["orderBy"];
-    } else {
-        $order = "nombre";
-    }
+                if (isset($_GET["orderBy"])) {
+                    $order = $_GET["orderBy"];
+                } else {
+                    $order = "nombre";
+                }
 
-    if (isset($_GET["direction"])) {
-        $direccio = $_GET["direction"];
-    } else {
-        $direccio = "";
-    }
+                if (isset($_GET["direction"])) {
+                    $direccio = $_GET["direction"];
+                } else {
+                    $direccio = "";
+                }
 
-    if (isset($_GET["page"])) {
-        $page = (int) $_GET["page"];
-    } else {
-        $page = 0;
-    }
+                if (isset($_GET["page"])) {
+                    $page = (int) $_GET["page"];
+                } else {
+                    $page = 0;
+                }
 
-    if (($_SESSION['buscar']) != '') {
-        $categoria = $_SESSION["categoria"];
-        $buscar = "AND " . $categoria . " LIKE  '%" . $_SESSION["buscar"] . "%'";
-    } else {
-        $buscar = "";
-    }
+                if (($_SESSION['buscar']) != '') {
+                    $categoria = $_SESSION["categoria"];
+                    $buscar = "AND " . $categoria . " LIKE  '%" . $_SESSION["buscar"] . "%'";
+                } else {
+                    $buscar = "";
+                }
 
-    $totalobres = "SELECT * FROM diario WHERE id_usuario = " . $id_usuario;
-    if (strlen($buscar))
-        $totalobres .= " " . $buscar;
-    if (strlen($order))
-        $totalobres .= " ORDER BY " . $order;
-    if (strlen($direccio))
-        $totalobres .= " " . $direccio;
+                $totalobres = "SELECT * FROM diario WHERE id_usuario = " . $id_usuario;
+                if (strlen($buscar))
+                    $totalobres .= " " . $buscar;
+                if (strlen($order))
+                    $totalobres .= " ORDER BY " . $order;
+                if (strlen($direccio))
+                    $totalobres .= " " . $direccio;
 
-    $mysqli = new DB();
-    $stm = $mysqli->query($totalobres);
-    $rtotalobres = $stm->fetchAll(PDO::FETCH_ASSOC);
+                $mysqli = new DB();
+                $stm = $mysqli->query($totalobres);
+                $rtotalobres = $stm->fetchAll(PDO::FETCH_ASSOC);
 
-    if (count($rtotalobres) > 0) {
-        $dg->bind($rtotalobres);
-        // Print the DataGrid
-        $dg->render();
-        if (strlen($buscar)) {
-            $dg->renderer->setExtraVars(array("buscar" => $_SESSION["buscar"], "categoria" => $categoria));
-        }
-        //echo $dg->renderer->getPaging(); OLGA: error al paginar
-    } else {
-        if (strlen($buscar)) {
-            echo "<p style=\"color:red; padding-left:1em;\">Failed search, there aren't any result.<p>";
-        } else {
-            echo "<p style=\"color:red; padding-left:1em;\">No registers in DB.<p>";
-        }
-    }
-    ?> 
+                if (count($rtotalobres) > 0) {
+                    $dg->bind($rtotalobres);
+                    // Print the DataGrid
+                    $dg->render();
+                    if (strlen($buscar)) {
+                        $dg->renderer->setExtraVars(array("buscar" => $_SESSION["buscar"], "categoria" => $categoria));
+                    }
+                    //echo $dg->renderer->getPaging(); OLGA: error al paginar
+                } else {
+                    if (strlen($buscar)) {
+                        echo "<p style=\"color:red; padding-left:1em;\">Failed search, there aren't any result.<p>";
+                    } else {
+                        echo "<p style=\"color:red; padding-left:1em;\">No registers in DB.<p>";
+                    }
+                }
+                ?> 
             </td>
         </tr>
     </table>
     <a href="addDiario.php" id="volver"><button class="btn btn-info">Añadir Diario</button></a>    
-        <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
+    <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
     <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
-    
+
 
 
 

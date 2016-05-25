@@ -4,6 +4,9 @@ include ("header.php");
 if (checkSession()) {
     include_once("../model/DAO/classDB.php");
     require_once('Structures/DataGrid.php');
+    include("../controller/controllerIdDropdowns.php");
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
 
     <h2>LUGARES VISITADOS</h2>

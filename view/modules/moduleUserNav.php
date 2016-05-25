@@ -1,15 +1,18 @@
 <?php
 //include ("header.php");
-include ("makeDropdownLists.php");
-include("../controller/controllerIdDropdowns.php");
-include("../controller/validatorTipoUsuario.php");
+//include ("makeDropdownLists.php");
+//include("../controller/controllerIdDropdowns.php");
+//include("../controller/validatorTipoUsuario.php");
+//include '../controller/controllerVerDetalleUsuario.php';
+//include_once("../model/DAO/classDB.php");
+//require_once('Structures/DataGrid.php');
 ?>
 <ul class="nav nav-pills">
-    <!--li><a href="#">DATOS PERSONALES</a></li-->
+    <li><a href="mainUser.php">Datos Personales</a></li>
     <li><a href="showDiaryUser.php">Diarios</a></li>
     <li><a href="showPOICityUser.php">Lugares visitados</a></li>
     <?php
-    include("../controller/validatorTipoUsuario.php");
+    //include("../controller/validatorTipoUsuario.php");
     if ($objUsuarioConectado->getProfessional() == 1) {
         ?>
         <li><a href="addAnuncio.php">Añadir Anuncios</a></li>
