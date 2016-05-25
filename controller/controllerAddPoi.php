@@ -13,6 +13,8 @@ include("validations/validateDescripcionPoi.php");
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
+
+
 $nombre = $_REQUEST['nombrePoi'];
 $foto = $_REQUEST['fotoPoi'];
 $descripcion = $_REQUEST['descripcionPoi'];
@@ -38,45 +40,49 @@ $pais = $bitacle->getPaises();
 //$id_tipo1 = cogerId($tipo, $id_tipo);
 //$id_transporte1 = cogerId($transporte, $id_transporte);
 //$id_entorno1 = cogerId($entorno, $id_entorno);
-//$id_ciudad1 = cogerId($ciudad, $id_ciudad);
+$id_ciudad1 = cogerId($ciudad, $id_ciudad);
 //$id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
 /*
-    if(emptyField($nombre)==false){
-      header("Location: ../view/errors/errorCamposVaciosPoi.html");
-      break;
-    }
-    else if(validateNombrePoi($nombre)==false){
-      header("Location: ../view/errors/errorCampoNombrePoi.html");
-      break;
-    }
-    else if(emptyField($descripcion)==false){
-      header("Location: ../view/errors/errorCamposVaciosPoi.html");
-      break;         
-    }
-    else if(validateDescripcion($descripcion)==false){
-      header("Location: ../view/errors/errorCampoDescripcionPoi.html");
-      break;         
-    }
-    else if(validateUrls($url)==false){
-      header("Location: ../view/errors/errorCampoUrlPoi.html");
-      break;         
-    }
-    else if(validatePrecio($precio)==false){
-      header("Location: ../view/errors/errorCampoPrecioPoi.html");
-      break;         
-    }
-    else if(validateHorario($horario)==false){
-      header("Location: ../view/errors/errorCampoHorarioPoi.html");
-      break;         
-    }
-*/
+  if(emptyField($nombre)==false){
+  header("Location: ../view/errors/errorCamposVaciosPoi.html");
+  break;
+  }
+  else if(validateNombrePoi($nombre)==false){
+  header("Location: ../view/errors/errorCampoNombrePoi.html");
+  break;
+  }
+  else if(emptyField($descripcion)==false){
+  header("Location: ../view/errors/errorCamposVaciosPoi.html");
+  break;
+  }
+  else if(validateDescripcion($descripcion)==false){
+  header("Location: ../view/errors/errorCampoDescripcionPoi.html");
+  break;
+  }
+  else if(validateUrls($url)==false){
+  header("Location: ../view/errors/errorCampoUrlPoi.html");
+  break;
+  }
+  else if(validatePrecio($precio)==false){
+  header("Location: ../view/errors/errorCampoPrecioPoi.html");
+  break;
+  }
+  else if(validateHorario($horario)==false){
+  header("Location: ../view/errors/errorCampoHorarioPoi.html");
+  break;
+  }
+ */
+if (isset($_REQUEST["submitPoi"])) {
     try {
-        $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);
+        $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad1, $id_pais, $id_usuario);
+        header("Location:../view/showPOI.php");
         echo $nombre . " INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {
         showMessage($e->getMessage());
     }
-
+} else {
+    echo "no has hecho submit";
+}
 ?>

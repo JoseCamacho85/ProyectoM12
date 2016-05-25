@@ -52,7 +52,7 @@ h2{
 
 #tituloPagina{
     position:absolute;
-    z-index: 100;
+    z-index: 1;
 }
 
 .flexslider{
@@ -814,12 +814,7 @@ video{
     margin-top:-4%;
     color:#f1f1f1;
 }
-#divForm{
-    background-image: url(../img/zelda1.jpg);
-}
-#videos{
-    background-image: url(../img/zelda1.jpg);
-}
+
 #titleForm{
     color:#f1f1f1;
     margin-top: 4%;

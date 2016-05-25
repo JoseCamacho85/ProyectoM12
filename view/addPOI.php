@@ -1,10 +1,11 @@
 <?php
 include ("header.php");
 if (checkSession()) {
+
+    include '../model/DAO/dbConnector.php';
+    include 'makeDropdownLists.php';
     
-include '../model/DAO/dbConnector.php';
-include 'makeDropdownLists.php';
-?>
+    ?>
 
 
     <!-- Script para generarar dropdown ciudades-->
@@ -18,21 +19,18 @@ include 'makeDropdownLists.php';
                     <?php
                     include ("./modules/addFotoPoi.php");
                     ?>
-                    <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
                     <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
                         <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                         <input type="submit" value="Subir imagen"  class="trig">
                     </form>
-                    <form method="POST" id="formPOI" >
+                    <form method="POST" id="formPOI" action="../controller/controllerAddPoi.php" >
                         <hr>
+                        <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
                         <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
                         <p><span>Descripción: </span><input type="text" name="descripcionPoi" id="descripcionPoi" ></p>
                         <p><span>URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
                         <p><span>Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
                         <p><span>Horario: </span><input type="text" name="horarioPoi" id="horarioPoi"></p>
-                        <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
-
-
                         <p>
                             <span>Tipo: </span>
                             <select name="tipoPoi" id="tipoPoi">
@@ -63,7 +61,7 @@ include 'makeDropdownLists.php';
 
                             </select><span class="erroresCiudad"></span>
                         </p>
-                        <input type="submit" name="submit" id="validate" value="Crear POI">
+                        <input type="submit" name="submitPoi" id="validate" value="Crear POI">
                     </form>
                 </div>
                 <div id="seleccionados">
