@@ -37,7 +37,8 @@ if (checkSession()) {
             if($objUsuarioConectado->getAdministrador()==1){
                 include("modules/botonAddAdministrador.php");
             }
-        ?>   
+        ?> 
+    <a href="message.php" id="volver"><button class="btn btn-info">Mensajes Privados</button></a>  
     <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
     <?php
 } else {
