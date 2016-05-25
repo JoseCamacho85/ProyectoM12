@@ -27,9 +27,10 @@ include 'modules/moduleUserNav.php';
     <div class="form-group">
         <div class="col-md-12" >
             <h5>mensajes recibidos</h5>
-            <div id="conversation" style="height:200px; border: 1px solid #CCCCCC; padding: 12px;  border-radius: 5px; overflow-x: hidden;">
+            <div id="conversation">
 
             </div>
+            <div id="ok"></div>
         </div>
     </div>
 </form>
