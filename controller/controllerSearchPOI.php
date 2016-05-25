@@ -28,29 +28,29 @@ $arrayCiudad = $bitacle->getCiudades();
 if (isset($_REQUEST['checkTipoPOI'])) {
     //echo $_REQUEST['selectTipoPOI'];
     $tipo = $_REQUEST['selectTipoPOI'];
-    $id_tipo = cogerId($arrayTipo, $tipo);
-    array_push($fields, $id_tipo);
+    //$id_tipo = cogerId($arrayTipo, $tipo);
+    array_push($fields, $tipo);
     array_push($fieldNames, "id_tipo");
 }
 if (isset($_REQUEST['checkTransportePOI'])) {
     //echo $_REQUEST['selectTransportePOI'];
     $transporte = $_REQUEST['selectTransportePOI'];
-    $id_transporte = cogerId($arrayTransporte, $transporte);
-    array_push($fields, $id_transporte);
+    //$id_transporte = cogerId($arrayTransporte, $transporte);
+    array_push($fields, $transporte);
     array_push($fieldNames, "id_transporte");
 }
 if (isset($_REQUEST['checkEntornoPOI'])) {
     //echo $_REQUEST['selectEntornoPOI'];
     $entorno = $_REQUEST['selectEntornoPOI'];
-    $id_entorno = cogerId($arrayEntorno, $entorno);
-    array_push($fields, $id_entorno);
+    //$id_entorno = cogerId($arrayEntorno, $entorno);
+    array_push($fields, $entorno);
     array_push($fieldNames, "id_entorno");
 }
 if (isset($_REQUEST['checkPaisPOI'])) {
     //echo $_REQUEST['selectPaisPOI'];
     $pais = $_REQUEST['selectPaisPOI'];
-    $id_pais = cogerId($arrayPais, $pais);
-    array_push($fields, $id_pais);
+    //$id_pais = cogerId($arrayPais, $pais);
+    array_push($fields, $pais);
     array_push($fieldNames, "id_pais");
 }
 if (isset($_REQUEST['checkCiudadPOI'])) {
@@ -72,8 +72,7 @@ if ($arrayQuery == null) {
     echo "no hay coincidencias";
 } else {
     
-    //var_dump($arrayQuery);
-    //header("Location: ../view/showBuscarAvanzado.php");
+  
     for ($i = 0; $i < count($arrayQuery); $i++) {
         showTablePOI($arrayQuery[$i]->getId(),$arrayQuery[$i]->getFoto(),$arrayQuery[$i]->getNombre(),$arrayQuery[$i]->getUrl(),
                 $arrayQuery[$i]->getPrecio(),$arrayQuery[$i]->getHorario());

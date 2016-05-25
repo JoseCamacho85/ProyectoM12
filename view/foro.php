@@ -45,7 +45,7 @@ include("header.php");
 
                 echo "<tr><td>$titulo</tr></td>";
                 echo "<table>";
-                echo "<tr><td>autor: $autor</td></tr>";
+                echo "<tr><td>autor: pepe</td></tr>";
                 echo "<tr><td>$mensaje</td></tr>";
                 echo "</table>";
                 if (isset($_SESSION['user'])) {

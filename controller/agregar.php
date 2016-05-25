@@ -19,8 +19,8 @@ if (isset($_POST["submit"])) {
         $fecha = date("y-m-d");
 
 //aplicar id de usuario logeado
-$usuarios = $bitacle->getUsers();
-$id_usuario = cogerIdUsuario($usuarios, $user);
+//$usuarios = $bitacle->getUsers();
+//$id_usuario = cogerIdUsuario($usuarios, $user);
 
         //Evitamos que el usuario ingrese HTML
         $mensaje = htmlentities($mensaje);
@@ -28,7 +28,7 @@ $id_usuario = cogerIdUsuario($usuarios, $user);
         echo $identificador;
 
         //Grabamos el mensaje en la base de datos.
-        $query = "INSERT INTO foro (autor, titulo, mensaje, identificador, fecha, ult_respuesta) VALUES ('$id_usuario', '$titulo', '$mensaje', '$identificador','$fecha','$fecha')";
+        $query = "INSERT INTO foro (autor, titulo, mensaje, identificador, fecha, ult_respuesta) VALUES ('$user', '$titulo', '$mensaje', '$identificador','$fecha','$fecha')";
 
         echo $query;
         echo "identificador:";

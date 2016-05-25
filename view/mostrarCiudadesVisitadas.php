@@ -1,8 +1,5 @@
 <?php
-
-
-
-include '../controller/controllerIdDropdowns.php';
+//include '../controller/controllerIdDropdowns.php';
 include '../controller/controllerNombreDropdowns.php';
 
 $bitacle = unserialize($_SESSION['bitacle']);
@@ -29,7 +26,7 @@ try {
    
   //arrayHistorial historial dels pois marcats en visitats i del diari del usuari marcat 
   for ($i = 0; $i <count($bitacle->getHistorial());$i++){
-    	if ($bitacle->getHistorial()[$i]->getEstaEnPoi() == "0"){
+    	if ($bitacle->getHistorial()[$i]->getEstaEnPoi() == "1"){
     		array_push($arrayHistorial,$bitacle->getHistorial()[$i]);
     	}
     }

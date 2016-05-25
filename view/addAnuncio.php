@@ -4,6 +4,7 @@ include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
 include("../controller/validatorTipoUsuario.php");
 
+    include 'modules/moduleUserNav.php';
 if ((checkSession())&&($objUsuarioConectado->getProfessional()==1)) {
 
 ?>

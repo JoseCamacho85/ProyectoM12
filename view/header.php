@@ -10,7 +10,6 @@ include ("../controller/checkSession.php");
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="js/jquery.js"></script>
-        <!--script type="text/javascript" src="js/jquery-1.11.3.min.js"></script-->
         <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.js"></script>
@@ -21,7 +20,12 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="js/animation.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexslider.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
-        <script type="text/javascript" src="js/validations.js"></script> 
+        <script type="text/javascript" src="../controller/validations/validatePOIcliente.js"></script> 
+        <script type="text/javascript" src="../controller/validations/validateUsuarioCliente.js"></script>
+        <script type="text/javascript" src="../controller/validations/validateDiarioCliente.js"></script>
+        <script type="text/javascript" src="../controller/validations/validateAdminPanelCliente.js"></script> 
+
+
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -57,10 +61,9 @@ include ("../controller/checkSession.php");
                     } else {
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");
-                    }           
-
+                    }
                     ?>
-                  
+
                 </div>
             </div>
         </nav>
