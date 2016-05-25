@@ -49,7 +49,7 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
 //        include ("./modules/addFotoHistorial.php");
 //        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name=\"fotoHistorial\" value=" . $fotoSubida . "></p>";
         echo "<p>Foto:</p><img src=\"fotoHistorial/" . $foto . "\"/>";
-        echo "<p>Vídeo:</p><video> <source src=" . $video . "></video>";
+        echo "<p>Vídeo:<input type=\"text\" name=\"video\" value=" . $video . ">";
         echo "<p><input type=\"submit\" name=\"mostrarInfo\" value=\"Modificar datos\" /></p>";
     }
 }
