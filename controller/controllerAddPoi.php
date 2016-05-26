@@ -13,8 +13,6 @@ include("validations/validateDescripcionPoi.php");
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 
-
-
 $nombre = $_REQUEST['nombrePoi'];
 $foto = $_REQUEST['fotoPoi'];
 $descripcion = $_REQUEST['descripcionPoi'];
@@ -44,36 +42,8 @@ $id_ciudad1 = cogerId($ciudad, $id_ciudad);
 //$id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
-/*
-  if(emptyField($nombre)==false){
-  header("Location: ../view/errors/errorCamposVaciosPoi.html");
-  break;
-  }
-  else if(validateNombrePoi($nombre)==false){
-  header("Location: ../view/errors/errorCampoNombrePoi.html");
-  break;
-  }
-  else if(emptyField($descripcion)==false){
-  header("Location: ../view/errors/errorCamposVaciosPoi.html");
-  break;
-  }
-  else if(validateDescripcion($descripcion)==false){
-  header("Location: ../view/errors/errorCampoDescripcionPoi.html");
-  break;
-  }
-  else if(validateUrls($url)==false){
-  header("Location: ../view/errors/errorCampoUrlPoi.html");
-  break;
-  }
-  else if(validatePrecio($precio)==false){
-  header("Location: ../view/errors/errorCampoPrecioPoi.html");
-  break;
-  }
-  else if(validateHorario($horario)==false){
-  header("Location: ../view/errors/errorCampoHorarioPoi.html");
-  break;
-  }
- */
+include 'validations/validateAddPoi.php';
+
 if (isset($_REQUEST["submitPoi"])) {
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad1, $id_pais, $id_usuario);
