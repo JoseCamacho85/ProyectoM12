@@ -39,7 +39,9 @@ if (isset($_REQUEST["submit"])) {
     try {
         $userId = $bitacle->getId();
         $bitacle->insertRuta(null, $ruta, $descripcion, $id_usuario);
+        include("../view/modules/refresh.php");
         header("location:../view/addRutas.php");
+
     } catch (Exception $e) {
         showMessage($e->getMessage());
     }
