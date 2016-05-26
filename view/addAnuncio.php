@@ -10,7 +10,7 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
     <div class="container-fluid text-center">    
         <div class="row content">
             <div class="col-sm-12 text-center"> 
-                <h2>añadir anuncio</h2>
+                <h2>Añadir anuncio</h2>
                 <div>
                     <?php
                     include ("./modules/addFotoAnuncio.php");

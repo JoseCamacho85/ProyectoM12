@@ -82,6 +82,10 @@ function VerDetalles($params) {
                         //$_SESSION['bitacle'] = serialize($bitacle);
                     } 
                     ?>
+<td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
+        <td align="right">&nbsp;
+ 
+        </td>
 
 <h2>puntos de interes</h2>
 
@@ -215,10 +219,6 @@ FK:id_usuario Usuario(id)-->
         </td>
     </tr>
     <tr>
-  <td> <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a></td>
-        <td align="right">&nbsp;
- 
-        </td>
     </tr>
 </table>
 </div>

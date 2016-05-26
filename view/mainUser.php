@@ -6,16 +6,16 @@ if (checkSession()) {
     include 'modules/moduleUserNav.php';
     ?>
 
-    <h2>datos personales</h2>
-    <div class="col-md-6 col-md-offset-4">   
+    <h2>Datos personales</h2>
+    <div class="container-fluid text-center">   
         <?php
         include ("./modules/addFotoUser.php");
         ?>
     <!--p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php //echo $fotoSubida;      ?>"></p-->
-        <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
+        <center><form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
             <input type="file" name="archivo[]" multiple="multiple">
             <input type="submit" value="Subir imagen"  class="trig">
-        </form>
+        </form></center>
         <form method="post" action="../controller/controllerModificarDatosUsuario.php">
             <img class="fotoMostrar" src="fotoUsuario/<?php echo $foto ?>"/>
             <p>Foto: <input id="fotoUser" type="text" id="fotoUser" name = "fotoUser" value="<?php echo $fotoSubida; ?>"/></p>
@@ -29,28 +29,9 @@ if (checkSession()) {
             <p><input type="submit" value="Modificar datos" /></p>
         </form>
     </div>
-    <div class="col-md-8 col-md-offset-2">
-        <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
-        <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
-        <?php
-//    include("../controller/validatorTipoUsuario.php");
-        if ($objUsuarioConectado->getProfessional() == 1) {
-            include("modules/botonAddAnuncio.php");
-        }
-        ?>   
-        <a href="showMisPois.php"><button class="btn btn-info">Mis POIs</button></a>
-        <?php
-        if ($objUsuarioConectado->getAdministrador() == 1) {
-            include("modules/botonAddAdministrador.php");
-        }
-        ?> 
-        <a href="message.php" id="volver"><button class="btn btn-info">Mensajes Privados</button></a>  
-        <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
-
-        <?php
-    } else {
-        header("Location: formErrorSession.php");
-    }
-    include ("footer.php");
-    ?>
-</div>
+    <?php
+} else {
+    header("Location: formErrorSession.php");
+}
+include ("footer.php");
+?>

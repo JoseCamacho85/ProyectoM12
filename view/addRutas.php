@@ -18,7 +18,7 @@ if (checkSession()) {
                     <br>
                     <a href="showRutas.php"><button class="btn btn-info">volver a rutas</button></a>
                 </div>
-                <div id="ok">ssss</div>
+                <div id="ok"></div>
             </div>
         </div>
     </div>

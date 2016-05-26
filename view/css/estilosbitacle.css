@@ -680,10 +680,7 @@ section h3.section-subheading {
 
 
 
-footer {
-    padding: 25px 0;
-    text-align: center;
-}
+
 
 footer span.copyright {
     text-transform: uppercase;
@@ -842,4 +839,19 @@ video{
 #titleForm{
     color:#f1f1f1;
     margin-top: 4%;
+}
+
+#mainBody{
+    min-height: 500px;
+}
+footer{
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    background-color: #008CBA;
+    text-align: center;
+    line-height: 30px;
+
+
 }

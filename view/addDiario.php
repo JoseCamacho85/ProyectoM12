@@ -14,7 +14,7 @@ if (checkSession()) {
                 </form>
             </div>
             <div id="seleccionados">
-                <div id="ok">ssss</div>
+                <div id="ok"></div>
             </div>
             <a href="showDiaryUser.php" id="volver"><button class="btn btn-info">VOLVER</button></a>    
         </div> 

@@ -70,6 +70,17 @@ if (!isset($_SESSION['bitacle'])) {
 <?php include("css/gridview.css"); ?>
 </style>
 
+<tr class="col-md-10 col-md-offset-1">
+        <td> <?php
+            if (isset($_SESSION['user'])) {
+                $user = "";
+                include("modules/addRutaBoton.php");
+            }
+            ?></td>
+        <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
+
+    </tr>
+
 <h2>rutas</h2>
 
 <table align="center">
@@ -188,18 +199,7 @@ if (!isset($_SESSION['bitacle'])) {
         </td>
     </tr>
     
-    <tr class="col-md-10 col-md-offset-1">
-        <td> <?php
-            if (isset($_SESSION['user'])) {
-                $user = "";
-                include("modules/addRutaBoton.php");
-                //$bitacle = new Bitacle("bitacle");
-                //$_SESSION['bitacle'] = serialize($bitacle);
-            }
-            ?></td>
-        <td> <a href="main.php" id="volver"><button class="btn btn-info">volver</button></a></td>
-
-    </tr>
+    
 </table>
 
 <?php
