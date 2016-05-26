@@ -28,6 +28,7 @@ class Bitacle {
     private $paises = null;
     private $historial = null;
     private $MP = null;
+    private $rutapoi = null;
 
     function __construct($nom) {
         @$this->id = $id;
@@ -44,6 +45,7 @@ class Bitacle {
         $this->paises = array();
         $this->historial = array();
         $this->MP = array();
+        $this->rutapoi = array();
     }
 
     function getId() {
@@ -157,7 +159,13 @@ class Bitacle {
     function setMP($MP) {
         $this->MP = $MP;
     }
+    function getRutapoi() {
+        return $this->rutapoi;
+    }
 
+    function setRutapoi($rutapoi) {
+        $this->rutapoi = $rutapoi;
+    }
         
     
     public function insertUser($id, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional) {
@@ -182,6 +190,10 @@ class Bitacle {
         $ruta->setId($id);
         array_push($this->rutas, $ruta);
         return $ruta;
+    }
+    public function insertRutaPoi($idPOI, $idRuta) {
+        $bitacleDB = new RutaPOIDB();
+        $bitacleDB->insertRutaPoi($idPOI, $idRuta);
     }
 
     public function insertDiario($id, $nombre, $descripcion, $id_usuario) {

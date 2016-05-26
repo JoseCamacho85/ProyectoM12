@@ -1,5 +1,5 @@
 <?php
-
+//echo "HOLHA K TAL";
 session_start();
 include("../model/functionAutoLoad.php");
 include("../model/DAO/classRutaPOIDB.php");
@@ -9,10 +9,12 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 $idPOI = $_POST["idPoi"];
 $idRuta = $_POST["idRuta"];
-$rutaPOIObj = new RutaPOIDB();
 
+//$rutaPOIObj = new RutaPOIDB();
+echo $idPOI;
+echo $idRuta;
 try {
-    $rutaPOIObj->insertRutaPoi($idPOI, $idRuta);
+    $bitacle->insertRutaPoi($idPOI, $idRuta);
     echo "rutaPoi insertado";
     header("location:../view/showPOI.php");
 } catch (Exception $e) {

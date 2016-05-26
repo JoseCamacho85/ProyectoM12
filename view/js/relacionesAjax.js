@@ -5,8 +5,8 @@ $(document).ready(function () {
 
 function addDiarioPoi() {
     $("#addDiario").click(function () {
-        alert($("#idPoi").val());
-        alert($("#idDiario").val());
+     alert("Poi añadido a Diario correctamente");
+        //alert($("#idDiario").val());
         $.ajax({
             type: "POST",
             url: "../controller/controllerAddDiaryPOI.php",
@@ -18,14 +18,16 @@ function addDiarioPoi() {
             success: function (data) {
                 //alert(data);
                 //$("body").html(data);
+                
             }
         });
     });
 }
 function addRutaPOI() {
     $("#addRuta").click(function () {
-        alert($("#idPoi").val());
-        alert($("#idRuta").val());
+        //alert($("#idPoi").val());
+        //alert($("#idRuta").val());
+          alert("Poi añadido a Ruta correctamente");
         $.ajax({
             type: "POST",
             url: "../controller/controllerAddRutaPOI.php",
@@ -35,8 +37,9 @@ function addRutaPOI() {
 
             },
             success: function (data) {
-
-                //$("body").html(data);
+               // console.log(data);
+            //$("body").html(data);
+          
 
             }
         });

@@ -41,8 +41,8 @@ class RutaPOI {
     }
     public function persist() {
         $rutaPOI = new RutaPOIDB();
-        $id = $rutaPOI->insertRutaPOI($this);
-        return $id;
+        $rutaPOI->insertRutaPOI($this);
+        //return $id;
     }
     
 }
