@@ -201,19 +201,10 @@ if (checkSession()) {
         </td>
     </tr>
     </table>
-    <div class="col-md-6 col-md-offset-3">
-        <a href="addDiario.php" id="volver"><button class="btn btn-info">Añadir Diario</button></a>    
-        <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
-        <a href="showPOICityUser.php"><button class="btn btn-info">Lugares visitados</button></a>
-
-
-
-
-    <?php
+    </div>
+<?php
 } else {
     header("Location: formErrorSession.php");
 }
-
 include ("footer.php");
 ?>
-    </div>

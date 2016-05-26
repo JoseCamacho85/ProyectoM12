@@ -19,7 +19,7 @@ include 'modules/moduleUserNav.php';
             <label for="user"><h5>receptor</h5></label>
             <input type="text" class="form-control" id="user" name="user" placeholder="Usuario">
         </div>
-        <div class="form-group">				
+        <div class="form-group">                
             <label for="message"><h5>Mensaje</h5></label>
             <textarea id="message" name="message" placeholder="Mensaje"  class="form-control" rows="3"></textarea>
         </div>
@@ -35,9 +35,7 @@ include 'modules/moduleUserNav.php';
             </div>
         </div>
     </form>
-
-
-    <?php
-    include ("footer.php")
-            ?>
 </div>
+<?php
+    include ("footer.php");
+            ?>

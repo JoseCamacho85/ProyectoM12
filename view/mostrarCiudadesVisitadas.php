@@ -59,7 +59,6 @@ for ($i = 0; $i <count($arrayPois);$i++){
 
     $nuevaArray = array_values($arrayFinal);
 
-echo "<h3>"."Ciudades visitadas"."</h3>";
 for ($i = 0; $i < count($nuevaArray);$i++){
 	echo $nuevaArray[$i]."<br>";
 

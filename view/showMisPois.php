@@ -21,7 +21,7 @@ include 'modules/moduleUserNav.php';
                         </select></p>
                     <p>Nombre: <input type="text" id="nombrePoi" name="nombrePoi"/></p>
                     <p>Foto: <input type="text" id="fotoPoi" name="fotoPoi"/></p>
-                    <p>Descripción:</p><textarea rows="4" cols="50" id="descripcionPoi" name="descripcionPoi"></textarea>>
+                    <p>Descripción:</p><textarea rows="4" cols="50" id="descripcionPoi" name="descripcionPoi"></textarea>
                     <p>URL: <input type="text" id="urlPoi" name="urlPoi" /></p>
                     <p>Precio: <input type="text" id="precioPoi" name="precioPoi"></p>
                     <p>Horario: <input type="text" id="horarioPoi" name="horarioPoi"></p>

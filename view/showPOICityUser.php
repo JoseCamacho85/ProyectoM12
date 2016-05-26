@@ -14,15 +14,11 @@ if (checkSession()) {
         <?php include ("mostrarCiudadesVisitadas.php"); ?>
 
     </div>
-    <div class="col-md-4 col-md-offset-4"> 
-        <a href="mainUser.php"><button class="btn btn-info">Datos personales</button></a>
-        <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
-        <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
 
-        <?php
+
+<?php
     } else {
         header("Location: formErrorSession.php");
     }
     include ("footer.php");
     ?>
-</div>
