@@ -9,6 +9,7 @@ include 'modules/moduleUserNav.php';
 <script type="text/javascript">
 <?php include("js/mensajesPrivados.js"); ?>
 </script>
+
 <div class="col-md-10 col-md-offset-1">
     <form id="formChat" role="form">
         <div class="form-group">

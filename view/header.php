@@ -70,4 +70,3 @@ include ("../controller/checkSession.php");
                 </div>
             </div>
         </nav>
-        <div id="mainBody">
