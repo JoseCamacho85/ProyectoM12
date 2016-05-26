@@ -20,17 +20,17 @@ if ((checkSession()) && ($objUsuarioConectado->getAdministrador() == 1)) {
                         <p>User: <select name="selectedUser" id="selectedUser" onchange="mostrarUsuarios(this.value)">
                                 <?php makeDropdownlistUsers(); ?>
                             </select></p>
-                        <p>Username:<input type="text" id="usernameUser" name="usernameUser"/></p>
-                        <p>Password:<input type="text" id="passwordUser" name="passwordUser"/></p>
-                        <p>E-mail:<input type="text" id="emailUser" name="emailUser" /></p>
-                        <p>Población:<input type="text" id="poblacionUser" name="poblacionUser"></p>
-                        <p>Idioma:<input type="text" id="idiomaUser" name="idiomaUser"/></p>
-                        <p>Teléfono:<input type="text" id="telefonoUser" name="telefonoUser"/></p>
-                        <p>URL:<input type="text" id="urlUser" name="urlUser"/></p>
-                        <p>Foto:<input type="text" id="fotoUser" name="fotoUser"/></p>
-                        <p>Texto Presentación:<input type="text" id="textoPresentacionUser" name="textoPresentacionUser"/></p>
+                        <p>Username: <input type="text" id="usernameUser" name="usernameUser"/></p>
+                        <p>Password: <input type="text" id="passwordUser" name="passwordUser"/></p>
+                        <p>E-mail: <input type="text" id="emailUser" name="emailUser" /></p>
+                        <p>Población: <input type="text" id="poblacionUser" name="poblacionUser"></p>
+                        <p>Idioma: <input type="text" id="idiomaUser" name="idiomaUser"/></p>
+                        <p>Teléfono: <input type="text" id="telefonoUser" name="telefonoUser"/></p>
+                        <p>URL: <input type="text" id="urlUser" name="urlUser"/></p>
+                        <p>Foto: <input type="text" id="fotoUser" name="fotoUser"/></p>
+                        <p>Texto Presentación:</p><textarea rows="4" cols="50" id="textoPresentacionUser" name="textoPresentacionUser"></textarea>
 
-                        <input type="submit" id="modificarUser" name= "modificarUser" value="Modificar Usuario">
+                        <p><input type="submit" id="modificarUser" name= "modificarUser" value="Modificar Usuario"></p>
                         <div id="botones">
                             <input type="submit" id="eliminarUser" name="eliminarUser" value="Eliminar Usuario">
                         </div>

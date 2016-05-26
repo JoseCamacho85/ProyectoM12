@@ -3,7 +3,6 @@ include ("header.php");
 include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
 include("../controller/validatorTipoUsuario.php");
-
 include 'modules/moduleUserNav.php';
 ?>
 <script type="text/javascript"><?php include ("js/mostrarMisPois.js"); ?></script>
@@ -20,20 +19,17 @@ include 'modules/moduleUserNav.php';
                             </option>-->
                             <?php makeDropdownlistPoisUser(); ?>
                         </select></p>
-                    <p>Nombre:<input type="text" id="nombrePoi" name="nombrePoi"/></p>
-                    <p>Foto:<input type="text" id="fotoPoi" name="fotoPoi"/></p>
-                    <p>Descripción:<input type="textarea" id="descripcionPoi" name="descripcionPoi"/></p>
-                    <p>URL:<input type="text" id="urlPoi" name="urlPoi" /></p>
-                    <p>Precio:<input type="text" id="precioPoi" name="precioPoi"></p>
-                    <p>Horario:<input type="text" id="horarioPoi" name="horarioPoi"></p>
-
+                    <p>Nombre: <input type="text" id="nombrePoi" name="nombrePoi"/></p>
+                    <p>Foto: <input type="text" id="fotoPoi" name="fotoPoi"/></p>
+                    <p>Descripción:</p><textarea rows="4" cols="50" id="descripcionPoi" name="descripcionPoi"></textarea>>
+                    <p>URL: <input type="text" id="urlPoi" name="urlPoi" /></p>
+                    <p>Precio: <input type="text" id="precioPoi" name="precioPoi"></p>
+                    <p>Horario: <input type="text" id="horarioPoi" name="horarioPoi"></p>
                     <input type="submit" id="modificarPoi" name= "modificarPoi" value="Modificar Poi">
                     <div id="botones">
                         <input type="submit" id="eliminarPoi" name="eliminarPoi" value="Eliminar Poi">
                     </div>
                 </form>
-
-
             </div>
             <div id="seleccionados">
             </div>
@@ -42,7 +38,6 @@ include 'modules/moduleUserNav.php';
         </div>
     </div>
 </div>
-
 <?php
 include ("footer.php");
 ?>

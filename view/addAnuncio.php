@@ -3,7 +3,6 @@ include ("header.php");
 include ("makeDropdownLists.php");
 include("../controller/controllerIdDropdowns.php");
 include("../controller/validatorTipoUsuario.php");
-
 include 'modules/moduleUserNav.php';
 if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
     ?>
@@ -16,7 +15,6 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
                     <?php
                     include ("./modules/addFotoAnuncio.php");
                     ?>
-
                     <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
                         <input class="center-block" type="file" name="archivo[]" multiple="multiple">
                         <input type="submit" value="Subir imagen"  class="trig">
@@ -24,21 +22,16 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
                     <form action="../controller/controllerAddAnuncio.php" name="formAnuncio" id="formAnuncio">
                         <hr>
                         <p>POI:<select id="POIAnuncio" name="POIAnuncio" onchange="mostrarInfoAnuncio(this.value)">
-                               
                                 <?php makeDropdownlistPoisUser(); ?>
                             </select><span class="erroresAnuncioSelect"></span></p>
                         <p><span>Foto: </span><input type="text" name="imagenAnuncio" id="imagenAnuncio" value="<?php echo $fotoSubida; ?>"></p>
-                        <p>Titulo:<input type="text" id="tituloAnuncio" name="tituloAnuncio" ></p>
-                        <p>Descripción:<input type="text" id="descripcionAnuncio" name="descripcionAnuncio"></p>
-
+                        <p>Titulo: <input type="text" id="tituloAnuncio" name="tituloAnuncio" ></p>
+                        <p>Descripción:</p><textarea rows="4" cols="50" id="descripcionAnuncio" name="descripcionAnuncio"></textarea>
                         <input type="submit" id="modificarAnuncio" name= "modificarAnuncio" value="Modificar Anuncio">
                         <div id="botones">
                             <input type="submit" id="crearAnuncio" name="crearAnuncio" value="Crear Anuncio">
                         </div>
                     </form>
-
-
-
                 </div>
                 <div id="seleccionados">
                 </div>
@@ -47,7 +40,6 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
             </div>
         </div>
     </div>
-
     <?php
 } else {
     header("Location: formErrorSession.php");
