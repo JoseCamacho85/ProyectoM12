@@ -10,13 +10,7 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 $tipo = $_REQUEST['tipo'];
 
-if (emptyField($tipo) == false) {
-    header("Location: ../view/errors/errorCamposVaciosPoi.html");
-    break;
-} else if (controlFindTipo($tipo) == false) {
-    header("Location: ../view/errors/errorCampoNombreExisteTipo.html");
-    break;
-}
+include 'validations/validateAddTipo.php';
 
 try {
     $bitacle->insertTipo(null, $tipo);

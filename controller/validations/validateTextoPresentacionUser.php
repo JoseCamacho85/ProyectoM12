@@ -1,9 +1,13 @@
 <?php
+
 function validateTextoPresentacion($string) {
     $ok = false;
-    if (preg_match('/^[a-zA-Z\d\s]{0,400}$/i', $string)) {
+    if (strlen($string) > 400) {
+        $ok = false;
+    } else {
         $ok = true;
     }
     return $ok;
 }
+
 ?>

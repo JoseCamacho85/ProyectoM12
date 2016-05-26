@@ -24,10 +24,7 @@ if (isset($_REQUEST['mostrarInfo'])) {
         $estaEnPoi = 0;
     }
 
-    if (validateTexto($texto) == false) {
-        header("Location: ../view/errors/errorCampoTextoHistorial.html");
-        break;
-    }
+    include 'validations/validateModifyHistorial.php';
 
     try {
         $bitacle->modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);

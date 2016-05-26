@@ -10,13 +10,7 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 $transporte = $_REQUEST['transporte'];
 
-if (emptyField($transporte) == false) {
-    header("Location: ../view/errors/errorCamposVaciosPoi.html");
-    break;
-} else if (controlFindTransporte($transporte) == false) {
-    header("Location: ../view/errors/errorCampoNombreExisteTransporte.html");
-    break;
-}
+include 'validations/validateAddTransporte.php';
 
 try {
     $bitacle->insertTransporte(null, $transporte);
