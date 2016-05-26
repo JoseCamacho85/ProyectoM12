@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2016 a las 14:12:13
+-- Tiempo de generación: 26-05-2016 a las 13:39:11
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.5.28
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `diario` (
   `nombre` char(25) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `diario`
@@ -91,7 +91,8 @@ CREATE TABLE IF NOT EXISTS `diario` (
 
 INSERT INTO `diario` (`id`, `nombre`, `descripcion`, `id_usuario`) VALUES
 (1, 'Mi Diario 1', 'Este es mi primer diario', 5),
-(2, 'Mi Diario 2', 'Mi segundo diario', 5);
+(2, 'Mi Diario 2', 'Mi segundo diario', 5),
+(3, 'mi nuevo diario', 'prueba', 6);
 
 -- --------------------------------------------------------
 
@@ -175,7 +176,8 @@ CREATE TABLE IF NOT EXISTS `historial` (
 --
 
 INSERT INTO `historial` (`id_diario`, `id_poi`, `fechaVisitaPoi`, `estaEnPoi`, `texto`, `foto`, `video`) VALUES
-(1, 1, '2016-05-03', 0, 'Espero que me guste', '', '');
+(1, 1, '2016-05-03', 0, 'Espero que me guste', '', ''),
+(3, 2, '0000-00-00', 0, 'srfsdfsdfsdfsdsf', '', '');
 
 -- --------------------------------------------------------
 
@@ -503,14 +505,33 @@ CREATE TABLE IF NOT EXISTS `ruta` (
   `nombre` char(25) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `ruta`
 --
 
 INSERT INTO `ruta` (`id`, `nombre`, `descripcion`, `id_usuario`) VALUES
-(1, 'Ruta del moli de vent', 'La mejor', 5);
+(1, 'Ruta del moli de vent', 'La mejor', 5),
+(2, 'ruta del bacalao', 'sfsdfsdfsdfsd', 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `rutapoi`
+--
+
+CREATE TABLE IF NOT EXISTS `rutapoi` (
+  `id_ruta` int(11) NOT NULL,
+  `id_poi` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `rutapoi`
+--
+
+INSERT INTO `rutapoi` (`id_ruta`, `id_poi`) VALUES
+(2, 2);
 
 -- --------------------------------------------------------
 
@@ -597,7 +618,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `username`, `password`, `email`, `poblacion`, `idioma`, `telefono`, `url`, `foto`, `textoPresentacion`, `esAdministrador`, `esUsuarioRegistrado`, `esUsuarioProfesional`) VALUES
 (5, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'admin@bitacle.es', 'Granollers', 'Català', '6403212', 'www.bitacle.es', '', '', 1, 1, 1),
-(6, 'userRegistrado', '81dc9bdb52d04dc20036dbd8313ed055', 'userRegistrado@bitacle.es', 'Granollers', 'Català', '4402212', '', '', '', 0, 1, 0),
+(6, 'userRegistrado', '81dc9bdb52d04dc20036dbd8313ed055', 'userRegistrado@bitacle.es', 'Granollers', 'Català', '4402212', '', '', '', 0, 1, 1),
 (7, 'userProfesional', '81dc9bdb52d04dc20036dbd8313ed055', 'userProfesional', 'Parets', 'Català', '6473652', '', '', '', 0, 1, 1);
 
 -- --------------------------------------------------------
@@ -710,6 +731,13 @@ ALTER TABLE `ruta`
   ADD KEY `id_usuario` (`id_usuario`);
 
 --
+-- Indices de la tabla `rutapoi`
+--
+ALTER TABLE `rutapoi`
+  ADD PRIMARY KEY (`id_ruta`,`id_poi`),
+  ADD KEY `id_poi` (`id_poi`);
+
+--
 -- Indices de la tabla `temaforo`
 --
 ALTER TABLE `temaforo`
@@ -771,7 +799,7 @@ ALTER TABLE `ciudad`
 -- AUTO_INCREMENT de la tabla `diario`
 --
 ALTER TABLE `diario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `entorno`
 --
@@ -806,7 +834,7 @@ ALTER TABLE `poi`
 -- AUTO_INCREMENT de la tabla `ruta`
 --
 ALTER TABLE `ruta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `temaforo`
 --
@@ -886,6 +914,13 @@ ALTER TABLE `poi`
 --
 ALTER TABLE `ruta`
   ADD CONSTRAINT `ruta_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+
+--
+-- Filtros para la tabla `rutapoi`
+--
+ALTER TABLE `rutapoi`
+  ADD CONSTRAINT `rutapoi_ibfk_1` FOREIGN KEY (`id_ruta`) REFERENCES `ruta` (`id`),
+  ADD CONSTRAINT `rutapoi_ibfk_2` FOREIGN KEY (`id_poi`) REFERENCES `poi` (`id`);
 
 --
 -- Filtros para la tabla `usuariomensajeforo`
