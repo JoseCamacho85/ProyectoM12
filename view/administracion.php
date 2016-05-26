@@ -12,7 +12,7 @@ if ((checkSession()) && ($objUsuarioConectado->getAdministrador() == 1)) {
     <div class="container-fluid text-center">    
         <div class="row content">
             <div class="col-sm-12 text-center"> 
-                <h2>Administración</h2>
+                <h2>panel de administrador</h2>
                 <hr>
                 <div id="adminUsers">
                     <h3>Administración de usuarios</h3>

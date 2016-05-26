@@ -10,7 +10,7 @@ include 'modules/moduleUserNav.php';
 <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-12 text-center"> 
-            <h2>Mis puntos de interés</h2>
+            <h2>mis puntos de interés</h2>
             <div>
                 <form action="../controller/controllerMisPois.php" name="formPOI">
                     <hr>
@@ -36,7 +36,6 @@ include 'modules/moduleUserNav.php';
 
             </div>
             <div id="seleccionados">
-                ELEMENTOS SELECCIONADOS APARECERÁN AQUÍ
             </div>
             <div id="prueba1">
             </div>

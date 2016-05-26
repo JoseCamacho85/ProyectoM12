@@ -11,7 +11,7 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
     <div class="container-fluid text-center">    
         <div class="row content">
             <div class="col-sm-12 text-center"> 
-                <h2>Introducir Anuncio</h2>
+                <h2>añadir anuncio</h2>
                 <div>
                     <?php
                     include ("./modules/addFotoAnuncio.php");
@@ -41,7 +41,6 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
 
                 </div>
                 <div id="seleccionados">
-                    ELEMENTOS SELECCIONADOS APARECERÁN AQUÍ
                 </div>
                 <div id="prueba1">
                 </div>

@@ -9,18 +9,20 @@ if (checkSession()) {
     include 'modules/moduleUserNav.php';
     ?>
 
-    <h2>LUGARES VISITADOS</h2>
-    
-    <?php include ("mostrarCiudadesVisitadas.php"); ?>
+    <h2>lugares visitados</h2>
+    <div class="col-md-4 col-md-offset-4">   
+        <?php include ("mostrarCiudadesVisitadas.php"); ?>
 
+    </div>
+    <div class="col-md-4 col-md-offset-4"> 
+        <a href="mainUser.php"><button class="btn btn-info">Datos personales</button></a>
+        <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
+        <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
 
-    <a href="mainUser.php"><button class="btn btn-info">Datos personales</button></a>
-    <a href="showDiaryUser.php"><button class="btn btn-info">Diarios</button></a>
-    <a href="mainUser.php"><button class="btn btn-info">VOLVER</button></a>
-
-    <?php
-} else {
-    header("Location: formErrorSession.php");
-}
-include ("footer.php");
-?>
+        <?php
+    } else {
+        header("Location: formErrorSession.php");
+    }
+    include ("footer.php");
+    ?>
+</div>

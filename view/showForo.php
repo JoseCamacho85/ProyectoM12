@@ -3,7 +3,7 @@ include ("header.php");
 ?>
 <div class="container-fluid text-center">    
     <div class="row content">
-        <div class="col-md-12 text-center"> 
+        <div class="col-md-10 text-center col-md-offset-1"> 
             <br>
             <table class="table table-hover">
                 <tr class="info">

@@ -63,13 +63,6 @@ if (!isset($_SESSION['bitacle'])) {
     // if session exist, we unserializate it.
     $bitacle = unserialize($_SESSION['bitacle']);
 }
-
-if (isset($_SESSION['user'])) {
-    $user = "";
-    include("modules/addRutaBoton.php");
-    //$bitacle = new Bitacle("bitacle");
-    //$_SESSION['bitacle'] = serialize($bitacle);
-}
 ?>
 
 <!--Css para gridviews-->
@@ -77,7 +70,7 @@ if (isset($_SESSION['user'])) {
 <?php include("css/gridview.css"); ?>
 </style>
 
-<h2>Rutas</h2>
+<h2>rutas</h2>
 
 <table align="center">
     <tr>
@@ -129,10 +122,10 @@ if (isset($_SESSION['user'])) {
              */
             $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
-            //$dg->addColumn($column);
-            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
-            //$dg->addColumn($column);
+//$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
+//$dg->addColumn($column);
+//$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
+//$dg->addColumn($column);
 //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Llistar($label=Llistats de peticionari)');
 //$dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
@@ -194,11 +187,18 @@ if (isset($_SESSION['user'])) {
             ?> 
         </td>
     </tr>
-    <tr>
-        <td> <a href="main.php" id="volver"><button class="btn btn-info">VOLVER</button></a></td>
-        <td align="right">&nbsp;
+    
+    <tr class="col-md-10 col-md-offset-1">
+        <td> <?php
+            if (isset($_SESSION['user'])) {
+                $user = "";
+                include("modules/addRutaBoton.php");
+                //$bitacle = new Bitacle("bitacle");
+                //$_SESSION['bitacle'] = serialize($bitacle);
+            }
+            ?></td>
+        <td> <a href="main.php" id="volver"><button class="btn btn-info">volver</button></a></td>
 
-        </td>
     </tr>
 </table>
 

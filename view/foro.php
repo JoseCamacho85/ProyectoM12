@@ -3,7 +3,7 @@ include("header.php");
 ?>
 <div class="container-fluid">    
     <div class="row content">
-        <div class="col-md-12"> 
+        <div class="col-md-10 col-md-offset-1"> 
             <br>
             <?php
             include("../controller/conexionBD.php");
