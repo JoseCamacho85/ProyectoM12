@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * método que comprueba si el email introducido es válido
+ * @param type $email correo electrónico que comprueba el método
+ * @return boolean
+ */
 function controlFindEmail($email) {
     $validation = true;
     $bitacle = unserialize($_SESSION['bitacle']);

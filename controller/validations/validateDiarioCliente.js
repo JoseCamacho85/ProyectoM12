@@ -1,7 +1,10 @@
 $(document).ready(function () {
     validarDiario();
 });
-
+/**
+ * método que comprueba que los campos al añadir un diario son válidos
+ * @returns {undefined}
+ */
 function validarDiario() {
 
     $("#ok").hide();

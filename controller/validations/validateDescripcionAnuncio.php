@@ -1,4 +1,9 @@
 <?php
+/**
+ * método que valora si la descripción del anuncio está en un formato correcto
+ * @param type $string string que contiene la descripcion del anuncio
+ * @return boolean
+ */
 function validateDescripcionAnuncio($string) {
     $ok = false;
     if (preg_match('/^[a-zA-Z0-9_-ÀÁÈÉÌÍÒÓÙÚàáèéìíòóùúñ]{2}+[a-zA-Z0-9_-ÀÁÈÉÌÍÒÓÙÚàáèéìíòóùúñ\s]{0,198}$/', $string)) {

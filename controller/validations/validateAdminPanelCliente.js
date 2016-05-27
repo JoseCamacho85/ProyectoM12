@@ -1,7 +1,10 @@
 $(document).ready(function () {
     validarPanelAdmin();
 });
-
+/**
+ * método para validar que los campos que modifica el administrador son correctos
+ * @returns {undefined}
+ */
 function validarPanelAdmin() {
 
     $("#ok").hide();

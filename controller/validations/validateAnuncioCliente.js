@@ -1,7 +1,10 @@
 $(document).ready(function () {
     validarAnuncio();
 });
-
+/**
+ * método que comprueba que los valores insertado al crear un anuncio son correctos
+ * @returns {undefined}
+ */
 function validarAnuncio() {
 
     $("#ok").hide();

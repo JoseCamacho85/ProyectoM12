@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * mira que el entorno introducido no exista
+ * @param type $nombre nombre del entorno
+ * @return boolean
+ */
 function controlFindEntorno($nombre) {
     $validation = true;
     $bitacle = unserialize($_SESSION['bitacle']);
