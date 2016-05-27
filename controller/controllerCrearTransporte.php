@@ -14,6 +14,7 @@ include 'validations/validateAddTransporte.php';
 
 try {
     $bitacle->insertTransporte(null, $transporte);
+    include("../view/modules/refresh.php");
     header("Location: ../view/administracion.php");
 } catch (Exception $e) {
     showMessage($e->getMessage());
