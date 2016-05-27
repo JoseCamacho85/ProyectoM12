@@ -475,7 +475,22 @@ class Bitacle {
         $this->setRutas($arrayAux);
     }
 
+public function eliminarDiaryUser($id){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->eliminarDiaryUser($id);
+        $arrayAux = []; 
+        for ($i = 0; $i<count($this->getDiarios()); $i++){
 
+            if (($this->getDiarios()[$i]->getId()!=$id)){
+                //echo "ID objeto FOR:".$this->employees[$i]->getId()."<br>"; 
+                array_push($arrayAux, $this->getDiarios()[$i]);             
+            }
+    
+        }   
+        $this->setDiarios($arrayAux);
+
+
+}
 
 
 }

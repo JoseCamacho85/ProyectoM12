@@ -442,5 +442,12 @@ class BitacleDB {
             $result = $con->exec($sql);
             $con = null; 
     }
+    function eliminarDiaryUser($id){
+        $sql = "DELETE FROM diario WHERE id='".$id."'";
+       //echo $sql;
+            $con = new DB(); 
+            $result = $con->exec($sql);
+            $con = null; 
+    }
 
 }
