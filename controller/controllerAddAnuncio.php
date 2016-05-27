@@ -36,7 +36,7 @@ if (isset($_REQUEST['crearAnuncio']) || isset($_REQUEST['modificarAnuncio'])) {
     if (isset($_REQUEST["modificarAnuncio"])) {
         try {
             $bitacle->modificarAnuncio($titulo, $descripcion, $imagen, $id_poi, $id_usuario);
-
+            include("../view/modules/refresh.php");
             echo $titulo . "perfecto";
         } catch (Exception $e) {
             showMessage($e->getMessage());

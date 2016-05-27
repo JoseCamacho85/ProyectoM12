@@ -24,6 +24,7 @@ if (isset($_REQUEST["submit"])) {
 
     try {
         $bitacle->insertDiario(null, $nombre, $descripcion, $id_usuario);
+        include("../view/modules/refresh.php");
         header("Location:../view/showDiaryUser.php");
         echo $nombre . "perfecto";
 

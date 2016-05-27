@@ -47,6 +47,7 @@ include 'validations/validateAddPoi.php';
 if (isset($_REQUEST["submitPoi"])) {
     try {
         $bitacle->insertPoi(null, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad1, $id_pais, $id_usuario);
+        include("../view/modules/refresh.php");
         header("Location:../view/showPOI.php");
         echo $nombre . " INSERTADO CORRECTAMENTE";
     } catch (Exception $e) {

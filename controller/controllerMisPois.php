@@ -22,7 +22,7 @@ $user = unserialize($_SESSION['user']);
 if (isset($_REQUEST["modificarPoi"])){
         try {
             $bitacle->modificarPoi($id_poi, $nombre, $foto, $descripcion, $url, $precio, $horario);
- 
+            include("../view/modules/refresh.php");
             echo $nombre . " modificado";
 
             //showMessage("Usuario ". $username ." creado correctamente");	
