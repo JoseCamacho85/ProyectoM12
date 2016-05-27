@@ -1,3 +1,4 @@
+<div id="anadirPoiRutas">Añade este POI a tus rutas o diarios:</div>
 <form method="post" action="../controller/controllerAddRutaPOI.php">
     <input type="hidden" name="idPoi" id="idPoi" value='<?php echo $idPOI; ?>'/>
     <select name="idRuta" id ="idRuta">
