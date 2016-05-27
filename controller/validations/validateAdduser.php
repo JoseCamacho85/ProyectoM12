@@ -4,7 +4,7 @@ if (emptyField($username) == false) {
     header("Location: ../view/errors/errorCamposVaciosUser.html");
     break;
 } else if (validateUsername($username) == false) {
-    header("Location: ../view/errors/errorCampoUserNameUser.html");
+    header("Location: ../view/errors/errorCampoUsernameUser.html");
     break;
 } else if (controlFindUser($username) == false) {
     header("Location: ../view/errors/errorCampoUsernameExisteUser.html");
