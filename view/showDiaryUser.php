@@ -80,7 +80,16 @@ if (checkSession()) {
     include("../controller/validatorTipoUsuario.php");
     include 'modules/moduleUserNav.php';
     ?>
+<tr class="col-md-10 col-md-offset-1">
+        <td> <?php
+            if (isset($_SESSION['user'])) {
+                $user = "";
+                include("modules/addDiaryBoton.php");
+            }
+            ?></td>
+        <td> <a href="mainUser.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
 
+    </tr>
     <h2>diarios</h2>
     <div class="col-md-8 col-md-offset-2">   
         <br />  
