@@ -22,7 +22,7 @@ include ("header.php");
                     <p>Población: <input id="poblacionUser" type="text" name="poblacion" /></p>
                     <p>Idioma: <input id="idiomaUser" type="text" name="idioma" /></p>
                     <p>Teléfono: <input id="telefonoUser" type="text" name="telefono"/></p>
-                    <p>URL: <input id="urlUser" type="text" name="url" /></p>
+                    <p>URL: <input id="urlUser" type="text" name="url" value="http://" /></p>
                     <p>Texto de presentación:</p>
                     <textarea id="presentacionUser" name="textoPresentacion" rows="4" cols="30"></textarea><br/>
 
