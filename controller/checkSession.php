@@ -1,4 +1,8 @@
 <?php
+/**
+ * 
+ * @return boolean
+ */
 function checkSession() {
     //session_start();
     if (isset($_SESSION["login"])) {

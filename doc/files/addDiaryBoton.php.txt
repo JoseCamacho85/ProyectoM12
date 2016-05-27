@@ -1,0 +1,1 @@
+<a href="addDiario.php" id="AddDiarioBtn"><button class="btn btn-info">Añadir Diario</button></a>
