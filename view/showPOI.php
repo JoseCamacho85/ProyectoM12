@@ -51,7 +51,7 @@ function Llistar($params) {
 function Borrar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"../controller/controllerDeleteEmployee.php?id=$id\"><img border=\"0\" src=\"images/delete.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"../controller/controllerDeletePOI.php?id=$id\"><img border=\"0\" src=\"images/delete.gif\" alt=\"$label\" title=\"$label\" /></a>";
 }
 function VerDetalles($params) {
     extract($params);
