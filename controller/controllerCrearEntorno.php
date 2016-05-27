@@ -14,6 +14,7 @@ include 'validations/validateAddEntorno.php';
 
 try {
     $bitacle->insertEntorno(null, $entorno);
+    include("../view/modules/refresh.php");
     header("Location: ../view/administracion.php");
 } catch (Exception $e) {
     showMessage($e->getMessage());

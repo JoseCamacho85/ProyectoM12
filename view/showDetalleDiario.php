@@ -24,7 +24,7 @@ if (checkSession()) {
         <h2>POIs</h2>
         <form method="post" action="../controller/controllerModificarHistorial.php">
             <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
-                <option selected>Seleccione un POI</option>
+                <!--<option selected>Seleccione un POI</option>-->
                 <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
             </select>
             <div id="infoPoi">
