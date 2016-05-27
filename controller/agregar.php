@@ -16,7 +16,7 @@ if (isset($_POST["submit"])) {
         $mensaje = $_POST['mensaje'];
         $respuestas = $_POST['respuestas'];
         $identificador = $_POST['identificador'];
-        $fecha = date("y-m-d");
+        $fecha = date("d-m-y");
 
 //aplicar id de usuario logeado
 //$usuarios = $bitacle->getUsers();

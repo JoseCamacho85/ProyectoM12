@@ -26,7 +26,7 @@ include ("header.php");
                             . "ver</a>"
                             . "</td>";
                     echo "<td>$titulo</td>";
-                    echo "<td>" . date("d-m-y,$fecha") . "</td>";
+                    echo "<td>".substr($fecha, 2)."</td>";
                     echo "<td>$respuestas</td>";
                     echo "</tr>";
                 }
