@@ -421,7 +421,7 @@ class BitacleDB {
 
     function eliminarPoi($id){
         $sql = "DELETE FROM poi WHERE id='".$id."'";
-       echo $sql;
+       //echo $sql;
             $con = new DB(); 
             $result = $con->exec($sql);
             $con = null; 
@@ -429,7 +429,15 @@ class BitacleDB {
 
     function eliminarUser($id){
         $sql = "DELETE FROM usuario WHERE id='".$id."'";
-       echo $sql;
+       //echo $sql;
+            $con = new DB(); 
+            $result = $con->exec($sql);
+            $con = null; 
+    }
+
+    function eliminarRuta($id){
+        $sql = "DELETE FROM ruta WHERE id='".$id."'";
+       //echo $sql;
             $con = new DB(); 
             $result = $con->exec($sql);
             $con = null; 

@@ -459,4 +459,23 @@ class Bitacle {
         }   
         $this->setUsers($arrayAux);
     }
+
+  public function eliminarRuta($id){
+        $bitacleDB = new BitacleDB();
+        $bitacleDB->eliminarRuta($id);
+        $arrayAux = []; 
+        for ($i = 0; $i<count($this->getRutas()); $i++){
+
+            if (($this->getRutas()[$i]->getId()!=$id)){
+                //echo "ID objeto FOR:".$this->employees[$i]->getId()."<br>"; 
+                array_push($arrayAux, $this->getRutas()[$i]);             
+            }
+    
+        }   
+        $this->setRutas($arrayAux);
+    }
+
+
+
+
 }
