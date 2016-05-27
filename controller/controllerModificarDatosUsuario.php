@@ -22,6 +22,7 @@ $id = cogerIdUsuario($usuarios, $user);
 
 try {
     $bitacle->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+	include("../view/modules/refresh.php");
 } catch (Exception $e) {
     $e->getMessage();
 }
