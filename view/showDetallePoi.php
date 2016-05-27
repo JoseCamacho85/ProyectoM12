@@ -31,7 +31,7 @@ $idPOI = $_REQUEST["id"];
             <div class="col-md-3">
             <div class="pull-left">
                    
-                    <span><img class="fotoMostrar" src="fotoPoi/<?php echo $foto ?>"/></span>
+                    <span><img class="fotoMostrar img-responsive" src="fotoPoi/<?php echo $foto ?>"/></span>
                 </div>
                 </div>
               <div class="col-md-9">
