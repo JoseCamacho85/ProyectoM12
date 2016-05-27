@@ -52,9 +52,11 @@ label{
 }
 
 .fotoMostrar{
-    height: 210px;
+    margin-left: -5px;
+    /*height: 210px;*/
     width: 210px;
     padding: 1%;
+    padding-bottom: 10px;
 }
 
 
@@ -980,3 +982,53 @@ td.text-right {
 .clear{
     clear: both;
 }
+
+.titulos{
+    font-weight: bold;
+}
+
+#tituloDetalle{
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+    border-style: solid; 
+    border-color: #008CBA;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.borderss{
+    border-style: solid;
+}
+
+.clearMP{
+    margin: 0px;
+    padding: 0px;
+}
+
+.padBot{
+    padding-bottom:10px;
+}
+
+#TituloPubli{
+    font-weight: bold;
+    font-size: large;
+    color: red;
+}
+#publi{
+    border-style: solid;
+    padding: 10px;
+    -moz-box-shadow: 0 0 5px 5px #888;
+    -webkit-box-shadow: 0 0 5px 5px #888;
+    box-shadow: 0 0 5px 5px #888;
+}
+
+#TituloAnuncio{
+    font-weight: bold;
+    font-size: xx-large;
+
+}
+
+#anadirPoiRutas{
+    font-weight: bold;
+}
+

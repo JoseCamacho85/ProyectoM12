@@ -87,7 +87,7 @@ function VerDetalles($params) {
  
         </td>
 
-<h2>puntos de interes</h2>
+<h2>puntos de interés</h2>
 
 <br />  
 

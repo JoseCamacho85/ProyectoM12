@@ -12,7 +12,7 @@ if (checkSession()) {
     <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
 
     <div class="container-fluid">    
-        <h2>Introducir Puntos De Interes</h2>
+        <h2>Introducir Puntos De Interés</h2>
         <div class="row content">
             <div class="col-sm-12"> 
                 <div>
@@ -29,9 +29,11 @@ if (checkSession()) {
                         <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
                         <p><span>Descripción: </span><input type="text" name="descripcionPoi" id="descripcionPoi" ></p>
                         <p><span>URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
-                        <p><span>Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
-                        <p><span>Horario: </span><input type="text" name="horarioPoi" id="horarioPoi"></p>
-                        <p>
+                        <p>Precio:</p>
+                        <p><textarea name="precioPoi" id="precioPoi" rows="3" cols="25"></textarea></p>
+                        <p>Horario:</p>
+                        <p><textarea name="horarioPoi" id="horarioPoi" rows="3" cols="25"></textarea></p>                   
+
                             <span>Tipo: </span>
                             <select name="tipoPoi" id="tipoPoi">
                                 <?php makeDropdownlistTipos(); ?>
