@@ -26,7 +26,8 @@ if (checkSession()) {
             <p>Teléfono: <input type="text" name="telefono" value="<?php echo $telefono ?>" </p>
             <p>URL: <input type="text" name="url" value="<?php echo $url ?>" </p>
             <p>Texto de presentación: <input type="text" name="textoPresentacion" value="<?php echo $texto ?>" </p>
-            <p><input type="submit" value="Modificar datos" /></p>
+            <p><input type="submit" name= "modificarDatos" value="Modificar datos" /></p>
+            <p><input type="submit" name= "eliminarUser" value="Eliminar usuario" /></p>
         </form>
     </div>
     <?php
