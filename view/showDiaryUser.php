@@ -45,7 +45,7 @@ if (checkSession()) {
     function Borrar($params) {
         extract($params);
         $id = $record['id'];
-        return "<a href=\"../controller/controllerDeleteEmployee.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\" /></a>";
+        return "<a href=\"../controller/controllerDeleteDiaryUser.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\" /></a>";
     }
 
     function VerDetalles($params) {
