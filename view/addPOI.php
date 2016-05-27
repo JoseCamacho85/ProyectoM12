@@ -12,7 +12,7 @@ if (checkSession()) {
     <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
 
     <div class="container-fluid">    
-        <h2>Introducir Puntos De Interes</h2>
+        <h2>Introducir punto de interés</h2>
         <div class="row content">
             <div class="col-sm-12"> 
                 <div>
@@ -27,7 +27,7 @@ if (checkSession()) {
                         <hr>
                         <p><span>Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
                         <p><span>Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
-                        <p><span>Descripción: </span><input type="text" name="descripcionPoi" id="descripcionPoi" ></p>
+                        <p><span>Descripción:</span></p><textarea rows="5" cols="25" name="descripcionPoi" id="descripcionPoi" ></textarea>
                         <p><span>URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
                         <p><span>Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
                         <p><span>Horario: </span><input type="text" name="horarioPoi" id="horarioPoi"></p>

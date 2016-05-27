@@ -22,7 +22,7 @@ function addDiarioPoi() {
                 }
             });
         } else {
-            alert("Deber seleccionar un Diario");
+            alert("Debe seleccionar un Diario");
 
         }
     });

@@ -25,6 +25,6 @@ if (isset($btnDiario)) {
     }
 } else {
 
-    header("location:../view/showDetallePoi.php?id=".$idPOI."");
+    header("location:../view/showPOI.php");
 }
 ?>
