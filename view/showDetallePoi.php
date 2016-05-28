@@ -45,7 +45,7 @@ $idPOI = $_REQUEST["id"];
                 <div class="col-md-6">
                     <div>
                         <span class="titulos">Url: </span>
-                        <span><?php echo $url ?></span>
+                        <span><a href="<?php echo $url ?>" target="_blank"><?php echo $url ?></a></span>
                     </div>
 
                     <div>
@@ -83,7 +83,6 @@ $idPOI = $_REQUEST["id"];
                         <span><?php echo $id_pais ?></span>
                     </div>
                     <?php
-
                     if (isset($_SESSION['user'])) {
                         include("modules/addRutaPOI_addDiarioPOI.php");
                     }
@@ -92,7 +91,6 @@ $idPOI = $_REQUEST["id"];
                 <div class="col-md-6">
 
                     <?php
-
                     showAnuncio($idPOI);
                     ?>
 
@@ -102,7 +100,7 @@ $idPOI = $_REQUEST["id"];
         </div>
     </div>
     <script>
-        <?php include("js/relacionesAjax.js"); ?>
+<?php include("js/relacionesAjax.js"); ?>
     </script>
     <?php
     include ("footer.php");

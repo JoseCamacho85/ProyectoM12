@@ -15,9 +15,6 @@ include 'modules/moduleUserNav.php';
                 <form action="../controller/controllerMisPois.php" name="formPOI">
                   
                     <p>POI: <select name="MiPoi" onchange="mostrarMisPois(this.value)">
-                            <!--<option>
-                                selecciona POI
-                            </option>-->
                             <?php makeDropdownlistPoisUser(); ?>
                         </select></p>
                     <p><span class="titulos">Nombre: </span><input type="text" id="nombrePoi" name="nombrePoi"/></p>
