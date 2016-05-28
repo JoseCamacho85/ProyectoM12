@@ -63,7 +63,7 @@ for ($i = 0; $i < count($nuevaArray);$i++){
 	echo $nuevaArray[$i]."<br>";
 
     }    
-echo "<br>";
+//echo "<br>";
    
 } catch (Exception $e) {
     $e->getMessage();

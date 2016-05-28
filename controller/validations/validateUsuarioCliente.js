@@ -2,7 +2,10 @@
 $(document).ready(function () {
     validarUser();
 });
-
+/**
+ * valida que los campos del usuario son validos
+ * @returns {undefined}
+ */
 function validarUser() {
 
     $("#ok").hide();

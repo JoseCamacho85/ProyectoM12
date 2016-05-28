@@ -18,7 +18,7 @@
                 //include("../controller/validatorTipoUsuario.php");
                 if ($objUsuarioConectado->getProfessional() == 1) {
                     ?>
-                    <li><a href="addAnuncio.php">Añadir Anuncios</a></li>
+                    <li><a href="addAnuncio.php">Anuncios</a></li>
                     <?php
                 }
                 ?>
@@ -26,6 +26,7 @@
                 if ($objUsuarioConectado->getAdministrador() == 1) {
                     ?>
                     <li><a href="administracion.php">Administración</a></li>
+                    <li><a href="showUsersAdmin.php">Buscar usuarios</a></li>             
                     <?php
                 }
                 ?>

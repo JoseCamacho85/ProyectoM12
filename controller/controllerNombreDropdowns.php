@@ -17,4 +17,5 @@ function cogerUsername($clase, $id) {
     }
     return $nombre;
 }
+
 ?>

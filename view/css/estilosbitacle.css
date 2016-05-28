@@ -113,7 +113,7 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #FF2800;
 }
 
 a:hover,
@@ -1032,3 +1032,47 @@ td.text-right {
     font-weight: bold;
 }
 
+.cuadro {
+        min-width: 1000px;
+        border-width: 1px;
+        padding: 10px;  
+        border-style: solid; 
+        border-color: #008CBA; 
+        -moz-box-shadow: 0 0 5px 5px #888;
+        -webkit-box-shadow: 0 0 5px 5px #888;
+        box-shadow: 0 0 5px 5px #888;  
+        border-radius: 25px;   
+    }
+.cuadro form{
+    padding: 2px;
+    margin-top: 5px;
+}
+
+.cuadro form span{
+        width: 9%;
+        float: left;
+}
+
+.centrar{
+    text-align: center;
+}
+label.error{
+    color: red;
+    padding-left: 5px;
+}
+select+label{
+    color: red;
+    padding-left: 5px;
+}
+
+.camposOb{
+    font-style: italic;
+}
+
+#searchPOI{
+    margin-top: 10px;
+}
+
+#ciudadesVis{
+    font-size: 25px;
+}

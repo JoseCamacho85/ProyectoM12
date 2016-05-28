@@ -20,26 +20,25 @@ $textoPresentacion = $_REQUEST['textoPresentacion'];
 $usuarios = $bitacle->getUsers();
 $id = cogerIdUsuario($usuarios, $user);
 
-if (isset($_REQUEST["modificarDatos"])){
-try {
-    $bitacle->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
-	include("../view/modules/refresh.php");
-} catch (Exception $e) {
-    $e->getMessage();
-}
-header("Location: ../view/mainUser.php");
-}
-
-if (isset($_REQUEST["eliminarUser"])){
-try {
-    $bitacle->eliminarUser($id);
-	include("../view/modules/refresh.php");
-	include("logout.php");
-	include("../view/modules/refresh.php");
-} catch (Exception $e) {
-    $e->getMessage();
-}
-header("Location: ../view/main.php");
+if (isset($_REQUEST["modificarDatos"])) {
+    try {
+        $bitacle->modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion);
+        include("../view/modules/refresh.php");
+    } catch (Exception $e) {
+        $e->getMessage();
+    }
+    header("Location: ../view/mainUser.php");
 }
 
+if (isset($_REQUEST["eliminarUser"])) {
+    try {
+        $bitacle->eliminarUser($id);
+        include("../view/modules/refresh.php");
+        include("logout.php");
+        include("../view/modules/refresh.php");
+    } catch (Exception $e) {
+        $e->getMessage();
+    }
+    header("Location: ../view/main.php");
+}
 ?>

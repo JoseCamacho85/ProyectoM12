@@ -25,7 +25,6 @@ $id_entorno = $_REQUEST['entornoPoi'];
 $id_pais = $_REQUEST['paisPoi'];
 $id_ciudad = $_REQUEST['selectCiudadPOI'];
 
-//aplicar id de usuario logeado
 $usuarios = $bitacle->getUsers();
 $id_usuario = cogerIdUsuario($usuarios, $user);
 
@@ -35,11 +34,7 @@ $entorno = $bitacle->getEntornos();
 $ciudad = $bitacle->getCiudades();
 $pais = $bitacle->getPaises();
 
-//$id_tipo1 = cogerId($tipo, $id_tipo);
-//$id_transporte1 = cogerId($transporte, $id_transporte);
-//$id_entorno1 = cogerId($entorno, $id_entorno);
 $id_ciudad1 = cogerId($ciudad, $id_ciudad);
-//$id_pais1 = cogerId($pais, $id_pais);
 $requiredFields = Array($nombre, $descripcion);
 
 include 'validations/validateAddPoi.php';

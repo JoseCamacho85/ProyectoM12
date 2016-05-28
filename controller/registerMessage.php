@@ -1,5 +1,5 @@
 <?php
-//include("conexionBD.php");
+
 session_start();
 include("controllerIdDropdowns.php");
 include("../model/functionAutoLoad.php");
@@ -22,14 +22,9 @@ $message = $_POST["message"];
 $usuario = $bitacle->getUsers();
 $id_usuario = cogerIdUsuario($usuario, $user);
 
-//echo $id_usuario;
-
-
-try{
-    $bitacle->insertMP(null,$titulo,$message,$usuarioReceptor,$id_usuario);
+try {
+    $bitacle->insertMP(null, $titulo, $message, $usuarioReceptor, $id_usuario);
 } catch (Exception $ex) {
     
 }
-
-
 ?>

@@ -4,19 +4,18 @@ include ("header.php");
 
 if (checkSession()) {
     ?>
-
-    <div class="container-fluid text-center">    
+    <a href="showRutas.php"><button class="btn btn-info">Volver</button></a>
+    <div class="container">    
         <div class="row content">
-            <div class="col-sm-12 text-center"> 
+            <div class="col-md-12"> 
                 <h2>Introducir Ruta</h2>
-                <div>
+                <hr>
+                <div class="cuadro">
                     <form action="../controller/controllerAddRuta.php" method="post" id="formRuta">
-                        <p>Nombre de la ruta: <input type="text" name="nameRuta"/></p>
-                        <p>Descripcion de la ruta: <textarea name="nameDescripcion" rows="4" cols="30"></textarea><br/></p>
-                        <input type="submit" value="Añadir Ruta" name="submit" class="btn btn-info"/>
+                        <p><span class="titulos">Nombre: </span><input type="text" name="nameRuta"/></p>
+                        <p><span class="titulos">Descripción: </span><textarea name="nameDescripcion" rows="4" cols="30"></textarea></p>
+                        <div class="centrar"><input type="submit" value="Añadir Ruta" name="submit" class="btn btn-info"/></div>
                     </form>
-                    <br>
-                    <a href="showRutas.php"><button class="btn btn-info">volver a rutas</button></a>
                 </div>
                 <div id="ok"></div>
             </div>

@@ -1,10 +1,10 @@
 <?php
+
 /**
- * 
- * @return boolean
+ * controla que la sesión existe
+ * @return boolean 
  */
 function checkSession() {
-    //session_start();
     if (isset($_SESSION["login"])) {
         $ok = true;
     } else {
