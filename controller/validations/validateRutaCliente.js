@@ -1,6 +1,10 @@
 $(document).ready(function () {
     validarRuta();
 });
+/**
+ * valida que los campos de la ruta sean correctos
+ * @returns {undefined}
+ */
 function validarRuta() {
 
     $("#ok").hide();

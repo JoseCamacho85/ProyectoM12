@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * controla que los transportes no se introduzcan duplicados
+ * @param type $nombre nombre del transporte a valorar
+ * @return boolean
+ */
 function controlFindTransporte($nombre) {
     $validation = true;
     $bitacle = unserialize($_SESSION['bitacle']);

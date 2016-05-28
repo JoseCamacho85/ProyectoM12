@@ -2,7 +2,10 @@ $(document).ready(function () {
     validarPOI();
 
 });
-
+/**
+ * valida que los campos del poi sean correctos
+ * @returns {undefined}
+ */
 function validarPOI() {
 
     $("#ok").hide();

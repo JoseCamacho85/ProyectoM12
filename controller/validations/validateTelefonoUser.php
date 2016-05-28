@@ -1,4 +1,9 @@
 <?php
+/**
+ * valida que el numero de telefono sea válido
+ * @param type $string numero de telefono
+ * @return boolean
+ */
 function validateTelefono($string) {
     $ok = false;
     if (preg_match('/^[0-9]{9}$|^$/', $string)) {
