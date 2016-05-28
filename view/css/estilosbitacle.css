@@ -1040,10 +1040,10 @@ td.text-right {
         border-color: #008CBA; 
         -moz-box-shadow: 0 0 5px 5px #888;
         -webkit-box-shadow: 0 0 5px 5px #888;
-        box-shadow: 0 0 5px 5px #888;      
+        box-shadow: 0 0 5px 5px #888;  
+        border-radius: 25px;   
     }
 .cuadro form{
-
     padding: 2px;
     margin-top: 5px;
 }
