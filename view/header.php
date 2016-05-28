@@ -26,7 +26,6 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="../controller/validations/validateAdminPanelCliente.js"></script> 
         <script type="text/javascript" src="../controller/validations/validateRutaCliente.js"></script> 
         <script type="text/javascript" src="../controller/validations/validateAnuncioCliente.js"></script> 
-        <!--script type="text/javascript" src="../controller/validations/validateMP.js"></script--> 
 
 
     </head>
@@ -54,7 +53,6 @@ include ("../controller/checkSession.php");
                         $bitacle = new Bitacle("bitacle");
                         $_SESSION['bitacle'] = serialize($bitacle);
                     } else {
-                        // if session exist, we unserializate it.
                         $bitacle = unserialize($_SESSION['bitacle']);
                     }
 

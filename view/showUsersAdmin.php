@@ -10,8 +10,6 @@ if (checkSession()) {
         $id = $record['id'];
     }
 
-//final de la funcio Editar
-
     if (isset($_SESSION['pantalla'])) {
         if ($_SESSION['pantalla'] == 'POI') {
             if (isset($_POST['buscar']))
@@ -32,15 +30,11 @@ if (checkSession()) {
         return "<a target=\"_blank\" href=\"employee_pdf.php?id=$id&tmp=$tmp\"><img border=\"0\" src=\"images/imprimir.gif\" alt=\"$label\" title=\"$label\" /></a>";
     }
 
-//final de la funcio Editar
-
     function Llistar($params) {
         extract($params);
         $id = $record['id'];
         return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
     }
-
-//final de la funcio Editar 
 
     function Borrar($params) {
         extract($params);
@@ -100,20 +94,13 @@ if (checkSession()) {
             $mostrar = 15;
 
             $dg = & new Structures_DataGrid($mostrar);
-// Define DataGrid Color Attributes
-// Define DataGrid Table Attributes
-//$dg->renderer->setTableAttribute('width', '25%');
             $dg->renderer->setTableAttribute('cellspacing', '1');
             $dg->renderer->setTableAttribute('cellpadding', '4');
             $dg->renderer->setTableAttribute('class', 'datagrid');
 
-//$dg->renderer->sortIconASC = "&uArr;";
-//$dg->renderer->sortIconDESC = "&dArr;";
             $dg->renderer->sortIconASC = "&uarr;";
             $dg->renderer->sortIconDESC = "&darr;";
 
-// Set empty row table attributes
-// Definim les columnes del datagrid
             $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Username', 'username', 'username', array('align' => 'center'));
@@ -166,12 +153,10 @@ if (checkSession()) {
 
             if (count($rtotalobres) > 0) {
                 $dg->bind($rtotalobres);
-                // Print the DataGrid
                 $dg->render();
                 if (strlen($buscar)) {
                     $dg->renderer->setExtraVars(array("buscar" => $_SESSION["buscar"], "categoria" => $categoria));
                 }
-                //echo $dg->renderer->getPaging(); OLGA: error al paginar
             } else {
                 if (strlen($buscar)) {
                     echo "<p style=\"color:red; padding-left:1em;\">Failed search, there aren't any result.<p>";

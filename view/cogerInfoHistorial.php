@@ -46,8 +46,6 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
         echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
         echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
         echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
-//        include ("./modules/addFotoHistorial.php");
-//        echo "<p>Foto: <input id=\"fotoHistorial\" type=\"text\" id=\"fotoUser\" name=\"fotoHistorial\" value=" . $fotoSubida . "></p>";
         echo "<p>Foto:</p><img src=\"fotoHistorial/" . $foto . "\"/>";
         echo "<p>Vídeo:<input type=\"text\" name=\"video\" value=" . $video . ">";
         echo "<p><input type=\"submit\" name=\"mostrarInfo\" value=\"Modificar datos\" /></p>";

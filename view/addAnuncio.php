@@ -7,7 +7,7 @@ include 'modules/moduleUserNav.php';
 if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
     ?>
     <script type="text/javascript"><?php include ("js/mostrarInfoAnuncio.js"); ?></script>
-  <div class="container">    
+    <div class="container">    
         <div class="row content">
             <div class="col-md-12 col-sm-12">  
                 <h2>añadir anuncio</h2>
@@ -23,7 +23,7 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
                     </form>
 
                     <form action="../controller/controllerAddAnuncio.php" name="formAnuncio" id="formAnuncio">
-                       
+
                         <p><span class="titulos">POI:</span><select id="POIAnuncio" name="POIAnuncio" onchange="mostrarInfoAnuncio(this.value)">
                                 <?php makeDropdownlistPoisUser(); ?>
                             </select><span class="erroresAnuncioSelect"></span></p>

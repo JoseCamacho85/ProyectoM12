@@ -30,11 +30,8 @@ include("header.php");
                     echo "<tr><td class='col-md-12'>"
                     . "<a href='formulario.php?id&respuestas=$respuestas&identificador=$id' class='btn btn-info'>Responder</a>"
                     . "</td></tr>";
-                    //$bitacle = new Bitacle("bitacle");
-                    //$_SESSION['bitacle'] = serialize($bitacle);
                     echo "</table>";
                 }
-                //echo "<br /><br /><a href='formulario.php?id&respuestas=$respuestas&identificador=$id'>Responder</a><br />";
             }
 
             $query2 = "SELECT * FROM  foro WHERE identificador = '$id' ORDER BY fecha DESC";

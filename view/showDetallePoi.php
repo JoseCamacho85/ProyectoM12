@@ -9,7 +9,7 @@ $bitacle = unserialize($_SESSION['bitacle']);
 
 if (checkSession()) {
     $user = unserialize($_SESSION['user']);
-//aplicar id de usuario logeado
+
     $usuarios = $bitacle->getUsers();
     $id_usuario = cogerIdUsuario($usuarios, $user);
 }

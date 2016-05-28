@@ -12,7 +12,6 @@ include 'makeDropdownLists.php';
                 <!-- Script para generarar dropdown ciudades-->
                 <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
 
-                <!-- <form type="POST">action="../controller/controllerSearchPOI.php"--> 
                 <div class="container col-md-12" style="background: #E7FFFF;">    
                     <div class="col-md-offset-1 col-md-2">
                         <p>Tipo <input type="checkbox" id="checkTipoPOI" name="checkTipoPOI"></p>

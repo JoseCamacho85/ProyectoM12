@@ -18,15 +18,15 @@ else
                 <input type="hidden" name="respuestas" value="<?php echo $respuestas; ?>">
                 <table  class='table table-bordered'>
                     <?php
-                    if(isset($_POST["newTheme"])){
-                    ?>
-                    <tr>
-                        <td>Titulo</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="titulo"></td>
-                    </tr>
-                    <?php
+                    if (isset($_POST["newTheme"])) {
+                        ?>
+                        <tr>
+                            <td>Titulo</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="titulo"></td>
+                        </tr>
+                        <?php
                     }
                     ?>
                     <tr>

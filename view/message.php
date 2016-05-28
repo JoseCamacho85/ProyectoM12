@@ -38,5 +38,5 @@ include 'modules/moduleUserNav.php';
     </form>
 </div>
 <?php
-    include ("footer.php");
-            ?>
+include ("footer.php");
+?>

@@ -5,7 +5,6 @@ include ("mostrarArrayRutaPoi.php");
 
 
 $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
-
 ?>
 <script type="text/javascript"><?php include ("js/mostrarInfoPoi.js"); ?></script>
 <div>
@@ -20,7 +19,7 @@ $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
     </div>
 
     <select id="selectPois" name="selectPois" onchange="mostrarInfoPoi(this.value)">	  
-   	<?php makeDropdownlistArray($arrayRutaPoi); ?>
+        <?php makeDropdownlistArray($arrayRutaPoi); ?>
     </select>
 
     <div id = "infoPoi">	

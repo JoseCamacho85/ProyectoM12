@@ -7,13 +7,13 @@ include 'modules/moduleUserNav.php';
 ?>
 <script type="text/javascript"><?php include ("js/mostrarMisPois.js"); ?></script>
 <div class="container">    
-        <div class="row content">
-            <div class="col-md-12"> 
+    <div class="row content">
+        <div class="col-md-12"> 
             <h2>mis puntos de interés</h2>
             <hr>
-                <div class="cuadro">
+            <div class="cuadro">
                 <form action="../controller/controllerMisPois.php" name="formPOI">
-                  
+
                     <p>POI: <select name="MiPoi" onchange="mostrarMisPois(this.value)">
                             <?php makeDropdownlistPoisUser(); ?>
                         </select></p>
@@ -24,10 +24,10 @@ include 'modules/moduleUserNav.php';
                     <p><span class="titulos">Precio: </span><input type="text" id="precioPoi" name="precioPoi"></p>
                     <p><span class="titulos">Horario: </span><input type="text" id="horarioPoi" name="horarioPoi"></p>
                     <div class="centrar">
-                    <div id="botones">
-                    <input type="submit" id="modificarPoi" name= "modificarPoi" value="Modificar Poi" class="btn btn-info">
-                        <input type="submit" id="eliminarPoi" name="eliminarPoi" value="Eliminar Poi" class="btn btn-info">
-                    </div>
+                        <div id="botones">
+                            <input type="submit" id="modificarPoi" name= "modificarPoi" value="Modificar Poi" class="btn btn-info">
+                            <input type="submit" id="eliminarPoi" name="eliminarPoi" value="Eliminar Poi" class="btn btn-info">
+                        </div>
                     </div>
                 </form>
             </div>

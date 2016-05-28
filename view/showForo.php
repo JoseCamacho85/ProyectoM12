@@ -23,10 +23,10 @@ include ("header.php");
                     $respuestas = $row['respuestas'];
                     echo "<tr>";
                     echo "<td><a class='btn btn-info' href='foro.php?id=$id'  role='button'>"
-                            . "ver</a>"
-                            . "</td>";
+                    . "ver</a>"
+                    . "</td>";
                     echo "<td>$titulo</td>";
-                    echo "<td>".substr($fecha, 2)."</td>";
+                    echo "<td>" . substr($fecha, 2) . "</td>";
                     echo "<td>$respuestas</td>";
                     echo "</tr>";
                 }
@@ -36,8 +36,6 @@ include ("header.php");
             if (isset($_SESSION['user'])) {
                 $user = "";
                 include("modules/addTemaForoBoton.php");
-                //$bitacle = new Bitacle("bitacle");
-                //$_SESSION['bitacle'] = serialize($bitacle);
             }
             ?>
         </div>
