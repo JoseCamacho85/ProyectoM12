@@ -1,28 +1,31 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classForo
- *
- * @author Mazu
- */
 class classForo {
+
     private $id = null;
-    
+
+    /**
+     * constructor de la clase foro
+     * @param type $id id del foro
+     */
     function __construct($id) {
         $this->id = $id;
     }
 
+    /**
+     * metodo get de la id de la clase foro
+     * @return type
+     */
     function getId() {
         return $this->id;
     }
 
+    /**
+     * metodo set de la id de la clase foro
+     * @param type $id id del foro
+     */
     function setId($id) {
         $this->id = $id;
-    }    
+    }
+
 }
