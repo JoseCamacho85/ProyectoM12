@@ -14,17 +14,14 @@ $btnRuta = $_POST["#addRuta"];
 echo $idPOI;
 echo $idRuta;
 
-if (isset($btnRuta)) {
-    try {
-        $bitacle->insertRutaPoi($idPOI, $idRuta);
-        echo "rutaPoi insertado";
-        header("location:../view/showPOI.php");
-    } catch (Exception $e) {
-        echo "error al insertar";
-        showMessage($e->getMessage());
-    }
-} else {
 
-    header("location:../view/showDetallePoi.php?id=" . $idPOI . "");
+try {
+    $bitacle->insertRutaPoi($idPOI, $idRuta);
+    echo "rutaPoi insertado";
+    header("location:../view/showPOI.php");
+} catch (Exception $e) {
+    //header("location:../view/showDetallePoi.php?id=" . $idPOI . "");
+    echo "error al insertar";
+    showMessage($e->getMessage());
 }
 ?>
