@@ -1,18 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classPOIDB
- *
- * @author jose
- */
 class AnuncioDB {
 
+    /**
+     * metodo para insertar un anuncio directamente a la base de datos
+     * @param type $anuncio anuncio a insertar
+     */
     public function insertAnuncio($anuncio) {
 
         $con = new DB();

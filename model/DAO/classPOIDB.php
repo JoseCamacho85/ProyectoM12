@@ -1,18 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classPOIDB
- *
- * @author Mazu
- */
 class PoiDB {
 
+    /**
+     * metodo para insertar un poi en la base de datos
+     * @param type $poi poi a insertar en la base de datos
+     * @return type
+     */
     public function insertPoi($poi) {
 
         $con = new DB();
@@ -51,10 +45,12 @@ class PoiDB {
         $con = null;
     }
 
+    /**
+     * crea un array de pois con los resultados de la base de datos
+     * @return array array de pois
+     */
     function fecthPoi() {
-
         $pois = array();
-
         $con = new DB();
         $sql = $con->prepare("SELECT * FROM poi");
         $result = $con->executeQuery($sql);

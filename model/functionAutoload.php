@@ -1,6 +1,9 @@
 <?php
 
-//This is the function of autoLoad of all clases
+/**
+ * metodo para leer e incluid todas las clases
+ * @param type $class_name nombre de la clase
+ */
 function __autoload($class_name) {
     $root = "C:/xampp/htdocs/ProyectoM12";
     $curdir = getcwd();

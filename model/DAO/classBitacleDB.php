@@ -1,19 +1,15 @@
 <?php
 
 include("dbConnector.php");
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of classBitacleDB
- *
- * @author Mazu
- */
 class BitacleDB {
 
+    /**
+     * comprueba que el usuario y contraseña correspondan con los introducidos
+     * @param type $user usuario
+     * @param type $password contraseña
+     * @return boolean
+     */
     function fetchValidateUser($user, $password) {
         $sql = "SELECT * FROM usuario WHERE username = '" . $user . "'";
         $con = new DB();
@@ -34,6 +30,10 @@ class BitacleDB {
         return $ok;
     }
 
+    /**
+     * crea un array de anuncios con los resultados de la base de datos
+     * @return array array de anuncios
+     */
     function fetchAnuncio() {
 
         $anuncios = array();
@@ -56,6 +56,10 @@ class BitacleDB {
         return $anuncios;
     }
 
+    /**
+     * crea un array de diarios con los resultados de la base de datos
+     * @return array array de diarios
+     */
     function fetchDiario() {
 
         $diarios = array();
@@ -76,6 +80,10 @@ class BitacleDB {
         return $diarios;
     }
 
+    /**
+     * crea un array de rutas con los resultados de la base de datos
+     * @return array array de rutas
+     */
     function fetchRuta() {
 
         $rutas = array();
@@ -96,6 +104,10 @@ class BitacleDB {
         return $rutas;
     }
 
+    /**
+     * crea un array de ciudades con los resultados de la base de datos
+     * @return array array de ciudades
+     */
     function fetchCiudad() {
 
         $ciudades = array();
@@ -115,6 +127,10 @@ class BitacleDB {
         return $ciudades;
     }
 
+    /**
+     * crea un array de enntornos con los resultados de la base de datos
+     * @return array array de entornos
+     */
     function fetchEntorno() {
 
         $entornos = array();
@@ -133,6 +149,10 @@ class BitacleDB {
         return $entornos;
     }
 
+    /**
+     * crea un array de paises con los resultados de la base de datos
+     * @return array array de paises
+     */
     function fetchPais() {
 
         $paises = array();
@@ -151,6 +171,10 @@ class BitacleDB {
         return $paises;
     }
 
+    /**
+     * crea un array de pois con los resultados de la base de datos
+     * @return array array de pois
+     */
     function fetchPoi() {
 
         $pois = array();
@@ -180,6 +204,10 @@ class BitacleDB {
         return $pois;
     }
 
+    /**
+     * crea un array de tipos de poi con los resultados de la base de datos
+     * @return array array de tipos de poi
+     */
     function fetchTipo() {
 
         $tipos = array();
@@ -198,6 +226,10 @@ class BitacleDB {
         return $tipos;
     }
 
+    /**
+     * crea un array de transportes con los resultados de la base de datos
+     * @return array array de transportes
+     */
     function fetchTransporte() {
 
         $transportes = array();
@@ -216,6 +248,10 @@ class BitacleDB {
         return $transportes;
     }
 
+    /**
+     * crea un array de usuarios con los resultados de la base de datos
+     * @return array array de usuarios
+     */
     function fetchUsuario() {
 
         $usuarios = array();
@@ -245,6 +281,10 @@ class BitacleDB {
         return $usuarios;
     }
 
+    /**
+     * crea un array de historial con los resultados de la base de datos
+     * @return array array de historial
+     */
     function fetchHistorial() {
 
         $historiales = array();
@@ -267,47 +307,47 @@ class BitacleDB {
 
         return $historiales;
     }
-    
-    function searchMP($Destinatario){
+
+    /**
+     * busca un mensaje privado para enviarselo al destinatario
+     * @param type $Destinatario usuario que recibe el mp
+     * @return array
+     */
+    function searchMP($Destinatario) {
         $con = new DB();
-        
+
         $MPS = array();
- 
-        $sql = $con->prepare("SELECT * FROM mensajeprivado where destinatario='$Destinatario'");      
-        
+
+        $sql = $con->prepare("SELECT * FROM mensajeprivado where destinatario='$Destinatario'");
+
         $result = $con->executeQuery($sql);
-               
+
         foreach ($result as $row) {
             $id_MP = $row['id'];
             $titulo = $row['titulo'];
             $texto = $row['texto'];
             $destinatario = $row['destinatario'];
             $id_usuario = $row['id_usuario'];
-            
+
             $MensajePrivado = new MensajePrivado($id_MP, $titulo, $texto, $destinatario, $id_usuario);
             array_push($MPS, $MensajePrivado);
         }
-        
+
         return $MPS;
     }
 
+    /**
+     * crea una query
+     * @param type $fields array de campos
+     * @param type $fieldNames array de valores
+     * @return array
+     */
     function crearQueryDB($fields, $fieldNames) {
 
         $query = "SELECT * FROM POI WHERE ";
 
-        //$arr = array();
-
-        /* for ($i = 0; $i < count($fields); $i++) {
-          if ($fields[$i] != null) {
-          $arr[$i] .= $fields[$i];
-          }
-          } */
-
-        //print_r($arr);
-
         for ($i = 0; $i < count($fields); $i++) {
             if ($fields[$i] != null) {
-                //echo count($arr);
                 if ($i == count($fields) - 1) {
                     $query .= $fieldNames[$i] . "=" . $fields[$i] . "  ";
                 } else {
@@ -315,7 +355,6 @@ class BitacleDB {
                 }
             }
         }
-        //echo $query;
 
         $pois = array();
 
@@ -340,11 +379,14 @@ class BitacleDB {
             $poi = new Poi($id, $nombre, $foto, $descripcion, $url, $precio, $horario, $id_tipo, $id_transporte, $id_entorno, $id_ciudad, $id_pais, $id_usuario);
             array_push($pois, $poi);
         }
-
-//Muestra resultado
         return $pois;
     }
 
+    /**
+     * carga un dropdown de pois a raíz de la ruta seleccionada
+     * @param type $idRuta ruta seleccionada
+     * @return array
+     */
     function DropdownPoisRuta($idRuta) {
 
         $arrayRutaPoi = array();
@@ -363,6 +405,11 @@ class BitacleDB {
         return $arrayRutaPoi;
     }
 
+    /**
+     * carga un dropdown de pois a raíz del diario seleccionado
+     * @param type $idDiario diario seleccionado
+     * @return array
+     */
     function DropdownPoisDiario($idDiario) {
 
         $arrayDiarioPoi = array();
@@ -386,6 +433,18 @@ class BitacleDB {
         return $arrayDiarioPoi;
     }
 
+    /**
+     * metodo para modificar los datos del usuario
+     * @param type $id id del usuario
+     * @param type $username nombre del usuario
+     * @param type $email correo electronico del usuario
+     * @param type $poblacion poblacion del usuario
+     * @param type $idioma idioma del usuario
+     * @param type $telefono telefono del usuario
+     * @param type $url sitio web del usuario
+     * @param type $foto foto de perfil del usuario
+     * @param type $textoPresentacion texto de presentacion del usuario
+     */
     function modificarDatosUsuario($id, $username, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion) {
         $sql = "UPDATE usuario SET username='" . $username . "',email='" . $email . "',poblacion='" . $poblacion . "',"
                 . "idioma='" . $idioma . "',telefono='" . $telefono . "',url='" . $url . "',foto='" . $foto . "',"
@@ -395,6 +454,16 @@ class BitacleDB {
         $con = null;
     }
 
+    /**
+     * metodo para modificar el historial de visitas
+     * @param type $id_diario id del diario
+     * @param type $id_poi id del poi
+     * @param type $fechaVisitaPoi fecha de visita del poi
+     * @param type $estaEnPoi checkbox que marca si ha estado en ese poi
+     * @param type $texto texto del historial
+     * @param type $foto foto del historial
+     * @param type $video video del historial
+     */
     function modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video) {
         $sql = "UPDATE historial SET fechaVisitaPoi='" . $fechaVisitaPoi . "',estaEnPoi='" . $estaEnPoi . "',texto='" . $texto . "',"
                 . "foto='" . $foto . "',video='" . $video . "' WHERE id_diario='" . $id_diario . "' AND id_poi='" . $id_poi . "'";
@@ -403,51 +472,77 @@ class BitacleDB {
         $con = null;
     }
 
+    /**
+     * metodo para modificar el anuncio
+     * @param type $titulo titulo del anuncio
+     * @param type $descripcion descripcion del anuncio
+     * @param type $imagen imagen del anuncio
+     * @param type $id_poi id del poi del anuncio
+     * @param type $id_usuario id del usuario del anuncio
+     */
     function modificarAnuncio($titulo, $descripcion, $imagen, $id_poi, $id_usuario) {
         $sql = "UPDATE anuncio SET titulo='" . $titulo . "',descripcion='" . $descripcion . "',imagen='" . $imagen
-        . "' WHERE id_usuario='" . $id_usuario . "' AND id_poi='" . $id_poi . "'";
+                . "' WHERE id_usuario='" . $id_usuario . "' AND id_poi='" . $id_poi . "'";
         $con = new DB();
         $result = $con->exec($sql);
         $con = null;
     }
-
+/**
+ * metodo para modificar los puntos de interes
+ * @param type $id_poi id del poi
+ * @param type $nombre nombre del poi
+ * @param type $foto foto del poi
+ * @param type $descripcion descripcion del poi
+ * @param type $url sitio web del poi
+ * @param type $precio precio del poi
+ * @param type $horario horario del poi
+ */
     function modificarPoi($id_poi, $nombre, $foto, $descripcion, $url, $precio, $horario) {
         $sql = "UPDATE poi SET nombre='" . $nombre . "',foto='" . $foto . "',descripcion='" .
-        $descripcion. "',url='" . $url . "',precio='" . $precio. "',horario='" . $horario. "' WHERE id='" . $id_poi . "'";
+                $descripcion . "',url='" . $url . "',precio='" . $precio . "',horario='" . $horario . "' WHERE id='" . $id_poi . "'";
         $con = new DB();
         $result = $con->exec($sql);
         $con = null;
     }
-
-    function eliminarPoi($id){
-        $sql = "DELETE FROM poi WHERE id='".$id."'";
-       //echo $sql;
-            $con = new DB(); 
-            $result = $con->exec($sql);
-            $con = null; 
+/**
+ * metodo para eliminar un poi
+ * @param type $id id del poi a eliminar
+ */
+    function eliminarPoi($id) {
+        $sql = "DELETE FROM poi WHERE id='" . $id . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
     }
-
-    function eliminarUser($id){
-        $sql = "DELETE FROM usuario WHERE id='".$id."'";
-       //echo $sql;
-            $con = new DB(); 
-            $result = $con->exec($sql);
-            $con = null; 
+/**
+ * metodo para eliminar usuarios
+ * @param type $id id del usuario a eliminar
+ */
+    function eliminarUser($id) {
+        $sql = "DELETE FROM usuario WHERE id='" . $id . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
     }
-
-    function eliminarRuta($id){
-        $sql = "DELETE FROM ruta WHERE id='".$id."'";
-       //echo $sql;
-            $con = new DB(); 
-            $result = $con->exec($sql);
-            $con = null; 
+/**
+ * metodo para eliminar ruta
+ * @param type $id id de la ruta a eliminar
+ */
+    function eliminarRuta($id) {
+        $sql = "DELETE FROM ruta WHERE id='" . $id . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
     }
-    function eliminarDiaryUser($id){
-        $sql = "DELETE FROM diario WHERE id='".$id."'";
-       //echo $sql;
-            $con = new DB(); 
-            $result = $con->exec($sql);
-            $con = null; 
+/**
+ * metodo para eliminar un diario de usuario
+ * @param type $id id del diario de usuario
+ */
+    function eliminarDiaryUser($id) {
+        $sql = "DELETE FROM diario WHERE id='" . $id . "'";
+        $con = new DB();
+        $result = $con->exec($sql);
+        $con = null;
     }
 
 }

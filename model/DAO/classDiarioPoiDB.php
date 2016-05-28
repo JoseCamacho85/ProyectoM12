@@ -1,18 +1,13 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classDiarioPoiDB
- *
- * @author jose
- */
 class DiarioPoiDB {
 
+    /**
+     * clase para insertar un poi dentro de un diario
+     * @param type $id_diario id del diario donde se insertara el poi
+     * @param type $id_poi poi que se insertara en el diario
+     * @return \Historial
+     */
     public function insertDiarioPoi($id_diario, $id_poi) {
         $fechaVisitaPoi = null;
         $estaEnPoi = null;

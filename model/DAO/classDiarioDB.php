@@ -1,18 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classDiario
- *
- * @author toni
- */
 class DiarioDB {
 
+    /**
+     * metodo para insertar un diario directamente a la base de datos
+     * @param type $diario diario a insertar en la base de datos
+     * @return type
+     */
     public function insertDiario($diario) {
 
         $con = new DB();

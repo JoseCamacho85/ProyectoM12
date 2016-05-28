@@ -1,18 +1,12 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of classRutaDB
- *
- * @author toni
- */
 class RutaDB {
 
+    /**
+     * metodo para insertar rutas a la base de datos
+     * @param type $ruta ruta a insertar a la base de datos
+     * @return type
+     */
     public function insertRuta($ruta) {
         $con = new DB();
         $nonquery = $con->prepare("INSERT INTO ruta (nombre,descripcion, id_usuario) "
