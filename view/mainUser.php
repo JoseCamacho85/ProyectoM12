@@ -11,11 +11,11 @@ if (checkSession()) {
         <?php
         include ("./modules/addFotoUser.php");
         ?>
-    <!--p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php //echo $fotoSubida;      ?>"></p-->
+    <!--p><span>Foto: </span><input type="text" name="fotoUser" id="fotoUser" value="<?php //echo $fotoSubida;       ?>"></p-->
         <center><form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post" enctype="multipart/form-data" name="inscripcion">
-            <input type="file" name="archivo[]" multiple="multiple">
-            <input type="submit" value="Subir imagen"  class="trig">
-        </form></center>
+                <input type="file" name="archivo[]" multiple="multiple">
+                <input type="submit" value="Subir imagen"  class="trig">
+            </form></center>
         <form method="post" action="../controller/controllerModificarDatosUsuario.php">
             <img class="fotoMostrar" src="fotoUsuario/<?php echo $foto ?>"/>
             <p>Foto: <input id="fotoUser" type="text" id="fotoUser" name = "fotoUser" value="<?php echo $fotoSubida; ?>"/></p>
@@ -25,7 +25,7 @@ if (checkSession()) {
             <p>Idioma: <input type="text" name="idioma" value="<?php echo $idioma ?>" </p>
             <p>Teléfono: <input type="text" name="telefono" value="<?php echo $telefono ?>" </p>
             <p>URL: <input type="text" name="url" value="<?php echo $url ?>" </p>
-            <p>Texto de presentación: <input type="text" name="textoPresentacion" value="<?php echo $texto ?>" </p>
+            <p>Texto de presentación:</p><textarea rows="5" cols="25" name="textoPresentacion" value="<?php echo $texto ?>"></textarea>
             <p><input type="submit" name= "modificarDatos" value="Modificar datos" /></p>
             <p><input type="submit" name= "eliminarUser" value="Eliminar usuario" /></p>
         </form>

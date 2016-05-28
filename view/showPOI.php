@@ -140,28 +140,14 @@ FK:id_usuario Usuario(id)-->
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
+//            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
+//            $dg->addColumn($column);
+            $column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Horario', 'horario', 'horario', array('align' => 'center'));
-            $dg->addColumn($column);
-
-            /*
-              $column = new Structures_DataGrid_Column('Nom', 'petnom', 'petnom', array('width' => '255','align'=>'center'));
-              $dg->addColumn($column);
-              $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));
-              $dg->addColumn($column);
-             */
             $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Editar($label=Modify)');
-            //$dg->addColumn($column);
-            //$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Imprimir($label=Print PDF)');
-            //$dg->addColumn($column);
-//$column = new Structures_DataGrid_Column('      ', null, null, array('align' => 'center'), null, 'Llistar($label=Llistats de peticionari)');
-//$dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
             $dg->addColumn($column);
-
 
             if (isset($_GET["orderBy"])) {
                 $order = $_GET["orderBy"];
