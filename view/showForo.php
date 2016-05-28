@@ -8,9 +8,10 @@ include ("header.php");
             <table class="table table-hover">
                 <tr class="info">
                     <td width="20px"></td>
-                    <td width="200px">Titulo</td>
-                    <td width="200px">Fecha</td>
-                    <td width="200px">Respuesta</td>
+                    <td width="180px">TÍTULO</td>
+                    <td width="180px">AUTOR</td>
+                    <td width="180px">FECHA</td>
+                    <td width="180px">RESPUESTAS</td>
                 </tr>
                 <?php
                 include("../controller/conexionBD.php");
@@ -18,6 +19,7 @@ include ("header.php");
                 $result = $mysqli->query($query);
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                     $id = $row['ID'];
+                    $autor = $row['autor'];
                     $titulo = $row['titulo'];
                     $fecha = $row['fecha'];
                     $respuestas = $row['respuestas'];
@@ -26,6 +28,7 @@ include ("header.php");
                     . "ver</a>"
                     . "</td>";
                     echo "<td>$titulo</td>";
+                    echo "<td>$autor</td>";
                     echo "<td>" . substr($fecha, 2) . "</td>";
                     echo "<td>$respuestas</td>";
                     echo "</tr>";
