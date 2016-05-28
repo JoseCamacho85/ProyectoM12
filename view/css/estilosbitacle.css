@@ -1035,9 +1035,7 @@ td.text-right {
 .cuadro {
         min-width: 1000px;
         border-width: 1px;
-        padding: 10px;
-        margin-left: 25em;      
-        margin-right: 25em;  
+        padding: 10px;  
         border-style: solid; 
         border-color: #008CBA; 
         -moz-box-shadow: 0 0 5px 5px #888;
@@ -1050,11 +1048,23 @@ td.text-right {
     margin-top: 5px;
 }
 
-form span{
+.cuadro form span{
         width: 9%;
         float: left;
 }
 
 .centrar{
     text-align: center;
+}
+label.error{
+    color: red;
+    padding-left: 5px;
+}
+select+label{
+    color: red;
+    padding-left: 5px;
+}
+
+.camposOb{
+    font-style: italic;
 }

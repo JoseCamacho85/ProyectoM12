@@ -35,7 +35,7 @@ $idPOI = $_REQUEST["id"];
                     </div>
                 </div>
                 <div class="col-md-9">
-                    <div class="pull-right">
+                    <div class="pull-left">
                         <span class="titulos">Descripción: </span>
                         <span><?php echo $descripcion ?></span>
                     </div>

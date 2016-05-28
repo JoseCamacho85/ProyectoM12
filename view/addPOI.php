@@ -11,8 +11,8 @@ if (checkSession()) {
     <!-- Script para generarar dropdown ciudades-->
     <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
  <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
-    <div class="container-fluid">    
-        <h2>Introducir punto de interés</h2>
+    <div class="container">    
+        <h2>introducir punto de interés</h2>
         <div class="row content">
             <div class="col-md-12"> 
                 <div class="cuadro">
@@ -27,42 +27,43 @@ if (checkSession()) {
 
                     <p></p>
                     <form method="POST" id="formPOI" action="../controller/controllerAddPoi.php" >
-                        <p><span class="titulos">Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>"></p>
-                        <p><span class="titulos">Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
-                        <p><span class="titulos">Descripción:</span></p><textarea rows="5" cols="25" name="descripcionPoi" id="descripcionPoi" ></textarea>
+                        <p><span class="titulos">Foto: </span><input type="text" name="fotoPoi" id="fotoPoi" value="<?php echo $fotoSubida; ?>" readonly></p>
+                        <p><span class="titulos">*Nombre: </span><input type="text" name="nombrePoi" id="nombrePoi"></p>
+                        <p><span class="titulos">*Descripción:</span></p><textarea rows="5" cols="25" name="descripcionPoi" id="descripcionPoi" ></textarea>
                         <p><span class="titulos">URL: </span><input type="text" name="urlPoi" id="urlPoi" value="http://"></p>
                         <p><span class="titulos">Precio: </span><input type="text" name="precioPoi" id="precioPoi"></p>
                         <p><span class="titulos">Horario: </span><input type="text" name="horarioPoi" id="horarioPoi"></p>
                         <p>
-                            <span class="titulos">Tipo: </span>
+                            <span class="titulos">*Tipo: </span>
                             <select name="tipoPoi" id="tipoPoi">
                                 <?php makeDropdownlistTipos(); ?>
                             </select><label class="erroresTipo"></label>
                         </p>
                         <p>
-                            <span class="titulos">Transporte: </span>
+                            <span class="titulos">*Transporte: </span>
                             <select name="transportePoi" id="transportePoi">
                                 <?php makeDropdownlistTransportes(); ?>
                             </select><label class="erroresTransporte"></label>
                         </p>
                         <p>
-                            <span class="titulos">Entorno: </span>
+                            <span class="titulos">*Entorno: </span>
                             <select name="entornoPoi" id="entornoPoi">
                                 <?php makeDropdownlistEntornos(); ?>
                             </select><label class="erroresEntorno"></label>
                         </p>
                         <p>
-                            <span class="titulos">País: </span>
+                            <span class="titulos">*País: </span>
                             <select name="paisPoi" onchange="cambioPais(this.value)" id="paisPoi">
                                 <?php makeDropdownlistPaises(); ?>
                             </select><label class="erroresPais"></label>
                         </p>
                         <p id="ciudad">
-                            <span class="titulos">Ciudad: </span>
+                            <span class="titulos">*Ciudad: </span>
                             <select name="selectCiudadPOI" id="selectCiudadPOI">
 
                             </select><label class="erroresCiudad"></label>
                         </p>
+                        <div class="camposOb">*Campos obligatorios</div>
                         <div class="centrar"><input type="submit" name="submitPoi" id="validate" value="Crear POI"></div>
                     </form>
                 </div>
