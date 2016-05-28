@@ -18,10 +18,10 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $precio = $bitacle->getPois()[$i]->getPrecio();
         $horario = $bitacle->getPois()[$i]->getHorario();
 
+        echo "<p><img src=\"fotoPoi/$foto\"/>" . "</p>";
         echo "<p>Nombre: " . $nombre . "</p>";
-        echo "<p>Foto: " . "<img src=\"fotoPoi/$foto\"/>" . "</p>";
         echo "<p>Descripción: " . $descripcion . "</p>";
-        echo "<p>URL: " . $url . "</p>";
+        echo "<p>URL: <a href=" . $url . " target=\"_blank\">$url</a></p>";
         echo "<p>Precio: " . $precio . "</p>";
         echo "<p>Horario: " . $horario . "</p>";
     }
@@ -46,8 +46,7 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
         echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
         echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
         echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
-        echo "<p>Foto:</p><img src=\"fotoHistorial/" . $foto . "\"/>";
-        echo "<p>Vídeo:<input type=\"text\" name=\"video\" value=" . $video . ">";
+        echo "<p>Vídeo: <input type=\"text\" name=\"video\" value=" . $video . ">";
         echo "<p><input type=\"submit\" name=\"mostrarInfo\" value=\"Modificar datos\" /></p>";
     }
 }
