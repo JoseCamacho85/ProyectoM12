@@ -107,7 +107,7 @@ if (!isset($_SESSION['bitacle'])) {
             $column = new Structures_DataGrid_Column('Descripcion', 'descripcion', 'descripcion', array('align' => 'center'));
             $dg->addColumn($column);
 
-            */
+           
             $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
