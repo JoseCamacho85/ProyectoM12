@@ -118,8 +118,8 @@ if (!isset($_SESSION['bitacle'])) {
 
 // Set empty row table attributes
 // Definim les columnes del datagrid
-            $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
-            $dg->addColumn($column);
+            /*$column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
+            $dg->addColumn($column);*/
             $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Descripcion', 'descripcion', 'descripcion', array('align' => 'center'));

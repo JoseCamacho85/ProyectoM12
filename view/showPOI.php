@@ -136,14 +136,14 @@ FK:id_usuario Usuario(id)-->
 
 // Set empty row table attributes
 // Definim les columnes del datagrid
-            $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
-            $dg->addColumn($column);
+            /*$column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
+            $dg->addColumn($column);*/
             $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
-//            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
-//            $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
             $dg->addColumn($column);
+            /*$column = new Structures_DataGrid_Column('Precio', 'precio', 'precio', array('align' => 'center'));
+            $dg->addColumn($column);*/
             $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
