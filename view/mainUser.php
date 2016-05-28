@@ -36,6 +36,8 @@ if (checkSession()) {
         </form>
         </div>
         </div>
+        </div>
+        </div>
     </div>
     <?php
 } else {
