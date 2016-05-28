@@ -16,7 +16,8 @@
                 if ($objUsuarioConectado->getAdministrador() == 1) {
                     ?>
                     <li><a href="administracion.php">Administración</a></li>
-                    <li><a href="showUsersAdmin.php">Buscar usuarios</a></li>             
+                    <li><a href="showUsersAdmin.php">Buscar usuarios</a></li>
+                    <li><a href="showEstadisticas.php">Estadísticas</a></li>             
                     <?php
                 }
                 ?>

@@ -20,9 +20,9 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $horario = $bitacle->getPois()[$i]->getHorario();
 
         echo "<p>Nombre: " . $nombre . "</p>";
-        echo "<p>Foto: " . "<img src=\"fotoPoi/$foto\"/>" . "</p>";
+        echo "<p><img src=\"fotoPoi/$foto\"/>" . "</p>";
         echo "<p>Descripción: " . $descripcion . "</p>";
-        echo "<p>URL: " . $url . "</p>";
+        echo "<p>URL: <a href=" . $url . " target=\"_blank\">$url</a></p>";
         echo "<p>Precio: " . $precio . "</p>";
         echo "<p>Horario: " . $horario . "</p>";
     }
