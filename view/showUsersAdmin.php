@@ -159,9 +159,9 @@ if (checkSession()) {
                 }
             } else {
                 if (strlen($buscar)) {
-                    echo "<p style=\"color:red; padding-left:1em;\">Failed search, there aren't any result.<p>";
+                    echo "<p style=\"color:red; padding-left:1em;\">Error de búsqueda: no hay coincidencias.<p>";
                 } else {
-                    echo "<p style=\"color:red; padding-left:1em;\">No registers in DB.<p>";
+                    echo "<p style=\"color:red; padding-left:1em;\">No hay registros.<p>";
                 }
             }
             ?> 
