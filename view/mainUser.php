@@ -28,10 +28,10 @@ if (checkSession()) {
                         <p><span class="titulos">Idioma: </span><input type="text" name="idioma" value="<?php echo $idioma ?>" </p>
                         <p><span class="titulos">Teléfono: </span><input type="text" name="telefono" value="<?php echo $telefono ?>" </p>
                         <p><span class="titulos">URL: </span><input type="text" name="url" value="<?php echo $url ?>" </p>
-                        <p><span class="titulos">Presentación: </span><input type="text" name="textoPresentacion" value="<?php echo $texto ?>" </p>
+                        <p><span class="titulos">Presentación: </span></p><textarea rows="4" cols="25" name="textoPresentacion" ><?php echo $texto ?></textarea>
                         <div class="centrar"><input type="submit" name= "modificarDatos" value="Modificar datos" class="btn btn-info"/></div>
                         <p></p>
-                        <div class="centrar"><input type="submit" name= "eliminarUser" value="Eliminar usuario" class="btn btn-info"/></siv>
+                        <div class="centrar"><input type="submit" name= "eliminarUser" value="Darse de baja" class="btn btn-info"/></siv>
                     </form>
                 </div>
             </div>

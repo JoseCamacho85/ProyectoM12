@@ -20,9 +20,9 @@ include 'modules/moduleUserNav.php';
                     <p><span class="titulos">Nombre: </span><input type="text" id="nombrePoi" name="nombrePoi"/></p>
                     <p><span class="titulos">Foto: </span><input type="text" id="fotoPoi" name="fotoPoi"/></p>
                     <p><span class="titulos">Descripción: </span></p><textarea rows="4" cols="50" id="descripcionPoi" name="descripcionPoi"></textarea>
-                    <p><span class="titulos">URL: </span><input type="text" id="urlPoi" name="urlPoi" /></p>
+                    <p><span class="titulos">URL: </span><input type="text" size="50" id="urlPoi" name="urlPoi" /></p>
                     <p><span class="titulos">Precio: </span><input type="text" id="precioPoi" name="precioPoi"></p>
-                    <p><span class="titulos">Horario: </span><input type="text" id="horarioPoi" name="horarioPoi"></p>
+                    <p><span class="titulos">Horario: </span><input type="text" size="50" id="horarioPoi" name="horarioPoi"></p>
                     <div class="centrar">
                         <div id="botones">
                             <input type="submit" id="modificarPoi" name= "modificarPoi" value="Modificar Poi" class="btn btn-info">
