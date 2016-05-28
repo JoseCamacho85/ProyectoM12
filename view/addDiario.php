@@ -2,22 +2,21 @@
 include ("header.php");
 if (checkSession()) {
     ?>
-    <div class="container-fluid text-center">    
-        <h2>Introducir Diario</h2>
+    <a href="showDiaryUser.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
+    <div class="container">    
         <div class="row content">
-            <div class="col-sm-12 text-center"> 
+            <div class="col-md-12"> 
+        <h2>introducir diario</h2>
+        <div class="cuadro">
                 <form action="../controller/controllerAddDiario.php" method="POST" id="formDiario">
-                    <p>Nombre del diario: <input id="nombreDiario" type="text" name="nombre" /></p>
-                    <p>Descripcion: <input id ="descripcionDiario" type="text" name="descripcion"/></p>
+                    <p><span class="titulos">Nombre: </span><input id="nombreDiario" type="text" name="nombre" /></p>
+                    <p><span class="titulos">Descripción: </span><input id ="descripcionDiario" type="text" name="descripcion"/></p>
 
-                    <input type="submit" value="Crear Diario" name="submit">
+                    <div class="centrar"><input type="submit" value="Crear Diario" name="submit" class="btn btn-info"></div>
                 </form>
-            </div>
-            <div id="seleccionados">
-                <div id="ok"></div>
-            </div>
-            <a href="showDiaryUser.php" id="volver"><button class="btn btn-info">VOLVER</button></a>    
+        </div>           
         </div> 
+    </div>
     </div>
     <?php
 } else {

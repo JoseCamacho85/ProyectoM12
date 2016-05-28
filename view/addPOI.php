@@ -64,7 +64,7 @@ if (checkSession()) {
                             </select><label class="erroresCiudad"></label>
                         </p>
                         <div class="camposOb">*Campos obligatorios</div>
-                        <div class="centrar"><input type="submit" name="submitPoi" id="validate" value="Crear POI"></div>
+                        <div class="centrar"><input type="submit" name="submitPoi" id="validate" value="Crear POI" class="btn btn-info"></div>
                     </form>
                 </div>
                 <div id="seleccionados">

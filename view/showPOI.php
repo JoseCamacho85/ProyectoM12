@@ -142,10 +142,9 @@ FK:id_usuario Usuario(id)-->
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
             $dg->addColumn($column);
+            /*
             $column = new Structures_DataGrid_Column('Horario', 'horario', 'horario', array('align' => 'center'));
             $dg->addColumn($column);
-
-            /*
               $column = new Structures_DataGrid_Column('Nom', 'petnom', 'petnom', array('width' => '255','align'=>'center'));
               $dg->addColumn($column);
               $column = new Structures_DataGrid_Column('Adre�a', ' petadr', ' petadr', array('width' => '255'));

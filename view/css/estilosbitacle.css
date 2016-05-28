@@ -113,7 +113,7 @@ a.active {
 }
 
 a {
-    color: #fed136;
+    color: #FF2800;
 }
 
 a:hover,
@@ -1071,4 +1071,8 @@ select+label{
 
 #searchPOI{
     margin-top: 10px;
+}
+
+#ciudadesVis{
+    font-size: 25px;
 }
