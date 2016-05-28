@@ -1068,3 +1068,7 @@ select+label{
 .camposOb{
     font-style: italic;
 }
+
+#searchPOI{
+    margin-top: 10px;
+}

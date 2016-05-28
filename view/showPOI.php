@@ -64,7 +64,7 @@ function VerDetalles($params) {
 <?php include("css/gridview.css"); ?>
 </style>
 
-<a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
+<a href="searchPOI.php"><button class="btn btn-info">Búsqueda avanzada</button></a>
       <?php
                     if (!isset($_SESSION['bitacle'])) {
 

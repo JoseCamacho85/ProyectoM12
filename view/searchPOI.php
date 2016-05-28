@@ -2,10 +2,12 @@
 include ("header.php");
 include 'makeDropdownLists.php';
 ?>
+<a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a> 
 <div class="container-fluid text-center">    
     <div class="row content">
-        <div class="col-sm-12 text-center"> 
-            <h2>Buscar POI</h2>
+        <div class="col-sm-12 text-center">
+
+            <h2>búsqueda avanzada</h2>
             <div>
                 <!-- Script para generarar dropdown ciudades-->
                 <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
@@ -43,17 +45,14 @@ include 'makeDropdownLists.php';
                         </select>
                     </div>
                 </div>
-                <button id="searchPOI" class="btn btn-info">Buscar Puntos de interes</button>
-
-                <!--</form>-->
-                <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
+                <button id="searchPOI" class="btn btn-info">Buscar puntos de interés</button>                
             </div>
 
         </div>
     </div>
 </div>
-<div id="seleccionados">
-    ELEMENTOS SELECCIONADOS APARECERÁN AQUÍ
+<div class="camposOb" id="seleccionados">
+    El resultado de la búsqueda aparecerá aquí
 </div>
 <script type="text/javascript">
     var tipo = null;
