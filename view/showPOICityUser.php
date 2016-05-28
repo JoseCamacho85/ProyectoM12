@@ -13,6 +13,7 @@ if (checkSession()) {
         <div class="row content">
             <div class="col-md-12 text-center"> 
     <h2>lugares visitados</h2>
+    <hr>
     <div class="cuadro">
         <p id="ciudadesVis">  
         <?php include ("mostrarCiudadesVisitadas.php"); ?>

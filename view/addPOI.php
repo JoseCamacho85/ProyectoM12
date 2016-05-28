@@ -13,6 +13,7 @@ if (checkSession()) {
  <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
     <div class="container">    
         <h2>introducir punto de interés</h2>
+        <hr>
         <div class="row content">
             <div class="col-md-12"> 
                 <div class="cuadro">

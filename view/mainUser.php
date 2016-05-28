@@ -8,6 +8,7 @@ if (checkSession()) {
 
      <div class="container">
     <h2>datos personales</h2>
+    <hr>
     <div class="row content">
             <div class="col-md-12"> 
                 <div class="cuadro">
