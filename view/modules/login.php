@@ -7,7 +7,6 @@
             <a>Password: <input id="pass" type="password" name="password" class="userInput" required></a>
         </li>
         <li>
-            <!--span class="glyphicon glyphicon-user"></span><input id="mySubmit" type="submit" name="login" value="login"-->
             <a href="#" id="login"><span class="glyphicon glyphicon-user"></span> Login</a>
         </li>
         <li>  
@@ -16,6 +15,6 @@
     </ul>
 </form>
 <script>
-<?php include("js/login.js");?>
+<?php include("js/login.js"); ?>
 </script>
 

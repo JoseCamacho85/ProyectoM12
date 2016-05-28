@@ -5,7 +5,6 @@
         <?php makeDropdownlistRutasUser(); ?>
     </select>
     <button id="addRuta">Añadir Punto de interés a ruta</button>
-    <!--<input type="submit" value="Añadir Punto de interés a ruta">-->
 
 </form>
 <form method="post" action="../controller/controllerAddDiaryPOI.php">
@@ -14,6 +13,5 @@
         <?php makeDropdownlistDiariosUser(); ?>
     </select>
     <button id="addDiario">Añadir Punto de interés a diario</button>
-    <!--input type="submit" value="Enviar"-->
 
 </form>

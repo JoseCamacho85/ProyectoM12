@@ -9,7 +9,7 @@ function showTablePOI($id, $foto, $nombre, $url, $precio, $horario) {
             <tr>
                 <td style="width: 10%;">
                     <a href="showDetallePoi.php?id=<?php echo $id; ?>">
-                        <img style="width: 70%;" src="fotoPoi/<?php echo $foto; ?>"></img>
+                        <img style="width: 70%;" src="fotoPoi/<?php echo $foto; ?>">
                     </a>
                 </td>
                 <td>
@@ -27,5 +27,4 @@ function showTablePOI($id, $foto, $nombre, $url, $precio, $horario) {
     <?php
 }
 
-//include("../showPOI.php");
 ?>
