@@ -9,6 +9,6 @@ try {
     $nombre = $ruta->getNombre();
     $descripcion = $ruta->getDescripcion();
 } catch (Exception $e) {
-    //showMessage($e->getMessage());    
+    
 }
 ?>

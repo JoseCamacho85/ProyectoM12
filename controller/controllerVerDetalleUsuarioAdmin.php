@@ -1,7 +1,5 @@
 <?php
 
-//include 'controllerNombreDropdowns.php';
-
 $bitacle = unserialize($_SESSION['bitacle']);
 $user = unserialize($_SESSION['user']);
 

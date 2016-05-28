@@ -1,21 +1,20 @@
 <?php
-   session_start();
 
-	include("../model/functionAutoLoad.php");
-   
+session_start();
 
-  $bitacle = unserialize($_SESSION['bitacle']);
+include("../model/functionAutoLoad.php");
 
-  try { 
-    
+
+$bitacle = unserialize($_SESSION['bitacle']);
+
+try {
+
     $bitacle->eliminarRuta($_REQUEST['id']);
 
-    
-    $_SESSION['bitacle']=serialize($bitacle); 
-    header("Location: ../view/showRutas.php");
 
-  } 
-  catch (Exception $e) {
-       
-  }    
+    $_SESSION['bitacle'] = serialize($bitacle);
+    header("Location: ../view/showRutas.php");
+} catch (Exception $e) {
+    
+}
 ?>

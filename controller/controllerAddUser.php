@@ -14,13 +14,8 @@ include("validations/validateTextopresentacionUser.php");
 include("validations/validateEmailExistsUser.php");
 include("validations/validateUserExistsUser.php");
 
-//include("../view/functionShowMessage.php"); 
-//include("../controller/controllerControlFindNif.php");
-
 $bitacle = unserialize($_SESSION['bitacle']);
-//$bitacle = new Bitacle("bitacle");
-//if (isset($_REQUEST['submit'])) {
-//Recover form data
+
 if (isset($_REQUEST["submit"])) {
 
     $username = $_REQUEST['username'];
@@ -47,14 +42,16 @@ if (isset($_REQUEST["submit"])) {
     try {
         $bitacle->insertUser(null, $username, $password, $email, $poblacion, $idioma, $telefono, $url, $foto, $textoPresentacion, $administrador, $registrado, $professional);
         header("Location: ../index.php");
-//inicio para mandar mail al usuario
-        /* $to = $email;
+        /* inicio para mandar mail al usuario
+          $to = $email;
           $subject = 'bitaCle';
           $message = 'Se ha enviado un mensaje a<b> ' . $email . ' </b>para verificar la cuenta.';
 
           mail($to, $subject, $message);
-          echo $message; */
-//final para mandar mail al usuario . hay que modificar el php.ini del xampp, SMTP
+          echo $message;
+          final para mandar mail al usuario .
+          NO SE PUEDE UTILIZAR EN LOCALHOST,
+          cuando esté subido a un servidor se descomentan estas líneas y funciona perfecto */
     } catch (Exception $e) {
         showMessage($e->getMessage());
     }

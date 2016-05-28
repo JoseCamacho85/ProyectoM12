@@ -1,6 +1,7 @@
 <?php
+
 /**
- * 
+ * controla que el usuario está logeado
  */
 function controllerLogin() {
     if (checkSession()) {
@@ -9,4 +10,5 @@ function controllerLogin() {
         header("location:notLogin.php");
     }
 }
+
 ?>

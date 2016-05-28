@@ -1,9 +1,6 @@
 <?php
 
 include 'controllerNombreDropdowns.php';
-//session_start();
-//include("../model/functionAutoLoad.php");
-//include("../view/functionShowMessage.php");   
 
 $bitacle = unserialize($_SESSION['bitacle']);
 
@@ -28,10 +25,7 @@ try {
     $id_entorno = cogerNombre($entorno, $objPOI->getId_entorno());
     $id_ciudad = cogerNombre($ciudad, $objPOI->getId_ciudad());
     $id_pais = cogerNombre($pais, $objPOI->getId_pais());
-    // showMessage("Employee with ID: ". $_REQUEST['id'] ." deleted successfully"); 
-    //header("Location: ../index.php");
-    // $_SESSION['bitacle']=serialize($bitacle);   
 } catch (Exception $e) {
-    //showMessage($e->getMessage());    
+    
 }
 ?>
