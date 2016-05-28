@@ -22,29 +22,16 @@ if (isset($_SESSION['pantalla'])) {
     $_SESSION['categoria'] = '';
 }
 
-function Imprimir($params) {
-    extract($params);
-    $id = $record['id'];
-    $tmp = time();
-    return "<a target=\"_blank\" href=\"employee_pdf.php?id=$id&tmp=$tmp\"><img border=\"0\" src=\"images/imprimir.gif\" alt=\"$label\" title=\"$label\" /></a>";
-}
-
-function Llistar($params) {
-    extract($params);
-    $id = $record['id'];
-    return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
-}
-
 function Borrar($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"../controller/controllerDeletePOI.php?id=$id\"><img border=\"0\" src=\"images/delete.gif\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a id=\"datagrid\" href=\"../controller/controllerDeletePOI.php?id=$id\"><span class=\"glyphicon glyphicon-trash\"></span></a>";
 }
 
 function VerDetalles($params) {
     extract($params);
     $id = $record['id'];
-    return "<a href=\"showDetallePoi.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
+    return "<a href=\"showDetallePoi.php?id=$id\"><span class=\"glyphicon glyphicon-zoom-in\"></span></a>";
 }
 ?>
 
@@ -87,7 +74,7 @@ if (isset($_SESSION['user'])) {
                     <option value="url" <?php if ($_SESSION['categoria'] == "url") echo 'selected="selected"' ?>>URL</option>     
                     <option value="horario" <?php if ($_SESSION['categoria'] == "horario") echo 'selected="selected"' ?>>Horario</option>
                 </select>           
-                <input name ="enviar" type="submit" value="Search">
+                <input name ="enviar" type="submit" value="Buscar">
             </form>
         </td>
     </tr>
@@ -105,13 +92,13 @@ if (isset($_SESSION['user'])) {
             $dg->renderer->sortIconASC = "&uarr;";
             $dg->renderer->sortIconDESC = "&darr;";
 
-            $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('NOMBRE', 'nombre', 'nombre', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Url', 'url', 'url', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('URL', 'url', 'url', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+            $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+            $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
             $dg->addColumn($column);
 
             if (isset($_GET["orderBy"])) {

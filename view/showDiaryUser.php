@@ -23,29 +23,16 @@ if (checkSession()) {
         $_SESSION['categoria'] = '';
     }
 
-    function Imprimir($params) {
-        extract($params);
-        $id = $record['id'];
-        $tmp = time();
-        return "<a target=\"_blank\" href=\"employee_pdf.php?id=$id&tmp=$tmp\"><img border=\"0\" src=\"images/imprimir.gif\" alt=\"$label\" title=\"$label\" /></a>";
-    }
-
-    function Llistar($params) {
-        extract($params);
-        $id = $record['id'];
-        return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
-    }
-
     function Borrar($params) {
         extract($params);
         $id = $record['id'];
-        return "<a href=\"../controller/controllerDeleteDiaryUser.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\" /></a>";
+        return "<a href=\"../controller/controllerDeleteDiaryUser.php?id=$id\"><span class=\"glyphicon glyphicon-trash\"></span></a>";
     }
 
     function VerDetalles($params) {
         extract($params);
         $id = $record['id'];
-        return "<a href=\"showDetalleDiario.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\"  src=\"images/boton-detalles.png\"/></a>";
+        return "<a href=\"showDetalleDiario.php?id=$id\"><span class=\"glyphicon glyphicon-zoom-in\"></span></a>";
     }
     ?>
 
@@ -114,14 +101,14 @@ if (checkSession()) {
     $dg->renderer->sortIconASC = "&uarr;";
     $dg->renderer->sortIconDESC = "&darr;";
 
-    $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
+    $column = new Structures_DataGrid_Column('ID', 'id', 'id', array('align' => 'center'));
     $dg->addColumn($column);
-    $column = new Structures_DataGrid_Column('Nombre', 'nombre', 'nombre', array('align' => 'center'));
+    $column = new Structures_DataGrid_Column('NOMBRE', 'nombre', 'nombre', array('align' => 'center'));
     $dg->addColumn($column);
 
-    $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+    $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
     $dg->addColumn($column);
-    $column = new Structures_DataGrid_Column('Eliminar', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+    $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
     $dg->addColumn($column);
 
 

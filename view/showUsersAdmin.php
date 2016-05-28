@@ -23,29 +23,16 @@ if (checkSession()) {
         $_SESSION['categoria'] = '';
     }
 
-    function Imprimir($params) {
-        extract($params);
-        $id = $record['id'];
-        $tmp = time();
-        return "<a target=\"_blank\" href=\"employee_pdf.php?id=$id&tmp=$tmp\"><img border=\"0\" src=\"images/imprimir.gif\" alt=\"$label\" title=\"$label\" /></a>";
-    }
-
-    function Llistar($params) {
-        extract($params);
-        $id = $record['id'];
-        return "<a href=\"worker_list.php?id=$id\"><img border=\"0\" src=\"images/boton-detalles.png\" alt=\"$label\" title=\"$label\" /></a>";
-    }
-
     function Borrar($params) {
         extract($params);
         $id = $record['id'];
-        return "<a href=\"../controller/controllerDeleteDiaryUser.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\" /></a>";
+        return "<a href=\"../controller/controllerDeleteDiaryUser.php?id=$id\"><span class=\"glyphicon glyphicon-trash\"></span></a>";
     }
 
     function VerDetalles($params) {
         extract($params);
         $id = $record['id'];
-        return "<a href=\"showDataUser.php?id=$id\"><img border=\"0\" alt=\"$label\" title=\"$label\"  src=\"images/boton-detalles.png\"/></a>";
+        return "<a href=\"showDataUser.php?id=$id\"><span class=\"glyphicon glyphicon-zoom-in\"></span></a>";
     }
     ?>
 
@@ -70,8 +57,8 @@ if (checkSession()) {
                     <form name="formbuscar" action="showUsersAdmin.php" method="post">
                         <input name ="buscar" type="text" size="40" value="<?php echo ($_SESSION['buscar']) ?>">
                         <select name="categoria">
-                            <option value="id" <?php if ($_SESSION['categoria'] == "id") echo 'selected="selected"' ?>>ID</option>
                             <option value="username" <?php if ($_SESSION['categoria'] == "username") echo 'selected="selected"' ?>>Username</option>
+                            <option value="id" <?php if ($_SESSION['categoria'] == "id") echo 'selected="selected"' ?>>ID</option>
                             <option value="email" <?php if ($_SESSION['categoria'] == "email") echo 'selected="selected"' ?>>Email</option>
                             <option value="poblacion" <?php if ($_SESSION['categoria'] == "poblacion") echo 'selected="selected"' ?>>Población</option>
                             <option value="idioma" <?php if ($_SESSION['categoria'] == "idioma") echo 'selected="selected"' ?>>Idioma</option>
@@ -82,7 +69,6 @@ if (checkSession()) {
                         </select>           
                         <input name ="enviar" type="submit" value="Search">
                     </form>
-
                 </td>
             </tr>
     </div>
@@ -101,17 +87,17 @@ if (checkSession()) {
             $dg->renderer->sortIconASC = "&uarr;";
             $dg->renderer->sortIconDESC = "&darr;";
 
-            $column = new Structures_DataGrid_Column('Id', 'id', 'id', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('ID', 'id', 'id', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Username', 'username', 'username', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('USERNAME', 'username', 'username', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Email', 'email', 'email', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('EMAIL', 'email', 'email', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Administrador', 'esAdministrador', 'esAdministrador', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('ADMINISTRADOR', 'esAdministrador', 'esAdministrador', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Profesional', 'esUsuarioProfesional', 'esUsuarioProfesional', array('align' => 'center'));
+            $column = new Structures_DataGrid_Column('PROFESIONAL', 'esUsuarioProfesional', 'esUsuarioProfesional', array('align' => 'center'));
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('Detalles', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
+            $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
 
             if (isset($_GET["orderBy"])) {
