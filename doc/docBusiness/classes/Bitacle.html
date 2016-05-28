@@ -1,0 +1,3364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">513</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-590838222"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-590838222" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Anuncio.html">Anuncio</a></li>
+                                                    <li class="class"><a href="../classes/Bitacle.html">Bitacle</a></li>
+                                                    <li class="class"><a href="../classes/Ciudad.html">Ciudad</a></li>
+                                                    <li class="class"><a href="../classes/classForo.html">classForo</a></li>
+                                                    <li class="class"><a href="../classes/Diario.html">Diario</a></li>
+                                                    <li class="class"><a href="../classes/DiarioPoi.html">DiarioPoi</a></li>
+                                                    <li class="class"><a href="../classes/Entorno.html">Entorno</a></li>
+                                                    <li class="class"><a href="../classes/Historial.html">Historial</a></li>
+                                                    <li class="class"><a href="../classes/MensajeForo.html">MensajeForo</a></li>
+                                                    <li class="class"><a href="../classes/MensajePrivado.html">MensajePrivado</a></li>
+                                                    <li class="class"><a href="../classes/Pais.html">Pais</a></li>
+                                                    <li class="class"><a href="../classes/Poi.html">Poi</a></li>
+                                                    <li class="class"><a href="../classes/Ruta.html">Ruta</a></li>
+                                                    <li class="class"><a href="../classes/RutaPOI.html">RutaPOI</a></li>
+                                                    <li class="class"><a href="../classes/TemaForo.html">TemaForo</a></li>
+                                                    <li class="class"><a href="../classes/Tipo.html">Tipo</a></li>
+                                                    <li class="class"><a href="../classes/Transporte.html">Transporte</a></li>
+                                                    <li class="class"><a href="../classes/Usuario.html">Usuario</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>Bitacle</h1>
+                    <p><em></em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Bitacle.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getId" class="">getId()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getNom" class="">getNom()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setId" class="">setId()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setNom" class="">setNom()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getUsers" class="">getUsers()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setUsers" class="">setUsers()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getPois" class="">getPois()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setPois" class="">setPois()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getRutas" class="">getRutas()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setRutas" class="">setRutas()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getDiarios" class="">getDiarios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setDiarios" class="">setDiarios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setCiudades" class="">setCiudades()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getCiudades" class="">getCiudades()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getAnuncios" class="">getAnuncios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getTipos" class="">getTipos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getTransportes" class="">getTransportes()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getEntornos" class="">getEntornos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getPaises" class="">getPaises()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setAnuncios" class="">setAnuncios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setTipos" class="">setTipos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setTransportes" class="">setTransportes()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setEntornos" class="">setEntornos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setPaises" class="">setPaises()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getHistorial" class="">getHistorial()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setHistorial" class="">setHistorial()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getMP" class="">getMP()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setMP" class="">setMP()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_getRutapoi" class="">getRutapoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_setRutapoi" class="">setRutapoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertUser" class="">insertUser()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertPoi" class="">insertPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertRuta" class="">insertRuta()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertRutaPoi" class="">insertRutaPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertDiario" class="">insertDiario()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertAnuncio" class="">insertAnuncio()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertTipo" class="">insertTipo()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertTransporte" class="">insertTransporte()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertEntorno" class="">insertEntorno()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertMP" class="">insertMP()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_validateUser" class="">validateUser()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateTipos" class="">populateTipos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateTransportes" class="">populateTransportes()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateEntornos" class="">populateEntornos()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateCiudades" class="">populateCiudades()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populatePaises" class="">populatePaises()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populatePois" class="">populatePois()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateUsuarios" class="">populateUsuarios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateRutas" class="">populateRutas()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateDiarios" class="">populateDiarios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateHistorial" class="">populateHistorial()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_populateAnuncios" class="">populateAnuncios()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerDetallesPOI" class="">VerDetallesPOI()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerDetallesRuta" class="">VerDetallesRuta()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerDetallesUsuario" class="">VerDetallesUsuario()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerDetallesDiario" class="">VerDetallesDiario()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerMensajesPrivados" class="">VerMensajesPrivados()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_crearQuery" class="">crearQuery()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerRutaPoi" class="">VerRutaPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_VerDiarioPoi" class="">VerDiarioPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_insertDiarioPoi" class="">insertDiarioPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_modificarDatosUsuario" class="">modificarDatosUsuario()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_modificarHistorial" class="">modificarHistorial()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_modificarAnuncio" class="">modificarAnuncio()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_modificarPoi" class="">modificarPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_eliminarPoi" class="">eliminarPoi()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_eliminarUser" class="">eliminarUser()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_eliminarRuta" class="">eliminarRuta()</a><br />
+                                                                    <a href="../classes/Bitacle.html#method_eliminarDiaryUser" class="">eliminarDiaryUser()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Bitacle.html#property_id" class="">$id</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_nom" class="">$nom</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_users" class="">$users</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_pois" class="">$pois</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_rutas" class="">$rutas</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_diarios" class="">$diarios</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_anuncios" class="">$anuncios</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_ciudades" class="">$ciudades</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_tipos" class="">$tipos</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_transportes" class="">$transportes</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_entornos" class="">$entornos</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_paises" class="">$paises</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_historial" class="">$historial</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_MP" class="">$MP</a><br />
+                                                                    <a href="../classes/Bitacle.html#property_rutapoi" class="">$rutapoi</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/classBitacle.html"><div class="path-wrapper">classBitacle.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Default</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Bitacle</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_id" name="property_id" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$id</h3>
+                <pre class="signature">$id : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nom" name="property_nom" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$nom</h3>
+                <pre class="signature">$nom : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_users" name="property_users" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$users</h3>
+                <pre class="signature">$users : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_pois" name="property_pois" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$pois</h3>
+                <pre class="signature">$pois : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_rutas" name="property_rutas" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$rutas</h3>
+                <pre class="signature">$rutas : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_diarios" name="property_diarios" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$diarios</h3>
+                <pre class="signature">$diarios : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_anuncios" name="property_anuncios" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$anuncios</h3>
+                <pre class="signature">$anuncios : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_ciudades" name="property_ciudades" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$ciudades</h3>
+                <pre class="signature">$ciudades : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_tipos" name="property_tipos" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$tipos</h3>
+                <pre class="signature">$tipos : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_transportes" name="property_transportes" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$transportes</h3>
+                <pre class="signature">$transportes : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_entornos" name="property_entornos" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$entornos</h3>
+                <pre class="signature">$entornos : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_paises" name="property_paises" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$paises</h3>
+                <pre class="signature">$paises : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_historial" name="property_historial" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$historial</h3>
+                <pre class="signature">$historial : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_MP" name="property_MP" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$MP</h3>
+                <pre class="signature">$MP : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_rutapoi" name="property_rutapoi" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$rutapoi</h3>
+                <pre class="signature">$rutapoi : </pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(\type  <span class="argument">$nom</span>) </pre>
+                <p><em>constructor de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nom </td>
+                                <td><p>nombre del objeto de la clase bitacle</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getId" name="method_getId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getId() : \type</pre>
+                <p><em>metodo get de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getNom" name="method_getNom" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getNom()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getNom() : \type</pre>
+                <p><em>metodo get del nombre de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setId" name="method_setId" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setId()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setId(\type  <span class="argument">$id</span>) </pre>
+                <p><em>metodo set de la id de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id de la clase bitacle</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setNom" name="method_setNom" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setNom()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setNom(\type  <span class="argument">$nom</span>) </pre>
+                <p><em>metodo set del nombre de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nom </td>
+                                <td><p>nombre de la clase bitacle</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getUsers" name="method_getUsers" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getUsers()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getUsers() : \type</pre>
+                <p><em>metodo get de la coleccion de usuarios de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setUsers" name="method_setUsers" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setUsers()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setUsers(\type  <span class="argument">$users</span>) </pre>
+                <p><em>metodo set de la coleccion de usuarios de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$users </td>
+                                <td><p>array de usuarios</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPois" name="method_getPois" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPois()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPois() : \type</pre>
+                <p><em>metodo get del array de puntos de interes de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setPois" name="method_setPois" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setPois()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setPois(\type  <span class="argument">$pois</span>) </pre>
+                <p><em>metodo set del array de puntos de interes de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$pois </td>
+                                <td><p>array de puntos de interes</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRutas" name="method_getRutas" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRutas()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRutas() : \type</pre>
+                <p><em>metodo get del array de rutas de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRutas" name="method_setRutas" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setRutas()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRutas(\type  <span class="argument">$rutas</span>) </pre>
+                <p><em>metodo set del array de rutas de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$rutas </td>
+                                <td><p>array de rutas</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDiarios" name="method_getDiarios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getDiarios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDiarios() : \type</pre>
+                <p><em>metodo get del array de diarios de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setDiarios" name="method_setDiarios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDiarios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDiarios(\type  <span class="argument">$diarios</span>) </pre>
+                <p><em>metodo set del array de diarios de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$diarios </td>
+                                <td><p>array de diarios</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setCiudades" name="method_setCiudades" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setCiudades()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setCiudades(\type  <span class="argument">$ciudades</span>) </pre>
+                <p><em>metodo set del array de ciudades de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$ciudades </td>
+                                <td><p>array de ciudades</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getCiudades" name="method_getCiudades" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCiudades()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCiudades() : \type</pre>
+                <p><em>metodo get del array de ciudades de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAnuncios" name="method_getAnuncios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAnuncios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAnuncios() : \type</pre>
+                <p><em>metodo get del array de anuncios de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTipos" name="method_getTipos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTipos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTipos() : \type</pre>
+                <p><em>metodo get del array de tipos de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getTransportes" name="method_getTransportes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getTransportes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getTransportes() : \type</pre>
+                <p><em>metodo get del array de transportes de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEntornos" name="method_getEntornos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getEntornos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEntornos() : \type</pre>
+                <p><em>metodo get del array de entornos de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getPaises" name="method_getPaises" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getPaises()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getPaises() : \type</pre>
+                <p><em>metodo get del array de paises de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setAnuncios" name="method_setAnuncios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setAnuncios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setAnuncios(\type  <span class="argument">$anuncios</span>) </pre>
+                <p><em>metodo set del array de anuncios de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$anuncios </td>
+                                <td><p>array de anuncios</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTipos" name="method_setTipos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTipos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTipos(\type  <span class="argument">$tipos</span>) </pre>
+                <p><em>metodo set del array de tipos de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$tipos </td>
+                                <td><p>array de tipos</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setTransportes" name="method_setTransportes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setTransportes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setTransportes(\type  <span class="argument">$transportes</span>) </pre>
+                <p><em>metodo set del array de transportes de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$transportes </td>
+                                <td><p>array de transportes</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setEntornos" name="method_setEntornos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setEntornos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setEntornos(\type  <span class="argument">$entornos</span>) </pre>
+                <p><em>metodo set del array de entornos de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$entornos </td>
+                                <td><p>array de entornos</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setPaises" name="method_setPaises" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setPaises()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setPaises(\type  <span class="argument">$paises</span>) </pre>
+                <p><em>metodo set del array de paises de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$paises </td>
+                                <td><p>array de paises</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getHistorial" name="method_getHistorial" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getHistorial()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getHistorial() : \type</pre>
+                <p><em>metodo get del array de historial de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setHistorial" name="method_setHistorial" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setHistorial()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setHistorial(\type  <span class="argument">$historial</span>) </pre>
+                <p><em>metodo set del array de historial de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$historial </td>
+                                <td><p>array de historial</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMP" name="method_getMP" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMP()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMP() : \type</pre>
+                <p><em>metodo get del array de mensajes privados de la clase bitacle</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMP" name="method_setMP" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMP()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMP(\type  <span class="argument">$MP</span>) </pre>
+                <p><em>metodo set del array de mensajes privados de la clase bitacle</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$MP </td>
+                                <td><p>array de mensajes privados</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRutapoi" name="method_getRutapoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRutapoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRutapoi() : \type</pre>
+                <p><em>metodo get de la relacion entre rutas y pois</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setRutapoi" name="method_setRutapoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setRutapoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setRutapoi(\type  <span class="argument">$rutapoi</span>) </pre>
+                <p><em>metodo set de la relacion entre rutas y pois</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$rutapoi </td>
+                                <td><p>relacion entre ruta y poi</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertUser" name="method_insertUser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertUser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertUser(\type  <span class="argument">$id</span>, \type  <span class="argument">$username</span>, \type  <span class="argument">$password</span>, \type  <span class="argument">$email</span>, \type  <span class="argument">$poblacion</span>, \type  <span class="argument">$idioma</span>, \type  <span class="argument">$telefono</span>, \type  <span class="argument">$url</span>, \type  <span class="argument">$foto</span>, \type  <span class="argument">$textoPresentacion</span>, \type  <span class="argument">$administrador</span>, \type  <span class="argument">$registrado</span>, \type  <span class="argument">$professional</span>) : \Usuario</pre>
+                <p><em>metodo para insertar un usuario a la base de datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$username </td>
+                                <td><p>nick del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$password </td>
+                                <td><p>contraseña de acceso del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$email </td>
+                                <td><p>email del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$poblacion </td>
+                                <td><p>poblacion del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idioma </td>
+                                <td><p>idioma del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$telefono </td>
+                                <td><p>telefono del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$url </td>
+                                <td><p>direccion web del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$foto </td>
+                                <td><p>foto de perfil del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$textoPresentacion </td>
+                                <td><p>texto de presentacion del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$administrador </td>
+                                <td><p>booleano true en caso de que el usuario sea administrador</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$registrado </td>
+                                <td><p>booleano que siempre será true ya que el usuario siempre será registrado</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$professional </td>
+                                <td><p>booleano true en caso de que el usuario sea profesional</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Usuario.html">\Usuario</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertPoi" name="method_insertPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertPoi(\type  <span class="argument">$id</span>, \type  <span class="argument">$nombre</span>, \type  <span class="argument">$foto</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$url</span>, \type  <span class="argument">$precio</span>, \type  <span class="argument">$horario</span>, \type  <span class="argument">$id_tipo</span>, \type  <span class="argument">$id_transporte</span>, \type  <span class="argument">$id_entorno</span>, \type  <span class="argument">$id_ciudad</span>, \type  <span class="argument">$id_pais</span>, \type  <span class="argument">$id_usuario</span>) : \Poi</pre>
+                <p><em>metodo para insertar punto de interes dentro de la base de datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nombre </td>
+                                <td><p>nombre del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$foto </td>
+                                <td><p>foto del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$url </td>
+                                <td><p>url del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$precio </td>
+                                <td><p>precio del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$horario </td>
+                                <td><p>horario del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_tipo </td>
+                                <td><p>tipo de poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_transporte </td>
+                                <td><p>transporte por el que se puede acceder al poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_entorno </td>
+                                <td><p>entorno en el que se encuentra el poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_ciudad </td>
+                                <td><p>ciudad en la que se encuentra el poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_pais </td>
+                                <td><p>pais en el que se encuentra el poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario que ha insertado el poi</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Poi.html">\Poi</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertRuta" name="method_insertRuta" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertRuta()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertRuta(\type  <span class="argument">$id</span>, \type  <span class="argument">$nombre</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$id_usuario</span>) : \Ruta</pre>
+                <p><em>metodo para añadir una ruta a la base de datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id de la ruta</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nombre </td>
+                                <td><p>nombre de la ruta</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion de la ruta</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario que ha insertado la ruta</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Ruta.html">\Ruta</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertRutaPoi" name="method_insertRutaPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertRutaPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertRutaPoi(\type  <span class="argument">$idPOI</span>, \type  <span class="argument">$idRuta</span>) </pre>
+                <p><em>metodo para insertar un poi dentro de una ruta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idPOI </td>
+                                <td><p>poi a insertar dentro de la ruta</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idRuta </td>
+                                <td><p>ruta en la que se inserta el poi</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertDiario" name="method_insertDiario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertDiario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertDiario(\type  <span class="argument">$id</span>, \type  <span class="argument">$nombre</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$id_usuario</span>) : \Diario</pre>
+                <p><em>metodo para insertar un diario en la base de datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del diario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nombre </td>
+                                <td><p>nombre del diario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion del diario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario propietario del diario</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Diario.html">\Diario</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertAnuncio" name="method_insertAnuncio" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertAnuncio()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertAnuncio(\type  <span class="argument">$id</span>, \type  <span class="argument">$titulo</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$imagen</span>, \type  <span class="argument">$id_poi</span>, \type  <span class="argument">$id_usuario</span>) : \Anuncio</pre>
+                <p><em>inserta un anuncio en un poi (solo usuarios profesionales y administradores)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$titulo </td>
+                                <td><p>titulo del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$imagen </td>
+                                <td><p>imagen del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_poi </td>
+                                <td><p>id del poi a quien se dedica el anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario que escribe el anuncio</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Anuncio.html">\Anuncio</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertTipo" name="method_insertTipo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertTipo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertTipo(\type  <span class="argument">$id</span>, \Tipo  <span class="argument">$tipo</span>) : \Tipo</pre>
+                <p><em>insertar un tipo de poi (solo usuario administrador)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del tipo</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Tipo.html">\Tipo</a></td>
+                                <td>$tipo </td>
+                                <td><p>nombre del tipo</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Tipo.html">\Tipo</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertTransporte" name="method_insertTransporte" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertTransporte()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertTransporte(\type  <span class="argument">$id</span>, \Transporte  <span class="argument">$transporte</span>) : \Transporte</pre>
+                <p><em>insertar un transporte de poi (solo usuario administrador)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del transporte</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Transporte.html">\Transporte</a></td>
+                                <td>$transporte </td>
+                                <td><p>nombre del transporte</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Transporte.html">\Transporte</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertEntorno" name="method_insertEntorno" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertEntorno()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertEntorno(\type  <span class="argument">$id</span>, \Entorno  <span class="argument">$entorno</span>) : \Entorno</pre>
+                <p><em>insertar un entorno de un poi (solo usuario administrador)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del entorno</p></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Entorno.html">\Entorno</a></td>
+                                <td>$entorno </td>
+                                <td><p>nombre del entorno</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Entorno.html">\Entorno</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertMP" name="method_insertMP" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertMP()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertMP(\type  <span class="argument">$id</span>, \type  <span class="argument">$titulo</span>, \type  <span class="argument">$message</span>, \type  <span class="argument">$usuarioReceptor</span>, \type  <span class="argument">$id_usuario</span>) : \MensajePrivado</pre>
+                <p><em>insertar mp a la base de datos</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del mensaje</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$titulo </td>
+                                <td><p>titulo del mensaje</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$message </td>
+                                <td><p>contenido del mensaje</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$usuarioReceptor </td>
+                                <td><p>usuario receptor</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario remitente</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/MensajePrivado.html">\MensajePrivado</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_validateUser" name="method_validateUser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">validateUser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">validateUser(\type  <span class="argument">$user</span>, \type  <span class="argument">$password</span>) : \type</pre>
+                <p><em>valida que el usuario logeado es correcto</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$user </td>
+                                <td><p>nombre de usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$password </td>
+                                <td><p>contraseña de usuario</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateTipos" name="method_populateTipos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateTipos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateTipos() </pre>
+                <p><em>metodo para poblar los tipos de poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateTransportes" name="method_populateTransportes" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateTransportes()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateTransportes() </pre>
+                <p><em>metodo para poblar los transporte de poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateEntornos" name="method_populateEntornos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateEntornos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateEntornos() </pre>
+                <p><em>metodo para poblar los entornos de poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateCiudades" name="method_populateCiudades" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateCiudades()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateCiudades() </pre>
+                <p><em>metodo para poblar las ciudades de poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populatePaises" name="method_populatePaises" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populatePaises()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populatePaises() </pre>
+                <p><em>metodo para poblar los paises de poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populatePois" name="method_populatePois" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populatePois()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populatePois() </pre>
+                <p><em>metodo para poblar los poi</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateUsuarios" name="method_populateUsuarios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateUsuarios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateUsuarios() </pre>
+                <p><em>metodo para poblar los usuarios</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateRutas" name="method_populateRutas" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateRutas()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateRutas() </pre>
+                <p><em>metodo para poblar las rutas</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateDiarios" name="method_populateDiarios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateDiarios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateDiarios() </pre>
+                <p><em>metodo para poblar los diarios</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateHistorial" name="method_populateHistorial" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateHistorial()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateHistorial() </pre>
+                <p><em>metodo para poblar el historial</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_populateAnuncios" name="method_populateAnuncios" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">populateAnuncios()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">populateAnuncios() </pre>
+                <p><em>metodo para poblar los anuncios</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerDetallesPOI" name="method_VerDetallesPOI" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerDetallesPOI()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerDetallesPOI(\type  <span class="argument">$idPOI</span>) : \type</pre>
+                <p><em>metodo para ver los detalles de los poi</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idPOI </td>
+                                <td><p>id del poi a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerDetallesRuta" name="method_VerDetallesRuta" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerDetallesRuta()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerDetallesRuta(\type  <span class="argument">$idRuta</span>) : \type</pre>
+                <p><em>metodo para ver los detalles de una ruta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idRuta </td>
+                                <td><p>id de la ruta a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerDetallesUsuario" name="method_VerDetallesUsuario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerDetallesUsuario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerDetallesUsuario(\type  <span class="argument">$idUsuario</span>) : \type</pre>
+                <p><em>metodo para ver los detalles del usuario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idUsuario </td>
+                                <td><p>id del usuario a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerDetallesDiario" name="method_VerDetallesDiario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerDetallesDiario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerDetallesDiario(\type  <span class="argument">$idDiario</span>) : \type</pre>
+                <p><em>metodo para ver los detalles del diario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idDiario </td>
+                                <td><p>id del diario a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerMensajesPrivados" name="method_VerMensajesPrivados" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerMensajesPrivados()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerMensajesPrivados(\type  <span class="argument">$Destinatario</span>) : \type</pre>
+                <p><em>metodo para ver los mensajes privados</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$Destinatario </td>
+                                <td><p>destinatario de los mensajes privados</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_crearQuery" name="method_crearQuery" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">crearQuery()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">crearQuery(\type  <span class="argument">$fields</span>, \type  <span class="argument">$fieldNames</span>) : \type</pre>
+                <p><em>metodo para crear una query</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$fields </td>
+                                <td><p>array de campos</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$fieldNames </td>
+                                <td><p>array de valores</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerRutaPoi" name="method_VerRutaPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerRutaPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerRutaPoi(\type  <span class="argument">$idRuta</span>) : \type</pre>
+                <p><em>metodo para ver los pois insertados en las rutas</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idRuta </td>
+                                <td><p>ruta a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_VerDiarioPoi" name="method_VerDiarioPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">VerDiarioPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">VerDiarioPoi(\type  <span class="argument">$idDiario</span>) : \type</pre>
+                <p><em>metodo para ver los pois insertados en los diarios</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idDiario </td>
+                                <td><p>diario a detallar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    \type
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_insertDiarioPoi" name="method_insertDiarioPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">insertDiarioPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">insertDiarioPoi(\type  <span class="argument">$idDiario</span>, \type  <span class="argument">$idPOI</span>) </pre>
+                <p><em>insertar un poi dentro de un diario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idDiario </td>
+                                <td><p>diario sobre el que se va a insertar un poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idPOI </td>
+                                <td><p>poi que va a ser insertado en un diario</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_modificarDatosUsuario" name="method_modificarDatosUsuario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">modificarDatosUsuario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">modificarDatosUsuario(\type  <span class="argument">$id</span>, \type  <span class="argument">$username</span>, \type  <span class="argument">$email</span>, \type  <span class="argument">$poblacion</span>, \type  <span class="argument">$idioma</span>, \type  <span class="argument">$telefono</span>, \type  <span class="argument">$url</span>, \type  <span class="argument">$foto</span>, \type  <span class="argument">$textoPresentacion</span>) </pre>
+                <p><em>modificar los datos de usuario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$username </td>
+                                <td><p>nombre de usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$email </td>
+                                <td><p>email del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$poblacion </td>
+                                <td><p>poblacion del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$idioma </td>
+                                <td><p>idioma del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$telefono </td>
+                                <td><p>telefono del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$url </td>
+                                <td><p>lugar web del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$foto </td>
+                                <td><p>foto de perfil del usuario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$textoPresentacion </td>
+                                <td><p>texto de presentacion del usuario</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_modificarHistorial" name="method_modificarHistorial" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">modificarHistorial()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">modificarHistorial(\type  <span class="argument">$id_diario</span>, \type  <span class="argument">$id_poi</span>, \type  <span class="argument">$fechaVisitaPoi</span>, \type  <span class="argument">$estaEnPoi</span>, \type  <span class="argument">$texto</span>, \type  <span class="argument">$foto</span>, \type  <span class="argument">$video</span>) </pre>
+                <p><em>modificar los datos del historial de lugares visitados</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_diario </td>
+                                <td><p>diario sobre el que se quiere modificar</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_poi </td>
+                                <td><p>poi que se quiere modifcar</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$fechaVisitaPoi </td>
+                                <td><p>fecha de visita del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$estaEnPoi </td>
+                                <td><p>checkbox que verifica que se ha estado en ese poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$texto </td>
+                                <td><p>texto del diario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$foto </td>
+                                <td><p>foto del diario</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$video </td>
+                                <td><p>video del diario</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_modificarAnuncio" name="method_modificarAnuncio" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">modificarAnuncio()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">modificarAnuncio(\type  <span class="argument">$titulo</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$imagen</span>, \type  <span class="argument">$id_poi</span>, \type  <span class="argument">$id_usuario</span>) </pre>
+                <p><em>modificar un anuncio</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$titulo </td>
+                                <td><p>titulo del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$imagen </td>
+                                <td><p>imagen del anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_poi </td>
+                                <td><p>id del poi sobre el que trata el anuncio</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_usuario </td>
+                                <td><p>usuario que escribe el anuncio</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_modificarPoi" name="method_modificarPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">modificarPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">modificarPoi(\type  <span class="argument">$id_poi</span>, \type  <span class="argument">$nombre</span>, \type  <span class="argument">$foto</span>, \type  <span class="argument">$descripcion</span>, \type  <span class="argument">$url</span>, \type  <span class="argument">$precio</span>, \type  <span class="argument">$horario</span>) </pre>
+                <p><em>modificar punto de interes</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id_poi </td>
+                                <td><p>id del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$nombre </td>
+                                <td><p>nombre del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$foto </td>
+                                <td><p>foto del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$descripcion </td>
+                                <td><p>descripcion del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$url </td>
+                                <td><p>url del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$precio </td>
+                                <td><p>precio del poi</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$horario </td>
+                                <td><p>horario del poi</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eliminarPoi" name="method_eliminarPoi" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eliminarPoi()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eliminarPoi(\type  <span class="argument">$id</span>) </pre>
+                <p><em>eliminar punto de interes</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del poi a eliminar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eliminarUser" name="method_eliminarUser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eliminarUser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eliminarUser(\type  <span class="argument">$id</span>) </pre>
+                <p><em>eliminar usuario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del usuario a eliminar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eliminarRuta" name="method_eliminarRuta" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eliminarRuta()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eliminarRuta(\type  <span class="argument">$id</span>) </pre>
+                <p><em>eliminar ruta</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id de la ruta a eliminar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eliminarDiaryUser" name="method_eliminarDiaryUser" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eliminarDiaryUser()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eliminarDiaryUser(\type  <span class="argument">$id</span>) </pre>
+                <p><em>eliminar diario de usuario</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\type</td>
+                                <td>$id </td>
+                                <td><p>id del diario a eliminar</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">classBitacle.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/classBitacle.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 28th, 2016 at 20:39.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
