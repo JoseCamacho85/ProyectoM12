@@ -1032,3 +1032,29 @@ td.text-right {
     font-weight: bold;
 }
 
+.cuadro {
+        min-width: 1000px;
+        border-width: 1px;
+        padding: 10px;
+        margin-left: 25em;      
+        margin-right: 25em;  
+        border-style: solid; 
+        border-color: #008CBA; 
+        -moz-box-shadow: 0 0 5px 5px #888;
+        -webkit-box-shadow: 0 0 5px 5px #888;
+        box-shadow: 0 0 5px 5px #888;      
+    }
+.cuadro form{
+
+    padding: 2px;
+    margin-top: 5px;
+}
+
+form span{
+        width: 9%;
+        float: left;
+}
+
+.centrar{
+    text-align: center;
+}
