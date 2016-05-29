@@ -12,7 +12,7 @@ if (checkSession()) {
 <script type="text/javascript">
 
 window.onload = function () {
-    {
+    
   $.ajax({
             async:true,
             //type: "GET",
@@ -20,18 +20,20 @@ window.onload = function () {
             url:"../controller/getStatistic.php", 
             success:tornada
            }); 
-}
+
 function tornada(dades){
     //document.write(dades);
     cat1 = dades[0];
     cat2 = dades[2];
     cat3 = dades[4];
     cat4 = dades[6];
+    cat5 = dades[8];
 
     num1= parseInt(dades[1]);
     num2= parseInt(dades[3]);
     num3= parseInt(dades[5]);
     num4= parseInt(dades[7]);
+    num5= parseInt(dades[9]);
 
     var chart = new CanvasJS.Chart("chartContainer", {
         theme: "theme1",//theme1
@@ -46,7 +48,8 @@ function tornada(dades){
                 { label: cat1,  y: num1  },
                 { label: cat2, y: num2  },
                 { label: cat3, y: num3  },
-                { label: cat4, y: num4  }
+                { label: cat4, y: num4  },
+                { label: cat5, y: num5  }
                
             ]
         }

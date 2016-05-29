@@ -3,7 +3,7 @@ include("../model/functionAutoLoad.php");
 	$stat = array();
 	$con = new DB();
 
-        $sql = $con->prepare("SELECT pais.nombre, count(poi.nombre) FROM poi INNER JOIN pais ON pais.id = poi.id_ciudad GROUP BY pais.nombre"); 
+        $sql = $con->prepare("SELECT pais.nombre, count(poi.nombre) FROM poi INNER JOIN pais ON pais.id = poi.id_pais GROUP BY pais.nombre"); 
         $result=$con->executeQuery($sql);
         $i=0;
         foreach ($result as $row) {        
