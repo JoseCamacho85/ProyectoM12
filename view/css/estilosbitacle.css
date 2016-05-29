@@ -16,7 +16,10 @@ body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     background-image: url("../images/bg.gif");
-    text-align: justify; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    text-align: justify;
 }
 
 #conversation{
@@ -58,7 +61,6 @@ label{
     padding: 1%;
     padding-bottom: 10px;
 }
-
 
 h1{
     font-family: "tituloFuente";
@@ -682,21 +684,6 @@ section h3.section-subheading {
     }
 }
 
-footer span.copyright {
-    text-transform: uppercase;
-    text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
-}
-
-footer ul.quicklinks {
-    margin-bottom: 0;
-    text-transform: uppercase;
-    text-transform: none;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
-}
-
 ul.social-buttons {
     margin-bottom: 0;
 }
@@ -830,6 +817,7 @@ body {
 video{
     margin-left: 24%;
 }
+
 #titlevideo{
     margin-left:30%;
     margin-top:-4%;
@@ -841,15 +829,22 @@ video{
     margin-top: 4%;
 }
 
+.clear{
+    clear: both;
+}
+
 footer{
+    margin-top: 5px;
+    width: 100%;
     color: white;
-    padding: 0px;
-    margin: 0px;
-    height: 40px;
+    height: 70px;
     background-color: #008CBA;
     text-align: center;
-    line-height: 30px;
-    margin-top: 10px;
+}
+
+footer span.copyright {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 40px;
 }
 
 div.table-title {
@@ -974,10 +969,6 @@ td.text-center {
 
 td.text-right {
     text-align: right;
-}
-
-.clear{
-    clear: both;
 }
 
 .titulos{
