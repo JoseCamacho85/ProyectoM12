@@ -40,7 +40,7 @@ include ("../controller/checkSession.php");
                     </button>
                     <a class="navbar-brand" href="main.php"></a>
                 </div>
-                <div class="collapse navbar-collapse navbar-ex1-collapse" id="menu">
+                <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                         <li><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
