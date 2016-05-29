@@ -15,8 +15,9 @@ if (isset($_REQUEST['mostrarInfo'])) {
     $fechaVisitaPoi = $_REQUEST['fechaVisitaPoi'];
     $estaEnPoi = 0;
     $texto = $_REQUEST['textoHistorial'];
-    $foto = $_REQUEST['fotoHistorial'];
+    //$foto = $_REQUEST['fotoHistorial'];
     $video = $_REQUEST['video'];
+    $foto = null;
 
     if (isset($_REQUEST['estaEnPoi'])) {
         $estaEnPoi = 1;
@@ -28,6 +29,8 @@ if (isset($_REQUEST['mostrarInfo'])) {
 
     try {
         $bitacle->modificarHistorial($id_diario, $id_poi, $fechaVisitaPoi, $estaEnPoi, $texto, $foto, $video);
+        include("../view/modules/refresh.php");
+        header("Location: ../view/mainUser.php");
     } catch (Exception $e) {
         $e->getMessage();
     }
