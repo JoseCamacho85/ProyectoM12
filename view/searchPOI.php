@@ -11,13 +11,11 @@ if (checkSession()) {
 <div class="container-fluid text-center">    
     <div class="row content">
         <div class="col-sm-12 text-center">
-
             <h2>búsqueda avanzada</h2>
             <div>
                 <!-- Script para generarar dropdown ciudades-->
                 <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
-
-                <div class="container col-md-12" style="background: #E7FFFF;">    
+                <div class="container col-md-12">    
                     <div class="col-md-offset-1 col-md-2">
                         <p>Tipo <input type="checkbox" id="checkTipoPOI" name="checkTipoPOI"></p>
                         <select id="selectTipoPOI" id="selectTipoPOI" name="selectTipoPOI" class="form-control" style="display:none">
@@ -49,18 +47,15 @@ if (checkSession()) {
                         </select>
                     </div>
                 </div>
-                <button id="searchPOI" class="btn btn-info">Buscar puntos de interés</button>                
+                <p><button id="searchPOI" class="btn btn-info">Buscar puntos de interés</button></p>            
             </div>
-
+        </div>
+        <div class="camposOb" id="seleccionados">
+            El resultado de la búsqueda aparecerá aquí
         </div>
     </div>
 </div>
-<div class="camposOb" id="seleccionados">
-    El resultado de la búsqueda aparecerá aquí
-</div>
 <script type="text/javascript"><?php include ("js/busquedaAvanzada.js"); ?></script>
-
-
 <?php
 include ("footer.php");
 ?>

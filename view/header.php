@@ -56,7 +56,13 @@ if (isset($_SESSION['user'])) {
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="showPOI.php">Ver POI's<i class="icon-arrow-right"></i></a>
-                                    <a href="addPOI.php">Añadir POI's<i class="icon-arrow-right"></i></a>
+                                    <?php
+                                    if (isset($_SESSION['user'])) {
+                                        ?>
+                                        <a href="addPOI.php">Añadir POI's<i class="icon-arrow-right"></i></a>
+                                        <?php
+                                    }
+                                    ?>
                                     <a href="searchPOI.php">Buscar POI's<i class="icon-arrow-right"></i></a>
                                 </li>
                             </ul>
@@ -66,7 +72,13 @@ if (isset($_SESSION['user'])) {
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="showRutas.php">Ver rutas<i class="icon-arrow-right"></i></a>
-                                    <a href="addRutas.php">Añadir rutas<i class="icon-arrow-right"></i></a>
+                                    <?php
+                                    if (isset($_SESSION['user'])) {
+                                        ?>
+                                        <a href="addRutas.php">Añadir rutas<i class="icon-arrow-right"></i></a>
+                                        <?php
+                                    }
+                                    ?>
                                 </li>
                             </ul>
                         </li>

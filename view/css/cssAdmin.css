@@ -1,12 +1,19 @@
-nav div{
-    background-color: #46a546;
-}
-
-#navRegistrado .nav > li > a:hover,
-.navbar .nav > li > a:hover {
-    background-color: #387038;
-}
-
+#navRegistrado .nav > .dropdown > .dropdown-menu > li > a,
+.navbar .nav > .dropdown > .dropdown-menu > li > a,
+#navRegistrado .nav > .dropdown > a,
+.navbar .nav > .dropdown > a,
+#navRegistrado .nav > li > a,
+nav div,
 footer{
     background-color: #46a546;
+}
+
+#navRegistrado .nav > .dropdown > .dropdown-menu > li > a:hover,
+.navbar .nav > .dropdown > .dropdown-menu > li > a:hover,
+#navRegistrado .nav > .dropdown > a:focus,
+#navRegistrado .nav > .dropdown > a:hover,
+#navRegistrado .nav > li > a:hover,
+.navbar .nav > .dropdown > a:focus,
+.navbar .nav > li > a:hover {
+    background-color: #387038;
 }
