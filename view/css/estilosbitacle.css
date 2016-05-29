@@ -14,7 +14,7 @@
 }
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;*/
     background-image: url("../images/bg.gif");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -118,6 +118,8 @@ a.active {
 
 a {
     color: black;
+    font-size: 1.1em;
+    font-weight: 400;
 }
 
 a:hover,
@@ -1089,4 +1091,12 @@ select+label{
 
 #formChat{
     margin-top: 20px;
+}
+
+#navRegistrado{
+    background-color: lightseagreen;
+}
+
+#navRegistrado .nav > li > a:hover{
+    background-color: teal;
 }

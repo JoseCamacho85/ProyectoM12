@@ -61,7 +61,7 @@ if (checkSession()) {
     <div class="container">   
         <div class="row content">
             <div class="col-md-12 text-center"> 
-                <h2>Estadísticas</h2>
+                <h2>estadísticas</h2>
                 <div class="cuadro">
                     <p id="estadisticas">
                         <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>  

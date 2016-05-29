@@ -11,12 +11,11 @@ if (checkSession()) {
     ?>
     <script type="text/javascript"><?php include ("js/mostrarInfoHistorial.js"); ?></script>
     <a href="showDiaryUser.php"><button class="btn btn-info">VOLVER</button></a>
-    <div>
+    <div class="container">
         <h2>diario</h2>
         <div class="row content">
-            <div class="col-md-6 col-md-offset-3 text-center"> 
+            <div class="col-md-12"> 
                 <div class="cuadro">
-
                     <div>
                         <span class="titulos">Nombre: </span>
                         <span><?php echo $nombre ?></span>
@@ -26,21 +25,22 @@ if (checkSession()) {
                         <span class="titulos">Descripción: </span>
                         <span><?php echo $descripcion ?></span>
                     </div>
-                </div></div>
-                <div class="col-md-6 col-md-offset-3 text-center">
-                    <form method="post" action="../controller/controllerModificarHistorial.php">
-                        <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
-                            <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
-                        </select>
-                        <div id="infoPoi">
-                        </div>
-                    </form>
                 </div>
-            </div></div>
-            
-            <?php
-        } else {
-            header("Location: formErrorSession.php");
-        }
-        include ("footer.php");
-        ?>
+            </div>
+            <div class="col-md-12">
+                <form method="post" action="../controller/controllerModificarHistorial.php">
+                    <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
+                        <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
+                    </select>
+                    <div id="infoPoi">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <?php
+} else {
+    header("Location: formErrorSession.php");
+}
+include ("footer.php");
+?>
