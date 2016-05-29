@@ -3,7 +3,7 @@
 session_start();
 
 include("conexionBD.php");
-include("../view/header.php");
+//include("../view/header.php");
 include("controllerIdDropdowns.php");
 
 $bitacle = unserialize($_SESSION['bitacle']);
