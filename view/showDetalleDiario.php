@@ -10,7 +10,7 @@ if (checkSession()) {
     include 'modules/moduleUserNav.php';
     ?>
     <script type="text/javascript"><?php include ("js/mostrarInfoHistorial.js"); ?></script>
-     <a href="showDiaryUser.php"><button class="btn btn-info">VOLVER</button></a>
+    <a href="showDiaryUser.php"><button class="btn btn-info">VOLVER</button></a>
     <div>
         <h2>diario</h2>
         <hr>
@@ -18,31 +18,31 @@ if (checkSession()) {
             <div class="col-md-6 col-md-offset-3 text-center"> 
                 <div class="cuadro">
 
-        <div>
-            <span class="titulos">Nombre: </span>
-            <span><?php echo $nombre ?></span>
-        </div>
+                    <div>
+                        <span class="titulos">Nombre: </span>
+                        <span><?php echo $nombre ?></span>
+                    </div>
 
-        <div>
-            <span class="titulos">Descripción: </span>
-            <span><?php echo $descripcion ?></span>
-        </div>
-        </div></div>
-        <div class="col-md-6 col-md-offset-3 text-center">
-        <hr>
-        <form method="post" action="../controller/controllerModificarHistorial.php">
-            <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
-                <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
-            </select>
-            <div id="infoPoi">
-            </div>
-        </form>
-    </div>
-    </div></div>
-   
-    <?php
-} else {
-    header("Location: formErrorSession.php");
-}
-include ("footer.php");
-?>
+                    <div>
+                        <span class="titulos">Descripción: </span>
+                        <span><?php echo $descripcion ?></span>
+                    </div>
+                </div></div>
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <hr>
+                    <form method="post" action="../controller/controllerModificarHistorial.php">
+                        <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
+                            <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>
+                        </select>
+                        <div id="infoPoi">
+                        </div>
+                    </form>
+                </div>
+            </div></div>
+            
+            <?php
+        } else {
+            header("Location: formErrorSession.php");
+        }
+        include ("footer.php");
+        ?>
