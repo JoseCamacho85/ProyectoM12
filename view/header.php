@@ -59,6 +59,9 @@ include ("../controller/checkSession.php");
                     if (!isset($_SESSION['user'])) {
                         $user = "";
                         include("modules/login.php");
+                        if ($objUsuarioConectado->getAdministrador() == 1) {
+                            include("css/cssaAdmin.css");
+                        }
                     } else {
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");

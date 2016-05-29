@@ -1081,3 +1081,12 @@ select+label{
 #menuAdmin{
     /*background-color: #AEB404;*/
 }
+footer{
+    margin-top: 7px;
+}
+nav div{
+    background-color: #E19F00;
+}
+footer{
+    background-color: #E19F00;
+}
