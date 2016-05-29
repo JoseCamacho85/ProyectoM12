@@ -17,7 +17,6 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
                         <p><span class="titulos">POI:</span><select id="POIAnuncio" name="POIAnuncio" onchange="mostrarInfoAnuncio(this.value)">
                                 <?php makeDropdownlistPoisUser(); ?>
                             </select><span class="erroresAnuncioSelect"></span></p>
-                        <p><span class="titulos">Foto: </span><input type="text" size="21" name="imagenAnuncio" id="imagenAnuncio" value="Desactivado temporalmente" readonly></p>
                         <p><span class="titulos">Título: </span><input type="text" id="tituloAnuncio" name="tituloAnuncio" ></p>
                         <p><span class="titulos">Descripción:</span></p><textarea rows="4" cols="50" id="descripcionAnuncio" name="descripcionAnuncio"></textarea>
                         <p></p>
