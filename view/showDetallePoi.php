@@ -18,7 +18,7 @@ if (checkSession()) {
 
 $idPOI = $_REQUEST["id"];
 ?>
-<a href="showPOI.php" id="volver"><button class="btn btn-info">VOLVER</button></a>
+<a href="showPOI.php" id="volver"><button class="btn btn-info">Volver</button></a>
 
 <div class="container">
     <div class="row">

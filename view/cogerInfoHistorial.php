@@ -18,12 +18,13 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $precio = $bitacle->getPois()[$i]->getPrecio();
         $horario = $bitacle->getPois()[$i]->getHorario();
 
-        echo "<p><img src=\"fotoPoi/$foto\"/>" . "</p>";
-        echo "<p>Nombre: " . $nombre . "</p>";
-        echo "<p>Descripción: " . $descripcion . "</p>";
-        echo "<p>URL: <a href=" . $url . " target=\"_blank\">$url</a></p>";
-        echo "<p>Precio: " . $precio . "</p>";
-        echo "<p>Horario: " . $horario . "</p>";
+        echo "<br><div class="."cuadro".">";
+        echo "<p class="."titulos".">".$nombre . "</p>";
+        echo "<p><img src=\"fotoPoi/$foto\"/>" . "</p>";   
+        echo "<p><span class="."titulos".">Descripción: </span>" . $descripcion . "</p>";
+        echo "<p><span class="."titulos".">URL: </span><a href=" . $url . " target=\"_blank\">$url</a></p>";
+        echo "<p><span class="."titulos".">Precio: </span>" . $precio . "</p>";
+        echo "<p><span class="."titulos".">Horario: </span>" . $horario . "</p>";
     }
 }
 
@@ -41,13 +42,15 @@ for ($i = 0; $i < count($bitacle->getHistorial()); $i++) {
             $checked = null;
         }
 
+        echo "<hr><h3><center>Historial</center></h3>";
         echo "<input type=\"hidden\" name=\"poi\" value=" . $id_com . ">";
         echo "<input type=\"hidden\" name=\"diario\" value=" . $id_diario . ">";
-        echo "<p>Fecha visita: <input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
-        echo "<p>¿Se ha visitado?: <input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
-        echo "<p>Texto:</p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
-        echo "<p>Vídeo: <input type=\"text\" name=\"video\" value=" . $video . ">";
-        echo "<p><input type=\"submit\" name=\"mostrarInfo\" value=\"Modificar datos\" /></p>";
+        echo "<p><span class="."titulos".">Fecha visita: </span><input name=\"fechaVisitaPoi\" type=\"date\" value=" . $fechaVisitaPoi . "></p>";
+        echo "<p><span class="."titulos".">¿Se ha visitado?: </span><input name=\"estaEnPoi\" type=\"checkbox\" $checked value=" . $estaEnPoi . "></p>";
+        echo "<p><span class="."titulos".">Texto: </span></p><textarea rows=\"5\" cols=\"25\" name=\"textoHistorial\">$texto</textarea>";
+        echo "<p><span class="."titulos".">Vídeo: </span><input type=\"text\" name=\"video\" value=" . $video . ">";
+        echo "<div class=\"centrar\"><p><input type=\"submit\" name=\"mostrarInfo\" value=\"Modificar datos\" class=\"btn btn-info\"/></p></div>";
+        echo "</div>";
     }
 }
 ?>

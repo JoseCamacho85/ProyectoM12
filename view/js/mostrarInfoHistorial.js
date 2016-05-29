@@ -10,5 +10,5 @@ function mostrarInfoHistorial(id_com, id_diario) {
 
 function tornadaCom(txt) {
     $("#infoPoi").html(txt);
-    $("#infoPoi").css({"text-align": "justify", "width": "75%", "margin": "auto", "padding": "15px"});
+    $("#infoPoi").css({"text-align": "justify"});
 }
