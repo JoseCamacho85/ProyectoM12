@@ -834,7 +834,7 @@ video{
 }
 
 footer{
-    /*margin-top: 5px;*/
+    margin-top: 5px;
     padding-top: 9px;
     margin-bottom: 0px;
     width: 100%;
@@ -848,7 +848,7 @@ footer span.copyright {
 }
 
 .contenido{
-    min-height: 544px;
+    min-height: 539px;
 }
 
 div.table-title {
@@ -1080,7 +1080,4 @@ select+label{
 
 #menuAdmin{
     /*background-color: #AEB404;*/
-}
-footer{
-    margin-top: 7px;
 }

@@ -25,9 +25,17 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="../controller/validations/validateDiarioCliente.js"></script>
         <script type="text/javascript" src="../controller/validations/validateAdminPanelCliente.js"></script> 
         <script type="text/javascript" src="../controller/validations/validateRutaCliente.js"></script> 
-        <script type="text/javascript" src="../controller/validations/validateAnuncioCliente.js"></script> 
-
-
+        <script type="text/javascript" src="../controller/validations/validateAnuncioCliente.js"></script>
+        <style type="text/css">
+        <?php
+        if (isset($_SESSION['user'])) {
+            $user = unserialize($_SESSION['user']);
+            if ($user == "admin") {
+                include("css/cssAdmin.css");
+            }
+        }
+        ?>
+        </style>
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -58,7 +66,7 @@ include ("../controller/checkSession.php");
 
                     if (!isset($_SESSION['user'])) {
                         $user = "";
-                        include("modules/login.php");                     
+                        include("modules/login.php");
                     } else {
                         $user = unserialize($_SESSION['user']);
                         include("modules/userNav.php");
