@@ -11,7 +11,7 @@ if (checkSession()) {
 
     <!-- Script para generarar dropdown ciudades-->
     <script type="text/javascript"><?php include ("js/cambioPais.js"); ?></script>
-    <a href="showPOI.php"><button class="btn btn-info">VOLVER</button></a>
+    <a href="showPOI.php"><button class="btn btn-info">Volver</button></a>
     <div class="container">    
         <h2>introducir punto de interés</h2>
         <hr>

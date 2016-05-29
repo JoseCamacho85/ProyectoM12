@@ -6,18 +6,21 @@ if (checkSession()) {
     include("../controller/validatorTipoUsuario.php");
     include 'modules/moduleUserNav.php';
     ?>
+    <a href="showUsersAdmin.php" id="volver"><button class="btn btn-info">Volver</button></a>
     <h2><?php echo $username ?></h2>
-    <div class="container-fluid text-center">   
+    <hr>
+    <div class="row content">
+            <div class="col-md-6 col-md-offset-3 text-center"> 
+                <div class="cuadro">   
         <img class="fotoMostrar" src="fotoUsuario/<?php echo $foto ?>"/>
-        <p>Username: <?php echo $username ?></p>
-        <p>E-mail: <?php echo $email ?></p>
-        <p>Población: <?php echo $poblacion ?></p>
-        <p>Idioma: <?php echo $idioma ?></p>
-        <p>Teléfono: <?php echo $telefono ?></p>
-        <p>URL: <?php echo $url ?></p>
-        <p>Texto de presentación: <?php echo $texto ?></p>       
-        <a href="showUsersAdmin.php" id="volver"><button class="btn btn-info">Volver</button></a>
-    </div>
+        <p><span class="titulos">Username: </span><?php echo $username ?></p>
+        <p><span class="titulos">E-mail: </span><?php echo $email ?></p>
+        <p><span class="titulos">Población: </span><?php echo $poblacion ?></p>
+        <p><span class="titulos">Idioma: </span><?php echo $idioma ?></p>
+        <p><span class="titulos">Teléfono: </span><?php echo $telefono ?></p>
+        <p><span class="titulos">URL: </span><?php echo $url ?></p>
+        <p><span class="titulos">Texto de presentación: </span><?php echo $texto ?></p> 
+    </div><br></div></div>
     <?php
 } else {
     header("Location: formErrorSession.php");
