@@ -12,6 +12,8 @@ if (checkSession()) {
 
     $usuarios = $bitacle->getUsers();
     $id_usuario = cogerIdUsuario($usuarios, $user);
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
 }
 
 $idPOI = $_REQUEST["id"];

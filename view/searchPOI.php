@@ -1,6 +1,11 @@
 <?php
 include ("header.php");
 include 'makeDropdownLists.php';
+if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
+}
 ?>
 <a href="showPOI.php"><button class="btn btn-info">Volver</button></a> 
 <div class="container-fluid text-center">    

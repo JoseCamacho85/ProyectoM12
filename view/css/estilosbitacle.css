@@ -682,10 +682,6 @@ section h3.section-subheading {
     }
 }
 
-
-
-
-
 footer span.copyright {
     text-transform: uppercase;
     text-transform: none;
@@ -1076,4 +1072,17 @@ select+label{
 
 #ciudadesVis{
     font-size: 25px;
+}
+
+#menu{
+    padding-left: 0;
+}
+
+#myNavbar{
+    /*background-color: orange;*/
+    padding-left: 0;
+}
+
+#menuAdmin{
+    /*background-color: #AEB404;*/
 }

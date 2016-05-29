@@ -1,1 +1,1 @@
-<a href="addPOI.php" id="AddPoiBtn"><button class="btn btn-info">Añadir POIs</button></a>
+<a href="addPOI.php" id="AddPoiBtn"><button class="btn btn-info">Añadir POI's</button></a>

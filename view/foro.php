@@ -1,5 +1,10 @@
 <?php
 include("header.php");
+if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
+}
 ?>
 <div class="container-fluid">    
     <div class="row content">

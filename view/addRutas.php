@@ -1,8 +1,9 @@
 <?php
 include ("header.php");
-
-
 if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
     <a href="showRutas.php"><button class="btn btn-info">Volver</button></a>
     <div class="container">    

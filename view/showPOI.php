@@ -39,10 +39,8 @@ function VerDetalles($params) {
 <?php include("css/gridview.css"); ?>
 </style>
 
-<a href="searchPOI.php"><button class="btn btn-info">Buscar POIs</button></a>
 <?php
 if (!isset($_SESSION['bitacle'])) {
-
     $bitacle = new Bitacle("bitacle");
     $_SESSION['bitacle'] = serialize($bitacle);
 } else {
@@ -51,9 +49,13 @@ if (!isset($_SESSION['bitacle'])) {
 
 if (isset($_SESSION['user'])) {
     $user = "";
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     include("modules/addPoiBoton.php");
 }
 ?>
+<a href="searchPOI.php"><button class="btn btn-info">Buscar POI's</button></a>
 <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
 <td align="right">&nbsp;
 

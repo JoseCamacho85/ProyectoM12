@@ -5,9 +5,10 @@ include ("mostrarArrayRutaPoi.php");
 $arrayDiarioPoi = $bitacle->VerDiarioPoi($_REQUEST['id']);
 $id_diario = $_REQUEST['id'];
 if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
-
-
     <script type="text/javascript"><?php include ("js/mostrarInfoHistorial.js"); ?></script>
     <div>
         <h2>DIARIO</h2>

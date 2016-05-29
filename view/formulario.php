@@ -1,5 +1,10 @@
 <?php
 include("header.php");
+if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
+}
 if (isset($_GET["respuestas"]))
     $respuestas = $_GET['respuestas'];
 else
@@ -36,7 +41,7 @@ else
                         <td><textarea name="mensaje" cols="50" rows="5" required="required"></textarea></td>
                     </tr>
                     <tr>
-                        <td><input type="submit" id="submit" name="submit" value="Enviar Mensaje"></td>
+                        <td><input type="submit" id="submit" name="submit" class="btn btn-info" value="Enviar Mensaje"></td>
                     </tr>
                 </table>
             </form>

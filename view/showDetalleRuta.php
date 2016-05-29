@@ -4,6 +4,11 @@ include("../controller/controllerVerDetalleRuta.php");
 include ("mostrarArrayRutaPoi.php");
 
 $arrayRutaPoi = $bitacle->VerRutaPoi($_REQUEST['id']);
+if (checkSession()) {
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
+}
 ?>
 <script type="text/javascript"><?php include ("js/mostrarInfoPoi.js"); ?></script>
 <div>

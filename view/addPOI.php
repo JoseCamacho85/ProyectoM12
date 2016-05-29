@@ -4,6 +4,9 @@ if (checkSession()) {
 
     include '../model/DAO/dbConnector.php';
     include 'makeDropdownLists.php';
+    include '../controller/controllerVerDetalleUsuario.php';
+    include("../controller/validatorTipoUsuario.php");
+    include 'modules/moduleUserNav.php';
     ?>
 
     <!-- Script para generarar dropdown ciudades-->

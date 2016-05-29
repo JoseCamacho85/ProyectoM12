@@ -52,11 +52,13 @@ if (!isset($_SESSION['bitacle'])) {
     <td> <?php
         if (isset($_SESSION['user'])) {
             $user = "";
+            include '../controller/controllerVerDetalleUsuario.php';
+            include("../controller/validatorTipoUsuario.php");
+            include 'modules/moduleUserNav.php';
             include("modules/addRutaBoton.php");
         }
         ?></td>
     <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
-
 </tr>
 
 <h2>rutas</h2>
@@ -93,7 +95,7 @@ if (!isset($_SESSION['bitacle'])) {
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('DESCRIPCIÓN', 'descripcion', 'descripcion', array('align' => 'center'));
             $dg->addColumn($column);
-           
+
             $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
