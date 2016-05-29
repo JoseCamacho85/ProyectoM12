@@ -15,14 +15,14 @@ function validarPOI() {
             nombrePoi: {required: true, minlength: 2, maxlength: 50},
             descripcionPoi: {required: true, minlength: 5, maxlength: 400},
             urlPoi: {required: false, url: true},
-            precioPoi: {required: true, minlength: 5, maxlength: 200},
+            precioPoi: {required: true, minlength: 2, maxlength: 200},
             horarioPoi: {required: true, minlength: 5, maxlength: 200}
         },
         messages: {
             nombrePoi: "Debe introducir un nombre entre 2 y 50 caracteres.",
             descripcionPoi: "Debe introducir una descripcion entre 5 y 400 caracteres.",
             urlPoi: "Debe introducir una url valida(http://www.example.com/).",
-            precioPoi: "Debe introducir una descripcion o precio de 5 a 200 caracteres.",
+            precioPoi: "Debe introducir una descripcion o precio de 2 a 200 caracteres.",
             horarioPoi: "Debe introducir una descripcion u horario de 5 a 200 caracteres."
         }
 
