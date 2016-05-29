@@ -68,7 +68,6 @@ if (checkSession()) {
 
     </tr>
     <h2>diarios</h2>
-    <div class="col-md-8 col-md-offset-2">   
         <br />  
 
         <table align="center">
@@ -167,7 +166,6 @@ if (checkSession()) {
         </td>
     </tr>
     </table>
-    </div>
     <?php
 } else {
     header("Location: formErrorSession.php");

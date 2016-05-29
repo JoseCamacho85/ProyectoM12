@@ -101,6 +101,7 @@ $idPOI = $_REQUEST["id"];
             </div>
         </div>
     </div>
+</div>
     <script>
 <?php include("js/relacionesAjax.js"); ?>
     </script>

@@ -84,10 +84,10 @@ h2{
     z-index: 1;
 }
 
-.flexslider{
+/*.flexslider{
     position: absolute;
     z-index:-1;
-}
+}*/
 
 .text-muted {
     color: #777;
@@ -834,17 +834,21 @@ video{
 }
 
 footer{
-    margin-top: 5px;
+    /*margin-top: 5px;*/
+    padding-top: 9px;
+    margin-bottom: 0px;
     width: 100%;
     color: white;
-    height: 70px;
     background-color: #008CBA;
     text-align: center;
 }
 
 footer span.copyright {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 40px;
+}
+
+.contenido{
+    min-height: 544px;
 }
 
 div.table-title {
