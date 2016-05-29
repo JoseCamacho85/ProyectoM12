@@ -98,9 +98,14 @@ if (!isset($_SESSION['bitacle'])) {
 
             $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
-            $dg->addColumn($column);
 
+            if (isset($_SESSION['user'])) {
+                if ($objUsuarioConectado->getAdministrador() == 1) {
+                   $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+                    $dg->addColumn($column);
+                }
+
+            }
 
             if (isset($_GET["orderBy"])) {
                 $order = $_GET["orderBy"];

@@ -55,7 +55,8 @@ if (isset($_SESSION['user'])) {
     include("modules/addPoiBoton.php");
 }
 ?>
-<a href="searchPOI.php"><button class="btn btn-info">Buscar POI's</button></a>
+
+&nbsp;<a href="searchPOI.php"><button class="btn btn-info">Buscar POI's</button></a>
 <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
 <td align="right">&nbsp;
 
@@ -100,9 +101,15 @@ if (isset($_SESSION['user'])) {
             $dg->addColumn($column);
             $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
             $dg->addColumn($column);
-            $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
-            $dg->addColumn($column);
+            
+            if (isset($_SESSION['user'])) {
+                if ($objUsuarioConectado->getAdministrador() == 1) {
+                    $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
+                    $dg->addColumn($column);
+                }
 
+            }
+   
             if (isset($_GET["orderBy"])) {
                 $order = $_GET["orderBy"];
             } else {

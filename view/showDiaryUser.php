@@ -108,6 +108,7 @@ if (checkSession()) {
 
     $column = new Structures_DataGrid_Column('DETALLES', null, null, array('align' => 'center'), null, 'VerDetalles($label=Ver detalles)');
     $dg->addColumn($column);
+    
     $column = new Structures_DataGrid_Column('ELIMINAR', null, null, array('align' => 'center'), null, 'Borrar($label=Delete)');
     $dg->addColumn($column);
 
