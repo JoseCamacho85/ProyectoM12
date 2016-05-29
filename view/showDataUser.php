@@ -8,7 +8,6 @@ if (checkSession()) {
     ?>
     <a href="showUsersAdmin.php" id="volver"><button class="btn btn-info">Volver</button></a>
     <h2><?php echo $username ?></h2>
-    <hr>
     <div class="row content">
             <div class="col-md-6 col-md-offset-3 text-center"> 
                 <div class="cuadro">   

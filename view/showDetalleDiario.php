@@ -13,7 +13,6 @@ if (checkSession()) {
     <a href="showDiaryUser.php"><button class="btn btn-info">VOLVER</button></a>
     <div>
         <h2>diario</h2>
-        <hr>
         <div class="row content">
             <div class="col-md-6 col-md-offset-3 text-center"> 
                 <div class="cuadro">
@@ -29,7 +28,6 @@ if (checkSession()) {
                     </div>
                 </div></div>
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <hr>
                     <form method="post" action="../controller/controllerModificarHistorial.php">
                         <select id="pp" name="pp" onchange="mostrarInfoHistorial(this.value, '<?php echo $id_diario ?>')">
                             <?php makeDropdownlistArrayHistorial($arrayDiarioPoi); ?>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-05-2016 a las 20:59:26
+-- Tiempo de generación: 29-05-2016 a las 19:03:03
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.5.28
 
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `diario` (
   `nombre` char(25) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `diario`
@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `mensajeprivado` (
 CREATE TABLE IF NOT EXISTS `pais` (
   `id` int(11) NOT NULL,
   `nombre` char(25) COLLATE utf8_spanish2_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=242 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `pais`
@@ -277,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `poi` (
   `id_ciudad` int(11) NOT NULL,
   `id_pais` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `poi`
@@ -287,7 +287,7 @@ INSERT INTO `poi` (`id`, `nombre`, `foto`, `descripcion`, `url`, `precio`, `hora
 (1, 'Castillo Himeji', 'himeji.jpg', 'El Castillo Himeji es un castillo japonés localizado en la ciudad costera de Himeji en la prefectura de Hyōgo (antiguo distrito de Shikito en la provincia de Harima), a unos 47 km al oeste de Kōbe. Es una de las estructuras más antiguas del Japón medieval que aún sobrevive en buenas condiciones; fue designado como Patrimonio de la Humanidad1 por la Unesco en 1993, también es un sitio histórico especial de Japón2 y un Tesoro Nacional. Junto con el Castillo Matsumoto y el Castillo Kumamoto, es uno de los "Tres Famosos Castillos" de Japón, y es el más visitado del país. Se le conoce a veces con el nombre de Hakuro-jō o Shirasagi-jō ("Castillo de la garza blanca") debido al color blanco brillante de su exterior.', 'http://www.himeji-kanko.jp/es/', '1000 yen (castillo)1040 yen (castillo y jardín Kokoen)', 'De 9:00 a 17:00. Cerrado 29 y 30 de Diciembre', 4, 3, 4, 11, 3, 5),
 (2, 'Acueducto romano', 'acueducto_romano.jpg', 'Se le denomina Puente del Diablo ya que una leyenda cuenta que fue construido por el Diablo tras ganar una apuesta donde una doncella se jugaba el alma.', 'https://es.wikipedia.org/wiki/Acueducto_de_les_Ferreres', 'Visita gratuita', 'Siempre se puede visitar', 4, 6, 1, 22, 1, 6),
 (3, 'Musée des beaux arts de Carcassonne', 'musee_carcassonne.jpg', 'Las pinturas y cerámicas hacen de este museo una bonita síntesis del arte europeo desde el siglo XVII hasta nuestros días. Visita guiada con previa cita. Presentación de tres exposiciones al año.', 'http://www.carcassonne.org/fr/le-mus%C3%A9e-des-beaux-arts-de-carcassonne', 'Entrada gratuita', 'De martes a sábado, de 10 a 12 y de 14 a 18 y el primer domingo del mes de 14:30 a 17:30', 1, 4, 1, 6, 2, 6),
-(4, 'Hakushu', 'hakushu.jpg', 'Recomiendo no perderse esta joya en Tokyo, el filet de kobe es una maravilla. Se disfruta de principio a fin y el ambiente familiar completa la experiencia.', 'https://www.facebook.com/hakusyu#_=_', 'Entre 65 € y 123 €', 'De lunes a sábado de 17:30 a 23:000', 2, 3, 4, 8, 3, 7),
+(4, 'Hakushu', 'hakushu.jpg', 'Recomiendo no perderse esta joya en Tokyo, el filet de kobe es una maravilla. Se disfruta de principio a fin y el ambiente familiar completa la experiencia.', 'https://www.facebook.com/hakusyu#_=_', 'Entre 65 € y 123 €', 'De lunes a sábado de 17:30 a 23:00', 2, 3, 4, 8, 3, 7),
 (5, 'Pirámide de Keops', 'keops.jpg', 'La pirámide de Keops es la más grande de las tres pirámides de la meseta de Giza, a las afueras de El Cairo (Egipto), es la única de las Siete Maravillas del Mundo antiguo que aún sigue en pie.', 'https://es.wikipedia.org/wiki/Gran_Pir%C3%A1mide_de_Guiza', 'Visita gratuita', 'De lunes a domingo de 8:00 a 17:00', 4, 4, 6, 28, 70, 5),
 (6, 'O by Cirque du Soleil', 'cirque_du_soleil.jpg', '"O" desafía cualquier descripción: es uno de los espectáculos en vivo más increíbles y creativos que encontrarás en el mundo.', 'https://www.vegas.com/shows/cirque-du-soleil/o-las-vegas/', 'Desde 121,32 $', 'Miércoles y sábado a las 19:00 o 21:30', 3, 5, 4, 46, 77, 7);
 
@@ -302,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `ruta` (
   `nombre` char(25) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish2_ci NOT NULL,
   `id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `ruta`
@@ -407,7 +407,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `esAdministrador` tinyint(1) NOT NULL,
   `esUsuarioRegistrado` tinyint(1) NOT NULL,
   `esUsuarioProfesional` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -415,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id`, `username`, `password`, `email`, `poblacion`, `idioma`, `telefono`, `url`, `foto`, `textoPresentacion`, `esAdministrador`, `esUsuarioRegistrado`, `esUsuarioProfesional`) VALUES
 (5, 'admin', '81dc9bdb52d04dc20036dbd8313ed055', 'admin@bitacle.es', 'Granollers', 'Català', '6403212', 'www.bitacle.es', 'admin.png', '', 1, 1, 1),
-(6, 'userRegistrado', '81dc9bdb52d04dc20036dbd8313ed055', 'userRegistrado@bitacle.es', 'Granollers', 'Català', '4402212', '', 'user.png', '', 0, 1, 1),
+(6, 'userRegistrado', '81dc9bdb52d04dc20036dbd8313ed055', 'userRegistrado@bitacle.es', 'Granollers', 'Català', '4402212', '', 'user.png', '', 0, 1, 0),
 (7, 'userProfesional', '81dc9bdb52d04dc20036dbd8313ed055', 'userProfesional', 'Parets', 'Català', '6473652', '', 'wally.PNG', '', 0, 1, 1);
 
 -- --------------------------------------------------------
@@ -596,7 +596,7 @@ ALTER TABLE `ciudad`
 -- AUTO_INCREMENT de la tabla `diario`
 --
 ALTER TABLE `diario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `entorno`
 --
@@ -621,17 +621,17 @@ ALTER TABLE `mensajeprivado`
 -- AUTO_INCREMENT de la tabla `pais`
 --
 ALTER TABLE `pais`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=242;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=165;
 --
 -- AUTO_INCREMENT de la tabla `poi`
 --
 ALTER TABLE `poi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `ruta`
 --
 ALTER TABLE `ruta`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `temaforo`
 --
@@ -651,7 +651,7 @@ ALTER TABLE `transporte`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- Restricciones para tablas volcadas
 --

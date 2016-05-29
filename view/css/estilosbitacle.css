@@ -23,6 +23,7 @@ body {
 }
 
 #conversation{
+    margin-bottom: 20px;
     height:200px; 
     border: 1px solid #CCCCCC; 
     padding: 12px;  
@@ -74,9 +75,10 @@ h1{
 h2{
     font-family: "Quicksand-Bold";
     text-align: center;
-    font-size: 3.8em;
+    font-size: 3em;
     text-shadow: 7px 3px 7px #e1e1e1;
-    color: #000000;
+    color: #343a45;
+    margin-bottom: 50px;
 }
 
 #tituloPagina{
@@ -1026,14 +1028,15 @@ td.text-right {
 
 .cuadro {
     min-width: 1000px;
+    margin-bottom: 40px;
     border-width: 1px;
     padding: 10px;  
     border-style: solid; 
-    border-color: #008CBA; 
-    -moz-box-shadow: 0 0 5px 5px #888;
-    -webkit-box-shadow: 0 0 5px 5px #888;
-    box-shadow: 0 0 5px 5px #888;  
-    border-radius: 25px;   
+    border-color: #008CBA;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 31px 7px rgba(0,140,186,1);
+    -moz-box-shadow: 0px 0px 31px 7px rgba(0,140,186,1);
+    box-shadow: 0px 0px 31px 7px rgba(0,140,186,1);
 }
 .cuadro form{
     padding: 2px;
@@ -1048,10 +1051,12 @@ td.text-right {
 .centrar{
     text-align: center;
 }
+
 label.error{
     color: red;
     padding-left: 5px;
 }
+
 select+label{
     color: red;
     padding-left: 5px;
@@ -1080,4 +1085,8 @@ select+label{
 
 #menuAdmin{
     /*background-color: #AEB404;*/
+}
+
+#formChat{
+    margin-top: 20px;
 }

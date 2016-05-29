@@ -11,7 +11,6 @@ if ((checkSession()) && ($objUsuarioConectado->getProfessional() == 1)) {
         <div class="row content">
             <div class="col-md-12 col-sm-12">  
                 <h2>añadir anuncio</h2>
-                <hr>
                 <div class="cuadro">
                     <form action="../controller/controllerAddAnuncio.php" name="formAnuncio" id="formAnuncio">
                         <p><span class="titulos">POI:</span><select id="POIAnuncio" name="POIAnuncio" onchange="mostrarInfoAnuncio(this.value)">

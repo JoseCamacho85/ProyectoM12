@@ -4,7 +4,6 @@ include ("header.php");
 <a href="main.php"><button class="btn btn-info">Volver</button></a>
     <div class="container">     
         <h2>registrar Usuario</h2>
-        <hr>
         <div class="row content">
             <div class="col-md-12"> 
                 <div class="cuadro">

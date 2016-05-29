@@ -12,7 +12,7 @@
                     <?php
                 }
                 ?>
-                <li><a href="showMisPois.php"><span class="glyphicon glyphicon-globe"></span> Mis POIs</a></li>
+                <li><a href="showMisPois.php"><span class="glyphicon glyphicon-globe"></span> Mis POI's</a></li>
                 <li><a href="message.php"><span class="glyphicon glyphicon-envelope"></span> Mensajes</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right" id="menuAdmin">

@@ -1,6 +1,11 @@
 nav div{
     background-color: #46a546;
 }
+
+.navbar .nav > li > a:hover {
+    background-color: #387038;
+}
+
 footer{
     background-color: #46a546;
 }

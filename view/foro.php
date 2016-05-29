@@ -41,7 +41,7 @@ if (checkSession()) {
 
             $query2 = "SELECT * FROM  foro WHERE identificador = '$id' ORDER BY fecha DESC";
             $result2 = $mysqli->query($query2);
-            echo "<h5>respuestas:</h5><hr>";
+            echo "<hr><h5>respuestas:</h5>";
             while ($row = mysqli_fetch_array($result2, MYSQLI_ASSOC)) {
                 $id = $row['ID'];
                 $titulo = $row['titulo'];

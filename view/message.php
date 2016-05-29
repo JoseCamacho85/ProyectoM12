@@ -27,7 +27,6 @@ include ("makeDropdownLists.php"); // RAQUEL
             <textarea id="message" name="message" placeholder="Mensaje"  class="form-control" rows="3"></textarea>
         </div>
         <button id="send" class="btn btn-info" >Enviar</button>
-        <hr>
         <div class="form-group">
             <div class="col-md-12" >
                 <h5>mensajes recibidos</h5>

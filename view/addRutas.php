@@ -10,7 +10,6 @@ if (checkSession()) {
         <div class="row content">
             <div class="col-md-12"> 
                 <h2>Introducir Ruta</h2>
-                <hr>
                 <div class="cuadro">
                     <form action="../controller/controllerAddRuta.php" method="post" id="formRuta">
                         <p><span class="titulos">Nombre: </span><input type="text" name="nameRuta"/></p>
