@@ -55,10 +55,10 @@ if (!isset($_SESSION['bitacle'])) {
             include '../controller/controllerVerDetalleUsuario.php';
             include("../controller/validatorTipoUsuario.php");
             include 'modules/moduleUserNav.php';
-            include("modules/addRutaBoton.php");
+//            include("modules/addRutaBoton.php");
         }
         ?></td>
-    <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
+    <!--<td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>-->
 </tr>
 
 <h2>rutas</h2>

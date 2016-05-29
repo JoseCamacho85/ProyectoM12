@@ -52,13 +52,13 @@ if (isset($_SESSION['user'])) {
     include '../controller/controllerVerDetalleUsuario.php';
     include("../controller/validatorTipoUsuario.php");
     include 'modules/moduleUserNav.php';
-    include("modules/addPoiBoton.php");
+//    include("modules/addPoiBoton.php");
 }
 ?>
 
-&nbsp;<a href="searchPOI.php"><button class="btn btn-info">Buscar POI's</button></a>
+<!--&nbsp;<a href="searchPOI.php"><button class="btn btn-info">Buscar POI's</button></a>
 <td> <a href="main.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
-<td align="right">&nbsp;
+<td align="right">&nbsp;-->
 
 </td>
 

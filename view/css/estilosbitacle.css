@@ -1093,10 +1093,13 @@ select+label{
     margin-top: 20px;
 }
 
+#navRegistrado .nav > .dropdown > .dropdown-menu > li > a,
 #navRegistrado{
     background-color: lightseagreen;
 }
 
+#navRegistrado .nav > .dropdown > a:focus,
+#navRegistrado .nav > .dropdown > .dropdown-menu > li > a:hover,
 #navRegistrado .nav > li > a:hover{
     background-color: teal;
 }

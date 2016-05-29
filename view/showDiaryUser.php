@@ -61,10 +61,10 @@ if (checkSession()) {
         <td> <?php
     if (isset($_SESSION['user'])) {
         $user = "";
-        include("modules/addDiaryBoton.php");
+//        include("modules/addDiaryBoton.php");
     }
     ?></td>
-        <td> <a href="mainUser.php" id="volver"><button class="btn btn-info">Volver</button></a></td>
+        <!--<td> <a href="mainUser.php" id="volver"><button class="btn btn-info">Volver</button></a></td>-->
 
     </tr>
     <h2>diarios</h2>

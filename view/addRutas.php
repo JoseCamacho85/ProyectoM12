@@ -5,7 +5,7 @@ if (checkSession()) {
     include("../controller/validatorTipoUsuario.php");
     include 'modules/moduleUserNav.php';
     ?>
-    <a href="showRutas.php"><button class="btn btn-info">Volver</button></a>
+    <!--<a href="showRutas.php"><button class="btn btn-info">Volver</button></a>-->
     <div class="container">    
         <div class="row content">
             <div class="col-md-12"> 

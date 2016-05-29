@@ -27,14 +27,14 @@ include ("../controller/checkSession.php");
         <script type="text/javascript" src="../controller/validations/validateRutaCliente.js"></script> 
         <script type="text/javascript" src="../controller/validations/validateAnuncioCliente.js"></script>
         <style type="text/css">
-        <?php
-        if (isset($_SESSION['user'])) {
-            $user = unserialize($_SESSION['user']);
-            if ($user == "admin") {
-                include("css/cssAdmin.css");
-            }
-        }
-        ?>
+<?php
+if (isset($_SESSION['user'])) {
+    $user = unserialize($_SESSION['user']);
+    if ($user == "admin") {
+        include("css/cssAdmin.css");
+    }
+}
+?>
         </style>
     </head>
     <body>
@@ -51,8 +51,25 @@ include ("../controller/checkSession.php");
                 <div class="collapse navbar-collapse navbar-ex1-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li><a href="main.php"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                        <li><a href="showPOI.php"><span class="glyphicon glyphicon-cutlery"></span> POI's</a></li>
-                        <li><a href="showRutas.php"><span class="glyphicon glyphicon-road"></span> Rutas</a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="main.php"><span class="glyphicon glyphicon-cutlery"></span> POI's <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="showPOI.php">Ver POI's<i class="icon-arrow-right"></i></a>
+                                    <a href="addPOI.php">Añadir POI's<i class="icon-arrow-right"></i></a>
+                                    <a href="searchPOI.php">Buscar POI's<i class="icon-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="main.php"><span class="glyphicon glyphicon-road"></span> Rutas <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="showRutas.php">Ver rutas<i class="icon-arrow-right"></i></a>
+                                    <a href="addRutas.php">Añadir rutas<i class="icon-arrow-right"></i></a>
+                                </li>
+                            </ul>
+                        </li>
                         <li><a href="showForo.php"><span class="glyphicon glyphicon-comment"></span> Foro</a></li>
                     </ul>
                     <?php
