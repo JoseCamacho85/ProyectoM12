@@ -19,12 +19,14 @@ for ($i = 0; $i < count($bitacle->getPois()); $i++) {
         $precio = $bitacle->getPois()[$i]->getPrecio();
         $horario = $bitacle->getPois()[$i]->getHorario();
 
-        echo "<p>Nombre: " . $nombre . "</p>";
+        echo "<br><div class="."cuadro".">";
+        echo "<p class=\"titulos\">" . $nombre . "</p>";
         echo "<p><img src=\"fotoPoi/$foto\"/>" . "</p>";
-        echo "<p>Descripción: " . $descripcion . "</p>";
-        echo "<p>URL: <a href=" . $url . " target=\"_blank\">$url</a></p>";
-        echo "<p>Precio: " . $precio . "</p>";
-        echo "<p>Horario: " . $horario . "</p>";
+        echo "<p><span class="."titulos".">Descripción: </span>" . $descripcion . "</p>";
+        echo "<p><span class="."titulos".">URL: </span><a href=" . $url . " target=\"_blank\">$url</a></p>";
+        echo "<p><span class="."titulos".">Precio: </span>" . $precio . "</p>";
+        echo "<p><span class="."titulos".">Horario: </span>" . "</p>";
+        echo "</div>";
     }
 }
 ?>
